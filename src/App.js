@@ -1,13 +1,11 @@
 import React from "react";
+import { HashRouter, Route } from "react-router-dom";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+//footer and header
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-import { HashRouter, Route } from "react-router-dom";
-
-
+//routes
 import Home from "./routes/Home";
 import Information from "./routes/Information";
 import Business from "./routes/Business";
@@ -15,6 +13,13 @@ import Product from "./routes/Product";
 import Global_Network from "./routes/Global_Network";
 import Inquiry from "./routes/Inquiry";
 import Customer from "./routes/Customer";
+
+//css
+import 'bootstrap/dist/css/bootstrap.min.css'; // react bootstrap css
+//import '@fortawesome/fontawesome-free/css/all.min.css'; 
+import 'bootstrap-css-only/css/bootstrap.min.css'; // navigation bar css
+import 'mdbreact/dist/css/mdb.css'; // hover effect css
+import "react-responsive-carousel/lib/styles/carousel.min.css"; //carousel css
 
 
 function App() {
@@ -29,7 +34,6 @@ function App() {
         <Route path="/Global_Network" component={Global_Network} />
         <Route path="/Inquiry" component={Inquiry} />
         <Route path="/Customer" component={Customer} />
-
       </HashRouter>
       <Footer />
     </div>
