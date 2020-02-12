@@ -19,8 +19,8 @@ toggleCollapse = () => {
 render() {
   return (
       <HashRouter >
-          <div style={{ display: 'flex', justifyContent: 'center', textAlign:"center", backgroundColor: "#9e4f89" }}>
-              <MDBNavbar color="" dark expand="md" className="z-depth-0">
+          <div style={{  backgroundColor: "#9e4f89" }}>
+              <MDBNavbar color="" dark expand="md" className="z-depth-0 mx-auto"  style={{maxWidth: 1100 , textAlign:"center" }}>
                   <MDBNavbarBrand>
                       <MDBNavLink style={{minWidth: 130}} to="/"><strong className="white-text">Suvin Cosmetic</strong></MDBNavLink>
                   </MDBNavbarBrand>

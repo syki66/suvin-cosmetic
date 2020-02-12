@@ -5,10 +5,10 @@ import { MDBMask, MDBView, MDBContainer, MDBRow, MDBCol } from "mdbreact";
 
 function HomeContact() {
     return (
-        <MDBContainer className="mt-5">
+        <MDBContainer className="mt-md-5">
             <MDBRow className="mb-4 ">
 
-                <MDBCol md="6" >
+                <MDBCol size= "6" sm="6" md="6" >
                     <MDBView className="hoverable">
                         <img
                             src="https://cdn.pixabay.com/photo/2016/03/27/23/11/post-it-notes-1284667_960_720.jpg"
@@ -29,7 +29,7 @@ function HomeContact() {
                 </MDBCol>
 
 
-                <MDBCol md="6" >
+                <MDBCol size= "6" sm="6" md="6" >
                     <MDBView className="hoverable">
                         <img
                             src="https://cdn.pixabay.com/photo/2014/10/23/16/58/phone-499991_960_720.jpg"

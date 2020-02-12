@@ -12,7 +12,7 @@ import {
 
 function HomeCarousel() {
   return (
-    <MDBContainer>
+    <MDBContainer fluid className="px-0">
     <MDBCarousel
       activeItem={1}
       length={2}

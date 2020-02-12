@@ -1,0 +1,12 @@
+@media (min-width: 1200px)  {
+    .so_special {
+        background-color: blue;
+    }
+}
+
+@media (max-width: 767px)  {
+    .so_special {
+        background-color: pink;
+
+    }
+}
