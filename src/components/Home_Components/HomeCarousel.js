@@ -1,27 +1,50 @@
 import React from "react";
 
-import { Carousel } from 'react-responsive-carousel';
+import {
+  MDBCarousel,
+  MDBCarouselInner,
+  MDBCarouselItem,
+  MDBView,
+  MDBContainer
+} from "mdbreact";
 
 
 
 function HomeCarousel() {
   return (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
-      <Carousel
-        infiniteLoop={true}
-        autoPlay={true}
-        width={2000}
-        showStatus={false}
-        showThumbs={false}
-      >
-        <div>
-          <img src="http://www.suvincos.com/sh_img/index/main_banner/main_banner_01.png" alt="pic01" />
-        </div>
-        <div>
-          <img src="http://www.suvincos.com/sh_img/index/main_banner/main_banner_02.png" alt="pic02" />
-        </div>
-      </Carousel>
-    </div>
+    <MDBContainer>
+    <MDBCarousel
+      activeItem={1}
+      length={2}
+      showControls={true}
+      showIndicators={true}
+      className="z-depth-1"
+    >
+      <MDBCarouselInner>
+        <MDBCarouselItem itemId="1">
+          <MDBView>
+            <img
+              className="d-block w-100"
+              src="http://www.suvincos.com/sh_img/index/main_banner/main_banner_01.png"
+              alt="First slide"
+            />
+            
+          </MDBView>
+        </MDBCarouselItem>
+        <MDBCarouselItem itemId="2">
+          <MDBView>
+            <img
+              className="d-block w-100"
+              src="http://www.suvincos.com/sh_img/index/main_banner/main_banner_02.png"
+              alt="Second slide"
+            />
+            
+          </MDBView>
+        </MDBCarouselItem>
+
+      </MDBCarouselInner>
+    </MDBCarousel>
+  </MDBContainer>
   );
 }
 

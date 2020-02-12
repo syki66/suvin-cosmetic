@@ -6,57 +6,48 @@ import { MDBMask, MDBView, MDBContainer, MDBRow, MDBCol } from "mdbreact";
 
 function HomeHoverEffect() {
   return (
-    <MDBContainer className="mt-5">
-      <MDBRow>
-        <MDBCol md="3">
-          <MDBView hover>
+    <MDBContainer className="my-5" >
+      <MDBRow> 
+
+        <MDBCol md="4" >
+          <MDBView hover zoom >
             <img
-              src="https://mdbootstrap.com/img/Others/documentation/forest-sm-mini.jpg"
-              className="img-fluid"
+              src="http://www.suvincos.com/sh_img/index/main_product_01_ov.png"
+              className="img-fluid rounded mx-auto d-block"
               alt=""
             />
-            <MDBMask className="flex-center" overlay="red-strong">
-              <p className="white-text">Competence</p>
-            </MDBMask>
-          </MDBView>
-        </MDBCol>
-        <MDBCol md="3">
-          <MDBView hover>
-            <img
-              src="https://mdbootstrap.com/img/Others/documentation/forest-sm-mini.jpg"
-              className="img-fluid"
-              alt=""
-            />
-            <MDBMask className="flex-center" overlay="red-light">
-              <p className="white-text">R & D</p>
-            </MDBMask>
-          </MDBView>
-        </MDBCol>
-        <MDBCol md="3">
-          <MDBView hover>
-            <img
-              src="https://mdbootstrap.com/img/Others/documentation/forest-sm-mini.jpg"
-              className="img-fluid"
-              alt=""
-            />
-            <MDBMask className="flex-center" overlay="red-slight">
-              <p className="white-text">OEM</p>
+            <MDBMask className="flex-center" overlay="white-strong">
+              <h1 className="text-black-50"><strong>Competence</strong></h1>
             </MDBMask>
           </MDBView>
         </MDBCol>
 
-        <MDBCol md="3">
+        <MDBCol md="4">
           <MDBView hover zoom>
             <img
-              src="https://mdbootstrap.com/img/Others/documentation/img%20(131)-mini.jpg"
-              className="img-fluid"
+              src="http://www.suvincos.com/sh_img/index/main_product_02_ov.png"
+              className="img-fluid rounded mx-auto d-block"
               alt=""
             />
-            <MDBMask className="flex-center">
-              <p className="white-text">ODM</p>
+            <MDBMask className="flex-center" overlay="white-strong">
+              <h1 className="text-black-50"><strong>R & D</strong></h1>
             </MDBMask>
           </MDBView>
         </MDBCol>
+        
+        <MDBCol md="4">
+          <MDBView hover zoom>
+            <img
+              src="http://www.suvincos.com/sh_img/index/main_product_03_ov.png"
+              className="img-fluid rounded mx-auto d-block"
+              alt=""
+            />
+            <MDBMask className="flex-center" overlay="white-strong">
+              <h1 className="text-black-50"><strong>OEM & ODM</strong></h1>
+            </MDBMask>
+          </MDBView>
+        </MDBCol>
+
 
       </MDBRow>
 
