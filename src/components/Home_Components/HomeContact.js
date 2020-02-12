@@ -5,14 +5,14 @@ import { MDBMask, MDBView, MDBContainer, MDBRow, MDBCol } from "mdbreact";
 
 function HomeContact() {
     return (
-        <MDBContainer className="mt-md-5">
-            <MDBRow className="mb-4 ">
+        <MDBContainer className="my-md-5" >
+            <MDBRow className="mb-md-4 ">
 
-                <MDBCol size= "6" sm="6" md="6" >
+                <MDBCol size= "6" sm="6" md="6" className="px-0">
                     <MDBView className="hoverable">
                         <img
                             src="https://cdn.pixabay.com/photo/2016/03/27/23/11/post-it-notes-1284667_960_720.jpg"
-                            className="img-fluid "
+                            className="img-fluid rounded mx-auto d-block"
                             alt=""
                         />
                         <MDBMask className="flex-center" overlay="black-strong">
@@ -29,14 +29,14 @@ function HomeContact() {
                 </MDBCol>
 
 
-                <MDBCol size= "6" sm="6" md="6" >
+                <MDBCol size= "6" sm="6" md="6" className="px-0">
                     <MDBView className="hoverable">
                         <img
                             src="https://cdn.pixabay.com/photo/2014/10/23/16/58/phone-499991_960_720.jpg"
-                            className="img-fluid"
+                            className="img-fluid rounded mx-auto d-block"
                             alt=""
                         />
-                        <MDBMask className="flex-center" overlay="black-strong">
+                        <MDBMask className="flex-center " overlay="black-strong">
                             <p className="white-text">
                                 <h1>CONTACT</h1>
                                 <span>Tel : 1688-9028</span><br />

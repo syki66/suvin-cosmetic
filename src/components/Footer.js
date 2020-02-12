@@ -3,8 +3,8 @@ import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
 function Footer() {
     return (
-        <MDBFooter color="elegant-color" className="font-small mt-4 py-2" >
-            <MDBContainer className="text-center text-md-left " style={{ display: 'flex', justifyContent: 'center'  }}>
+        <MDBFooter color="elegant-color" className="font-small mt-md-4 py-2" >
+            <MDBContainer fluid className="text-center text-md-left " style={{ display: 'flex', justifyContent: 'center'  }}>
                 <MDBRow className="align-bottom">
                     <MDBCol md="10" >
                         <p>
@@ -19,7 +19,7 @@ function Footer() {
                 </MDBRow>
             </MDBContainer>
             <div className="footer-copyright text-center py-2">
-                <MDBContainer >
+                <MDBContainer fluid>
                     Copyright ⓒ <a href="http://www.suvincos.com/"> www.suvincos.com </a> All rights reserved.
           </MDBContainer>
             </div>

@@ -6,10 +6,10 @@ import { MDBMask, MDBView, MDBContainer, MDBRow, MDBCol } from "mdbreact";
 
 function HomeHoverEffect() {
   return (
-    <MDBContainer className="my-md-0 " >
+    <MDBContainer className="my-md-5 " >
       <MDBRow> 
 
-        <MDBCol size="4" sm="4" md="4">
+        <MDBCol size="4" sm="4" md="4" className="px-0">
           <MDBView hover zoom >
             <img
               src="http://www.suvincos.com/sh_img/index/main_product_01_ov.png"
@@ -22,7 +22,7 @@ function HomeHoverEffect() {
           </MDBView>
         </MDBCol>
 
-        <MDBCol size="4" sm="4" md="4">
+        <MDBCol size="4" sm="4" md="4" className="px-0">
           <MDBView hover zoom>
             <img
               src="http://www.suvincos.com/sh_img/index/main_product_02_ov.png"
@@ -35,7 +35,7 @@ function HomeHoverEffect() {
           </MDBView>
         </MDBCol>
         
-        <MDBCol size="4" sm="4" md="4">
+        <MDBCol size="4" sm="4" md="4" className="px-0">
           <MDBView hover zoom>
             <img
               src="http://www.suvincos.com/sh_img/index/main_product_03_ov.png"
