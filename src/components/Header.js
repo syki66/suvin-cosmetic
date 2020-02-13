@@ -1,11 +1,20 @@
 import React, { Component } from "react";
 import {
-MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBFormInline,
-MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBLink
+MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse
 } from "mdbreact";
 
 import { HashRouter } from "react-router-dom";
 
+
+/*
+    isOpen은 모바일형으로 네비게이션바 변경되었을때 메뉴 열리게 하는 토글의 스테이트 변경하는거
+    mx-auto 는 마진 x축방향 알아서 맞추는거랑 양쪽 동일해져서 창크기에 따라서 쫙펴지게 되고
+    그래서 maxWidth를 1100줘서 일정이상 커지면 모양 고정되게 했고,
+    고정되고 난뒤에 그림자 효과 생겨서 없앨라고 z-depth-0 줬고,
+    그정도, BrowserRouter 보다 HashRouter가 깃허브 호스팅 편하다해서 이걸로한거고,
+    뭐 <a href> 로 하면 새로고침된다함.
+    어쨌든 여기서는 각 네비바 클릭하면 어디로 링크해줄지만 해줌 (경로 설정과 파일연결은 App.js 에서 했음)
+*/
 
 class Header extends Component {
 state = {
@@ -20,39 +29,39 @@ render() {
   return (
       <HashRouter >
           <div style={{  backgroundColor: "#9e4f89" }}>
-              <MDBNavbar color="" dark expand="md" className="z-depth-0 mx-auto"  style={{maxWidth: 1100 , textAlign:"center" }}>
+              <MDBNavbar color="" dark expand="md" className="z-depth-0 mx-auto"  style={{maxWidth: 1100}}>
                   <MDBNavbarBrand>
-                      <MDBNavLink style={{minWidth: 130}} to="/"><strong className="white-text">Suvin Cosmetic</strong></MDBNavLink>
+                      <MDBNavLink to="/"><strong className="white-text">Suvin Cosmetic</strong></MDBNavLink>
                   </MDBNavbarBrand>
 
                   <MDBNavbarToggler onClick={this.toggleCollapse} />
-                  <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
+                  <MDBCollapse isOpen={this.state.isOpen} navbar>
 
 
-                      <MDBNavbarNav center>
+                      <MDBNavbarNav>
 
                           <MDBNavItem>
-                              <MDBNavLink style={{minWidth: 130}} to="Information">Information</MDBNavLink>
+                              <MDBNavLink to="Information">Information</MDBNavLink>
                           </MDBNavItem>
 
                           <MDBNavItem>
-                              <MDBNavLink style={{minWidth: 130}} to="Business">Business</MDBNavLink>
+                              <MDBNavLink to="Business">Business</MDBNavLink>
                           </MDBNavItem>
 
                           <MDBNavItem>
-                              <MDBNavLink style={{minWidth: 130}} to="Product">Product</MDBNavLink>
+                              <MDBNavLink to="Product">Product</MDBNavLink>
                           </MDBNavItem>
 
                           <MDBNavItem>
-                              <MDBNavLink style={{minWidth: 130}} to="Global_Network">Global Network</MDBNavLink>
+                              <MDBNavLink to="Global_Network">Global Network</MDBNavLink>
                           </MDBNavItem>
 
                           <MDBNavItem>
-                              <MDBNavLink style={{minWidth: 130}} to="Inquiry">Inquiry</MDBNavLink>
+                              <MDBNavLink to="Inquiry">Inquiry</MDBNavLink>
                           </MDBNavItem>
 
                           <MDBNavItem>
-                              <MDBNavLink style={{minWidth: 130}} to="Customer">Customer</MDBNavLink>
+                              <MDBNavLink to="Customer">Customer</MDBNavLink>
                           </MDBNavItem>
 
                       </MDBNavbarNav>
@@ -61,7 +70,6 @@ render() {
               </MDBNavbar>
               </div>
     </HashRouter>
-
 
     );
   }

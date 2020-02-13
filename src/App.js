@@ -19,7 +19,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // react bootstrap css
 //import '@fortawesome/fontawesome-free/css/all.min.css'; 
 import 'bootstrap-css-only/css/bootstrap.min.css'; // navigation bar css
 import 'mdbreact/dist/css/mdb.css'; // hover effect css
-import "react-responsive-carousel/lib/styles/carousel.min.css"; //carousel css
 
 
 function App() {
