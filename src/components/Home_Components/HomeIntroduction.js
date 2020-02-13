@@ -6,12 +6,8 @@ import intro_pic_1 from "./Home_Image/intro01.png"
 import intro_pic_2 from "./Home_Image/intro02.png"
 import intro_pic_3 from "./Home_Image/intro03.png"
 
-
 import notice from "./Home_Image/notice.jpg"
 import telephone from "./Home_Image/telephone.jpg"
-
-
-
 
 
 /*
@@ -37,7 +33,7 @@ import telephone from "./Home_Image/telephone.jpg"
   이런식으로 xs에서는 모든 패딩 제거했고,
   sm에서는 row 간에 padding만 추가 각 column 컨텐츠는 붙어있음 (1열,2열 padding bottom-4 , 1열 padding top-4)
   md에서는 sm에서 row 간에 패딩 1씩만 추가 (1열,2열 padding bottom-5 , 1열 padding top-5)
-  lg에서는 1열은 애초에 사진크기가 작기때문에 사이에 공백이 생겨서 건들필요없고, 2열에 사진 붙어있어서 x축 패딩 3줌(각각 오른쪽 왼쪽만주면 사진커서 그냥 x축 한번에줌)
+  lg에서는 1열은 애초에 사진크기가 wapper에 비해 작기때문에 사이에 공백이 생겨서 건들필요없고, 2열에 사진 붙어있어서 x축 패딩 3줌(각각 오른쪽 왼쪽만주면 사진커서 그냥 x축 한번에줌)
   xl도 lg랑 마찬가지로 하고 패딩 4줌
 
   <img>에 mx-auto를 줘서 중앙정렬시킴 (마진값 오토)
@@ -52,30 +48,30 @@ import telephone from "./Home_Image/telephone.jpg"
   
   className="white-text" 로 흰색글씨체
 
+  rounded 로 1열 박스들 둥글게 라운딩함
 
 
-  글씨 높이변경 vh vw 이용
+
+  글씨는 App.css 에서 직접 크기에 따라 입힘
 */
 
-function HomeHoverEffect() {
+
+function HomeIntroduction() {
   return (
     <MDBContainer>
 
 
-
       <MDBRow className="pb-sm-4 pt-sm-4 pb-md-5 pt-md-5"> 
-
-
 
         <MDBCol size="4" className="px-0">
           <MDBView hover zoom>
             <img
               src={intro_pic_1}
-              className="img-fluid mx-auto"
+              className="img-fluid mx-auto rounded"
               alt=""
             />
             <MDBMask className="flex-center" overlay="white-strong">
-              <h1 ><strong>Competence</strong></h1>
+              <p className="home__intro">Competence</p>
             </MDBMask>
           </MDBView>
         </MDBCol>
@@ -84,11 +80,11 @@ function HomeHoverEffect() {
           <MDBView hover zoom>
             <img
               src={intro_pic_2}
-              className="img-fluid mx-auto"
+              className="img-fluid mx-auto rounded"
               alt=""
             />
             <MDBMask className="flex-center" overlay="white-strong">
-              <h1 ><strong>R & D</strong></h1>
+              <p className="home__intro">R & D</p>
             </MDBMask>
           </MDBView>
         </MDBCol>
@@ -97,31 +93,19 @@ function HomeHoverEffect() {
           <MDBView hover zoom>
             <img
               src={intro_pic_3}
-              className="img-fluid mx-auto"
+              className="img-fluid mx-auto rounded"
               alt=""
             />
             <MDBMask className="flex-center" overlay="white-strong">
-              <h1 ><strong>OEM & ODM</strong></h1>
+              <p className="home__intro">OEM & ODM</p>
             </MDBMask>
           </MDBView>
         </MDBCol>
 
-
-
       </MDBRow>
 
 
-
-
-
-
-
-
-
-
       <MDBRow className="pb-sm-4 pb-md-5">
-
-
 
         <MDBCol size="6" className="px-0 px-lg-3 px-xl-4">
           <MDBView className="hoverable">
@@ -132,17 +116,12 @@ function HomeHoverEffect() {
             />
             <MDBMask className="flex-center" overlay="black-strong">
               <p className="white-text">
-                <h1>NOTICE</h1>
-
-
+                <span className="home__notice">NOTICE</span><br />
+                <span className="home__noticeText">test</span>
               </p>
-
-
-
             </MDBMask>
           </MDBView>
         </MDBCol>
-
 
         <MDBCol size="6" className="px-0 px-lg-3 px-xl-4">
           <MDBView className="hoverable">
@@ -153,37 +132,22 @@ function HomeHoverEffect() {
             />
             <MDBMask className="flex-center" overlay="black-strong">
               <p className="white-text">
-                <h1>CONTACT</h1>
-                <span>Tel : 1688-9028</span><br />
-                <span>Mobile : 010-6644-3665</span><br />
-                <span>Bussiness hours : 09:00~18:00</span><br />
-                <span>E-mail : suvin@suvincos.com</span><br />
-                <span>계좌: 210702-04-163993(국민은행 김덕훈)</span><br />
-
+                <span className="home__contact">CONTACT</span><br />
+                <span className="home__contactText">Tel : 1688-9028</span><br />
+                <span className="home__contactText">Mobile : 010-6644-3665</span><br />
+                <span className="home__contactText">Bussiness hours : 09:00~18:00</span><br />
+                <span className="home__contactText">E-mail : suvin@suvincos.com</span><br />
+                <span className="home__contactText">계좌: 210702-04-163993(국민은행 김덕훈)</span><br />
               </p>
-
-
-
             </MDBMask>
           </MDBView>
         </MDBCol>
 
-
-
       </MDBRow>
-
-
-
-
-
-
-
-
 
 
     </MDBContainer>
   );
 }
 
-
-export default HomeHoverEffect;
+export default HomeIntroduction;

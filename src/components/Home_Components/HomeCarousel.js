@@ -20,6 +20,8 @@ import suvin_pic_2 from "./Home_Image/suvin02.png"
   showIndicators={true} : 밑에 점박이 넣을거냐
   z-depth-1 : 그림자
   그리고 그림 넣을때 경로로 바로 안들어가서 import 시키고 그림 넣어야됨.
+
+  <MDBContainer>에 fluid 쓰고 className="w-100" 넣어야 커라젤 너비 꽉채워줌
 */
 
 function HomeCarousel() {
@@ -38,6 +40,7 @@ function HomeCarousel() {
             <img
               src={suvin_pic_1}
               alt="First slide"
+              className="w-100"
             />
             
           </MDBView>
@@ -47,6 +50,7 @@ function HomeCarousel() {
             <img
               src={suvin_pic_2}
               alt="Second slide"
+              className="w-100"
             />
             
           </MDBView>

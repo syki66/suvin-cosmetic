@@ -20,6 +20,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // react bootstrap css
 import 'bootstrap-css-only/css/bootstrap.min.css'; // navigation bar css
 import 'mdbreact/dist/css/mdb.css'; // hover effect css
 
+import "./App.css";
+
 
 function App() {
   return (

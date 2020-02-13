@@ -1,0 +1,51 @@
+.so_special {
+    background-color: red;
+}
+
+.home__intro {
+    font-size: 4vw;
+}
+
+.home__notice {
+    font-size: 4vw;
+}
+
+.home__noticeText {
+    font-size: 4vw;
+}
+
+.home__contact {
+    font-size: 4vw;
+}
+
+.home__contactText {
+    font-size: 3vw;
+}
+
+@media (min-width: 576px)  {
+    .so_special {
+        background-color: pink;
+    }
+
+}
+
+@media (min-width: 768px)  {
+    .so_special {
+        background-color: white;
+    }
+
+}
+
+@media (min-width: 992px)  {
+    .so_special {
+        background-color: skyblue;
+    }
+
+}
+
+@media (min-width: 1200px)  {
+    .so_special {
+        background-color: blue;
+    }
+
+}
