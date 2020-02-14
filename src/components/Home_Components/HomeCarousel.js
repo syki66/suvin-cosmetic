@@ -11,6 +11,9 @@ import {
 import suvin_pic_1 from "./Home_Image/suvin01.png"
 import suvin_pic_2 from "./Home_Image/suvin02.png"
 
+import suvin_pic_1_mobile from "./Home_Image/suvin01_mobile.png"
+import suvin_pic_2_mobile from "./Home_Image/suvin02_mobile.png"
+
 
 /*
   px-0 : x축 마진제거
@@ -22,6 +25,8 @@ import suvin_pic_2 from "./Home_Image/suvin02.png"
   그리고 그림 넣을때 경로로 바로 안들어가서 import 시키고 그림 넣어야됨.
 
   <MDBContainer>에 fluid 쓰고 className="w-100" 넣어야 커라젤 너비 꽉채워줌
+
+  home__carousel로 모바일로 갈수록 사진 양옆 없앰
 */
 
 function HomeCarousel() {
@@ -37,22 +42,38 @@ function HomeCarousel() {
       <MDBCarouselInner>
         <MDBCarouselItem itemId="1">
           <MDBView>
-            <img
-              src={suvin_pic_1}
-              alt="First slide"
-              className="w-100"
-            />
-            
+            <div className="carousel__pcImgToggle">
+                <img
+                  src={suvin_pic_1}
+                  alt="First slide"
+                  className="w-100"
+                />
+            </div>
+            <div className="carousel__mobileImgToggle">
+                <img
+                  src={suvin_pic_1_mobile}
+                  alt="First slide"
+                  className="w-100"
+                />
+            </div>
           </MDBView>
         </MDBCarouselItem>
         <MDBCarouselItem itemId="2">
           <MDBView>
-            <img
-              src={suvin_pic_2}
-              alt="Second slide"
-              className="w-100"
-            />
-            
+            <div className="carousel__pcImgToggle">
+              <img
+                src={suvin_pic_2}
+                alt="Second slide"
+                className="w-100"
+              />
+            </div>
+            <div className="carousel__mobileImgToggle">
+              <img
+                src={suvin_pic_2_mobile}
+                alt="Second slide"
+                className="w-100"
+              />
+            </div>
           </MDBView>
         </MDBCarouselItem>
 

@@ -2,25 +2,14 @@
     background-color: red;
 }
 
-.home__intro {
-    font-size: 4vw;
+.carousel__pcImgToggle {
+    display: none;
 }
 
-.home__notice {
-    font-size: 4vw;
+.carousel__mobileImgToggle {
+    display: block;
 }
 
-.home__noticeText {
-    font-size: 4vw;
-}
-
-.home__contact {
-    font-size: 4vw;
-}
-
-.home__contactText {
-    font-size: 3vw;
-}
 
 @media (min-width: 576px)  {
     .so_special {
@@ -29,12 +18,14 @@
 
 }
 
+
 @media (min-width: 768px)  {
     .so_special {
         background-color: white;
     }
 
 }
+
 
 @media (min-width: 992px)  {
     .so_special {
@@ -43,9 +34,52 @@
 
 }
 
+
 @media (min-width: 1200px)  {
     .so_special {
         background-color: blue;
     }
 
+    .carousel__pcImgToggle {
+        display: block;
+    }
+    
+    .carousel__mobileImgToggle {
+        display: none;
+    }
+
 }
+
+
+.home__intro {
+    
+}
+
+.home__notice {
+    color: snow;
+}
+
+.home__noticeTitle {
+    color: snow;
+}
+
+.home__noticeText {
+    color: snow;
+}
+
+
+.home__contact {
+    color: snow;
+    line-height: 2vw;
+}
+
+.home__contactTitle {
+    color: snow;
+    font-size:4vw;
+}
+
+.home__contactText {
+    color: snow;
+    font-size: 1vmin;
+}
+

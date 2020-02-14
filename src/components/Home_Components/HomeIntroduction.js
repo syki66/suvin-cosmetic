@@ -51,6 +51,11 @@ import telephone from "./Home_Image/telephone.jpg"
   rounded 로 1열 박스들 둥글게 라운딩함
 
 
+  notice랑 contact는 그냥 세로로 배열할라고 size 12씩 줬고, sm부터 6:6으로 배열
+
+
+  화장품 파는거 커라젤로 메인에 올려야겠다.
+
 
   글씨는 App.css 에서 직접 크기에 따라 입힘
 */
@@ -107,7 +112,7 @@ function HomeIntroduction() {
 
       <MDBRow className="pb-sm-4 pb-md-5">
 
-        <MDBCol size="6" className="px-0 px-lg-3 px-xl-4">
+        <MDBCol size="12" sm="6" className="px-0 px-lg-3 px-xl-4">
           <MDBView className="hoverable">
             <img
               src={notice}
@@ -115,15 +120,15 @@ function HomeIntroduction() {
               className="img-fluid"
             />
             <MDBMask className="flex-center" overlay="black-strong">
-              <p className="white-text">
-                <span className="home__notice">NOTICE</span><br />
+              <p className="home__notice">
+                <span className="home__noticeTitle">NOTICE</span><br />
                 <span className="home__noticeText">test</span>
               </p>
             </MDBMask>
           </MDBView>
         </MDBCol>
 
-        <MDBCol size="6" className="px-0 px-lg-3 px-xl-4">
+        <MDBCol size="12" sm="6" className="px-0 px-lg-3 px-xl-4">
           <MDBView className="hoverable">
             <img
               src={telephone}
@@ -131,8 +136,8 @@ function HomeIntroduction() {
               className="img-fluid"
             />
             <MDBMask className="flex-center" overlay="black-strong">
-              <p className="white-text">
-                <span className="home__contact">CONTACT</span><br />
+              <p className="home__contact">
+                <span className="home__contactTitle">CONTACT</span><br />
                 <span className="home__contactText">Tel : 1688-9028</span><br />
                 <span className="home__contactText">Mobile : 010-6644-3665</span><br />
                 <span className="home__contactText">Bussiness hours : 09:00~18:00</span><br />
