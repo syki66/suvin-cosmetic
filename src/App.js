@@ -23,6 +23,11 @@ import 'mdbreact/dist/css/mdb.css'; // hover effect css
 import "./App.css";
 
 
+import Competence from './components/Business_Components/Competence';
+import RnD from './components/Business_Components/RnD';
+import OEMnODM from './components/Business_Components/OEMnODM';
+
+
 function App() {
   return (
     <div>
@@ -35,6 +40,10 @@ function App() {
         <Route path="/Global_Network" component={Global_Network} />
         <Route path="/Inquiry" component={Inquiry} />
         <Route path="/Customer" component={Customer} />
+
+        <Route path="/Competence" component={Competence} />
+        <Route path="/RnD" component={RnD} />
+        <Route path="/OEMnODM" component={OEMnODM} />
       </HashRouter>
       <Footer />
     </div>

@@ -50,9 +50,20 @@
 
 }
 
-
+/*
+    display flex로 방향지정, justify-content: center로 가로방향 중앙정렬, align-items: center로 세로방향 중앙정렬 후
+    width height 100%로 해서 늘리기
+    MDBMask 에 flex-center 지워버리고 직접 조정했음
+*/
 .home__intro {
-    
+    width: 100%;
+    height: 100%;
+
+    font-size: 5vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .home__notice {

@@ -9,6 +9,10 @@ import intro_pic_3 from "./Home_Image/intro03.png"
 import notice from "./Home_Image/notice.jpg"
 import telephone from "./Home_Image/telephone.jpg"
 
+import {
+  MDBNavItem, MDBNavLink, MDBNav
+  } from "mdbreact";
+
 
 /*
   사진 직접 경로설정하면 안되고 import 시켜줘야됨
@@ -58,6 +62,9 @@ import telephone from "./Home_Image/telephone.jpg"
 
 
   글씨는 App.css 에서 직접 크기에 따라 입힘
+
+
+  여기서 navlink는 이미 app.js에서 hash router 로 감싸져있어서 라우터 태그 따로 없어도됨
 */
 
 
@@ -75,8 +82,8 @@ function HomeIntroduction() {
               className="img-fluid mx-auto rounded"
               alt=""
             />
-            <MDBMask className="flex-center" overlay="white-strong">
-              <p className="home__intro">Competence</p>
+            <MDBMask overlay="white-strong">
+                <MDBNavLink to="Competence" className="home__intro">Competence</MDBNavLink>
             </MDBMask>
           </MDBView>
         </MDBCol>
@@ -88,8 +95,9 @@ function HomeIntroduction() {
               className="img-fluid mx-auto rounded"
               alt=""
             />
-            <MDBMask className="flex-center" overlay="white-strong">
-              <p className="home__intro">R & D</p>
+            <MDBMask overlay="white-strong">
+            <MDBNavLink to="RnD" className="home__intro">R & D</MDBNavLink>
+              <p className="home__intro"></p>
             </MDBMask>
           </MDBView>
         </MDBCol>
@@ -101,8 +109,8 @@ function HomeIntroduction() {
               className="img-fluid mx-auto rounded"
               alt=""
             />
-            <MDBMask className="flex-center" overlay="white-strong">
-              <p className="home__intro">OEM & ODM</p>
+            <MDBMask overlay="white-strong">
+            <MDBNavLink to="OEMnODM" className="home__intro">OEM & ODM</MDBNavLink>
             </MDBMask>
           </MDBView>
         </MDBCol>
@@ -134,6 +142,7 @@ function HomeIntroduction() {
               src={telephone}
               alt="telephone"
               className="img-fluid"
+              onclick="location.href='tel:01066443665'"
             />
             <MDBMask className="flex-center" overlay="black-strong">
               <p className="home__contact">
