@@ -32,7 +32,7 @@ import {
   p-3 주고 p-sm-0 이렇게하면 오직 extra small만 p-3가 적용.
   p-sm-3 주고 p-md-0 이렇게 주면 오직 small만 p-3 적용.
   p-md-3 주고 p-lg-0 이렇게 주면 오직 middle만 p-3 적용.
-  즉, 값을 주게되면 상위 크기들도 같이 적용되고, 오버라이딩 쓰면 된다는거임..
+  즉, 값을 주게되면 상위 크기들도 같이 적용되고, 오버라이딩 하면 된다는거임..
 
   이런식으로 xs에서는 모든 패딩 제거했고,
   sm에서는 row 간에 padding만 추가 각 column 컨텐츠는 붙어있음 (1열,2열 padding bottom-4 , 1열 padding top-4)
