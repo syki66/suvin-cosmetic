@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { RenderAfterNavermapsLoaded, NaverMap } from 'react-naver-maps'
 
-console.log(process.env.REACT_APP_API)
+
 function Information() {
   return (
     <RenderAfterNavermapsLoaded
