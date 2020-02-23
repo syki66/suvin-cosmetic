@@ -3,10 +3,12 @@ import React, { Component } from 'react';
 import { RenderAfterNavermapsLoaded, NaverMap } from 'react-naver-maps'
 
 
+const CLIENT_ID = process.env.REACT_APP_NAVER_CLIENT_ID;
+
 function Information() {
   return (
     <RenderAfterNavermapsLoaded
-      ncpClientId={process.env.REACT_APP_API}
+      ncpClientId={CLIENT_ID}
     >
       <NaverMap
         mapDivId={'maps-getting-started-uncontrolled'} // default: react-naver-map
@@ -14,8 +16,8 @@ function Information() {
           width: '100%',
           height: '400px',
         }}
-        defaultCenter={{ lat: 37.3595704, lng: 127.105399 }}
-        defaultZoom={10}
+        defaultCenter={{ lat: 37.4965077, lng: 126.7862828 }}
+        defaultZoom={18}
       />
     </RenderAfterNavermapsLoaded>
   );
