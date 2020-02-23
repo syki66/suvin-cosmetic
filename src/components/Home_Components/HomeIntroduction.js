@@ -96,8 +96,7 @@ function HomeIntroduction() {
               alt=""
             />
             <MDBMask overlay="white-strong">
-            <MDBNavLink to="RnD" className="home__intro">R & D</MDBNavLink>
-              <p className="home__intro"></p>
+              <MDBNavLink to="RnD" className="home__intro">R & D</MDBNavLink>
             </MDBMask>
           </MDBView>
         </MDBCol>
