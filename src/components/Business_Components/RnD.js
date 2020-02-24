@@ -8,13 +8,13 @@ function RnD() {
         <MDBContainer>
             
             <MDBRow>
-                <MDBCol size="3">
+                <MDBCol size="12" sm="12" md="3">
 
                     <SideNav />
 
                 </MDBCol>
 
-                <MDBCol size="9">
+                <MDBCol size="12" sm="12" md="9">
                     <div className="h3">R&D</div>
 
                     <div className="border-bottom border-light">

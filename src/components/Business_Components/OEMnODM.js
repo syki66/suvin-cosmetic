@@ -9,7 +9,7 @@ function OEMnODM() {
         <MDBContainer>
             
             <MDBRow>
-                <MDBCol size="3">
+                <MDBCol size="12" sm="12" md="3">
 
                     <SideNav />
 
@@ -17,7 +17,7 @@ function OEMnODM() {
 
 
 
-                <MDBCol size="9">
+                <MDBCol size="12" sm="12" md="9">
                     <div className="h3">OEM&ODM</div>
 
                     <div className="border-bottom border-light">

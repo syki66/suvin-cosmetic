@@ -1,4 +1,4 @@
-.so_special {
+body {
     background-color: red;
 }
 
@@ -12,7 +12,7 @@
 
 
 @media (min-width: 576px)  {
-    .so_special {
+    body {
         background-color: pink;
     }
 
@@ -20,7 +20,7 @@
 
 
 @media (min-width: 768px)  {
-    .so_special {
+    body {
         background-color: white;
     }
 
@@ -28,7 +28,7 @@
 
 
 @media (min-width: 992px)  {
-    .so_special {
+    body {
         background-color: skyblue;
     }
 
@@ -36,7 +36,7 @@
 
 
 @media (min-width: 1200px)  {
-    .so_special {
+    body {
         background-color: blue;
     }
 

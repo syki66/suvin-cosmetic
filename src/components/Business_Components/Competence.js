@@ -36,6 +36,9 @@ import diverseDistribution from "./Business_image/diverseDistribution.jpg";
     사진들은 z-depth-1로 그림자 주고, display:"flex", alignItems:"center" 로 수직 중앙정렬
 
 
+    그러고 xs와 sm에서는 size값 12로 넣어서 사이드네비 상단에 배치하고, 사진들 글 오른쪽에서 하단으로 가게끔 배치함
+
+    첫번째 콜롬 특허증때메 컨텐츠가 붕 떠서 md 이상부터만 패딩 없앰 (모바일버전에 구분선때메 나머지 크기는 패딩 붙임)
 
 
     메뉴 바꿀때 fade효과 추가해야겠다.
@@ -48,23 +51,23 @@ import diverseDistribution from "./Business_image/diverseDistribution.jpg";
 
 function Competence() {
     return (
-        <MDBContainer className="so_special ">
+        <MDBContainer className="p-0">
             
             <MDBRow className="mt-4">
 
-                <MDBCol size="12" sm="12">
+                <MDBCol size="12" sm="12" md="3">
                     <SideNav />
                 </MDBCol>
 
 
-                <MDBCol size="12" sm="12">
+                <MDBCol size="12" sm="12" md="9">
 
                     <div className="h2 py-2">Competence</div>
 
 
 
-                    <MDBRow className="border-bottom border-top border-light">
-                        <MDBCol size="8" className="pt-5">
+                    <MDBRow className="border-bottom border-top border-light pb-5 pb-md-0">
+                        <MDBCol size="12" md="8" className=" pt-5">
 
                             <div className="h4">Competitive Technology</div>
                             <div className="h5 py-1" style={{ color: "#7f304e" }}><b>특허 인증의 경쟁력 있는 기술</b></div>
@@ -76,14 +79,14 @@ function Competence() {
                             </ul>
                         </MDBCol>
 
-                        <MDBCol size="4" style={{display:"flex", alignItems:"center"}}>
+                        <MDBCol size="12" md="4" style={{display:"flex", alignItems:"center"}}>
                             <img src={certificate} className="img-fluid z-depth-1" alt="" />
                         </MDBCol>
                     </MDBRow>
 
 
                     <MDBRow className="border-bottom border-light py-5">
-                        <MDBCol size="8">
+                        <MDBCol size="12" md="8">
                                 <div className="h4">Success of duty-free sales</div>
                                 <div className="h5 py-1" style={{ color: "#7f304e" }}><b>면세점 판매로 인정받은 품질</b></div>
                                 <ul className="py-3 border border-light" style={{ backgroundColor: "#f4f4f4" }}>
@@ -94,14 +97,14 @@ function Competence() {
                                 </ul>
                         </MDBCol>
 
-                        <MDBCol size="4" style={{display:"flex", alignItems:"center"}}>
+                        <MDBCol size="12" md="4" style={{display:"flex", alignItems:"center"}}>
                             <img src={dutyfreeStore} className="img-fluid z-depth-1" alt="" />
                         </MDBCol>
                     </MDBRow>
 
 
                     <MDBRow className="border-bottom border-light py-5">
-                        <MDBCol size="8">
+                        <MDBCol size="12" md="8">
                                 <div className="h4">Overseas Marketing</div>
                                 <div className="h5 py-1" style={{ color: "#7f304e" }}><b>글로벌 판매망 강화</b></div>
                                 <ul className="py-3 border border-light" style={{ backgroundColor: "#f4f4f4" }}>
@@ -112,14 +115,14 @@ function Competence() {
                                 </ul>
                         </MDBCol>
 
-                        <MDBCol size="4" style={{display:"flex", alignItems:"center"}}>
+                        <MDBCol size="12" md="4" style={{display:"flex", alignItems:"center"}}>
                             <img src={overseasMarketing} className="img-fluid z-depth-1" alt="" />
                         </MDBCol>
                     </MDBRow>
 
 
                     <MDBRow className="border-bottom border-light py-5">
-                        <MDBCol size="8">
+                        <MDBCol size="12" md="8">
                                 <div className="h4">Diverse distribution channel</div>
                                 <div className="h5 py-1" style={{ color: "#7f304e" }}><b>국내 유통망 다양화</b></div>
                                 <ul className="py-3 border border-light" style={{ backgroundColor: "#f4f4f4" }}>
@@ -130,7 +133,7 @@ function Competence() {
                                 </ul>
                         </MDBCol>
 
-                        <MDBCol size="4" style={{display:"flex", alignItems:"center"}}>
+                        <MDBCol size="12" md="4" style={{display:"flex", alignItems:"center"}}>
                             <img src={diverseDistribution} className="img-fluid z-depth-1" alt="" />
                         </MDBCol>
                     </MDBRow>
