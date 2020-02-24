@@ -1,5 +1,7 @@
 import React from 'react';
-import { MDBListGroup, MDBListGroupItem, MDBContainer, MDBCol, MDBRow } from "mdbreact";
+import { MDBContainer, MDBCol, MDBRow } from "mdbreact";
+
+import SideNav from "./SideNav";
 
 
 
@@ -20,7 +22,6 @@ import certificate_12 from "./Business_image/certificate_12.jpg";
 import dutyfreeStore from "./Business_image/dutyfreeStore.jpg";
 import overseasMarketing from "./Business_image/overseasMarketing.jpg";
 import diverseDistribution from "./Business_image/diverseDistribution.jpg";
-import { findByLabelText } from '@testing-library/react';
 
 /*
     일단 그리드 레이아웃으로 나눠서 글쓸부분과 네비부분 나눴고, MDB에서 리스트그룹 가져와서 그리드 100퍼센트주고 크기 조정했음
@@ -29,29 +30,34 @@ import { findByLabelText } from '@testing-library/react';
     글쓰는 부분도 8:4 비율로 글과 사진으로 그리드 나누었고, 하단부분에는 증명서 2열로 p-1만 줬음
 
 
+
+    py-5 로 각 칸들 y축 패딩 넣어주고, border border-light 로 회색 테투리들 주고
+
+    사진들은 z-depth-1로 그림자 주고, display:"flex", alignItems:"center" 로 수직 중앙정렬
+
+
+
+
     메뉴 바꿀때 fade효과 추가해야겠다.
 
     나눔글꼴 적용하기
 */
 
+
+
+
 function Competence() {
     return (
-        <MDBContainer>
+        <MDBContainer className="so_special ">
             
             <MDBRow className="mt-4">
-                <MDBCol size="3">
-                    <span className="h1" style={{color:"#7f304e"}}>Business</span>
 
-                    <MDBListGroup style={{ width: "100%" }}>
-                        <MDBListGroupItem href="#/Competence" hover style={{ backgroundColor: "#7f304e", color: "white" }}>Competence</MDBListGroupItem>
-                        <MDBListGroupItem href="#/RnD" hover>R&D</MDBListGroupItem>
-                        <MDBListGroupItem href="#/OEMnODM" hover>OEM&ODM</MDBListGroupItem>
-                    </MDBListGroup>
-
+                <MDBCol size="12" sm="12">
+                    <SideNav />
                 </MDBCol>
 
 
-                <MDBCol size="9">
+                <MDBCol size="12" sm="12">
 
                     <div className="h2 py-2">Competence</div>
 
@@ -78,7 +84,6 @@ function Competence() {
 
                     <MDBRow className="border-bottom border-light py-5">
                         <MDBCol size="8">
-                
                                 <div className="h4">Success of duty-free sales</div>
                                 <div className="h5 py-1" style={{ color: "#7f304e" }}><b>면세점 판매로 인정받은 품질</b></div>
                                 <ul className="py-3 border border-light" style={{ backgroundColor: "#f4f4f4" }}>
@@ -87,7 +92,6 @@ function Competence() {
                                     <li>2009년부터 국내면세점 독점판매</li>
                                     <li>품질에 대한 외국들의 좋은 평가</li>
                                 </ul>
-                            
                         </MDBCol>
 
                         <MDBCol size="4" style={{display:"flex", alignItems:"center"}}>
@@ -98,7 +102,6 @@ function Competence() {
 
                     <MDBRow className="border-bottom border-light py-5">
                         <MDBCol size="8">
-                            
                                 <div className="h4">Overseas Marketing</div>
                                 <div className="h5 py-1" style={{ color: "#7f304e" }}><b>글로벌 판매망 강화</b></div>
                                 <ul className="py-3 border border-light" style={{ backgroundColor: "#f4f4f4" }}>
@@ -107,7 +110,6 @@ function Competence() {
                                     <li>주요 화장품 전시회 적극 참가</li>
                                     <li>주요국 해외파트너와의 협력 강화</li>
                                 </ul>
-                            
                         </MDBCol>
 
                         <MDBCol size="4" style={{display:"flex", alignItems:"center"}}>
@@ -118,7 +120,6 @@ function Competence() {
 
                     <MDBRow className="border-bottom border-light py-5">
                         <MDBCol size="8">
-                            
                                 <div className="h4">Diverse distribution channel</div>
                                 <div className="h5 py-1" style={{ color: "#7f304e" }}><b>국내 유통망 다양화</b></div>
                                 <ul className="py-3 border border-light" style={{ backgroundColor: "#f4f4f4" }}>
@@ -127,7 +128,6 @@ function Competence() {
                                     <li>온라인/오픈 마켓 판매망 구축</li>
                                     <li>방문판매, 홈쇼핑, 대형유통망 자체브랜드 분야 진출</li>
                                 </ul>
-                            
                         </MDBCol>
 
                         <MDBCol size="4" style={{display:"flex", alignItems:"center"}}>

@@ -1,17 +1,17 @@
 import React from "react";
-import { MDBListGroup, MDBListGroupItem, MDBContainer, MDBCol, MDBRow } from "mdbreact";
+import { MDBContainer, MDBCol, MDBRow } from "mdbreact";
+import SideNav from "./SideNav";
+
 
 function RnD() {
     return (
         <MDBContainer>
-            <span className="h1" style={{color:"#7f304e"}}>Business</span>
+            
             <MDBRow>
                 <MDBCol size="3">
-                <MDBListGroup style={{ width: "100%" }}>
-                    <MDBListGroupItem href="#/Competence" hover>Competence</MDBListGroupItem>
-                    <MDBListGroupItem href="#/RnD" hover style={{ backgroundColor: "#7f304e", color: "white" }}>R&D</MDBListGroupItem>
-                    <MDBListGroupItem href="#/OEMnODM" hover>OEM&ODM</MDBListGroupItem>
-                </MDBListGroup>
+
+                    <SideNav />
+
                 </MDBCol>
 
                 <MDBCol size="9">
