@@ -92,3 +92,12 @@ body {
     font-size: 1vmin;
 }
 
+.active.sideNavComponent {
+    background-color: #7f304e !important;
+    color: white !important;
+    border-radius: 0px;
+}
+
+.sideNavComponent {
+     
+}
