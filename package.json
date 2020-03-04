@@ -20,6 +20,7 @@
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
+    "react-fitted-image": "^1.0.1",
     "react-kakao-map": "0.0.0",
     "react-native-viewport-units": "0.0.5",
     "react-naver-maps": "0.0.13",

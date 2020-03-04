@@ -5,23 +5,23 @@ import SideNav from "./SideNav";
 
 
 
-import certificate from "./Business_image/certificate.jpg";
-import certificate_01 from "./Business_image/certificate_01.jpg";
-import certificate_02 from "./Business_image/certificate_02.jpg";
-import certificate_03 from "./Business_image/certificate_03.jpg";
-import certificate_04 from "./Business_image/certificate_04.jpg";
-import certificate_05 from "./Business_image/certificate_05.jpg";
-import certificate_06 from "./Business_image/certificate_06.jpg";
-import certificate_07 from "./Business_image/certificate_07.jpg";
-import certificate_08 from "./Business_image/certificate_08.jpg";
-import certificate_09 from "./Business_image/certificate_09.jpg";
-import certificate_10 from "./Business_image/certificate_10.jpg";
-import certificate_11 from "./Business_image/certificate_11.jpg";
-import certificate_12 from "./Business_image/certificate_12.jpg";
+import certificate from "./Business_image/Competence_IMGs/certificate.jpg";
+import certificate_01 from "./Business_image/Competence_IMGs/certificate_01.jpg";
+import certificate_02 from "./Business_image/Competence_IMGs/certificate_02.jpg";
+import certificate_03 from "./Business_image/Competence_IMGs/certificate_03.jpg";
+import certificate_04 from "./Business_image/Competence_IMGs/certificate_04.jpg";
+import certificate_05 from "./Business_image/Competence_IMGs/certificate_05.jpg";
+import certificate_06 from "./Business_image/Competence_IMGs/certificate_06.jpg";
+import certificate_07 from "./Business_image/Competence_IMGs/certificate_07.jpg";
+import certificate_08 from "./Business_image/Competence_IMGs/certificate_08.jpg";
+import certificate_09 from "./Business_image/Competence_IMGs/certificate_09.jpg";
+import certificate_10 from "./Business_image/Competence_IMGs/certificate_10.jpg";
+import certificate_11 from "./Business_image/Competence_IMGs/certificate_11.jpg";
+import certificate_12 from "./Business_image/Competence_IMGs/certificate_12.jpg";
 
-import dutyfreeStore from "./Business_image/dutyfreeStore.jpg";
-import overseasMarketing from "./Business_image/overseasMarketing.jpg";
-import diverseDistribution from "./Business_image/diverseDistribution.jpg";
+import dutyfreeStore from "./Business_image/Competence_IMGs/dutyfreeStore.jpg";
+import overseasMarketing from "./Business_image/Competence_IMGs/overseasMarketing.jpg";
+import diverseDistribution from "./Business_image/Competence_IMGs/diverseDistribution.jpg";
 
 /*
     일단 그리드 레이아웃으로 나눠서 글쓸부분과 네비부분 나눴고, MDB에서 리스트그룹 가져와서 그리드 100퍼센트주고 크기 조정했음
