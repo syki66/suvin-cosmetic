@@ -71,7 +71,7 @@ function OEMnODM() {
                     </MDBRow>
                     
 
-                    <MDBRow className="pb-5 border-bottom border-light">
+                    <MDBRow className="pb-5">
                         <MDBCol size="12" md="10">                                
                             <ul className="py-3 border border-light mb-md-0" style={{ backgroundColor: "#f4f4f4" }}>
                                     <li>OEM : 주문자가 제품의 스펙과 디자인을 제시하고 제조는 주문자상표로 생산 공급함.</li>
@@ -90,7 +90,7 @@ function OEMnODM() {
 
 
 
-                    <div className="h4 pt-5 pb-1">Process</div>
+                    <div className="h4 border-top border-light pt-5 pb-1">Process</div>
 
                     <MDBRow className="">
                         <MDBCol size="8" className="pr-0">
@@ -134,14 +134,14 @@ function OEMnODM() {
                             </ul>
                         </MDBCol>
 
-                        <MDBCol size="4" className="pl-0 px-md-0 mb-0" style={{display:"flex", alignItems:"center"}}>
+                        <MDBCol size="4" className="pl-0 px-md-0 mb-0" style={{display:"flex", alignItems:"center" , backgroundColor:"white"}}>
                             <FittedImage fit="cover" src={production} />
                         </MDBCol>
                     </MDBRow>
 
                     <div style={{fontSize:"30px", color:"#b2b2b2", textAlign:"center"}}>&#9661;</div>
 
-                    <MDBRow className="pb-5 border-bottom border-light">
+                    <MDBRow className="pb-5">
                         <MDBCol size="8" className="pr-0">                                
                             <ul className="py-4 border border-light mb-0" style={{ backgroundColor: "#f4f4f4", listStyle:"none" }}>
                                     <li>Supply of product</li>
@@ -149,7 +149,7 @@ function OEMnODM() {
                             </ul>
                         </MDBCol>
 
-                        <MDBCol size="4" className="pl-0 px-md-0 mb-0" style={{display:"flex", alignItems:"center"}}>
+                        <MDBCol size="4" className="pl-0 px-md-0 mb-0" style={{display:"flex", alignItems:"center", backgroundColor:"white"}}>
                             <FittedImage fit="cover" src={product} />
                         </MDBCol>
                     </MDBRow>
@@ -158,7 +158,7 @@ function OEMnODM() {
 
 
 
-                    <div className="pt-5">Suvin Cosmetic always welcomes business partners with the competitive and optimal OEM & ODM system based on our strong technical and marketing background. Our partnership will promise mutual development and prosperity.</div>
+                    <div className="pt-5 border-top border-light">Suvin Cosmetic always welcomes business partners with the competitive and optimal OEM & ODM system based on our strong technical and marketing background. Our partnership will promise mutual development and prosperity.</div>
                     <div className="py-3 font-weight-bold">최적의 OEM, ODM시스템을 갖추고 고객님의 요구를 정밀하게 분석하여 최고의 제품을 생산 공급.</div>
 
                     <MDBRow className="pb-5">
