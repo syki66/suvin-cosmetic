@@ -28,6 +28,10 @@ body {
         display: flex !important;
     }
 
+    .footer_display {
+        display: inline !important;
+    }
+
 }
 
 
