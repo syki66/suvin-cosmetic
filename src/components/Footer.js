@@ -15,7 +15,7 @@ function Footer() {
                         </div>
                         <div>
                             <div className="footer_display">E-mail : dhkkis@daum.net </div>
-                            <div className="footer_display">사업자 번호 : 130-42-62423</div>
+                            <div className="footer_display">사업자 번호 : 130-42-62423 </div>
                             <div className="footer_display">상호 : 수빈코스메틱, 대표 : 김덕훈</div>
                         </div>
                     </MDBCol>

@@ -41,11 +41,11 @@ render() {
                       <MDBNavbarNav>
 
                           <MDBNavItem>
-                              <MDBNavLink to="Information">Information</MDBNavLink>
+                              <MDBNavLink to="Company">Information</MDBNavLink>
                           </MDBNavItem>
 
                           <MDBNavItem>
-                              <MDBNavLink to="Business">Business</MDBNavLink>
+                              <MDBNavLink to="Competence">Business</MDBNavLink>
                           </MDBNavItem>
 
                           <MDBNavItem>

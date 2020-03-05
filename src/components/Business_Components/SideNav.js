@@ -19,26 +19,6 @@ import { MDBNav, MDBNavItem, MDBNavLink } from "mdbreact";
 
 
 class SideNav extends React.Component {
-    state = {
-        clickedNav: 1
-        
-      };
-
-
-
-
-    toggleNav = (index) => {
-        this.setState({ clickedNav:index });
-        
-        if (index !== this.state.clickedNav) {
-            
-            console.log(this.state.clickedNav)
-            
-        } else {
-            console.log("same")
-        }
-
-    }
 
     render (){
         return(

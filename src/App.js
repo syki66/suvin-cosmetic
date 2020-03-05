@@ -7,8 +7,6 @@ import Footer from './components/Footer';
 
 //routes
 import Home from "./routes/Home";
-import Information from "./routes/Information";
-import Business from "./routes/Business";
 import Product from "./routes/Product";
 import Global_Network from "./routes/Global_Network";
 import Inquiry from "./routes/Inquiry";
@@ -27,6 +25,9 @@ import Competence from './components/Business_Components/Competence';
 import RnD from './components/Business_Components/RnD';
 import OEMnODM from './components/Business_Components/OEMnODM';
 
+import Company from './components/Information_Components/Company';
+import OfficeMap from './components/Information_Components/OfficeMap';
+
 
 function App() {
   return (
@@ -34,8 +35,7 @@ function App() {
       <Header />
       <HashRouter>
         <Route path="/" exact={true} component={Home} />
-        <Route path="/Information" component={Information} />
-        <Route path="/Business" component={Business} />
+        
         <Route path="/Product" component={Product} />
         <Route path="/Global_Network" component={Global_Network} />
         <Route path="/Inquiry" component={Inquiry} />
@@ -44,6 +44,9 @@ function App() {
         <Route path="/Competence" component={Competence} />
         <Route path="/RnD" component={RnD} />
         <Route path="/OEMnODM" component={OEMnODM} />
+
+        <Route path="/Company" component={Company} />
+        <Route path="/OfficeMap" component={OfficeMap} />
       </HashRouter>
       <Footer />
     </div>

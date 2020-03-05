@@ -2,6 +2,8 @@ body {
     background-color: red;
 }
 
+
+/* 커라젤 창크기 작아지면 큰 이미지로 출력할라고 */
 .carousel__pcImgToggle {
     display: none;
 }
@@ -100,12 +102,11 @@ body {
     font-size: 1vmin;
 }
 
+
+
+/*사이드 네비게이션 용 css*/
 .active.sideNavComponent {
     background-color: #7f304e !important;
     color: white !important;
     border-radius: 0px;
-}
-
-.sideNavComponent {
-     
 }
