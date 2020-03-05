@@ -7,6 +7,9 @@ import SideNav from "./SideNav";
 import contract from "./Business_image/OEMnODM_IMGs/contract.jpg";
 import shaking_hands from "./Business_image/OEMnODM_IMGs/shaking_hands.jpg";
 import consulting from "./Business_image/OEMnODM_IMGs/consulting.jpg";
+import production from "./Business_image/OEMnODM_IMGs/production.png";
+import product from "./Business_image/OEMnODM_IMGs/product.png";
+import procurement from "./Business_image/OEMnODM_IMGs/procurement.jpg";
 
 
 
@@ -94,7 +97,7 @@ function OEMnODM() {
 
                             
                             
-                            <ul className="py-3 border border-light mb-0" style={{ backgroundColor: "#f4f4f4", listStyle:"none"}}>
+                            <ul className="py-4 border border-light mb-0" style={{ backgroundColor: "#f4f4f4", listStyle:"none"}}>
                                 <li>Requirements Consultation & contract</li>
                                 <li>고객요구진단&계약</li>
                             </ul>
@@ -110,14 +113,14 @@ function OEMnODM() {
 
                     <MDBRow className="">
                         <MDBCol size="8" className="pr-0">                                
-                            <ul className="py-3 border border-light mb-0" style={{ backgroundColor: "#f4f4f4", listStyle:"none"}}>
+                            <ul className="py-4 border border-light mb-0" style={{ backgroundColor: "#f4f4f4", listStyle:"none"}}>
                                     <li>Procurement of resources and Sample production</li>
                                     <li>원료조달 & 시제품생산</li>
                             </ul>
                         </MDBCol>
 
                         <MDBCol size="4" className="pl-0 px-md-0 mb-0" style={{display:"flex", alignItems:"center"}}>
-                            <FittedImage fit="cover" src={consulting} />
+                            <FittedImage fit="cover" src={procurement} />
                         </MDBCol>
                     </MDBRow>
 
@@ -125,14 +128,14 @@ function OEMnODM() {
 
                     <MDBRow className="">
                         <MDBCol size="8" className="pr-0">                                
-                            <ul className="py-3 border border-light mb-0" style={{ backgroundColor: "#f4f4f4", listStyle:"none" }}>
+                            <ul className="py-4 border border-light mb-0" style={{ backgroundColor: "#f4f4f4", listStyle:"none" }}>
                                     <li>Quality control & Production</li>
                                     <li>품질확인 & 생산</li>
                             </ul>
                         </MDBCol>
 
                         <MDBCol size="4" className="pl-0 px-md-0 mb-0" style={{display:"flex", alignItems:"center"}}>
-                            <FittedImage fit="cover" src={consulting} />
+                            <FittedImage fit="cover" src={production} />
                         </MDBCol>
                     </MDBRow>
 
@@ -140,14 +143,14 @@ function OEMnODM() {
 
                     <MDBRow className="pb-5 border-bottom border-light">
                         <MDBCol size="8" className="pr-0">                                
-                            <ul className="py-3 border border-light mb-0" style={{ backgroundColor: "#f4f4f4", listStyle:"none" }}>
+                            <ul className="py-4 border border-light mb-0" style={{ backgroundColor: "#f4f4f4", listStyle:"none" }}>
                                     <li>Supply of product</li>
                                     <li>제품공급</li>
                             </ul>
                         </MDBCol>
 
                         <MDBCol size="4" className="pl-0 px-md-0 mb-0" style={{display:"flex", alignItems:"center"}}>
-                            <FittedImage fit="cover" src={consulting} />
+                            <FittedImage fit="cover" src={product} />
                         </MDBCol>
                     </MDBRow>
 
