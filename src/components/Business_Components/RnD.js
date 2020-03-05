@@ -21,7 +21,7 @@ function RnD() {
 
 
 
-        <MDBContainer className="p-0">
+        <MDBContainer className="px-md-0">
             
             <MDBRow className="mt-4">
 
@@ -55,7 +55,7 @@ function RnD() {
 
                     <MDBRow className="pb-4">
 
-                        <MDBCol size="12" md="3"  className="mb-0 " style={{display:"flex", alignItems:"center"}}>
+                        <MDBCol size="12" md="3"  className="mb-0 pb-3 pb-md-0" style={{display:"flex", alignItems:"center"}}>
                             <FittedImage fit="cover" src={rnd} className="z-depth-1" />
                         </MDBCol>
 
@@ -110,12 +110,12 @@ function RnD() {
 
                     <MDBRow className="pb-3">
 
-                        <MDBCol size= "2" className="pr-0">
+                        <MDBCol size="12" md= "3" className="pr-md-0">
                             <div className="h-100 border border-light purple-gradient" style={{ backgroundColor: "#f4f4f4", display:"flex", alignItems:"center", justifyContent:"center", borderRadius:"10px"}}>Basic Technology</div>
                         </MDBCol>
                             
 
-                        <MDBCol size="8" className="pr-0">
+                        <MDBCol size="9" md="7" className="pr-0 pl-md-0 pl-lg-3">
 
                             
                             
@@ -126,7 +126,7 @@ function RnD() {
 
                         </MDBCol>
 
-                        <MDBCol size="2" className="" style={{display:"flex", alignItems:"center"}}>
+                        <MDBCol size="3" md="2" className="pl-0 pl-lg-3" style={{display:"flex", alignItems:"center"}}>
                             <FittedImage fit="cover" src={nanoTech} style={{borderRadius:"10px"}} />
                         </MDBCol>
                     </MDBRow>
@@ -135,19 +135,19 @@ function RnD() {
 
                     <MDBRow className="pb-3">
 
-                        <MDBCol size="2" className="pr-0">
+                        <MDBCol size="12" md="3" className="pr-md-0">
                             <div className="h-100 border border-light blue-gradient" style={{ backgroundColor: "#f4f4f4", display:"flex", alignItems:"center", justifyContent:"center", borderRadius:"10px"}}>Fusion Technology</div>
                         </MDBCol>
 
 
-                        <MDBCol size="8" className="pr-0">                                
+                        <MDBCol size="9" md="7" className="pr-0 pl-md-0 pl-lg-3">                                
                             <ul className="py-4 border border-light mb-0 blue-gradient" style={{ backgroundColor: "#f4f4f4", listStyle:"none", borderRadius:"10px"}}>
                                     <li>Unique configuration technology by based on convergence</li>
                                     <li>융합기반 독보적 신제형기술</li>
                             </ul>
                         </MDBCol>
 
-                        <MDBCol size="2" className="" style={{display:"flex", alignItems:"center"}}>
+                        <MDBCol size="3" md="2" className="pl-0 pl-lg-3" style={{display:"flex", alignItems:"center"}}>
                             <FittedImage fit="cover" src={nanoTech} style={{borderRadius:"10px"}}/>
                         </MDBCol>
                     </MDBRow>
@@ -156,18 +156,18 @@ function RnD() {
 
                     <MDBRow className="pb-3">
 
-                        <MDBCol size="2" className="pr-0">
+                        <MDBCol size="12" md="3" className="pr-md-0">
                             <div className="h-100 border border-light aqua-gradient" style={{ backgroundColor: "#f4f4f4", display:"flex", alignItems:"center", justifyContent:"center", borderRadius:"10px"}}>Nano Technology</div>
                         </MDBCol>
 
-                        <MDBCol size="8" className="pr-0">                                
+                        <MDBCol size="9" md="7" className="pr-0 pl-md-0 pl-lg-3">                                
                             <ul className="py-4 border border-light mb-0 aqua-gradient" style={{ backgroundColor: "#f4f4f4", listStyle:"none", borderRadius:"10px" }}>
                                     <li>Three-phase emulsion technology on nano basis</li>
                                     <li>나노기반 삼상 유화기술</li>
                             </ul>
                         </MDBCol>
 
-                        <MDBCol size="2" className="" style={{display:"flex", alignItems:"center"}}>
+                        <MDBCol size="3" md="2" className="pl-0 pl-lg-3" style={{display:"flex", alignItems:"center"}}>
                             <FittedImage fit="cover" src={nanoTech} style={{borderRadius:"10px"}} />
                         </MDBCol>
                     </MDBRow>
@@ -176,18 +176,18 @@ function RnD() {
 
                     <MDBRow className="pb-5">
 
-                        <MDBCol size="2" className="pr-0">
+                        <MDBCol size="12" md="3" className="pr-md-0">
                             <div className="h-100 border border-light peach-gradient" style={{ backgroundColor: "#f4f4f4", display:"flex", alignItems:"center", justifyContent:"center", borderRadius:"10px"}}>Bio Technology</div>
                         </MDBCol>
 
-                        <MDBCol size="8" className="pr-0">                                
+                        <MDBCol size="9" md="7" className="pr-0 pl-md-0 pl-lg-3">                                
                             <ul className="py-4 border border-light mb-0 peach-gradient" style={{ backgroundColor: "#f4f4f4", listStyle:"none", borderRadius:"10px" }}>
                                     <li>Skin system activation technology based on living organic</li>
                                     <li>생체기반 피부시스템 활성화 기술</li>
                             </ul>
                         </MDBCol>
 
-                        <MDBCol size="2" className="" style={{display:"flex", alignItems:"center"}}>
+                        <MDBCol size="3" md="2" className="pl-0 pl-lg-3" style={{display:"flex", alignItems:"center"}}>
                             <FittedImage fit="cover" src={bioTech} style={{borderRadius:"10px"}} />
                         </MDBCol>
                     </MDBRow>
@@ -221,9 +221,9 @@ function RnD() {
 
                     <MDBRow className="pt-3 mb-5">
                         <MDBCol className="pr-0"><FittedImage fit="cover" className="border border-light" src={nanoTech} /></MDBCol>
-                        <MDBCol className="pr-0"><FittedImage fit="cover" className="border border-light" src={nanoTech} /></MDBCol>
-                        <MDBCol className="pr-0"><FittedImage fit="cover" className="border border-light" src={nanoTech} /></MDBCol>
-                        <MDBCol><FittedImage fit="cover" className="border border-light" src={nanoTech} /></MDBCol>
+                        <MDBCol className="pr-0 pl-1 pl-lg-3"><FittedImage fit="cover" className="border border-light" src={nanoTech} /></MDBCol>
+                        <MDBCol className="pr-0 pl-1 pl-lg-3"><FittedImage fit="cover" className="border border-light" src={nanoTech} /></MDBCol>
+                        <MDBCol className="pl-1 pl-lg-3"><FittedImage fit="cover" className="border border-light" src={nanoTech} /></MDBCol>
 
 
                     </MDBRow>

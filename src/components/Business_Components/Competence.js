@@ -44,6 +44,9 @@ import diverseDistribution from "./Business_image/Competence_IMGs/diverseDistrib
     메뉴 바꿀때 fade효과 추가해야겠다.
 
     나눔글꼴 적용하기
+
+
+    원래 컨테이너에 p-0 주고서 양옆으로 쫙 붙였는데 가로스크롤 생겨서 그냥 없애버림
 */
 
 
@@ -51,7 +54,7 @@ import diverseDistribution from "./Business_image/Competence_IMGs/diverseDistrib
 
 function Competence() {
     return (
-        <MDBContainer className="p-0">
+        <MDBContainer className="px-md-0">
             
             <MDBRow className="mt-4">
 
@@ -66,7 +69,7 @@ function Competence() {
 
 
 
-                    <MDBRow className="border-bottom border-top border-light pb-5 pb-md-0">
+                    <MDBRow className="border-bottom border-top border-light pb-5 pb-md-0 ">
                         <MDBCol size="12" md="8" className=" pt-5">
 
                             <div className="h4">Competitive Technology</div>

@@ -34,7 +34,7 @@ function OEMnODM() {
 
 
 
-        <MDBContainer className="p-0">
+        <MDBContainer className="px-md-0">
             
             <MDBRow className="mt-4">
 
@@ -57,15 +57,15 @@ function OEMnODM() {
                             
                             
                             <ul className="py-3 border border-light" style={{ backgroundColor: "#f4f4f4" }}>
-                                <li>OEM : Equipment Manufacturing</li>
-                                <li>Manufacturing and supply of products based on the specifications and design delivered from customers</li>
-                                <li>ODM : Original Development (Design) Manufacturing</li>
-                                <li>Manufacturer provided design/development and production for the products ordered from customers.</li>
+                                <li><span className="font-weight-bold">OEM</span> : Equipment Manufacturing</li>
+                                <li style={{listStyle:"none"}}>Manufacturing and supply of products based on the specifications and design delivered from customers</li>
+                                <li><span className="font-weight-bold">ODM</span> : Original Development (Design) Manufacturing</li>
+                                <li style={{listStyle:"none"}}>Manufacturer provided design/development and production for the products ordered from customers.</li>
                             </ul>
 
                         </MDBCol>
 
-                        <MDBCol size="12" md="2" className="px-0 mb-3 disappear" style={{display:"none", alignItems:"center"}}>
+                        <MDBCol size="12" md="2" className="pl-0 mb-3 disappear" style={{display:"none", alignItems:"center"}}>
                             <FittedImage fit="cover" src={contract} className="z-depth-1" />
                         </MDBCol>
                     </MDBRow>
@@ -74,12 +74,12 @@ function OEMnODM() {
                     <MDBRow className="pb-5">
                         <MDBCol size="12" md="10">                                
                             <ul className="py-3 border border-light mb-md-0" style={{ backgroundColor: "#f4f4f4" }}>
-                                    <li>OEM : 주문자가 제품의 스펙과 디자인을 제시하고 제조는 주문자상표로 생산 공급함.</li>
-                                    <li>ODM : 제조자가 제품의 스펙과 디자인을 제공하여 생산 공급함.</li>
+                                    <li><span className="font-weight-bold">OEM</span> : 주문자가 제품의 스펙과 디자인을 제시하고 제조는 주문자상표로 생산 공급함.</li>
+                                    <li><span className="font-weight-bold">ODM</span> : 제조자가 제품의 스펙과 디자인을 제공하여 생산 공급함.</li>
                             </ul>
                         </MDBCol>
 
-                        <MDBCol size="12" md="2"  className="px-md-0 mb-0" style={{display:"flex", alignItems:"center"}}>
+                        <MDBCol size="12" md="2"  className="pl-md-0 mb-0" style={{display:"flex", alignItems:"center"}}>
                             <FittedImage fit="cover" src={shaking_hands} className="z-depth-1"/>
                         </MDBCol>
                     </MDBRow>
@@ -104,7 +104,7 @@ function OEMnODM() {
 
                         </MDBCol>
 
-                        <MDBCol size="4" className="pl-0 px-md-0 mb-0" style={{display:"flex", alignItems:"center"}}>
+                        <MDBCol size="4" className="pl-0 mb-0" style={{display:"flex", alignItems:"center"}}>
                             <FittedImage fit="cover" src={consulting} />
                         </MDBCol>
                     </MDBRow>
@@ -119,7 +119,7 @@ function OEMnODM() {
                             </ul>
                         </MDBCol>
 
-                        <MDBCol size="4" className="pl-0 px-md-0 mb-0" style={{display:"flex", alignItems:"center"}}>
+                        <MDBCol size="4" className="pl-0 mb-0" style={{display:"flex", alignItems:"center"}}>
                             <FittedImage fit="cover" src={procurement} />
                         </MDBCol>
                     </MDBRow>
@@ -134,7 +134,7 @@ function OEMnODM() {
                             </ul>
                         </MDBCol>
 
-                        <MDBCol size="4" className="pl-0 px-md-0 mb-0" style={{display:"flex", alignItems:"center" , backgroundColor:"white"}}>
+                        <MDBCol size="4" className="pl-0 mb-0" style={{display:"flex", alignItems:"center"}}>
                             <FittedImage fit="cover" src={production} />
                         </MDBCol>
                     </MDBRow>
@@ -149,7 +149,7 @@ function OEMnODM() {
                             </ul>
                         </MDBCol>
 
-                        <MDBCol size="4" className="pl-0 px-md-0 mb-0" style={{display:"flex", alignItems:"center", backgroundColor:"white"}}>
+                        <MDBCol size="4" className="pl-0 mb-0" style={{display:"flex", alignItems:"center"}}>
                             <FittedImage fit="cover" src={product} />
                         </MDBCol>
                     </MDBRow>
