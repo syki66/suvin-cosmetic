@@ -1,7 +1,11 @@
 import React from "react";
 
 function Inquiry() {
-    return <span>Inquiry js 임....</span>
+    return (
+                
+        <div>abdc</div>
+        
+    );
 }
 
 export default Inquiry;
