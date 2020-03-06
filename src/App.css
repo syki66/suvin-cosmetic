@@ -58,6 +58,15 @@ body {
         display: none;
     }
 
+    .cssShapeBox_disappear{
+        display: block !important;
+    }
+
+    .after_appear_cssShapeBox{
+        text-align: right !important;
+        background-color: transparent !important;
+        border: transparent !important;
+    }
 }
 
 /*

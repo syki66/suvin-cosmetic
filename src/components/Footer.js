@@ -10,7 +10,7 @@ function Footer() {
 
                     <MDBCol size="12" md="11">
                         <div>
-                            <div className="footer_display">[14566] 경기도 부천시 부천로136번길27 원미어울마당 406호 </div>
+                            <div className="footer_display">[14566] 경기도 부천시 부천로 136번길 27 원미어울마당 406호 </div>
                             <div className="footer_display">Tel : 1688-9028 / 010-6644-3665 </div>
                         </div>
                         <div>
