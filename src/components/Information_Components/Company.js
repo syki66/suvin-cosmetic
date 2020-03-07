@@ -104,7 +104,7 @@ function Company() {
 
 
                                 <ul className="py-4 mb-0" style={{ backgroundColor: "transparent" }}>
-                                    <div className="h5 py-1" style={{ color: "#444444" }}><b>아름다움을 위한 기술개발과 가치창출</b></div>
+                                    <div className="h5 py-1" style={{ color: "#444444"}}><b>아름다움을 위한 기술개발과 가치창출</b></div>
                                     <ol>
                                         <li>Competence on technology</li>
                                         <li style={{marginLeft:"20px"}}>Value creation for customer satisfaction</li>
@@ -203,19 +203,137 @@ function Company() {
 
 
 
-
+                    
 
                     <div className="h4 border-top border-light pt-5 pb-1">THE HISTORY OF COMPANY</div>
 
+                    <div className="pb-5 pt-3">
+                        <MDBRow className="py-2 my-2">
+                            <MDBCol size="12" lg="1" className="h5 font-weight-bold mb-0 py-1" style={{color:"#6f6052"}}>2009</MDBCol>
+                            <MDBCol size="12" lg="11">
+                                <MDBRow>
+                                    <MDBCol size="1" className="font-weight-bold" style={{color:"#444444", textAlign:"center"}}>09</MDBCol>
+                                    <MDBCol size="11" style={{color:"#777777"}}>SUVIN COSMETIC is Established</MDBCol>
+                                </MDBRow>
+                                <MDBRow>
+                                    <MDBCol size="1" className="font-weight-bold" style={{color:"#444444", textAlign:"center"}}>10</MDBCol>
+                                    <MDBCol size="11" style={{color:"#777777"}}>ODM supply to JSM duty free shop</MDBCol>
+                                </MDBRow>
+                            </MDBCol>
+                        </MDBRow>
+
+                        <MDBRow className="py-2 my-2">
+                            <MDBCol size="12" lg="1" className="h5 font-weight-bold mb-0 py-1" style={{color:"#6f6052"}}>2011</MDBCol>
+                            <MDBCol size="12" lg="11">
+                                <MDBRow>
+                                    <MDBCol size="1" className="font-weight-bold" style={{color:"#444444", textAlign:"center"}}>06</MDBCol>
+                                    <MDBCol size="11" style={{color:"#777777"}}>Launching Aesthetic Products</MDBCol>
+                                </MDBRow>
+                            </MDBCol>
+                        </MDBRow>
+
+                        <MDBRow className="py-2 my-2">
+                            <MDBCol size="12" lg="1" className="h5 font-weight-bold mb-0 py-1" style={{color:"#6f6052"}}>2012</MDBCol>
+                            <MDBCol size="12" lg="11">
+                                <MDBRow>
+                                    <MDBCol size="1" className="font-weight-bold" style={{color:"#444444", textAlign:"center"}}>05</MDBCol>
+                                    <MDBCol size="11" style={{color:"#777777"}}>Technology Cooperation with Dongguk University Exporting pore reducing pack to Lilisha International in China</MDBCol>
+                                </MDBRow>
+                                <MDBRow>
+                                    <MDBCol size="1" className="font-weight-bold" style={{color:"#444444", textAlign:"center"}}>07</MDBCol>
+                                    <MDBCol size="11" style={{color:"#777777"}}>Exporting Suvin products to JSM in Tailand</MDBCol>
+                                </MDBRow>
+                            </MDBCol>
+                        </MDBRow>
+
+                        <MDBRow className="py-2 my-2">
+                            <MDBCol size="12" lg="1" className="h5 font-weight-bold mb-0 py-1" style={{color:"#6f6052"}}>2013</MDBCol>
+                            <MDBCol size="12" lg="11">
+                                <MDBRow>
+                                    <MDBCol size="1" className="font-weight-bold" style={{color:"#444444", textAlign:"center"}}>03</MDBCol>
+                                    <MDBCol size="11" style={{color:"#777777"}}>The Mixture for Cleansing with Demodex Removal (Korean Patent No. 10- 1022550)</MDBCol>
+                                </MDBRow>
+                                <MDBRow>
+                                    <MDBCol size="1" className="font-weight-bold" style={{color:"#444444", textAlign:"center"}}>11</MDBCol>
+                                    <MDBCol size="11" style={{color:"#777777"}}>Certification of Venture Company</MDBCol>
+                                </MDBRow>
+                            </MDBCol>
+                        </MDBRow>
+
+                        <MDBRow className="py-2 my-2">
+                            <MDBCol size="12" lg="1" className="h5 font-weight-bold mb-0 py-1" style={{color:"#6f6052"}}>2014</MDBCol>
+                            <MDBCol size="12" lg="11">
+                                <MDBRow>
+                                    <MDBCol size="1" className="font-weight-bold" style={{color:"#444444", textAlign:"center"}}>02</MDBCol>
+                                    <MDBCol size="11" style={{color:"#777777"}}>Agreement of Cooperation with Yuhan University</MDBCol>
+                                </MDBRow>
+                                <MDBRow>
+                                    <MDBCol size="1" className="font-weight-bold" style={{color:"#444444", textAlign:"center"}}>11</MDBCol>
+                                    <MDBCol size="11" style={{color:"#777777"}}>Opening booth in Seoul Coex Exhibition</MDBCol>
+                                </MDBRow>
+                            </MDBCol>
+                        </MDBRow>
+
+                        <MDBRow className="py-2 my-2">
+                            <MDBCol size="12" lg="1" className="h5 font-weight-bold mb-0 py-1" style={{color:"#6f6052"}}>2015</MDBCol>
+                            <MDBCol size="12" lg="11">
+                                <MDBRow>
+                                    <MDBCol size="1" className="font-weight-bold" style={{color:"#444444", textAlign:"center"}}>03</MDBCol>
+                                    <MDBCol size="11" style={{color:"#777777"}}>Nomination of support fund from Korean Institute of Company Support</MDBCol>
+                                </MDBRow>
+                                <MDBRow>
+                                    <MDBCol size="1" className="font-weight-bold" style={{color:"#444444", textAlign:"center"}}>04</MDBCol>
+                                    <MDBCol size="11" style={{color:"#777777"}}>Opening booth in Seoul Coex- Health & Beauty Exhibition</MDBCol>
+                                </MDBRow>
+                            </MDBCol>
+                        </MDBRow>
+
+                    </div>
 
 
 
 
 
+                    <div>
+                        <div className="h4 border-top border-light pt-5 pb-1">CEO Comments</div>
+
+                        <p className="pt-3">
+                            Dear our customers and business partners! <br />
+                            Based on the world-class patented pore care technology, Suvin products are well-known and beloved among
+                            foreign tourists in Korea. Our management philosophy is to develop and supply high-end quality products for
+                            beauty and health of our customers. Suvin product line is very competitive and marketable with pore care pack,
+                            snail musin products, mask packs and stem cell application. We will do our best and sincere efforts to create high
+                            values for our customers and partners. Thank you.
+                        </p>
+
+                        <div className="h3 pb-5 mb-0" style={{textAlign:"center", fontFamily:"Brush Script MT, Brush Script Std, cursive"}}>President Kim Duck-hoon & Lee Pilsung(Strategy/Marketing)</div>
+                    </div>
+
+                    
 
 
 
 
+                    <div className="h4 border-top border-light pt-5 pb-1">CEO 인사말</div>
+
+                    <MDBRow className="">
+                        <MDBCol size="12" md="10" className="">
+
+                            <p className="pt-3">
+                                화장품 연구개발 경력 30년의 연구전문가가 고객이 만족하고 신뢰할 수 있는 화장품을 직접 개발하여 공급합니다.
+                                세계적으로 유일한 모공 관리 특허기술로 만들어진 모공축소팩, 달팽이크림, 마스크팩, 줄기세포크림등 최고품질의 제품으로
+                                고객님과 같이 시장을 선도하는 파트너가 되겠습니다.
+                            </p>
+
+                            <div className="h5 pb-5 mb-0" style={{textAlign:"center", fontFamily:"cursive"}}>대표 김 덕훈</div>
+
+
+                        </MDBCol>
+
+                        <MDBCol size="12" md="2" className="pl-0 mb-3 disappear" style={{display:"none", alignItems:"center"}}>
+                            
+                        </MDBCol>
+                    </MDBRow>
 
 
 
