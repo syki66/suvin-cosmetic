@@ -67,6 +67,10 @@ body {
         background-color: transparent !important;
         border: transparent !important;
     }
+
+    .br__appear {
+        display: block !important;
+    }
 }
 
 /*
