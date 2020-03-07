@@ -68,82 +68,85 @@ function Competence() {
                     <div className="h2 py-2">Competence</div>
 
 
+                    <div className="border-top border-light">
+                        <MDBRow className="pb-5 pb-md-0 ">
+                            <MDBCol size="12" md="8" className=" pt-5">
 
-                    <MDBRow className="border-bottom border-top border-light pb-5 pb-md-0 ">
-                        <MDBCol size="12" md="8" className=" pt-5">
-
-                            <div className="h4">Competitive Technology</div>
-                            <div className="h5 py-1" style={{ color: "#7f304e" }}><b>특허 인증의 경쟁력 있는 기술</b></div>
-                            <ul className="py-3 border border-light" style={{ backgroundColor: "#f4f4f4" }}>
-                                <li>Management with technological background of 30-year R&D expertise</li>
-                                <li>Pore shrinking pack with world class patent certified in 2013</li>
-                                <li>30년 축적된 R&D에 기반한 기술우선경영</li>
-                                <li>2013년 세계유일 특허로 탄생한 모공축소팩</li>
-                            </ul>
-                        </MDBCol>
-
-                        <MDBCol size="12" md="4" style={{display:"flex", alignItems:"center"}}>
-                            <img src={certificate} className="img-fluid z-depth-1" alt="" />
-                        </MDBCol>
-                    </MDBRow>
-
-
-                    <MDBRow className="border-bottom border-light py-5">
-                        <MDBCol size="12" md="8">
-                                <div className="h4">Success of duty-free sales</div>
-                                <div className="h5 py-1" style={{ color: "#7f304e" }}><b>면세점 판매로 인정받은 품질</b></div>
+                                <div className="h4">Competitive Technology</div>
+                                <div className="h5 py-1" style={{ color: "#7f304e" }}><b>특허 인증의 경쟁력 있는 기술</b></div>
                                 <ul className="py-3 border border-light" style={{ backgroundColor: "#f4f4f4" }}>
-                                    <li>Sale of main products on duty-free shops from 2009</li>
-                                    <li>High reputation about quality among foreign customers</li>
-                                    <li>2009년부터 국내면세점 독점판매</li>
-                                    <li>품질에 대한 외국들의 좋은 평가</li>
+                                    <li>Management with technological background of 30-year R&D expertise</li>
+                                    <li>Pore shrinking pack with world class patent certified in 2013</li>
+                                    <li>30년 축적된 R&D에 기반한 기술우선경영</li>
+                                    <li>2013년 세계유일 특허로 탄생한 모공축소팩</li>
                                 </ul>
-                        </MDBCol>
+                            </MDBCol>
 
-                        <MDBCol size="12" md="4" style={{display:"flex", alignItems:"center"}}>
-                            <img src={dutyfreeStore} className="img-fluid z-depth-1" alt="" />
-                        </MDBCol>
-                    </MDBRow>
+                            <MDBCol size="12" md="4" style={{display:"flex", alignItems:"center"}}>
+                                <img src={certificate} className="img-fluid z-depth-1" alt="" />
+                            </MDBCol>
+                        </MDBRow>
+                    </div>
+
+                    <div className="border-top border-light">
+                        <MDBRow className="py-5">
+                            <MDBCol size="12" md="8">
+                                    <div className="h4">Success of duty-free sales</div>
+                                    <div className="h5 py-1" style={{ color: "#7f304e" }}><b>면세점 판매로 인정받은 품질</b></div>
+                                    <ul className="py-3 border border-light" style={{ backgroundColor: "#f4f4f4" }}>
+                                        <li>Sale of main products on duty-free shops from 2009</li>
+                                        <li>High reputation about quality among foreign customers</li>
+                                        <li>2009년부터 국내면세점 독점판매</li>
+                                        <li>품질에 대한 외국들의 좋은 평가</li>
+                                    </ul>
+                            </MDBCol>
+
+                            <MDBCol size="12" md="4" style={{display:"flex", alignItems:"center"}}>
+                                <img src={dutyfreeStore} className="img-fluid z-depth-1" alt="" />
+                            </MDBCol>
+                        </MDBRow>
+                    </div>
+
+                    <div className="border-top border-light">
+                        <MDBRow className="py-5">
+                            <MDBCol size="12" md="8">
+                                    <div className="h4">Overseas Marketing</div>
+                                    <div className="h5 py-1" style={{ color: "#7f304e" }}><b>글로벌 판매망 강화</b></div>
+                                    <ul className="py-3 border border-light" style={{ backgroundColor: "#f4f4f4" }}>
+                                        <li>Marketing in main cosmetic exhibitions</li>
+                                        <li>Affiliation of business partnership in main countries</li>
+                                        <li>주요 화장품 전시회 적극 참가</li>
+                                        <li>주요국 해외파트너와의 협력 강화</li>
+                                    </ul>
+                            </MDBCol>
+
+                            <MDBCol size="12" md="4" style={{display:"flex", alignItems:"center"}}>
+                                <img src={overseasMarketing} className="img-fluid z-depth-1" alt="" />
+                            </MDBCol>
+                        </MDBRow>
+                    </div>
+
+                    <div className="border-top border-light">
+                        <MDBRow className="py-5">
+                            <MDBCol size="12" md="8">
+                                    <div className="h4">Diverse distribution channel</div>
+                                    <div className="h5 py-1" style={{ color: "#7f304e" }}><b>국내 유통망 다양화</b></div>
+                                    <ul className="py-3 border border-light" style={{ backgroundColor: "#f4f4f4" }}>
+                                        <li>On-line/Open market sales</li>
+                                        <li>Door to door sale, Home shopping, PB marketing</li>
+                                        <li>온라인/오픈 마켓 판매망 구축</li>
+                                        <li>방문판매, 홈쇼핑, 대형유통망 자체브랜드 분야 진출</li>
+                                    </ul>
+                            </MDBCol>
+
+                            <MDBCol size="12" md="4" style={{display:"flex", alignItems:"center"}}>
+                                <img src={diverseDistribution} className="img-fluid z-depth-1" alt="" />
+                            </MDBCol>
+                        </MDBRow>
+                    </div>
 
 
-                    <MDBRow className="border-bottom border-light py-5">
-                        <MDBCol size="12" md="8">
-                                <div className="h4">Overseas Marketing</div>
-                                <div className="h5 py-1" style={{ color: "#7f304e" }}><b>글로벌 판매망 강화</b></div>
-                                <ul className="py-3 border border-light" style={{ backgroundColor: "#f4f4f4" }}>
-                                    <li>Marketing in main cosmetic exhibitions</li>
-                                    <li>Affiliation of business partnership in main countries</li>
-                                    <li>주요 화장품 전시회 적극 참가</li>
-                                    <li>주요국 해외파트너와의 협력 강화</li>
-                                </ul>
-                        </MDBCol>
-
-                        <MDBCol size="12" md="4" style={{display:"flex", alignItems:"center"}}>
-                            <img src={overseasMarketing} className="img-fluid z-depth-1" alt="" />
-                        </MDBCol>
-                    </MDBRow>
-
-
-                    <MDBRow className="border-bottom border-light py-5">
-                        <MDBCol size="12" md="8">
-                                <div className="h4">Diverse distribution channel</div>
-                                <div className="h5 py-1" style={{ color: "#7f304e" }}><b>국내 유통망 다양화</b></div>
-                                <ul className="py-3 border border-light" style={{ backgroundColor: "#f4f4f4" }}>
-                                    <li>On-line/Open market sales</li>
-                                    <li>Door to door sale, Home shopping, PB marketing</li>
-                                    <li>온라인/오픈 마켓 판매망 구축</li>
-                                    <li>방문판매, 홈쇼핑, 대형유통망 자체브랜드 분야 진출</li>
-                                </ul>
-                        </MDBCol>
-
-                        <MDBCol size="12" md="4" style={{display:"flex", alignItems:"center"}}>
-                            <img src={diverseDistribution} className="img-fluid z-depth-1" alt="" />
-                        </MDBCol>
-                    </MDBRow>
-
-
-
-                    <div className="py-5">
+                    <div className="py-5 border-top border-light">
                         <div className="h4">Certificates</div>
                         <div className="h5 py-1" style={{ color: "#7f304e" }}><b>특허 인증의 경쟁력 있는 기술</b></div>
 

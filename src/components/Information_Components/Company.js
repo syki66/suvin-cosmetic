@@ -2,6 +2,10 @@ import React from 'react';
 import { MDBContainer, MDBCol, MDBRow } from "mdbreact";
 
 import SideNav from "./SideNav";
+import FittedImage from "react-fitted-image";
+
+
+import CEO_IMG from "./Company_IMGs/ceo.jpg";
 
 
 
@@ -306,7 +310,7 @@ function Company() {
                             values for our customers and partners. Thank you.
                         </p>
 
-                        <div className="h3 pb-5 mb-0" style={{textAlign:"center", fontFamily:"Brush Script MT, Brush Script Std, cursive"}}>President Kim Duck-hoon & Lee Pilsung(Strategy/Marketing)</div>
+                        <div className="h3 pb-5 mb-0" style={{textAlign:"center", fontFamily:"Brush Script MT, Brush Script Std, cursive"}}>President Kim Duck-hoon</div>
                     </div>
 
                     
@@ -314,27 +318,27 @@ function Company() {
 
 
 
-                    <div className="h4 border-top border-light pt-5 pb-1">CEO 인사말</div>
+                    
+                    <div className="border-top border-light">
+                        <MDBRow className="">
+                            <MDBCol size="12" md="8" className="">
+                            <div className="h4 pt-5 pb-1">CEO 인사말</div>
+                                <p className="pt-3">
+                                    화장품 연구개발 경력 30년의 연구전문가가 고객이 만족하고 신뢰할 수 있는 화장품을 직접 개발하여 공급합니다.
+                                    세계적으로 유일한 모공 관리 특허기술로 만들어진 모공축소팩, 달팽이크림, 마스크팩, 줄기세포크림등 최고품질의 제품으로
+                                    고객님과 같이 시장을 선도하는 파트너가 되겠습니다.
+                                </p>
 
-                    <MDBRow className="">
-                        <MDBCol size="12" md="10" className="">
-
-                            <p className="pt-3">
-                                화장품 연구개발 경력 30년의 연구전문가가 고객이 만족하고 신뢰할 수 있는 화장품을 직접 개발하여 공급합니다.
-                                세계적으로 유일한 모공 관리 특허기술로 만들어진 모공축소팩, 달팽이크림, 마스크팩, 줄기세포크림등 최고품질의 제품으로
-                                고객님과 같이 시장을 선도하는 파트너가 되겠습니다.
-                            </p>
-
-                            <div className="h5 pb-5 mb-0" style={{textAlign:"center", fontFamily:"cursive"}}>대표 김 덕훈</div>
+                                <div className="h3 pb-5 mb-0" style={{textAlign:"center", fontFamily:"cursive"}}>대표 김 덕훈</div>
 
 
-                        </MDBCol>
+                            </MDBCol>
 
-                        <MDBCol size="12" md="2" className="pl-0 mb-3 disappear" style={{display:"none", alignItems:"center"}}>
-                            
-                        </MDBCol>
-                    </MDBRow>
-
+                            <MDBCol size="12" md="4" className="pb-5" style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
+                                <img src={CEO_IMG} className="img-fluid z-depth-1" alt="" />
+                            </MDBCol>
+                        </MDBRow>
+                    </div>
 
 
 

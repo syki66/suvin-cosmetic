@@ -4,13 +4,10 @@ body {
 }
 
 
-/* 커라젤 창크기 작아지면 큰 이미지로 출력할라고 */
-.carousel__pcImgToggle {
-    display: none;
-}
 
-.carousel__mobileImgToggle {
-    display: block;
+/* 커라젤용 css 높이를 49vw로 한 이유가 xl 전환될때 자연스럽게 됨 */
+.carousel__css{
+    height: 49vw;
 }
 
 
@@ -51,12 +48,8 @@ body {
         background-color: blue;
     }
 
-    .carousel__pcImgToggle {
-        display: block;
-    }
-    
-    .carousel__mobileImgToggle {
-        display: none;
+    .carousel__css{
+        height: 587px;
     }
 
     .cssShapeBox_disappear{
@@ -73,6 +66,32 @@ body {
         display: block !important;
     }
 }
+
+
+@media (min-width: 2001px) {
+    .carousel__css{
+        object-fit: contain;
+        background-repeat: repeat-x;
+        background-position-x: center;
+    }
+
+    .first_carousel {
+        background-image: url('./components/Home_Components/Home_Image/suvin01.png');
+    }
+
+    .second_carousel {
+        background-image: url('./components/Home_Components/Home_Image/suvin02.png');
+    }
+
+    .headerBG__css {
+        object-fit: contain; 
+        background-image: url('./components/header_sub_bg.png');
+        background-repeat: repeat-x;
+        background-position-x: center;
+        
+    }
+}
+
 
 /*
     display flex로 방향지정, justify-content: center로 가로방향 중앙정렬, align-items: center로 세로방향 중앙정렬 후

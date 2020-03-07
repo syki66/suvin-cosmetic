@@ -8,6 +8,9 @@ import {
   MDBContainer
 } from "mdbreact";
 
+import FittedImage from "react-fitted-image";
+
+
 import suvin_pic_1 from "./Home_Image/suvin01.png"
 import suvin_pic_2 from "./Home_Image/suvin02.png"
 
@@ -41,40 +44,19 @@ function HomeCarousel() {
     >
       <MDBCarouselInner>
         <MDBCarouselItem itemId="1">
+
           <MDBView>
-            <div className="carousel__pcImgToggle">
-                <img
-                  src={suvin_pic_1}
-                  alt="First slide"
-                  className="w-100"
-                />
-            </div>
-            <div className="carousel__mobileImgToggle">
-                <img
-                  src={suvin_pic_1_mobile}
-                  alt="First slide"
-                  className="w-100"
-                />
-            </div>
+                <FittedImage fit="cover" src={suvin_pic_1} className="carousel__css first_carousel" />
+                
           </MDBView>
+
         </MDBCarouselItem>
         <MDBCarouselItem itemId="2">
+
           <MDBView>
-            <div className="carousel__pcImgToggle">
-              <img
-                src={suvin_pic_2}
-                alt="Second slide"
-                className="w-100"
-              />
-            </div>
-            <div className="carousel__mobileImgToggle">
-              <img
-                src={suvin_pic_2_mobile}
-                alt="Second slide"
-                className="w-100"
-              />
-            </div>
+              <FittedImage fit="cover" src={suvin_pic_2} className="carousel__css second_carousel" />
           </MDBView>
+
         </MDBCarouselItem>
 
       </MDBCarouselInner>

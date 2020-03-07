@@ -7,7 +7,7 @@ import conduct from "./Business_image/RnD_IMGs/conduct.png";
 import rnd from "./Business_image/RnD_IMGs/rnd.jpg";
 import nanoTech from "./Business_image/RnD_IMGs/nanoTech.jpg";
 import bioTech from "./Business_image/RnD_IMGs/bioTech.jpg";
-
+import fusionTech from "./Business_image/RnD_IMGs/fusionTech.jpg";
 
 import FittedImage from "react-fitted-image";
 
@@ -60,7 +60,7 @@ function RnD() {
                         </MDBCol>
 
                         <MDBCol size="12" md="9">                                
-                            <ol className="py-4 border border-light mb-md-0" style={{ backgroundColor: "#f4f4f4" }}>
+                            <ol className="py-4 py-xl-5 border border-light mb-md-0" style={{ backgroundColor: "#f4f4f4" }}>
                                     <li>고객 만족의 화장품 개발</li>
                                     <li>첨단 기술 우선 적용 명품화장품 개발</li>
                                     <li>R&D기반 제품경쟁력 확보- 설계품질과 시장품질이 최고급화된 화장품개발</li>
@@ -148,7 +148,7 @@ function RnD() {
                         </MDBCol>
 
                         <MDBCol size="3" md="2" className="pl-0 pl-lg-3" style={{display:"flex", alignItems:"center"}}>
-                            <FittedImage fit="cover" src={nanoTech} style={{borderRadius:"10px"}}/>
+                            <FittedImage fit="cover" src={fusionTech} style={{borderRadius:"10px"}}/>
                         </MDBCol>
                     </MDBRow>
 
