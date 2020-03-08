@@ -3,7 +3,7 @@ import {
 MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse
 } from "mdbreact";
 
-import { HashRouter } from "react-router-dom";
+import { HashRouter, useLocation } from "react-router-dom";
 
 import FittedImage from "react-fitted-image";
 import header_sub_bg from "./header_sub_bg.png";
@@ -75,8 +75,9 @@ render() {
                     </MDBCollapse>
                 </MDBNavbar>
             </div>
-        
-        <FittedImage fit="cover" src={header_sub_bg} style={{height: "169px"}} className="headerBG__css" />
+
+        <DisplayBG />
+
     </div>
 
     );
@@ -84,3 +85,22 @@ render() {
 }
 
 export default Header;
+
+
+// 홈화면에서는 출력 안되게 하는 함수
+function DisplayBG() {
+    let location = useLocation();
+    let display;
+
+    if ( location.pathname === "/" ){
+        display = "none"
+    } else {
+        display = "block"
+    }
+
+    //css에서 안해도 백틱형식으로 백그라운드 이미지 불러올수 있음 backgroundImage:`url(${Motto})`
+    return (
+        <FittedImage fit="cover" src={header_sub_bg} style={{height: "169px", display}} className="headerBG__css" />
+    );
+
+}

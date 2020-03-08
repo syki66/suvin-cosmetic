@@ -28,14 +28,16 @@ import OEMnODM from './components/Business_Components/OEMnODM';
 import Company from './components/Information_Components/Company';
 import OfficeMap from './components/Information_Components/OfficeMap';
 
-import NotFound from './routes/NotFound';
+import NoMatch from './routes/NoMatch';
 
 
 function App() {
+  
   return (
-      
       <HashRouter>
+
         <Header />
+
         <Route path="/" exact={true} component={Home} />
         
         <Route path="/Product" component={Product} />
@@ -53,8 +55,8 @@ function App() {
         <Footer />
 
       </HashRouter>
-      
   );
+
 }
 
 export default App;

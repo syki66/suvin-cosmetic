@@ -30,6 +30,9 @@ import suvin_pic_2_mobile from "./Home_Image/suvin02_mobile.png"
   <MDBContainer>에 fluid 쓰고 className="w-100" 넣어야 커라젤 너비 꽉채워줌
 
   home__carousel로 모바일로 갈수록 사진 양옆 없앰
+
+
+  fittedimage 굳이 안쓰고 div 이용해서 background만 처리해도 가능할듯
 */
 
 function HomeCarousel() {

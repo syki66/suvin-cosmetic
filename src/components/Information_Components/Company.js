@@ -6,6 +6,7 @@ import FittedImage from "react-fitted-image";
 
 
 import CEO_IMG from "./Company_IMGs/ceo.jpg";
+import Motto from "./Company_IMGs/motto.png";
 
 
 
@@ -59,12 +60,12 @@ function Company() {
                                         position: "absolute",
                                         zIndex:"-1",
                                         width:"100%",
-                                        height:"100%"                                     
+                                        height:"260px"
                                 }}>
 
 
 
-                                    <div style={{ display:"flex", flexDirection:"column", flex:"3", backgroundColor:"#f0e2e8" }}>
+                                    <div style={{ display:"flex", flexDirection:"column", flex:"1", backgroundColor:"#f0e2e8" }}>
                                         <div
                                             style={{
                                                 backgroundColor:"#f0e2e8",
@@ -75,8 +76,8 @@ function Company() {
 
                                         <div
                                             style={{
-                                                borderLeft: "150px solid white",
-                                                borderTop: "190px solid #f0e2e8",
+                                                borderLeft: "120px solid white",
+                                                borderTop: "210px solid #f0e2e8",
 
                                                 width:"100%",
                                                 height:"100%",
@@ -87,11 +88,11 @@ function Company() {
                                     </div>
                                     
 
-                                    <div style={{ display:"flex", flexDirection:"column", flex:"2" }}>
+                                    <div style={{ display:"flex", flexDirection:"column", flex:"1" }}>
                                         <div
                                             style={{
-                                                borderLeft: "170px solid #f0e2e8",
-                                                borderTop: "237px solid transparent",
+                                                borderLeft: "140px solid #f0e2e8",
+                                                borderTop: "260px solid transparent",
 
                                                 width:"0",
                                                 height:"100%",
@@ -106,18 +107,29 @@ function Company() {
                                 </div>
 
 
+                                <FittedImage fit="cover" src={Motto} 
+                                    style={{
+                                        display:"flex",
+                                        position: "absolute",
+                                        zIndex:"-2",
+                                        height:"260px",
+                                        objectPosition:"right"
 
-                                <ul className="py-4 mb-0" style={{ backgroundColor: "transparent" }}>
+                                }}/>
+
+
+
+                                <ul className="py-4 mb-0 pl-2 pl-lg-4 pl-xl-5" style={{ backgroundColor: "transparent", height:"260px" }}>
                                     <div className="h5 py-1" style={{ color: "#444444"}}><b>아름다움을 위한 기술개발과 가치창출</b></div>
                                     <ol>
                                         <li>Competence on technology</li>
-                                        <li style={{marginLeft:"20px"}}>Value creation for customer satisfaction</li>
-                                        <li style={{marginLeft:"40px"}}>Respect for social value</li>
+                                        <li style={{marginLeft:"15px"}}>Value creation for customer satisfaction</li>
+                                        <li style={{marginLeft:"30px"}}>Respect for social value</li>
                                     </ol>
-                                    <ol style={{marginLeft:"60px"}} className="pt-2">
+                                    <ol className="pt-2" style={{marginLeft:"45px"}} >
                                         <li>기술적 우위확보</li>
-                                        <li style={{marginLeft:"20px"}}>고객만족을 위한 가치창출</li>
-                                        <li style={{marginLeft:"40px"}}>사회적 가치창출</li>
+                                        <li style={{marginLeft:"15px"}}>고객만족을 위한 가치창출</li>
+                                        <li style={{marginLeft:"30px"}}>사회적 가치창출</li>
                                     </ol>
                                 </ul>
 
