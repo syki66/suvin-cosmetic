@@ -8,7 +8,6 @@ import Footer from './components/Footer';
 //routes
 import Home from "./routes/Home";
 import Product from "./routes/Product";
-import Global_Network from "./routes/Global_Network";
 import Inquiry from "./routes/Inquiry";
 import Customer from "./routes/Customer";
 
@@ -27,6 +26,8 @@ import OEMnODM from './components/Business_Components/OEMnODM';
 
 import Company from './components/Information_Components/Company';
 import OfficeMap from './components/Information_Components/OfficeMap';
+
+import Global_Network from "./components/Global_Network_Components/Global_Network.js";
 
 import NoMatch from './routes/NoMatch';
 

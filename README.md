@@ -11,6 +11,11 @@ R&D 페이지 사진 수정 및 레이아웃 재조정
 
 competence의 certificate 들 1/4 크기로 리사이징함
 
+global network에 세계지도 추가. 옆 박스에는 MDBMask 대각선 패턴 사용.
+
+global network-Main Business Partners 에 각 국가 박스 수동으로 제작함.
+
+
 
 ### 2020-03-08 수정사항
 
@@ -81,3 +86,7 @@ information page added 부터
 - 이미지 리사이징 하기
 - The field of R&D에 표하나 추가
 - 상단 헤더 백그라운드 md 이하일때 줄어들게 하기
+
+- global network 이미지를 한국에서 해외로 연결되는 사진으로 바꾸기
+
+- notice 페이지는 마크다운 사용해서 간편하게 쓸수있게하기
