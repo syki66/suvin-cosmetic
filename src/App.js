@@ -41,7 +41,6 @@ function App() {
         <Route path="/" exact={true} component={Home} />
         
         <Route path="/Product" component={Product} />
-        <Route path="/Global_Network" component={Global_Network} />
         <Route path="/Inquiry" component={Inquiry} />
         <Route path="/Customer" component={Customer} />
 
@@ -51,6 +50,8 @@ function App() {
 
         <Route path="/Company" component={Company} />
         <Route path="/OfficeMap" component={OfficeMap} />
+
+        <Route path="/Global_Network" component={Global_Network} />
 
         <Footer />
 
