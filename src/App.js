@@ -8,8 +8,8 @@ import Footer from './components/Footer';
 //routes
 import Home from "./routes/Home";
 import Product from "./routes/Product";
-import Inquiry from "./routes/Inquiry";
 import Customer from "./routes/Customer";
+
 
 //css
 import 'bootstrap/dist/css/bootstrap.min.css'; // react bootstrap css
@@ -29,6 +29,8 @@ import OfficeMap from './components/Information_Components/OfficeMap';
 
 import Global_Network from "./components/Global_Network_Components/Global_Network.js";
 
+import Inquiry from "./components/Inquiry_Components/Inquiry";
+
 import NoMatch from './routes/NoMatch';
 
 
@@ -42,7 +44,6 @@ function App() {
         <Route path="/" exact={true} component={Home} />
         
         <Route path="/Product" component={Product} />
-        <Route path="/Inquiry" component={Inquiry} />
         <Route path="/Customer" component={Customer} />
 
         <Route path="/Competence" component={Competence} />
@@ -53,6 +54,8 @@ function App() {
         <Route path="/OfficeMap" component={OfficeMap} />
 
         <Route path="/Global_Network" component={Global_Network} />
+
+        <Route path="/Inquiry" component={Inquiry} />
 
         <Footer />
 
