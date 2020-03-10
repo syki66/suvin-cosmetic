@@ -9,6 +9,7 @@
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.4.1",
+    "disqus-react": "^1.0.7",
     "dotenv": "^8.2.0",
     "gh-pages": "^2.2.0",
     "google-map-react": "^1.1.6",
@@ -54,5 +55,5 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://syki66.github.io/suvin-cosmetic-official-webpage/"
+  "homepage": "https://syki66.github.io/suvin-cosmetic/"
 }
