@@ -1,15 +1,15 @@
 import React from "react";
-import { MDBContainer, MDBCol, MDBRow } from "mdbreact";
+import { MDBCol, MDBRow } from "mdbreact";
 
-import SideNav from "./SideNav";
+import InnerPageFrame from "../common/InnerPageFrame";
 
 
-import contract from "./Business_image/OEMnODM_IMGs/contract.jpg";
-import shaking_hands from "./Business_image/OEMnODM_IMGs/shaking_hands.jpg";
-import consulting from "./Business_image/OEMnODM_IMGs/consulting.jpg";
-import production from "./Business_image/OEMnODM_IMGs/production.png";
-import product from "./Business_image/OEMnODM_IMGs/product.png";
-import procurement from "./Business_image/OEMnODM_IMGs/procurement.jpg";
+import contract from "../../images/Business/OEMnODM/contract.jpg";
+import shaking_hands from "../../images/Business/OEMnODM/shaking_hands.jpg";
+import consulting from "../../images/Business/OEMnODM/consulting.jpg";
+import production from "../../images/Business/OEMnODM/production.png";
+import product from "../../images/Business/OEMnODM/product.png";
+import procurement from "../../images/Business/OEMnODM/procurement.jpg";
 
 
 
@@ -32,18 +32,11 @@ import FittedImage from "react-fitted-image";
 function OEMnODM() {
     return (
 
+        <InnerPageFrame
+            title="Business"
+            subtitle={["Competence", "R & D", "OEM & ODM"]}
+        >
 
-
-        <MDBContainer className="px-md-0">
-            
-            <MDBRow className="mt-4">
-
-                <MDBCol size="12" sm="12" md="3">
-                    <SideNav />
-                </MDBCol>
-
-
-                <MDBCol size="12" sm="12" md="9">
 
                     <div className="h2 py-2">OEM & ODM</div>
 
@@ -161,7 +154,7 @@ function OEMnODM() {
                     <div className="pt-5 border-top border-light">Suvin Cosmetic always welcomes business partners with the competitive and optimal OEM & ODM system based on our strong technical and marketing background. Our partnership will promise mutual development and prosperity.</div>
                     <div className="py-3 font-weight-bold">최적의 OEM, ODM시스템을 갖추고 고객님의 요구를 정밀하게 분석하여 최고의 제품을 생산 공급.</div>
 
-                    <MDBRow className="pb-5">
+                    <MDBRow>
                         <MDBCol size="12" md="12">                                
                             <div className="border border-light mb-md-0" style={{ backgroundColor: "#cccccc", textAlign:"center" }}>
                                 <div className="font-weight-bold h4 py-3" style={{color:"#b53c6a"}}>Our partnership will promise mutual development and prosperity</div>
@@ -176,14 +169,7 @@ function OEMnODM() {
 
 
 
-                </MDBCol>
-
-
-
-            </MDBRow>
-        </MDBContainer>
-
-
+                    </InnerPageFrame>
 
 
 

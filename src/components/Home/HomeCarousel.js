@@ -11,12 +11,8 @@ import {
 import FittedImage from "react-fitted-image";
 
 
-import suvin_pic_1 from "./Home_Image/suvin01.png"
-import suvin_pic_2 from "./Home_Image/suvin02.png"
-
-import suvin_pic_1_mobile from "./Home_Image/suvin01_mobile.png"
-import suvin_pic_2_mobile from "./Home_Image/suvin02_mobile.png"
-
+import suvin_pic_1 from "../../images/Home/suvin01.png"
+import suvin_pic_2 from "../../images/Home/suvin02.png"
 
 /*
   px-0 : x축 마진제거
@@ -38,31 +34,31 @@ import suvin_pic_2_mobile from "./Home_Image/suvin02_mobile.png"
 function HomeCarousel() {
   return (
     <MDBContainer fluid className="px-0">
-    <MDBCarousel
-      activeItem={1}
-      length={2}
-      showControls={true}
-      showIndicators={true}
-    >
-      <MDBCarouselInner>
-        <MDBCarouselItem itemId="1">
+      <MDBCarousel
+        activeItem={1}
+        length={2}
+        showControls={true}
+        showIndicators={true}
+      >
+        <MDBCarouselInner>
+          <MDBCarouselItem itemId="1">
 
-          <MDBView>
-                <FittedImage fit="cover" src={suvin_pic_1} className="carousel__css first_carousel" /> 
-          </MDBView>
+            <MDBView>
+              <FittedImage fit="cover" src={suvin_pic_1} className="carousel__css first_carousel" />
+            </MDBView>
 
-        </MDBCarouselItem>
-        <MDBCarouselItem itemId="2">
+          </MDBCarouselItem>
+          <MDBCarouselItem itemId="2">
 
-          <MDBView>
+            <MDBView>
               <FittedImage fit="cover" src={suvin_pic_2} className="carousel__css second_carousel" />
-          </MDBView>
+            </MDBView>
 
-        </MDBCarouselItem>
+          </MDBCarouselItem>
 
-      </MDBCarouselInner>
-    </MDBCarousel>
-  </MDBContainer>
+        </MDBCarouselInner>
+      </MDBCarousel>
+    </MDBContainer>
   );
 }
 

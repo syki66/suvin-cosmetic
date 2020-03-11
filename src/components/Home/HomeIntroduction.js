@@ -2,12 +2,12 @@ import React from "react";
 
 import { MDBMask, MDBView, MDBContainer, MDBRow, MDBCol } from "mdbreact";
 
-import intro_pic_1 from "./Home_Image/intro01.png"
-import intro_pic_2 from "./Home_Image/intro02.png"
-import intro_pic_3 from "./Home_Image/intro03.png"
+import intro_pic_1 from "../../images/Home/intro01.png"
+import intro_pic_2 from "../../images/Home/intro02.png"
+import intro_pic_3 from "../../images/Home/intro03.png"
 
-import notice from "./Home_Image/notice.jpg"
-import telephone from "./Home_Image/telephone.jpg"
+import notice from "../../images/Home/notice.jpg"
+import telephone from "../../images/Home/telephone.jpg"
 
 import {
   MDBNavItem, MDBNavLink, MDBNav
@@ -96,7 +96,7 @@ function HomeIntroduction() {
               alt=""
             />
             <MDBMask overlay="white-strong">
-              <MDBNavLink to="RnD" className="home__intro">R & D</MDBNavLink>
+              <MDBNavLink to="R & D" className="home__intro">R & D</MDBNavLink>
             </MDBMask>
           </MDBView>
         </MDBCol>
@@ -109,7 +109,7 @@ function HomeIntroduction() {
               alt=""
             />
             <MDBMask overlay="white-strong">
-            <MDBNavLink to="OEMnODM" className="home__intro">OEM & ODM</MDBNavLink>
+            <MDBNavLink to="OEM & ODM" className="home__intro">OEM & ODM</MDBNavLink>
             </MDBMask>
           </MDBView>
         </MDBCol>

@@ -1,15 +1,6 @@
 import React from "react";
 import { HashRouter, Route } from "react-router-dom";
 
-//footer and header
-import Header from './components/Header_Components/Header';
-import Footer from './components/Footer_Components/Footer';
-
-//routes
-import Home from "./routes/Home";
-import Product from "./routes/Product";
-
-
 //css
 import 'bootstrap/dist/css/bootstrap.min.css'; // react bootstrap css
 //import '@fortawesome/fontawesome-free/css/all.min.css'; 
@@ -19,22 +10,35 @@ import 'mdbreact/dist/css/mdb.css'; // hover effect css
 import "./App.css";
 
 
-import Competence from './components/Business_Components/Competence';
-import RnD from './components/Business_Components/RnD';
-import OEMnODM from './components/Business_Components/OEMnODM';
-
-import Company from './components/Information_Components/Company';
-import OfficeMap from './components/Information_Components/OfficeMap';
-
-import Global_Network from "./components/Global_Network_Components/Global_Network.js";
-
-import Inquiry from "./components/Inquiry_Components/Inquiry";
-
-import Notice from "./components/Customer_Components/Notice";
-import Comments from "./components/Customer_Components/Comments";
-
-
+//routes
+import Home from "./routes/Home";
 import NoMatch from './routes/NoMatch';
+
+//footer and header
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+
+//components
+import Company from './components/Information/Company';
+import OfficeMap from './components/Information/OfficeMap';
+
+import Competence from './components/Business/Competence';
+import RnD from './components/Business/RnD';
+import OEMnODM from './components/Business/OEMnODM';
+
+import Premium from './components/Product/Premium';
+import Special from './components/Product/Special';
+import Others from './components/Product/Others';
+
+import Global_Network from "./components/Global_Network/Global_Network.js";
+
+import Inquiry from "./components/Inquiry/Inquiry";
+
+import Notice from "./components/Customer/Notice";
+import Comments from "./components/Customer/Comments";
+
+
+
 
 
 function App() {
@@ -45,17 +49,19 @@ function App() {
         <Header />
 
         <Route path="/" exact={true} component={Home} />
-        
-        <Route path="/Product" component={Product} />
-
-        <Route path="/Competence" component={Competence} />
-        <Route path="/RnD" component={RnD} />
-        <Route path="/OEMnODM" component={OEMnODM} />
 
         <Route path="/Company" component={Company} />
-        <Route path="/OfficeMap" component={OfficeMap} />
+        <Route path="/Office Map" component={OfficeMap} />
 
-        <Route path="/Global_Network" component={Global_Network} />
+        <Route path="/Competence" component={Competence} />
+        <Route path="/R & D" component={RnD} />
+        <Route path="/OEM & ODM" component={OEMnODM} />
+
+        <Route path="/Premium" component={Premium} />
+        <Route path="/Special" component={Special} />
+        <Route path="/Others" component={Others} />
+
+        <Route path="/Global Network" component={Global_Network} />
 
         <Route path="/Inquiry" component={Inquiry} />
 

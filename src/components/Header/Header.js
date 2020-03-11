@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import {
-MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBView, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse
+MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse
 } from "mdbreact";
 
-import { HashRouter, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import FittedImage from "react-fitted-image";
 
 
-import header_sub_bg from "./Header_IMGs/header_sub_bg.png";
+import header_sub_bg from "../../images/Header/header_sub_bg.png";
 
 
 /*
@@ -54,7 +54,7 @@ render() {
                                         <MDBNavLink to="Company" className="py-md-3 headerMenu_css" style={{textAlign:"center"}}>Information</MDBNavLink>
                                         <div className="nav__link-group" style={{zIndex:"2"}}>
                                             <MDBNavLink to="Company" className="nav__link">Company</MDBNavLink>
-                                            <MDBNavLink to="OfficeMap" className="nav__link">Office Map</MDBNavLink>
+                                            <MDBNavLink to="Office Map" className="nav__link">Office Map</MDBNavLink>
                                         </div>
                                     </div>
                                 </nav>
@@ -66,8 +66,8 @@ render() {
                                         <MDBNavLink to="Competence" className="py-md-3 headerMenu_css" style={{textAlign:"center"}}>Business</MDBNavLink>
                                         <div className="nav__link-group" style={{zIndex:"2"}}>
                                             <MDBNavLink to="Competence" className="nav__link">Competence</MDBNavLink>
-                                            <MDBNavLink to="RnD" className="nav__link">R & D</MDBNavLink>
-                                            <MDBNavLink to="OEMnODM" className="nav__link">OEM & ODM</MDBNavLink>
+                                            <MDBNavLink to="R & D" className="nav__link">R & D</MDBNavLink>
+                                            <MDBNavLink to="OEM & ODM" className="nav__link">OEM & ODM</MDBNavLink>
                                         </div>
                                     </div>
                                 </nav>
@@ -76,11 +76,11 @@ render() {
                             <MDBNavItem className="">
                                 <nav className="nav">
                                     <div className="nav__link p-0" style={{width:"100%"}}>
-                                        <MDBNavLink to="Product" className="py-md-3 headerMenu_css" style={{textAlign:"center"}}>Product</MDBNavLink>
+                                        <MDBNavLink to="Premium" className="py-md-3 headerMenu_css" style={{textAlign:"center"}}>Product</MDBNavLink>
                                         <div className="nav__link-group" style={{zIndex:"2"}}>
-                                            <MDBNavLink to="" className="nav__link">Premium</MDBNavLink>
-                                            <MDBNavLink to="" className="nav__link">Special</MDBNavLink>
-                                            <MDBNavLink to="" className="nav__link">Others</MDBNavLink>
+                                            <MDBNavLink to="Premium" className="nav__link">Premium</MDBNavLink>
+                                            <MDBNavLink to="Special" className="nav__link">Special</MDBNavLink>
+                                            <MDBNavLink to="Others" className="nav__link">Others</MDBNavLink>
                                         </div>
                                     </div>
                                 </nav>
@@ -89,9 +89,9 @@ render() {
                             <MDBNavItem className="">
                                 <nav className="nav">
                                     <div className="nav__link p-0" style={{width:"100%"}}>
-                                        <MDBNavLink to="Global_Network" className="py-md-3 headerMenu_css" style={{textAlign:"center"}}>Global Network</MDBNavLink>
+                                        <MDBNavLink to="Global Network" className="py-md-3 headerMenu_css" style={{textAlign:"center"}}>Global Network</MDBNavLink>
                                         <div className="nav__link-group" style={{zIndex:"2"}}>
-                                            <MDBNavLink to="Global_Network" className="nav__link">Global Network</MDBNavLink>
+                                            <MDBNavLink to="Global Network" className="nav__link">Global Network</MDBNavLink>
                                         </div>
                                     </div>
                                 </nav>

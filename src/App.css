@@ -10,7 +10,7 @@ body {
 
 /* 커라젤용 css 높이를 49vw로 한 이유가 xl 전환될때 자연스럽게 됨 */
 .carousel__css{
-    height: 49vw;
+    height: 49vw !important;
 }
 
 
@@ -117,7 +117,7 @@ body {
     }
 
     .carousel__css{
-        height: 587px;
+        height: 587px !important;
     }
 
     .headerBG__css {
@@ -145,22 +145,22 @@ body {
 
 @media (min-width: 2001px) {
     .carousel__css{
-        object-fit: contain;
+        object-fit: contain !important;
         background-repeat: repeat-x;
         background-position-x: center;
     }
 
     .first_carousel {
-        background-image: url('./components/Home_Components/Home_Image/suvin01.png');
+        background-image: url('./images/Home/suvin01.png');
     }
 
     .second_carousel {
-        background-image: url('./components/Home_Components/Home_Image/suvin02.png');
+        background-image: url('./images/Home/suvin02.png');
     }
 
     .headerBG__css {
-        object-fit: contain; 
-        background-image: url('./components/Header_Components/Header_IMGs/header_sub_bg.png');
+        object-fit: contain !important; 
+        background-image: url('./images/Header/header_sub_bg.png');
         background-repeat: repeat-x;
         background-position-x: center;
         
