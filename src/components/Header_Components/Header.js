@@ -6,7 +6,9 @@ MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBView, MDBNavItem, MDBNavLink, MDBNav
 import { HashRouter, useLocation } from "react-router-dom";
 
 import FittedImage from "react-fitted-image";
-import header_sub_bg from "./header_sub_bg.png";
+
+
+import header_sub_bg from "./Header_IMGs/header_sub_bg.png";
 
 
 /*
@@ -125,7 +127,7 @@ render() {
                 </MDBNavbar>
             </div>
 
-        <DisplayBG />
+        <DisplayHeaderBG />
 
     </div>
 
@@ -137,7 +139,7 @@ export default Header;
 
 
 // 홈화면에서는 출력 안되게 하는 함수
-function DisplayBG() {
+function DisplayHeaderBG() {
     let location = useLocation();
     let display;
 

@@ -160,7 +160,7 @@ body {
 
     .headerBG__css {
         object-fit: contain; 
-        background-image: url('./components/header_sub_bg.png');
+        background-image: url('./components/Header_Components/Header_IMGs/header_sub_bg.png');
         background-repeat: repeat-x;
         background-position-x: center;
         

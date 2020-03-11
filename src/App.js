@@ -2,8 +2,8 @@ import React from "react";
 import { HashRouter, Route } from "react-router-dom";
 
 //footer and header
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/Header_Components/Header';
+import Footer from './components/Footer_Components/Footer';
 
 //routes
 import Home from "./routes/Home";
