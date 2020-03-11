@@ -8,7 +8,6 @@ import Footer from './components/Footer';
 //routes
 import Home from "./routes/Home";
 import Product from "./routes/Product";
-import Customer from "./routes/Customer";
 
 
 //css
@@ -31,6 +30,10 @@ import Global_Network from "./components/Global_Network_Components/Global_Networ
 
 import Inquiry from "./components/Inquiry_Components/Inquiry";
 
+import Notice from "./components/Customer_Components/Notice";
+import Comments from "./components/Customer_Components/Comments";
+
+
 import NoMatch from './routes/NoMatch';
 
 
@@ -44,7 +47,6 @@ function App() {
         <Route path="/" exact={true} component={Home} />
         
         <Route path="/Product" component={Product} />
-        <Route path="/Customer" component={Customer} />
 
         <Route path="/Competence" component={Competence} />
         <Route path="/RnD" component={RnD} />
@@ -56,6 +58,9 @@ function App() {
         <Route path="/Global_Network" component={Global_Network} />
 
         <Route path="/Inquiry" component={Inquiry} />
+
+        <Route path="/Notice" component={Notice} />
+        <Route path="/Comments" component={Comments} />
 
         <Footer />
 

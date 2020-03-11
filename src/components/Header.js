@@ -110,9 +110,10 @@ render() {
                             <MDBNavItem className="">
                                 <nav className="nav">
                                     <div className="nav__link p-0" style={{width:"100%"}}>
-                                        <MDBNavLink to="Customer" className="py-md-3 headerMenu_css" style={{textAlign:"center"}}>Customer</MDBNavLink>
+                                        <MDBNavLink to="Notice" className="py-md-3 headerMenu_css" style={{textAlign:"center"}}>Customer</MDBNavLink>
                                         <div className="nav__link-group" style={{zIndex:"2"}}>
-                                            <MDBNavLink to="Customer" className="nav__link">Customer</MDBNavLink>
+                                            <MDBNavLink to="Notice" className="nav__link">Notice</MDBNavLink>
+                                            <MDBNavLink to="Comments" className="nav__link">Comments</MDBNavLink>
                                         </div>
                                     </div>
                                 </nav>

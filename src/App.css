@@ -57,7 +57,7 @@ body {
         background-color: transparent;
         user-select: none;
         -webkit-tap-highlight-color: transparent;
-        transition: background-color 0.2s;
+        transition: background-color 0.5s;
     }
     
     .nav__link:hover {
