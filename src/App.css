@@ -39,7 +39,7 @@ body {
     /* 네비게이션 드롭다운 용 css */
     .nav {
         display: flex;
-        background-color: #009578;
+        background-color: #9e4f89;
     }
     
     .nav * {
@@ -50,21 +50,23 @@ body {
         position: relative;
         display: block;
         padding: 10px 15px;
-        color: #ffffff;
+        color: black !important;
         text-decoration: none;
         cursor: pointer;
         white-space: nowrap;
-        background-color: #009578;
+        background-color: transparent;
         user-select: none;
         -webkit-tap-highlight-color: transparent;
         transition: background-color 0.2s;
     }
     
     .nav__link:hover {
-        background-color: #007f66;
+        background-color: #7f304e;
+        color: white !important;
     }
     
     .nav__link-group {
+        background-color: white;
         display: block;
         position: absolute;
         top: 100%;
