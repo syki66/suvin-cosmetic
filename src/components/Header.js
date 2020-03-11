@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse
+MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBView, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse
 } from "mdbreact";
 
 import { HashRouter, useLocation } from "react-router-dom";
@@ -46,28 +46,76 @@ render() {
 
                         <MDBNavbarNav>
 
-                            <MDBNavItem>
-                                <MDBNavLink to="Company">Information</MDBNavLink>
+                            <MDBNavItem className="">
+                                <nav className="nav" >
+                                    <div className="nav__link p-0" style={{width:"100%"}}>
+                                        <MDBNavLink to="Company" className="py-md-3 headerMenu_css" style={{backgroundColor:"red", textAlign:"center"}}>Information</MDBNavLink>
+                                        <div className="nav__link-group" style={{zIndex:"2"}}>
+                                            <MDBNavLink to="Company" className="nav__link">Company</MDBNavLink>
+                                            <MDBNavLink to="OfficeMap" className="nav__link">Office Map</MDBNavLink>
+                                        </div>
+                                    </div>
+                                </nav>
                             </MDBNavItem>
 
-                            <MDBNavItem>
-                                <MDBNavLink to="Competence">Business</MDBNavLink>
+                            <MDBNavItem className="">
+                                <nav className="nav">
+                                    <div className="nav__link p-0" style={{width:"100%"}}>
+                                        <MDBNavLink to="Competence" className="py-md-3 headerMenu_css" style={{backgroundColor:"red", textAlign:"center"}}>Business</MDBNavLink>
+                                        <div className="nav__link-group" style={{zIndex:"2"}}>
+                                            <MDBNavLink to="Competence" className="nav__link">Competence</MDBNavLink>
+                                            <MDBNavLink to="RnD" className="nav__link">R & D</MDBNavLink>
+                                            <MDBNavLink to="OEMnODM" className="nav__link">OEM & ODM</MDBNavLink>
+                                        </div>
+                                    </div>
+                                </nav>
                             </MDBNavItem>
 
-                            <MDBNavItem>
-                                <MDBNavLink to="Product">Product</MDBNavLink>
+                            <MDBNavItem className="">
+                                <nav className="nav">
+                                    <div className="nav__link p-0" style={{width:"100%"}}>
+                                        <MDBNavLink to="Product" className="py-md-3 headerMenu_css" style={{backgroundColor:"red", textAlign:"center"}}>Product</MDBNavLink>
+                                        <div className="nav__link-group" style={{zIndex:"2"}}>
+                                            <MDBNavLink to="" className="nav__link">Premium</MDBNavLink>
+                                            <MDBNavLink to="" className="nav__link">Special</MDBNavLink>
+                                            <MDBNavLink to="" className="nav__link">Others</MDBNavLink>
+                                        </div>
+                                    </div>
+                                </nav>
                             </MDBNavItem>
 
-                            <MDBNavItem>
-                                <MDBNavLink to="Global_Network">Global Network</MDBNavLink>
+                            <MDBNavItem className="">
+                                <nav className="nav">
+                                    <div className="nav__link p-0" style={{width:"100%"}}>
+                                        <MDBNavLink to="Global_Network" className="py-md-3 headerMenu_css" style={{backgroundColor:"red", textAlign:"center"}}>Global Network</MDBNavLink>
+                                        <div className="nav__link-group" style={{zIndex:"2"}}>
+                                            <MDBNavLink to="Global_Network" className="nav__link">Global Network</MDBNavLink>
+                                        </div>
+                                    </div>
+                                </nav>
                             </MDBNavItem>
 
-                            <MDBNavItem>
-                                <MDBNavLink to="Inquiry">Inquiry</MDBNavLink>
+                            <MDBNavItem className="">
+                                <nav className="nav">
+                                    <div className="nav__link p-0" style={{width:"100%"}}>
+                                        <MDBNavLink to="Inquiry" className="py-md-3 headerMenu_css" style={{backgroundColor:"red", textAlign:"center"}}>Inquiry</MDBNavLink>
+                                        <div className="nav__link-group" style={{zIndex:"2"}}>
+                                            <MDBNavLink to="Inquiry" className="nav__link">Inquiry</MDBNavLink>
+                                        </div>
+                                    </div>
+                                </nav>
                             </MDBNavItem>
 
-                            <MDBNavItem>
-                                <MDBNavLink to="Customer">Customer</MDBNavLink>
+                            
+                            <MDBNavItem className="">
+                                <nav className="nav">
+                                    <div className="nav__link p-0" style={{width:"100%"}}>
+                                        <MDBNavLink to="Customer" className="py-md-3 headerMenu_css" style={{backgroundColor:"red", textAlign:"center"}}>Customer</MDBNavLink>
+                                        <div className="nav__link-group" style={{zIndex:"2"}}>
+                                            <MDBNavLink to="Customer" className="nav__link">Customer</MDBNavLink>
+                                        </div>
+                                    </div>
+                                </nav>
                             </MDBNavItem>
 
                         </MDBNavbarNav>
@@ -100,7 +148,7 @@ function DisplayBG() {
 
     //css에서 안해도 백틱형식으로 백그라운드 이미지 불러올수 있음 backgroundImage:`url(${Motto})`
     return (
-        <FittedImage fit="cover" src={header_sub_bg} style={{height: "169px", display}} className="headerBG__css" />
+        <FittedImage fit="cover" src={header_sub_bg} style={{height: "14vw", display}} className="headerBG__css" />
     );
 
 }

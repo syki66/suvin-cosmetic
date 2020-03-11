@@ -3,6 +3,9 @@ body {
     background-color: green;
 }
 
+.nav__link-group {
+    display: none;
+}
 
 
 /* 커라젤용 css 높이를 49vw로 한 이유가 xl 전환될때 자연스럽게 됨 */
@@ -32,6 +35,59 @@ body {
         display: inline !important;
     }
 
+
+    /* 네비게이션 드롭다운 용 css */
+    .nav {
+        display: flex;
+        background-color: #009578;
+    }
+    
+    .nav * {
+        font: 500 15px sans-serif;
+    }
+    
+    .nav__link {
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+        color: #ffffff;
+        text-decoration: none;
+        cursor: pointer;
+        white-space: nowrap;
+        background-color: #009578;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        transition: background-color 0.2s;
+    }
+    
+    .nav__link:hover {
+        background-color: #007f66;
+    }
+    
+    .nav__link-group {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 100%;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+    }
+    
+    .nav__link:hover .nav__link-group {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0px);
+        transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+    }
+
+
+
+
+
+
 }
 
 
@@ -44,6 +100,12 @@ body {
         display: none !important;
     }
 
+    .headerMenu_css {
+        width: 130px;
+    }
+    
+
+
 }
 
 
@@ -54,6 +116,10 @@ body {
 
     .carousel__css{
         height: 587px;
+    }
+
+    .headerBG__css {
+        height: 169px !important;
     }
 
     .cssShapeBox_disappear{
@@ -70,6 +136,7 @@ body {
         display: block !important;
     }
 
+    
 
 }
 
@@ -149,3 +216,9 @@ body {
     color: white !important;
     border-radius: 0px;
 }
+
+
+
+
+
+  

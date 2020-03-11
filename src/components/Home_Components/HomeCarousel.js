@@ -43,14 +43,12 @@ function HomeCarousel() {
       length={2}
       showControls={true}
       showIndicators={true}
-      className="z-depth-0"
     >
       <MDBCarouselInner>
         <MDBCarouselItem itemId="1">
 
           <MDBView>
-                <FittedImage fit="cover" src={suvin_pic_1} className="carousel__css first_carousel" />
-                
+                <FittedImage fit="cover" src={suvin_pic_1} className="carousel__css first_carousel" /> 
           </MDBView>
 
         </MDBCarouselItem>
