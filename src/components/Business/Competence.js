@@ -3,7 +3,6 @@ import { MDBCol, MDBRow } from "mdbreact";
 
 import InnerPageFrame from "../common/InnerPageFrame";
 
-
 import certificate from "../../images/Business/Competence/certificate.jpg";
 import certificate_01 from "../../images/Business/Competence/certificate_01.jpg";
 import certificate_02 from "../../images/Business/Competence/certificate_02.jpg";
@@ -17,7 +16,6 @@ import certificate_09 from "../../images/Business/Competence/certificate_09.jpg"
 import certificate_10 from "../../images/Business/Competence/certificate_10.jpg";
 import certificate_11 from "../../images/Business/Competence/certificate_11.jpg";
 import certificate_12 from "../../images/Business/Competence/certificate_12.jpg";
-
 import dutyfreeStore from "../../images/Business/Competence/dutyfreeStore.jpg";
 import overseasMarketing from "../../images/Business/Competence/overseasMarketing.jpg";
 import diverseDistribution from "../../images/Business/Competence/diverseDistribution.jpg";
@@ -50,9 +48,8 @@ import diverseDistribution from "../../images/Business/Competence/diverseDistrib
 */
 
 
-function Competence() {
+export default function Competence() {
     return (
-
         <InnerPageFrame
             title="Business"
             subtitle={["Competence", "R & D", "OEM & ODM"]}
@@ -60,11 +57,9 @@ function Competence() {
 
             <div className="h2 py-2">Competence</div>
 
-
             <div className="border-top border-light">
                 <MDBRow className="pb-5 pb-md-0 ">
                     <MDBCol size="12" md="8" className=" pt-5">
-
                         <div className="h4">Competitive Technology</div>
                         <div className="h5 py-1" style={{ color: "#7f304e" }}><b>특허 인증의 경쟁력 있는 기술</b></div>
                         <ul className="py-3 border border-light" style={{ backgroundColor: "#f4f4f4" }}>
@@ -74,7 +69,6 @@ function Competence() {
                             <li>2013년 세계유일 특허로 탄생한 모공축소팩</li>
                         </ul>
                     </MDBCol>
-
                     <MDBCol size="12" md="4" style={{ display: "flex", alignItems: "center" }}>
                         <img src={certificate} className="img-fluid z-depth-1" alt="" />
                     </MDBCol>
@@ -93,7 +87,6 @@ function Competence() {
                             <li>품질에 대한 외국들의 좋은 평가</li>
                         </ul>
                     </MDBCol>
-
                     <MDBCol size="12" md="4" style={{ display: "flex", alignItems: "center" }}>
                         <img src={dutyfreeStore} className="img-fluid z-depth-1" alt="" />
                     </MDBCol>
@@ -112,7 +105,6 @@ function Competence() {
                             <li>주요국 해외파트너와의 협력 강화</li>
                         </ul>
                     </MDBCol>
-
                     <MDBCol size="12" md="4" style={{ display: "flex", alignItems: "center" }}>
                         <img src={overseasMarketing} className="img-fluid z-depth-1" alt="" />
                     </MDBCol>
@@ -131,18 +123,15 @@ function Competence() {
                             <li>방문판매, 홈쇼핑, 대형유통망 자체브랜드 분야 진출</li>
                         </ul>
                     </MDBCol>
-
                     <MDBCol size="12" md="4" style={{ display: "flex", alignItems: "center" }}>
                         <img src={diverseDistribution} className="img-fluid z-depth-1" alt="" />
                     </MDBCol>
                 </MDBRow>
             </div>
 
-
             <div className="pt-5 border-top border-light">
                 <div className="h4">Certificates</div>
                 <div className="h5 py-1" style={{ color: "#7f304e" }}><b>특허 인증의 경쟁력 있는 기술</b></div>
-
                 <MDBRow>
                     <MDBCol className="p-1"><img src={certificate_01} className="img-fluid border border-light" alt="" /></MDBCol>
                     <MDBCol className="p-1"><img src={certificate_02} className="img-fluid border border-light" alt="" /></MDBCol>
@@ -151,7 +140,6 @@ function Competence() {
                     <MDBCol className="p-1"><img src={certificate_05} className="img-fluid border border-light" alt="" /></MDBCol>
                     <MDBCol className="p-1"><img src={certificate_06} className="img-fluid border border-light" alt="" /></MDBCol>
                 </MDBRow>
-
                 <MDBRow>
                     <MDBCol className="p-1"><img src={certificate_07} className="img-fluid border border-light" alt="" /></MDBCol>
                     <MDBCol className="p-1"><img src={certificate_08} className="img-fluid border border-light" alt="" /></MDBCol>
@@ -162,9 +150,6 @@ function Competence() {
                 </MDBRow>
             </div>
 
-
         </InnerPageFrame>
     );
 };
-
-export default Competence;

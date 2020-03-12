@@ -2,9 +2,7 @@ import React from "react"
 
 import InnerPageFrame from "../common/InnerPageFrame";
 
-export default function Component () {
-
- 
+export default function Comments() {
     return (
         <InnerPageFrame
             title="Customer"

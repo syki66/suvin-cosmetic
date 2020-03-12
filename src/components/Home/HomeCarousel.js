@@ -1,18 +1,11 @@
 import React from "react";
 
-import {
-  MDBCarousel,
-  MDBCarouselInner,
-  MDBCarouselItem,
-  MDBView,
-  MDBContainer
-} from "mdbreact";
-
+import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from "mdbreact";
 import FittedImage from "react-fitted-image";
-
 
 import suvin_pic_1 from "../../images/Home/suvin01.png"
 import suvin_pic_2 from "../../images/Home/suvin02.png"
+
 
 /*
   px-0 : x축 마진제거
@@ -31,7 +24,8 @@ import suvin_pic_2 from "../../images/Home/suvin02.png"
   fittedimage 굳이 안쓰고 div 이용해서 background만 처리해도 가능할듯
 */
 
-function HomeCarousel() {
+
+export default function HomeCarousel() {
   return (
     <MDBContainer fluid className="px-0">
       <MDBCarousel
@@ -41,19 +35,17 @@ function HomeCarousel() {
         showIndicators={true}
       >
         <MDBCarouselInner>
-          <MDBCarouselItem itemId="1">
 
+          <MDBCarouselItem itemId="1">
             <MDBView>
               <FittedImage fit="cover" src={suvin_pic_1} className="carousel__css first_carousel" />
             </MDBView>
-
           </MDBCarouselItem>
+          
           <MDBCarouselItem itemId="2">
-
             <MDBView>
               <FittedImage fit="cover" src={suvin_pic_2} className="carousel__css second_carousel" />
             </MDBView>
-
           </MDBCarouselItem>
 
         </MDBCarouselInner>
@@ -61,6 +53,3 @@ function HomeCarousel() {
     </MDBContainer>
   );
 }
-
-
-export default HomeCarousel;

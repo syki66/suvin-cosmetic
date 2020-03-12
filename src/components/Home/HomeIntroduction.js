@@ -1,17 +1,12 @@
 import React from "react";
 
-import { MDBMask, MDBView, MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import { MDBMask, MDBView, MDBContainer, MDBRow, MDBCol, MDBNavLink } from "mdbreact";
 
 import intro_pic_1 from "../../images/Home/intro01.png"
 import intro_pic_2 from "../../images/Home/intro02.png"
 import intro_pic_3 from "../../images/Home/intro03.png"
-
 import notice from "../../images/Home/notice.jpg"
 import telephone from "../../images/Home/telephone.jpg"
-
-import {
-  MDBNavItem, MDBNavLink, MDBNav
-  } from "mdbreact";
 
 
 /*
@@ -68,12 +63,11 @@ import {
 */
 
 
-function HomeIntroduction() {
+export default function HomeIntroduction() {
   return (
     <MDBContainer>
 
-
-      <MDBRow className="pb-sm-4 pt-sm-4 pb-md-5 pt-md-5"> 
+      <MDBRow className="pb-sm-4 pt-sm-4 pb-md-5 pt-md-5">
 
         <MDBCol size="4" className="px-0">
           <MDBView hover zoom>
@@ -158,9 +152,6 @@ function HomeIntroduction() {
 
       </MDBRow>
 
-
     </MDBContainer>
   );
 }
-
-export default HomeIntroduction;

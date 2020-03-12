@@ -3,12 +3,10 @@ import { HashRouter, Route } from "react-router-dom";
 
 //css
 import 'bootstrap/dist/css/bootstrap.min.css'; // react bootstrap css
-//import '@fortawesome/fontawesome-free/css/all.min.css'; 
 import 'bootstrap-css-only/css/bootstrap.min.css'; // navigation bar css
 import 'mdbreact/dist/css/mdb.css'; // hover effect css
 
 import "./App.css";
-
 
 //routes
 import Home from "./routes/Home";
@@ -38,11 +36,7 @@ import Notice from "./components/Customer/Notice";
 import Comments from "./components/Customer/Comments";
 
 
-
-
-
-function App() {
-  
+export default function App() {
   return (
       <HashRouter>
 
@@ -72,7 +66,4 @@ function App() {
 
       </HashRouter>
   );
-
 }
-
-export default App;
