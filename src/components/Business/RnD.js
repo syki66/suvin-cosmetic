@@ -29,8 +29,8 @@ export default function RnD() {
             <div>
                 <div className="h4 border-top border-light pt-5 pb-1">R&D Focus</div>
 
-                <MDBRow className="">
-                    <MDBCol size="12" className="">
+                <MDBRow>
+                    <MDBCol size="12">
                         <ol className="py-3 border border-light" style={{ backgroundColor: "#f4f4f4" }}>
                             <li>Development of cosmetics focused on customer satisfaction</li>
                             <li>Top quality products with foremost and new technology</li>
@@ -142,8 +142,8 @@ export default function RnD() {
             <div>
                 <div className="h4 border-top border-light pt-5 pb-1">Research Theme Items</div>
 
-                <MDBRow className="">
-                    <MDBCol size="12" className="">
+                <MDBRow>
+                    <MDBCol size="12">
                         <ul className="py-3 border border-light" style={{ backgroundColor: "#f4f4f4" }}>
                             <li>Magnetic control Pack</li>
                             <li>Cleansing Keratin in Two phase Pack</li>
