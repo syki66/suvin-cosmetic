@@ -29,7 +29,8 @@ import { HashRouter, Route, Link, Switch } from "react-router-dom";
 const importAll = (r) => r.keys().map(r);
 const markdownFiles = importAll(require.context('../../posts/', false, /\.md$/)).sort().reverse();
  
-export default class Notice extends React.Component {
+
+export default class MainTextFrame extends React.Component {
 
     state = {
         isLoading: true,
@@ -37,17 +38,15 @@ export default class Notice extends React.Component {
     }
 
 
-
-
     // front matter 뽑아서 (날짜, 타이틀, 내용) 객체로 리턴해주는 함수
-    sliceFrontMatter = (text, index) => {
+    sliceFrontMatter = (text) => {
         const parsedText = text.substring(text.indexOf("---")+5, text.indexOf("---", 3)-2);
         
         const date = parsedText.substring(parsedText.indexOf('date: "')+7, parsedText.indexOf('"' , parsedText.indexOf('date: "')+10) );
         const title = parsedText.substring(parsedText.indexOf('title: "')+8, parsedText.indexOf('"' , parsedText.indexOf('title: "')+10) );
         const mainText = text.substr(text.indexOf("---", 3)+5);
 
-        return { index, date, title, mainText }
+        return {date, title, mainText}
     }
 
 
@@ -55,16 +54,14 @@ export default class Notice extends React.Component {
     async componentDidMount() {
         const posts = await Promise.all(
             markdownFiles.map(
-                (file, i) => fetch(file).then(
-                    res => (res.text()).then(result => this.sliceFrontMatter(result, i))
+                file => fetch(file).then(
+                    res => (res.text()).then(result => this.sliceFrontMatter(result))
                     )
                 )
         ).catch((err) => console.error(err));
 
         this.setState({ posts, isLoading: false });
     }
-
-
 
 
     render() {
@@ -75,45 +72,17 @@ export default class Notice extends React.Component {
                 title="Customer"
                 subtitle={["Notice", "Comments"]}
             >
-
-
                 <div className="h2 py-2">Notice</div>
                 
                 {isLoading ? (
                     <div>데이터 로딩중</div>
                     ) : (
-
-
-
-
-                        <div className="border-top border-light pt-5">
-
-
-                            {posts.map(post => {
-                                return (
-                                    <div>
-                                        
-                                        <Link to={`/Notice/${post.index}`}>{post.title}</Link>
-
-                                    </div>
-                                );
-                            })}
-
-
-
-
-
-
-
-                        </div>
-
-
-
-
-
+                        <Markdown 
+                            source={posts[0].mainText} 
+                            className="border-top border-light pt-5"
+                            escapeHtml={false}
+                        />
                 ) }
-
-
             </InnerPageFrame>
         );
     }

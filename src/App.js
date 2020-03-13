@@ -35,6 +35,7 @@ import Inquiry from "./components/Inquiry/Inquiry";
 import Notice from "./components/Customer/Notice";
 import Comments from "./components/Customer/Comments";
 
+import MainTextFrame from "./components/Customer/MainTextFrame"
 
 export default function App() {
   return (
@@ -59,8 +60,10 @@ export default function App() {
 
         <Route path="/Inquiry" component={Inquiry} />
 
-        <Route path="/Notice" component={Notice} />
+        <Route path="/Notice" exact={true} component={Notice} />
         <Route path="/Comments" component={Comments} />
+
+        <Route path="/Notice/:index" component={MainTextFrame}/>
 
         <Footer />
 
