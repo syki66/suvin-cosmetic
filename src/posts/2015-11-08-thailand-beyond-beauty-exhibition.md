@@ -1,6 +1,6 @@
 ---
 date: "2015-11-08"
-title: "Thailand Byond Beauty Exibition 참가하였습니다."
+title: "Thailand Beyond Beauty Exhibition 참가하였습니다."
 writer: "수빈코스메틱"
 disqus: "true"
 ---
@@ -11,7 +11,7 @@ disqus: "true"
 
 ---
 
-2015.09.26~28 Beyond Beauty Asean Bangkok Exibition in Thailand 참가하였습니다.
+2015.09.26~28 Beyond Beauty Asean Bangkok Exhibition in Thailand 참가하였습니다.
 
 저희 수빈코스메틱을 사랑해주시는 고객들의 성원에 힘입어 2015년 9월 26일부터 태국 비욘드뷰티 전시회에 다녀왔습니다.
 
