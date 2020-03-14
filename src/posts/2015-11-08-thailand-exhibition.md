@@ -5,9 +5,9 @@ writer: "수빈코스메틱"
 disqus: "true"
 ---
 
-<img style="width:100%; padding-bottom: 10px;" src="https://user-images.githubusercontent.com/59393359/76685164-fad88000-6654-11ea-9416-6e9b95a999a0.jpg" />
+<img style="width:100%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76685164-fad88000-6654-11ea-9416-6e9b95a999a0.jpg" />
 
-<img style="width:100%; padding-bottom: 10px;" src="https://user-images.githubusercontent.com/59393359/76685151-e2686580-6654-11ea-8b43-0617030679f1.jpg" />
+<img style="width:100%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76685151-e2686580-6654-11ea-8b43-0617030679f1.jpg" />
 
 ---
 

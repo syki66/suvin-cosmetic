@@ -15,18 +15,18 @@ disqus: "true"
 
 ---
 
-<img style="width:100%; padding-bottom: 10px;" src="https://user-images.githubusercontent.com/59393359/76685639-bc44c480-6658-11ea-9e93-c1cabba7ff41.jpg" />
+<img style="width:100%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76685639-bc44c480-6658-11ea-9e93-c1cabba7ff41.jpg" />
 
-<img style="width:100%; padding-bottom: 10px;" src="https://user-images.githubusercontent.com/59393359/76685641-bd75f180-6658-11ea-93a2-ae1446a087f7.jpg" />
+<img style="width:100%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76685641-bd75f180-6658-11ea-93a2-ae1446a087f7.jpg" />
 
-<img style="width:100%; padding-bottom: 10px;" src="https://user-images.githubusercontent.com/59393359/76685642-be0e8800-6658-11ea-8c18-f57096bd270b.jpg" />
+<img style="width:100%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76685642-be0e8800-6658-11ea-8c18-f57096bd270b.jpg" />
 
-<img style="width:100%; padding-bottom: 10px;" src="https://user-images.githubusercontent.com/59393359/76685643-be0e8800-6658-11ea-9718-e96ca48fb3e1.jpg" />
+<img style="width:100%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76685643-be0e8800-6658-11ea-9718-e96ca48fb3e1.jpg" />
 
-<img style="width:100%; padding-bottom: 10px;" src="https://user-images.githubusercontent.com/59393359/76685644-bea71e80-6658-11ea-8611-99a98597a3cb.jpg" />
+<img style="width:100%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76685644-bea71e80-6658-11ea-8611-99a98597a3cb.jpg" />
 
-<img style="width:100%; padding-bottom: 10px;" src="https://user-images.githubusercontent.com/59393359/76685645-bea71e80-6658-11ea-865b-156497a2c8ac.jpg" />
+<img style="width:100%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76685645-bea71e80-6658-11ea-865b-156497a2c8ac.jpg" />
 
-<img style="width:100%; padding-bottom: 10px;" src="https://user-images.githubusercontent.com/59393359/76685646-bf3fb500-6658-11ea-994a-2049566cfc62.jpg" />
+<img style="width:100%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76685646-bf3fb500-6658-11ea-994a-2049566cfc62.jpg" />
 
-<img style="width:100%; padding-bottom: 10px;" src="https://user-images.githubusercontent.com/59393359/76685647-bfd84b80-6658-11ea-890e-f484f3b5828e.jpg" />
+<img style="width:100%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76685647-bfd84b80-6658-11ea-890e-f484f3b5828e.jpg" />
