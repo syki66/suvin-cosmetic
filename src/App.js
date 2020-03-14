@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Route } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 
 //css
 import 'bootstrap/dist/css/bootstrap.min.css'; // react bootstrap css
@@ -60,9 +60,10 @@ export default function App() {
 
         <Route path="/Inquiry" component={Inquiry} />
 
-        <Route path="/Notice" exact={true} component={Notice} />
+        
         <Route path="/Comments" component={Comments} />
 
+        <Route path="/Notice" exact={true} component={Notice} />
         <Route path="/Notice/:index" component={MainTextFrame}/>
 
         <Footer />

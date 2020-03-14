@@ -26,8 +26,10 @@ import { HashRouter, Route, Link, Switch } from "react-router-dom";
     여기서부터 글 시작
 */
 
+/* 한코드로 두곳에서 활용하기가 힘들어서 notice.js 에서는 제목만 빼서 나열하고 여기서는 인덱스에 맞게 페이지 생성 */
+
 const importAll = (r) => r.keys().map(r);
-const markdownFiles = importAll(require.context('../../posts/', false, /\.md$/)).sort().reverse();
+const markdownFiles = importAll(require.context('./posts', false, /\.md$/)).sort().reverse();
  
 
 export default class MainTextFrame extends React.Component {
@@ -78,7 +80,7 @@ export default class MainTextFrame extends React.Component {
                     <div>데이터 로딩중</div>
                     ) : (
                         <Markdown 
-                            source={posts[0].mainText} 
+                            source={posts[this.props.match.params.index].mainText} 
                             className="border-top border-light pt-5"
                             escapeHtml={false}
                         />
