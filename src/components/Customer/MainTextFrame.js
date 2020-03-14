@@ -11,6 +11,8 @@ import rawMarkdownArray from "./RawMarkdownArray"
     ---
     date: "2020-03-12"
     title: "제목입니다."
+    writer: "수빈코스메틱"
+    disqus: "true"
     ---
 
     한칸 띄우고 여기서부터 글 시작
@@ -18,7 +20,7 @@ import rawMarkdownArray from "./RawMarkdownArray"
 
 // notice에서 fetch한 객체리터럴을 데이터 로딩 후에 가져오는법을 모르겠어서 notice랑 fetch 하는 부분 코드 중복임.. 나중에 수정하겠음
  
-
+// 디스커스기능 yml에 서 가져올수 있게 내용 추가
 
 export default class MainTextFrame extends React.Component {
     state = {
@@ -31,9 +33,13 @@ export default class MainTextFrame extends React.Component {
         
         const date = parsedText.substring(parsedText.indexOf('date: "')+7, parsedText.indexOf('"' , parsedText.indexOf('date: "')+7) );
         const title = parsedText.substring(parsedText.indexOf('title: "')+8, parsedText.indexOf('"' , parsedText.indexOf('title: "')+8) );
+        const writer = parsedText.substring(parsedText.indexOf('writer: "')+9, parsedText.indexOf('"' , parsedText.indexOf('writer: "')+9) );
+        const disqus = parsedText.substring(parsedText.indexOf('disqus: "')+9, parsedText.indexOf('"' , parsedText.indexOf('disqus: "')+9) );
         const mainText = text.substr(text.indexOf("---",1)+5);
         
-        return { index, date, title, mainText }
+        console.log(writer);
+        console.log(disqus);
+        return { index, date, title, writer, disqus, mainText }
     }
 
     async componentDidMount() {
@@ -51,8 +57,6 @@ export default class MainTextFrame extends React.Component {
 
     render() {
         const { posts, isLoading } = this.state;
-        console.log(this.props.match.params.index)
-        
 
         return (
             <InnerPageFrame

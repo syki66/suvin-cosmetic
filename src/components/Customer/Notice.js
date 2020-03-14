@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 
 import rawMarkdownArray from "./RawMarkdownArray"
 
+
+import { MDBRow, MDBCol } from "mdbreact";
+
 /*
     posts 폴더 전체를 임포트 시켜서 각 md파일의 내용을 fetch 이용해서 가져와서 state의 posts 어레이에 저장함
     그후 render에서 posts 어레이 이용해서 규격에 넣어서 화면상에 출력
@@ -31,9 +34,13 @@ export default class Notice extends React.Component {
         
         const date = parsedText.substring(parsedText.indexOf('date: "')+7, parsedText.indexOf('"' , parsedText.indexOf('date: "')+7) );
         const title = parsedText.substring(parsedText.indexOf('title: "')+8, parsedText.indexOf('"' , parsedText.indexOf('title: "')+8) );
+        const writer = parsedText.substring(parsedText.indexOf('writer: "')+9, parsedText.indexOf('"' , parsedText.indexOf('writer: "')+9) );
+        const disqus = parsedText.substring(parsedText.indexOf('disqus: "')+9, parsedText.indexOf('"' , parsedText.indexOf('disqus: "')+9) );
         const mainText = text.substr(text.indexOf("---",1)+5);
         
-        return { index, date, title, mainText }
+        console.log(writer);
+        console.log(disqus);
+        return { index, date, title, writer, disqus, mainText }
     }
 
 
@@ -68,41 +75,31 @@ export default class Notice extends React.Component {
                 {isLoading ? (
                     <div>데이터 로딩중</div>
                     ) : (
-
-
-
-
                         <div className="border-top border-light pt-5">
-
 
                             {posts.map(post => {
                                 return (
                                     <div>
                                         
                                         <Link to={`/Notice/${post.index}`}>
-                                            <span>{post.title}</span>
-                                            <span>{post.date}</span>
+
+                                            <MDBRow className="border-bottom border-light" style={{color:"black"}} >
+
+                                                <MDBCol>{post.index}</MDBCol>
+                                                <MDBCol>{post.title}</MDBCol>
+                                                <MDBCol></MDBCol>
+                                                <MDBCol>{post.date}</MDBCol>
+
+                                            </MDBRow>
+
                                         </Link>
 
                                     </div>
                                 );
                             })}
 
-
-
-
-
-
-
                         </div>
-
-
-
-
-
                 ) }
-
-
             </InnerPageFrame>
         );
     }
