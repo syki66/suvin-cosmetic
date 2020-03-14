@@ -17,6 +17,8 @@ import { HashRouter, Route, Link, Switch } from "react-router-dom";
     비동기에 있어서 isLoading 은 필수, front matter에 disqus 추가할지 정하는거추가
 
     퍼블리시 하고나서 md파일은 로컬에서 안불러지는데 막상 txt는 겁나잘되네
+
+    md 파일 get은 못하더라도 파일 이름까지는 가져올 수 있어서 이름 이용해서 내 깃허브 레포에서 파일 가져와야겠다.
 */
 
 
@@ -25,38 +27,49 @@ import { HashRouter, Route, Link, Switch } from "react-router-dom";
     date: "2020-03-12"
     title: "제목입니다."
     ---
-    여기서부터 글 시작
+
+    한칸 띄우고 여기서부터 글 시작
 */
 
-const importAll = (r) => r.keys().map(r);
-const markdownFiles = importAll(require.context('../../posts/', false, /\.md$/)).sort().reverse();
- 
-export default class Notice extends React.Component {
+const RawMarkdownUrl = "https://raw.githubusercontent.com/syki66/suvin-cosmetic/master/src/posts";
 
+//제목만 가져오기
+const importAll = (r) => r.keys().map(r);
+const markdownFolder = importAll(require.context('../../posts/', false, /\.md$/)).sort().reverse();
+
+//마크다운 이름 다듬기
+const trimedmarkdownName = markdownFolder.map((eachMD) => {
+    return eachMD.substring(eachMD.indexOf("media")+6, eachMD.indexOf("."));
+})
+
+// 깃허브 레포 raw 파일에 연결
+const rawMarkdownArray = trimedmarkdownName.map((each) => {
+    return `${RawMarkdownUrl}/${each}.md`
+})
+
+
+export default class Notice extends React.Component {
     state = {
         isLoading: true,
         posts: []
     }
 
-
-
-
-    // front matter 뽑아서 (날짜, 타이틀, 내용) 객체로 리턴해주는 함수
+    // front matter 뽑아서 (날짜, 타이틀, 내용) 객체리터럴로 리턴해주는 함수
     sliceFrontMatter = (text, index) => {
-        const parsedText = text.substring(text.indexOf("---")+5, text.indexOf("---", 3)-2);
+        const parsedText = text.substring(text.indexOf("---")+4, text.indexOf("---", 3)-1);
         
-        const date = parsedText.substring(parsedText.indexOf('date: "')+7, parsedText.indexOf('"' , parsedText.indexOf('date: "')+10) );
-        const title = parsedText.substring(parsedText.indexOf('title: "')+8, parsedText.indexOf('"' , parsedText.indexOf('title: "')+10) );
-        const mainText = text.substr(text.indexOf("---", 3)+5);
-
+        const date = parsedText.substring(parsedText.indexOf('date: "')+7, parsedText.indexOf('"' , parsedText.indexOf('date: "')+7) );
+        const title = parsedText.substring(parsedText.indexOf('title: "')+8, parsedText.indexOf('"' , parsedText.indexOf('title: "')+8) );
+        const mainText = text.substr(text.indexOf("---",1)+5);
+        
         return { index, date, title, mainText }
     }
 
 
-
+    // 서버에서 md 파일 가져오기
     async componentDidMount() {
         const posts = await Promise.all(
-            markdownFiles.map(
+            rawMarkdownArray.map(
                 (file, i) => fetch(file).then(
                     res => (res.text()).then(result => this.sliceFrontMatter(result, i))
                     )
