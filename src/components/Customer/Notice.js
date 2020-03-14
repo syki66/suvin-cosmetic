@@ -2,9 +2,7 @@ import React from "react";
 
 import InnerPageFrame from "../common/InnerPageFrame";
 
-import Markdown from "react-markdown";
-
-import { HashRouter, Route, Link, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import rawMarkdownArray from "./RawMarkdownArray"
 
