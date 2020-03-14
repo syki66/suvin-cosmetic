@@ -6,7 +6,7 @@ import Markdown from "react-markdown";
 
 import { HashRouter, Route, Link, Switch } from "react-router-dom";
 
-
+import rawMarkdownArray from "./RawMarkdownArray"
 
 /*
     posts 폴더 전체를 임포트 시켜서 각 md파일의 내용을 fetch 이용해서 가져와서 state의 posts 어레이에 저장함
@@ -20,33 +20,6 @@ import { HashRouter, Route, Link, Switch } from "react-router-dom";
 
     md 파일 get은 못하더라도 파일 이름까지는 가져올 수 있어서 이름 이용해서 내 깃허브 레포에서 파일 가져와야겠다.
 */
-
-
-/*  마크다운 front matter 형식
-    ---
-    date: "2020-03-12"
-    title: "제목입니다."
-    ---
-
-    한칸 띄우고 여기서부터 글 시작
-*/
-
-const RawMarkdownUrl = "https://raw.githubusercontent.com/syki66/suvin-cosmetic/master/src/posts";
-
-//제목만 가져오기
-const importAll = (r) => r.keys().map(r);
-const markdownFolder = importAll(require.context('../../posts/', false, /\.md$/)).sort().reverse();
-
-//마크다운 이름 다듬기
-const trimedmarkdownName = markdownFolder.map((eachMD) => {
-    return eachMD.substring(eachMD.indexOf("media")+6, eachMD.indexOf("."));
-})
-
-// 깃허브 레포 raw 파일에 연결
-const rawMarkdownArray = trimedmarkdownName.map((each) => {
-    return `${RawMarkdownUrl}/${each}.md`
-})
-
 
 export default class Notice extends React.Component {
     state = {
@@ -108,7 +81,10 @@ export default class Notice extends React.Component {
                                 return (
                                     <div>
                                         
-                                        <Link to={`/Notice/${post.index}`}>{post.title}</Link>
+                                        <Link to={`/Notice/${post.index}`}>
+                                            <span>{post.title}</span>
+                                            <span>{post.date}</span>
+                                        </Link>
 
                                     </div>
                                 );
