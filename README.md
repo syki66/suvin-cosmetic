@@ -10,6 +10,10 @@ raw 마크다운 주소 생성 변수는 따로 파일 생성함
 
 Notice 게시판 틀 생성
 
+front matter에 writer와 disqus 입력할수 있도록함
+
+notice에 들어갈 마크다운 콘텐츠들 추가
+
 ---
 
 ### 2020-03-13 수정사항

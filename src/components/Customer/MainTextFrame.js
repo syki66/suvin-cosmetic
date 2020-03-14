@@ -37,8 +37,6 @@ export default class MainTextFrame extends React.Component {
         const disqus = parsedText.substring(parsedText.indexOf('disqus: "')+9, parsedText.indexOf('"' , parsedText.indexOf('disqus: "')+9) );
         const mainText = text.substr(text.indexOf("---",1)+5);
         
-        console.log(writer);
-        console.log(disqus);
         return { index, date, title, writer, disqus, mainText }
     }
 
@@ -57,6 +55,7 @@ export default class MainTextFrame extends React.Component {
 
     render() {
         const { posts, isLoading } = this.state;
+        const { index } = this.props.match.params;
 
         return (
             <InnerPageFrame
@@ -71,7 +70,7 @@ export default class MainTextFrame extends React.Component {
                         <div className="border-top border-light pt-5">
 
                             <Markdown
-                                source={posts[this.props.match.params.index].mainText}
+                                source={posts[index].mainText}
                                 escapeHtml={false}
                             />
 

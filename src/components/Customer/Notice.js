@@ -38,8 +38,6 @@ export default class Notice extends React.Component {
         const disqus = parsedText.substring(parsedText.indexOf('disqus: "')+9, parsedText.indexOf('"' , parsedText.indexOf('disqus: "')+9) );
         const mainText = text.substr(text.indexOf("---",1)+5);
         
-        console.log(writer);
-        console.log(disqus);
         return { index, date, title, writer, disqus, mainText }
     }
 
@@ -77,18 +75,28 @@ export default class Notice extends React.Component {
                     ) : (
                         <div className="border-top border-light pt-5">
 
+
+                            <MDBRow className="border-bottom border-light p-1 m-1" style={{ color: "black", backgroundColor:"#e5ecef" }} >
+
+                                <MDBCol size="1">번호</MDBCol>
+                                <MDBCol size="7">제목</MDBCol>
+                                <MDBCol size="2">작성자</MDBCol>
+                                <MDBCol size="2">날짜</MDBCol>
+
+                            </MDBRow>
+
                             {posts.map(post => {
                                 return (
                                     <div>
                                         
                                         <Link to={`/Notice/${post.index}`}>
 
-                                            <MDBRow className="border-bottom border-light" style={{color:"black"}} >
+                                            <MDBRow className="border-bottom border-light p-1 m-1" style={{color:"black"}} >
 
-                                                <MDBCol>{post.index}</MDBCol>
-                                                <MDBCol>{post.title}</MDBCol>
-                                                <MDBCol></MDBCol>
-                                                <MDBCol>{post.date}</MDBCol>
+                                                <MDBCol size="1">{post.index}</MDBCol>
+                                                <MDBCol size="7">{post.title}</MDBCol>
+                                                <MDBCol size="2">{post.writer}</MDBCol>
+                                                <MDBCol size="2">{post.date}</MDBCol>
 
                                             </MDBRow>
 
