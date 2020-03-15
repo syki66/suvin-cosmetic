@@ -6,12 +6,7 @@ import InnerPageFrame from "../common/InnerPageFrame";
 
 export default class Comments extends React.Component {
     render() {
-        const disqusShortname = "suvin-cosmetic" //found in your Disqus.com dashboard
-        const disqusConfig = {
-          url: "https://syki66.github.io/suvin-cosmetic", //this.props.pageUrl
-          identifier: "Comments", //this.props.uniqueId
-          title: "Comments page" //this.props.title
-        }
+
      
         return (
             <InnerPageFrame
@@ -25,10 +20,7 @@ export default class Comments extends React.Component {
                 <div>Please write freely about our pruducts or any question</div>
 
                 <div className="pt-3">
-                    <Disqus.DiscussionEmbed
-                        shortname={disqusShortname}
-                        config={disqusConfig}
-                    />
+
                 </div>
 
             </InnerPageFrame>
