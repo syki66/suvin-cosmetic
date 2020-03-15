@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 import FittedImage from "react-fitted-image";
 
 import header_sub_bg from "../../images/Header/header_sub_bg.png";
+import logoImg from "../../images/Header/slicedLogo.png";
 
 
 /*
@@ -38,7 +39,10 @@ export default class Header extends Component {
                     <MDBNavbar color="" dark expand="md" className="z-depth-0 mx-auto" style={{ maxWidth: 1100 }}>
 
                         <MDBNavbarBrand>
-                            <MDBNavLink to="/"><strong className="white-text">Suvin Cosmetic</strong></MDBNavLink>
+                            <MDBNavLink to="/">
+                                <img src={logoImg} className="pr-1"/>
+                                <strong className="white-text">Suvin Cosmetic</strong>
+                            </MDBNavLink>
                         </MDBNavbarBrand>
 
                         <MDBNavbarToggler onClick={this.toggleCollapse} />
