@@ -29,10 +29,10 @@ export default class Comments extends Component {
                 subtitle={["Notice", "Comments"]}
             >
 
-                <div className="h2 py-2">Inquiry</div>
+                <div className="h2 py-2">Comments</div>
                 <div className="h4 border-top border-light pt-5 pb-1">Total 1 / 1 page</div>
 
-                <div>Please write freely about our pruducts or any question</div>
+                <div>Please write freely about our pruducts or any questions</div>
 
                 <div className="pt-3">
                     <Disqus.DiscussionEmbed

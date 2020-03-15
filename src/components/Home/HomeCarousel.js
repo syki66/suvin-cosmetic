@@ -22,6 +22,8 @@ import suvin_pic_2 from "../../images/Home/suvin02.png"
 
 
   fittedimage 굳이 안쓰고 div 이용해서 background만 처리해도 가능할듯
+
+  showControls는 드롭다운 메뉴가 안열리는 에러때문에 false로 둠
 */
 
 
@@ -31,7 +33,7 @@ export default function HomeCarousel() {
       <MDBCarousel
         activeItem={1}
         length={2}
-        showControls={true}
+        showControls={false}
         showIndicators={true}
       >
         <MDBCarouselInner>

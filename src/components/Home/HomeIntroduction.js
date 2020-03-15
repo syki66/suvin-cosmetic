@@ -140,7 +140,7 @@ export default function HomeIntroduction() {
             <MDBMask className="flex-center" overlay="black-strong">
               <p className="home__contact">
                 <span className="home__contactTitle">CONTACT</span><br />
-                <span className="home__contactText">Tel : 1688-9028</span><br />
+                <span className="home__contactText"><a href="tel:16889028" id="device_change">Tel.1688-9028</a></span><br />
                 <span className="home__contactText">Mobile : 010-6644-3665</span><br />
                 <span className="home__contactText">Bussiness hours : 09:00~18:00</span><br />
                 <span className="home__contactText">E-mail : suvin@suvincos.com</span><br />
