@@ -8,7 +8,7 @@ export default class Comments extends React.Component {
     render() {
         const disqusShortname = "suvin-cosmetic" //found in your Disqus.com dashboard
         const disqusConfig = {
-          url: "https://syki66.github.io/suvin-cosmetic/#/Comments", //this.props.pageUrl
+          url: "https://syki66.github.io/suvin-cosmetic", //this.props.pageUrl
           identifier: "Comments", //this.props.uniqueId
           title: "Comments page" //this.props.title
         }

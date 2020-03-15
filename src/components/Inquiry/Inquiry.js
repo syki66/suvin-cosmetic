@@ -6,11 +6,11 @@ import InnerPageFrame from "../common/InnerPageFrame";
 
 export default class Inquiry extends Component {
     render() {
-        const disqusShortname = "suvin-cosmetic" //found in your Disqus.com dashboard
+        const disqusShortname = "your-site-shortname" //found in your Disqus.com dashboard
         const disqusConfig = {
-          url: "https://syki66.github.io/suvin-cosmetic/#/Inquiry", //this.props.pageUrl
-          identifier: "Inquiry", //this.props.uniqueId
-          title: "Inquiry page" //this.props.title
+          url: "https://syki66.github.io/suvin-cosmetic", //this.props.pageUrl
+          identifier: "article-id", //this.props.uniqueId
+          title: "Title of Your Article" //this.props.title
         }
      
         return (
