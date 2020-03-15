@@ -7,7 +7,7 @@ import Markdown from "react-markdown";
 import rawMarkdownArray from "./RawMarkdownArray"
 
 
-/*  마크다운 front matter 형식
+/*  마크다운 front matter 형식 (제목은 반드시 2020-03-15-file-name.md 이런식으로 해야됨 아니면 deploy 할때 에러남)
     ---
     date: "2020-03-12"
     title: "제목입니다."

@@ -8,7 +8,7 @@ export default class Inquiry extends Component {
     render() {
         const disqusShortname = "suvin-cosmetic" //found in your Disqus.com dashboard
         const disqusConfig = {
-          url: "https://syki66.github.io/suvin-cosmetic/#/", //this.props.pageUrl
+          url: "https://syki66.github.io/suvin-cosmetic/#/Inquiry", //this.props.pageUrl
           identifier: "Inquiry", //this.props.uniqueId
           title: "Inquiry page" //this.props.title
         }
