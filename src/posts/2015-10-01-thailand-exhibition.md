@@ -1,6 +1,6 @@
 ---
 title: "Thailand Beyond Beauty Exhibition 참가하였습니다."
-date: "2015-11-08"
+date: "2015-10-01"
 writer: "수빈코스메틱"
 disqus: "true"
 ---

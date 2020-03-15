@@ -35,7 +35,6 @@ disqus: "true"
 
 <img style="width:100%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76685882-5f4a0e00-665a-11ea-88d2-2773229bf373.jpg" />
 
-
 <img style="width:50%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76685958-0464e680-665b-11ea-8ad4-329cd973e107.png" />
 
 <img style="width:50%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76685883-5f4a0e00-665a-11ea-9eb8-072495220ed1.png" />
