@@ -5,6 +5,12 @@ Notice 게시판의 공지 및 컨텐츠들 전부 옮겼음.
 
 comments에 disqus 기능 추가
 
+디스커스 공통 댓글창 오류해결 (url값, identifier값 모두 다르게 줌)
+
+notice 페이지 인덱스 번호 역순으로 변경, MainTextFrame 페이지도 index props를 역순으로 받아들이게 바꿈
+
+notice 개별 페이지 마다 disqus 임베드 시킴
+
 ---
 
 ### 2020-03-14 수정사항

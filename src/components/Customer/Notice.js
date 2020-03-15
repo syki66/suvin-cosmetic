@@ -38,6 +38,8 @@ export default class Notice extends React.Component {
         const disqus = parsedText.substring(parsedText.indexOf('disqus: "')+9, parsedText.indexOf('"' , parsedText.indexOf('disqus: "')+9) );
         const mainText = text.substr(text.indexOf("---",1)+5);
         
+        index = rawMarkdownArray.length - index; // 인덱스 순서 역순으로 변환
+
         return { index, date, title, writer, disqus, mainText }
     }
 
