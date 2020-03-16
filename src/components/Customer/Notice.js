@@ -91,7 +91,7 @@ export default class Notice extends React.Component {
                                 return (
                                     <div>
                                         
-                                        <Link to={`Notice/${post.index}`}>
+                                        <Link to={`/Notice/${post.index}`}>
 
                                             <MDBRow className="border-bottom border-light p-1 m-1" style={{color:"black"}} >
 

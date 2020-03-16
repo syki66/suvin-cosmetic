@@ -39,10 +39,11 @@ import MainTextFrame from "./components/Customer/MainTextFrame"
 
 export default function App() {
   return (
-      <HashRouter>
+    <HashRouter>
 
-        <Header />
+      <Header />
 
+      <Switch>
         <Route path="/" exact={true} component={Home} />
 
         <Route path="/Company" component={Company} />
@@ -60,14 +61,19 @@ export default function App() {
 
         <Route path="/Inquiry" component={Inquiry} />
 
-        
+
         <Route path="/Comments" component={Comments} />
 
-        <Route path="/Notice" exact={true} component={Notice} />
-        <Route path="/Notice/:index" component={MainTextFrame}/>
 
-        <Footer />
+          <Route path="/Notice" exact={true} component={Notice} />
+          <Route path="/Notice/:index" component={MainTextFrame} />
 
-      </HashRouter>
+
+        <Route path="*" component={NoMatch} />
+      </Switch>
+
+      <Footer />
+
+    </HashRouter>
   );
 }
