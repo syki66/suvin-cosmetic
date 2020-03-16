@@ -65,8 +65,8 @@ export default function App() {
         <Route path="/Comments" component={Comments} />
 
 
-          <Route path="/Notice" exact={true} component={Notice} />
-          <Route path="/Notice/:index" component={MainTextFrame} />
+        <Route path="/Notice" exact={true} component={Notice} />
+        <Route path="/Notice-detail" component={MainTextFrame} />
 
 
         <Route path="*" component={NoMatch} />

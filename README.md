@@ -2,7 +2,13 @@
 
 Product 페이지도 Notice 페이지와 동일하되 front matter 값만 조금 다르게
 
-Switch 이용해서 404 페이지를 라우터에 연결함 
+Switch 이용해서 404 페이지를 라우터에 연결함
+
+MainTextFrame 삭제하고 Notice에서 Link에 
+
+리다이렉팅
+
+디스커스 온오프
 
 ---
 

@@ -20,6 +20,8 @@ import { MDBRow, MDBCol } from "mdbreact";
     퍼블리시 하고나서 md파일은 로컬에서 안불러지는데 막상 txt는 겁나잘되네
 
     md 파일 get은 못하더라도 파일 이름까지는 가져올 수 있어서 이름 이용해서 내 깃허브 레포에서 파일 가져와야겠다.
+
+    Link의 state를 이용해서 MaintextFrame에 모든 props 전달
 */
 
 export default class Notice extends React.Component {
@@ -91,7 +93,19 @@ export default class Notice extends React.Component {
                                 return (
                                     <div>
                                         
-                                        <Link to={`/Notice/${post.index}`}>
+                                        <Link 
+                                            to={{
+                                                pathname: "/Notice-detail",
+                                                state: {
+                                                    index: post.index,
+                                                    title: post.title,
+                                                    date: post.date,
+                                                    writer: post.writer,
+                                                    mainText: post.mainText,
+                                                    disqus: post.disqus
+                                                    
+                                                }
+                                            }}>
 
                                             <MDBRow className="border-bottom border-light p-1 m-1" style={{color:"black"}} >
 

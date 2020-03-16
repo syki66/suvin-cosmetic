@@ -4,8 +4,6 @@ import InnerPageFrame from "../common/InnerPageFrame";
 
 import Markdown from "react-markdown";
 
-import rawMarkdownArray from "./RawMarkdownArray"
-
 import Disqus from "disqus-react"
 
 
@@ -27,80 +25,51 @@ import Disqus from "disqus-react"
 
     notice 개별 페이지에 disqus 추가
 
+    ---
+
+    notice페이지의 link의 state를 가져와서 활용했고, 리다이렉팅 시키는데 인자들 undefined 에러나서 else 구문에 다 넣어버림
 */
 
-export default class MainTextFrame extends React.Component {
-    state = {
-        isLoading: true,
-        posts: []
+export default function MainTextFrame(props) {
+    const post = props.location.state;
+    console.log(props.history)
+    if (post === undefined) {
+        props.history.push("/")
+        return null;
     }
 
-    sliceFrontMatter = (text, index) => {
-        const parsedText = text.substring(text.indexOf("---")+4, text.indexOf("---", 3)-1);
-        
-        const date = parsedText.substring(parsedText.indexOf('date: "')+7, parsedText.indexOf('"' , parsedText.indexOf('date: "')+7) );
-        const title = parsedText.substring(parsedText.indexOf('title: "')+8, parsedText.indexOf('"' , parsedText.indexOf('title: "')+8) );
-        const writer = parsedText.substring(parsedText.indexOf('writer: "')+9, parsedText.indexOf('"' , parsedText.indexOf('writer: "')+9) );
-        const disqus = parsedText.substring(parsedText.indexOf('disqus: "')+9, parsedText.indexOf('"' , parsedText.indexOf('disqus: "')+9) );
-        const mainText = text.substr(text.indexOf("---",1)+5);
-        
-        return { index, date, title, writer, disqus, mainText }
-    }
-
-    async componentDidMount() {
-        const posts = await Promise.all(
-            rawMarkdownArray.map(
-                (file, i) => fetch(file).then(
-                    res => (res.text()).then(result => this.sliceFrontMatter(result, i))
-                    )
-                )
-        ).catch((err) => console.error(err));
-
-        this.setState({ posts, isLoading: false });
-    }
-
-
-    render() {
-        const { posts, isLoading } = this.state;
-        const { index } = this.props.match.params;
-
-        const reversedIndex = rawMarkdownArray.length - index; // maintext index 역순으로 변경
-
-
-        const disqusShortname = "suvin" //found in your Disqus.com dashboard
+    else{
+        const disqusShortname = "suvin" 
         const disqusConfig = {
-          url: `http://localhost:3000/Notice/${index}`,
-          identifier: `/Notice/${index}`,
-          title: `Notice page : "${index}"`
+          url: `http://localhost:3000/Notice/${post.index}`,
+          identifier: `/Notice/${post.index}`,
+          title: `Notice page : "${post.index}"`
         }
 
-
-        return (
+        return(
             <InnerPageFrame
                 title="Customer"
                 subtitle={["Notice", "Comments"]}
             >
                 <div className="h2 py-2">Notice</div>
-                
-                {isLoading ? (
-                    <div>데이터 로딩중</div>
-                    ) : (
-                        <div className="border-top border-light pt-5">
-
-                            <Markdown
-                                source={posts[reversedIndex].mainText}
-                                escapeHtml={false}
-                            />
-
-                            <div className="pt-5 mt-5">
-                                <Disqus.DiscussionEmbed
-                                    shortname={disqusShortname}
-                                    config={disqusConfig}
-                                />
-                            </div>
-                        </div>
-                ) }
+    
+                <div className="border-top border-light pt-5">
+                    <Markdown
+                        source={post.mainText}
+                        escapeHtml={false}
+                    />
+    
+                    <div className="pt-5 mt-5">
+                        <Disqus.DiscussionEmbed
+                            shortname={disqusShortname}
+                            config={disqusConfig}
+                        />
+                    </div>
+    
+                </div>
             </InnerPageFrame>
         );
     }
+
+
 }
