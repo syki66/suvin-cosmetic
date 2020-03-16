@@ -19,22 +19,20 @@ import Disqus from "disqus-react"
 */
 
 /*
-    notice에서 fetch한 객체리터럴을 데이터 로딩 후에 가져오는법을 모르겠어서 notice랑 fetch 하는 부분 코드 중복임.. 나중에 수정하겠음
  
     디스커스기능 yml에 서 가져올수 있게 내용 추가
 
     notice 개별 페이지에 disqus 추가
 
-    ---
-
     notice페이지의 link의 state를 가져와서 활용했고, 리다이렉팅 시키는데 인자들 undefined 에러나서 else 구문에 다 넣어버림
+
+    개별페이지에 인덱스 부여하는거는 여전히 오류나서 그냥 추후에 추가하는걸로..
 */
 
 export default function MainTextFrame(props) {
     const post = props.location.state;
-    console.log(props.history)
     if (post === undefined) {
-        props.history.push("/")
+        props.history.push("/Notice");
         return null;
     }
 
@@ -54,18 +52,21 @@ export default function MainTextFrame(props) {
                 <div className="h2 py-2">Notice</div>
     
                 <div className="border-top border-light pt-5">
+                    
                     <Markdown
                         source={post.mainText}
                         escapeHtml={false}
                     />
     
-                    <div className="pt-5 mt-5">
-                        <Disqus.DiscussionEmbed
-                            shortname={disqusShortname}
-                            config={disqusConfig}
-                        />
-                    </div>
-    
+                    {post.disqus ? (
+                        <div className="pt-5 mt-5">
+                            <Disqus.DiscussionEmbed
+                                shortname={disqusShortname}
+                                config={disqusConfig}
+                            />
+                        </div>
+                    ) : (null)}
+
                 </div>
             </InnerPageFrame>
         );

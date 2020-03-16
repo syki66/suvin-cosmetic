@@ -4,11 +4,11 @@ Product 페이지도 Notice 페이지와 동일하되 front matter 값만 조금
 
 Switch 이용해서 404 페이지를 라우터에 연결함
 
-MainTextFrame 삭제하고 Notice에서 Link에 
+MainTextFrame에서 fetch 부분이 Notice랑 중복되어서 삭제하고 Notice의 Link 의 state를 이용해서 MainTextFrame에 인자 넘겨줘서 받아 쓰게끔 해줌
 
-리다이렉팅
+Notice페이지를 통해서 Notice-page로 들어가지 않는다면 undefined 뜨기 때문에 Notice 페이지로 리다이렉팅 시킴
 
-디스커스 온오프
+forntMatter에서 디스커스 on/off 할수 있게 MainTextFrame에 기능 추가
 
 ---
 

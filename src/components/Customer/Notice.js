@@ -95,7 +95,7 @@ export default class Notice extends React.Component {
                                         
                                         <Link 
                                             to={{
-                                                pathname: "/Notice-detail",
+                                                pathname: `/Notice-page`,
                                                 state: {
                                                     index: post.index,
                                                     title: post.title,

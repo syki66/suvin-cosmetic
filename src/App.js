@@ -61,12 +61,13 @@ export default function App() {
 
         <Route path="/Inquiry" component={Inquiry} />
 
-
-        <Route path="/Comments" component={Comments} />
-
-
         <Route path="/Notice" exact={true} component={Notice} />
-        <Route path="/Notice-detail" component={MainTextFrame} />
+        <Route path="/Comments" component={Comments} />
+        
+
+        <Route path="/Notice-page" component={MainTextFrame} />
+
+
 
 
         <Route path="*" component={NoMatch} />
