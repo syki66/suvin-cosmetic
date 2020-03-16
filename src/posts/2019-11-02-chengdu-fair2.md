@@ -2,7 +2,7 @@
 title: "2019 청두미용전시회에 다녀왔습니다 2.(10.17~19)"
 date: "2019-11-02"
 writer: "수빈코스메틱"
-disqus: "false"
+disqus: "true"
 ---
 
 <img style="width:100%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76696646-2731e200-66d1-11ea-8ff6-df8dbfb97fec.jpg" />

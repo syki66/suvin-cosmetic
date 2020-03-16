@@ -5,6 +5,8 @@ import InnerPageFrame from "../common/InnerPageFrame";
 import Markdown from "react-markdown";
 
 import Disqus from "disqus-react"
+import { MDBRow, MDBCol } from "mdbreact";
+import { Link } from "react-router-dom";
 
 
 /*  마크다운 front matter 형식 (제목은 반드시 2020-03-15-file-name.md 이런식으로 해야됨 아니면 deploy 할때 에러남)
@@ -53,12 +55,22 @@ export default function MainTextFrame(props) {
     
                 <div className="border-top border-light pt-5">
                     
+                    <div className="h5">{post.title}</div>
+
+                    <div className="border-bottom border-light pb-2">
+                        <MDBRow>
+                            <MDBCol>작성자 : {post.writer}</MDBCol>
+                            <MDBCol>{post.date}</MDBCol>
+                            <MDBCol><Link to="/Notice" className="border borer">목록</Link></MDBCol>
+                        </MDBRow>
+                    </div>
+
                     <Markdown
                         source={post.mainText}
                         escapeHtml={false}
                     />
-    
-                    {post.disqus ? (
+
+                    {(post.disqus === "true") ? (
                         <div className="pt-5 mt-5">
                             <Disqus.DiscussionEmbed
                                 shortname={disqusShortname}

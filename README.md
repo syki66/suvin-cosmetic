@@ -1,7 +1,5 @@
 ### 2020-03-16 수정사항
 
-Product 페이지도 Notice 페이지와 동일하되 front matter 값만 조금 다르게
-
 Switch 이용해서 404 페이지를 라우터에 연결함
 
 MainTextFrame에서 fetch 부분이 Notice랑 중복되어서 삭제하고 Notice의 Link 의 state를 이용해서 MainTextFrame에 인자 넘겨줘서 받아 쓰게끔 해줌
@@ -9,6 +7,8 @@ MainTextFrame에서 fetch 부분이 Notice랑 중복되어서 삭제하고 Notic
 Notice페이지를 통해서 Notice-page로 들어가지 않는다면 undefined 뜨기 때문에 Notice 페이지로 리다이렉팅 시킴
 
 forntMatter에서 디스커스 on/off 할수 있게 MainTextFrame에 기능 추가
+
+MainTextFrame 레이아웃 수정
 
 ---
 
@@ -200,3 +200,5 @@ information page added 부터
 - 커라젤 양옆 화살표 누르는거 때문에 customer의 드롭다운 메뉴가 안열리는 경우가 있어서 이거 수정해야됨
 
 - 카카오톡 채널파기
+
+- Product 페이지도 Notice 페이지와 동일하되 front matter 에 가격만 넣어야지
