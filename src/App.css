@@ -95,7 +95,7 @@ body {
 
 @media (min-width: 992px)  {
     body {
-        
+        background-color: #b4d491;
     }
 
     .showing__cosmetic {
@@ -114,12 +114,16 @@ body {
         text-align: center !important;
     }
 
+    .footer-lg-right {
+        justify-content: flex-end !important;
+    }
+
 }
 
 
 @media (min-width: 1200px)  {
     body {
-        
+        background-color: #a2cba1;
     }
 
     .carousel__css{
@@ -227,3 +231,44 @@ body {
 
 
 
+/* spinner css */
+.loaders-container {
+    padding: 20px;
+    margin: 0 auto;
+    width: 700px;
+    text-align: center;
+    font-size: 0;
+  }
+  .loaders-container .spinner_container {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 30px;
+    width: 25%;
+    height: 140px;
+  }
+  
+  .spinner_circle {
+    box-sizing: border-box;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    border: 10px solid #7f304e;
+    border-top-color: transparent;
+    -webkit-animation: spin 1s infinite linear;
+            animation: spin 1s infinite linear;
+  }
+  
+  @-webkit-keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }

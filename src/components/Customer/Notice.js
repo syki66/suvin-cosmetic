@@ -77,18 +77,19 @@ export default class Notice extends React.Component {
                 subtitle={["Notice", "Comments"]}
             >
 
-
-                <div className="h2 py-2">Notice</div>
-                
-                {isLoading ? (
-                        <div className="spinner-border" role="status" style={{color:"#7f304e"}}>
-                          <span className="sr-only">Loading...</span>
+                {!isLoading ? (
+                        <div className="pt-5" style={{ height:"570px", display:"flex", justifyContent:"center" }}>
+                            <div className="loaders-container">
+                                <div className="spinner_container p-3">
+                                    <div className="spinner_circle"></div>
+                                </div>
+                            </div>
                         </div>
                     ) : (
+                        <>
+                        <div className="h2 py-2">Notice</div>
+
                         <div className="border-top border-light pt-5">
-
-
-
 
 
                             <MDBRow className="border-bottom border-top border-light py-2 mx-1 font-weight-bold" style={{ color: "black", display:"flex", alignItems:"center", backgroundColor:"#e5ecef" }} >
@@ -158,6 +159,7 @@ export default class Notice extends React.Component {
 
 
                         </div>
+                        </>
                 ) }
             </InnerPageFrame>
         );
