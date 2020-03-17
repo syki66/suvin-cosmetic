@@ -24,6 +24,12 @@ import { MDBRow, MDBCol } from "mdbreact";
     Link의 state를 이용해서 MaintextFrame에 모든 props 전달
 */
 
+/*
+    로딩시에 spinner 추가했고, 색은 테마에 맞게 자주색으로 변경함
+
+    MDBCol MDBRow 이용해서 그리드 중첩으로 칸 더 세밀하게 조정
+*/
+
 export default class Notice extends React.Component {
     state = {
         isLoading: true,
@@ -75,18 +81,30 @@ export default class Notice extends React.Component {
                 <div className="h2 py-2">Notice</div>
                 
                 {isLoading ? (
-                    <div>데이터 로딩중</div>
+                        <div className="spinner-border" role="status" style={{color:"#7f304e"}}>
+                          <span className="sr-only">Loading...</span>
+                        </div>
                     ) : (
                         <div className="border-top border-light pt-5">
 
 
-                            <MDBRow className="border-bottom border-light p-1 m-1" style={{ color: "black", backgroundColor:"#e5ecef" }} >
 
-                                <MDBCol size="1">번호</MDBCol>
-                                <MDBCol size="7">제목</MDBCol>
-                                <MDBCol size="2">작성자</MDBCol>
-                                <MDBCol size="2">날짜</MDBCol>
 
+
+                            <MDBRow className="border-bottom border-top border-light py-2 mx-1" style={{ color: "black", display:"flex", alignItems:"center", backgroundColor:"#e5ecef" }} >
+                                <MDBCol size="8" lg="9">
+                                    <MDBRow>
+                                        <MDBCol size="2" lg="1" className="p-0 pl-1 notice-lg-center" style={{textAlign:"left" }}>번호</MDBCol>
+                                        <MDBCol size="10" lg="11" style={{ display:"flex", alignItems:"center", justifyContent:"center" }}>제목</MDBCol>
+                                    </MDBRow>
+                                </MDBCol>
+
+                                <MDBCol size="4" lg="3">
+                                    <MDBRow>
+                                        <MDBCol size="8" lg="5" className="px-0 notice-lg-right" style={{ textAlign:"right" }}>작성자</MDBCol>
+                                        <MDBCol size="4" lg="7" className="px-0 pr-1 pr-lg-2 pr-xl-0 notice-lg-center" style={{ textAlign:"right" }}>날짜</MDBCol>
+                                    </MDBRow>
+                                </MDBCol>
                             </MDBRow>
 
                             {posts.map(post => {
@@ -107,20 +125,37 @@ export default class Notice extends React.Component {
                                                 }
                                             }}>
 
-                                            <MDBRow className="border-bottom border-light p-1 m-1" style={{color:"black"}} >
 
-                                                <MDBCol size="1">{post.index}</MDBCol>
-                                                <MDBCol size="7">{post.title}</MDBCol>
-                                                <MDBCol size="2">{post.writer}</MDBCol>
-                                                <MDBCol size="2">{post.date}</MDBCol>
+
+                                            <MDBRow className="border-bottom border-light py-2 mx-1" style={{ color:"black", display:"flex", alignItems:"center" }} >
+
+                                                <MDBCol size="9">
+                                                    <MDBRow>
+                                                        <MDBCol size="1" className="p-0" style={{ display:"flex", alignItems:"center", justifyContent:"center" }}>{post.index}</MDBCol>
+                                                        <MDBCol size="11">{post.title}</MDBCol>
+                                                    </MDBRow>
+                                                </MDBCol>
+
+                                                <MDBCol size="3">
+                                                    <MDBRow>
+                                                        <MDBCol size="12" lg="5" className="px-0 notice-lg-right" style={{ textAlign:"right" }}>{post.writer}</MDBCol>
+                                                        <MDBCol size="12" lg="7" className="px-0 pl-lg-2 pl-xl-4 notice-lg-right" style={{ textAlign:"right" }}>{post.date}</MDBCol>
+                                                    </MDBRow>
+                                                </MDBCol>
 
                                             </MDBRow>
+
+
+
 
                                         </Link>
 
                                     </div>
                                 );
                             })}
+
+
+
 
                         </div>
                 ) }

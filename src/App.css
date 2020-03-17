@@ -106,7 +106,13 @@ body {
         width: 130px;
     }
     
+    .notice-lg-right {
+        text-align: left !important;
+    }
 
+    .notice-lg-center {
+        text-align: center !important;
+    }
 
 }
 

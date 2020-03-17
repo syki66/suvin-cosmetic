@@ -1,3 +1,11 @@
+### 2020-03-17 수정사항
+
+notice 페이지 로딩시에 spinner 효과 추가
+
+notice 게시판 페이지 디자인 및 레이아웃 변경
+
+---
+
 ### 2020-03-16 수정사항
 
 Switch 이용해서 404 페이지를 라우터에 연결함
@@ -202,3 +210,5 @@ information page added 부터
 - 카카오톡 채널파기
 
 - Product 페이지도 Notice 페이지와 동일하되 front matter 에 가격만 넣어야지
+
+- notice페이지에서 공지는 yml 옵션으로 따로 빼기
