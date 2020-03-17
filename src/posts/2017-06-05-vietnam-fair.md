@@ -1,7 +1,7 @@
 ---
 title: "2017 베트남 소비재 전시회입니다."
 date: "2017-06-05"
-writer: "수빈코스메틱"
+writer: "관리자"
 disqus: "true"
 ---
 

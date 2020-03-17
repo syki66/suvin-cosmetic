@@ -1,7 +1,7 @@
 ---
 title: "태국 비욘드 뷰티 전시회 2"
 date: "2015-10-01"
-writer: "수빈코스메틱"
+writer: "관리자"
 disqus: "true"
 ---
 

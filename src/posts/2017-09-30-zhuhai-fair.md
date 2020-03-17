@@ -1,7 +1,7 @@
 ---
 title: "2017 주하이 중추절 박람회입니다."
 date: "2017-09-30"
-writer: "수빈코스메틱"
+writer: "관리자"
 disqus: "true"
 ---
 

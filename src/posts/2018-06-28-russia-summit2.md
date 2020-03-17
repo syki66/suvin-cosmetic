@@ -1,7 +1,7 @@
 ---
 title: "한-러 비지니스 포럼(6/22)"
 date: "2018-06-28"
-writer: "수빈코스메틱"
+writer: "관리자"
 disqus: "true"
 ---
 
