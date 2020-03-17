@@ -91,7 +91,7 @@ export default class Notice extends React.Component {
 
 
 
-                            <MDBRow className="border-bottom border-top border-light py-2 mx-1" style={{ color: "black", display:"flex", alignItems:"center", backgroundColor:"#e5ecef" }} >
+                            <MDBRow className="border-bottom border-top border-light py-2 mx-1 font-weight-bold" style={{ color: "black", display:"flex", alignItems:"center", backgroundColor:"#e5ecef" }} >
                                 <MDBCol size="8" lg="9">
                                     <MDBRow>
                                         <MDBCol size="2" lg="1" className="p-0 pl-1 notice-lg-center" style={{textAlign:"left" }}>번호</MDBCol>
@@ -127,12 +127,12 @@ export default class Notice extends React.Component {
 
 
 
-                                            <MDBRow className="border-bottom border-light py-2 mx-1" style={{ color:"black", display:"flex", alignItems:"center" }} >
+                                            <MDBRow className="border-bottom border-light py-2 mx-1" style={{ color:"gray", display:"flex", alignItems:"center" }} >
 
                                                 <MDBCol size="9">
                                                     <MDBRow>
                                                         <MDBCol size="1" className="p-0" style={{ display:"flex", alignItems:"center", justifyContent:"center" }}>{post.index}</MDBCol>
-                                                        <MDBCol size="11">{post.title}</MDBCol>
+                                                        <MDBCol size="11" className="font-weight-bolder" style={{ color:"black" }}>{post.title}</MDBCol>
                                                     </MDBRow>
                                                 </MDBCol>
 

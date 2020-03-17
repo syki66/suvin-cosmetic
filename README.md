@@ -4,6 +4,8 @@ notice 페이지 로딩시에 spinner 효과 추가
 
 notice 게시판 페이지 디자인 및 레이아웃 변경
 
+MaintextFrame 디자인, 레이아웃 변경
+
 ---
 
 ### 2020-03-16 수정사항

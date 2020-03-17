@@ -57,11 +57,10 @@ export default function MainTextFrame(props) {
                     
                     <div className="h5">{post.title}</div>
 
-                    <div className="border-bottom border-light pb-2">
+                    <div className="border-bottom border-light pb-3 mb-2" style={{color:"gray"}}>
                         <MDBRow>
-                            <MDBCol>작성자 : {post.writer}</MDBCol>
-                            <MDBCol>{post.date}</MDBCol>
-                            <MDBCol><Link to="/Notice" className="border borer">목록</Link></MDBCol>
+                            <MDBCol size="9">작성자 : {post.writer} &nbsp;&nbsp;&nbsp;&nbsp; {post.date}</MDBCol>
+                            <MDBCol size="3" style={{ textAlign:"right"}}><Link to="/Notice" className="border border-light p-1 p-lg-2" style={{backgroundColor:"#e5ecef", color:"black"}}>목록</Link></MDBCol>
                         </MDBRow>
                     </div>
 
