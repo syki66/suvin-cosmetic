@@ -1,9 +1,9 @@
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
-import youtubeIcon from "../../images/Footer/youtube-icon.png"
-import emailIcon from "../../images/Footer/email-icon.png"
-import callIcon from "../../images/Footer/call-icon.png"
+import youtubeIcon from "../../images/Footer/youtube-icon32.png"
+import emailIcon from "../../images/Footer/email-icon32.png"
+import callIcon from "../../images/Footer/call-icon32.png"
 
 
 export default function Footer() {

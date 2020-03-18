@@ -16,18 +16,18 @@ import { MDBRow, MDBCol } from "mdbreact";
     댓글 디스커스 쓸수있게 해야겠다.
     front matter는 아래형식에 맞춰서 date와 title 집어넣어줘야됨(순서는 상관없음). 띄어쓰기와 오타 주의 글의 시작은 front matter 와 한칸 띄워서 시작하기
     비동기에 있어서 isLoading 은 필수, front matter에 disqus 추가할지 정하는거추가
-
     퍼블리시 하고나서 md파일은 로컬에서 안불러지는데 막상 txt는 겁나잘되네
-
     md 파일 get은 못하더라도 파일 이름까지는 가져올 수 있어서 이름 이용해서 내 깃허브 레포에서 파일 가져와야겠다.
-
     Link의 state를 이용해서 MaintextFrame에 모든 props 전달
 */
 
 /*
     로딩시에 spinner 추가했고, 색은 테마에 맞게 자주색으로 변경함
-
     MDBCol MDBRow 이용해서 그리드 중첩으로 칸 더 세밀하게 조정
+*/
+
+/*
+    Notice 페이지에서 마크다운 fetch 하는 부분을 공통으로 쓰기 위해서 fetchMarkdowns.js 컴포넌트 하나 만들어서 분리시킬라 했는데 실패 나중에 리덕스 이용해서 해보겠음
 */
 
 export default class Notice extends React.Component {
@@ -77,7 +77,7 @@ export default class Notice extends React.Component {
                 subtitle={["Notice", "Comments"]}
             >
 
-                {!isLoading ? (
+                {isLoading ? (
                         <div className="pt-5" style={{ height:"570px", display:"flex", justifyContent:"center" }}>
                             <div className="loaders-container">
                                 <div className="spinner_container p-3">
