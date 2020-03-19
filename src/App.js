@@ -35,9 +35,16 @@ import Inquiry from "./components/Inquiry/Inquiry";
 import Notice from "./components/Customer/Notice";
 import Comments from "./components/Customer/Comments";
 
+
+//common components
 import MainTextFrame from "./components/Customer/MainTextFrame"
+import MarkdownMainTextFrame from "./components/common/board/MarkdownMainTextFrame";
 
 export default function App() {
+
+  const pageList = ["Premium-page", "Special-page", "Others-page"];
+
+
   return (
     <HashRouter>
 
@@ -66,6 +73,8 @@ export default function App() {
         
 
         <Route path="/Notice-page" component={MainTextFrame} />
+
+        <Route path="/board" component={MarkdownMainTextFrame} />
 
 
 

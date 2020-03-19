@@ -10,8 +10,8 @@ const trimedmarkdownName = markdownFolder.map((eachMD) => {
 })
 
 // 깃허브 레포 raw 파일에 연결
-const rawMarkdownArray = trimedmarkdownName.map((each) => {
+const rawMarkdownUrlArray = trimedmarkdownName.map((each) => {
     return `${RawMarkdownUrl}/${each}.md`
 })
 
-export default rawMarkdownArray;
+export default rawMarkdownUrlArray;
