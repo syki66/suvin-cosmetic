@@ -2,6 +2,7 @@ import rawMarkdownUrlArray from "./rawMarkdownUrlArray"
 
 const fetchMarkdowns = async (path) => {
 
+    // front matter 뽑아서 (날짜, 타이틀, 내용) 객체리터럴로 리턴해주는 함수
     function sliceFrontMatter (text, index) {
         const parsedText = text.substring(text.indexOf("---")+4, text.indexOf("---", 3)-1);
         
@@ -11,7 +12,7 @@ const fetchMarkdowns = async (path) => {
         const disqus = parsedText.substring(parsedText.indexOf('disqus: "')+9, parsedText.indexOf('"' , parsedText.indexOf('disqus: "')+9) );
         const mainText = text.substr(text.indexOf("---",1)+5);
         
-        index = rawMarkdownUrlArray(path).length - index; 
+        index = rawMarkdownUrlArray(path).length - index; // 인덱스 순서 역순으로 변환
     
         return { index, date, title, writer, disqus, mainText }
     }

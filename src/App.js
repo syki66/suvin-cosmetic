@@ -37,13 +37,9 @@ import Comments from "./components/Customer/Comments";
 
 
 //common components
-import MainTextFrame from "./components/Customer/MainTextFrame"
 import MarkdownMainTextFrame from "./components/common/board/MarkdownMainTextFrame";
 
 export default function App() {
-
-  const pageList = ["Premium-page", "Special-page", "Others-page"];
-
 
   return (
     <HashRouter>
@@ -71,13 +67,7 @@ export default function App() {
         <Route path="/Notice" exact={true} component={Notice} />
         <Route path="/Comments" component={Comments} />
         
-
-        <Route path="/Notice-page" component={MainTextFrame} />
-
-        <Route path="/board" component={MarkdownMainTextFrame} />
-
-
-
+        <Route path="/:id" component={MarkdownMainTextFrame} />
 
         <Route path="*" component={NoMatch} />
       </Switch>

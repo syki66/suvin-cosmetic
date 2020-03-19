@@ -9,7 +9,7 @@ import { MDBRow, MDBCol } from "mdbreact";
 import { Link } from "react-router-dom";
 
 
-/*  마크다운 front matter 형식 (제목은 반드시 2020-03-15-file-name.md 이런식으로 해야됨 아니면 deploy 할때 에러남)
+/*  마크다운 front matter 형식 (제목은 반드시 2020-03-15-file-name.경로명.md 이런식으로 해야됨 아니면 deploy 할때 에러남. 경로명 필수.)
 
     ---
     date: "2020-03-12"
@@ -34,9 +34,11 @@ import { Link } from "react-router-dom";
 
 export default function MainTextFrame(props) {
     const post = props.location.state;
-    console.log(props.location.pathname)
+    const trimmedPath = props.location.pathname.substr(1)
+    console.log(trimmedPath)
+
     if (post === undefined) {
-        props.history.push("/Notice");
+        props.history.push(`/`);
         return null;
     }
 
@@ -45,13 +47,13 @@ export default function MainTextFrame(props) {
         const disqusConfig = {
           url: `http://localhost:3000${props.location.pathname}/${post.index}`,
           identifier: `${props.location.pathname}/${post.index}`,
-          title: `${props.location.pathname} page : "${post.index}"`
+          title: `${trimmedPath} page : "${post.index}"`
         }
 
         return(
             <InnerPageFrame
-                title="Customer"
-                subtitle={["Notice", "Comments"]}
+                title={post.menuTitle}
+                subtitle={post.menuSubtitle}
             >
                 <div className="h2 py-2">Notice</div>
     
@@ -62,7 +64,7 @@ export default function MainTextFrame(props) {
                     <div className="border-bottom border-light pb-3 mb-2" style={{color:"gray"}}>
                         <MDBRow>
                             <MDBCol size="9">작성자 : {post.writer} &nbsp;&nbsp;&nbsp;&nbsp; {post.date}</MDBCol>
-                            <MDBCol size="3" style={{ textAlign:"right"}}><Link to="/Notice" className="border border-light p-1 p-lg-2" style={{backgroundColor:"#e5ecef", color:"black"}}>목록</Link></MDBCol>
+                            <MDBCol size="3" style={{ textAlign:"right"}}><Link to={post.menuSubtitle[0]} className="border border-light p-1 p-lg-2" style={{backgroundColor:"#e5ecef", color:"black"}}>목록</Link></MDBCol>
                         </MDBRow>
                     </div>
 

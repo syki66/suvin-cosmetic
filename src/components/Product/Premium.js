@@ -14,17 +14,20 @@ export default class Premium extends React.Component {
     }
 
     async componentDidMount() {
-        const posts = await fetchMarkdowns("products/premium/");
+        const posts = await fetchMarkdowns("premium");
         this.setState({ posts, isLoading: false })
     }
 
     render() {
         const { posts, isLoading } = this.state;
 
+        const menuTitle = "Product"
+        const menuSubtitle = ["Premium", "Special", "Others"]
+
         return (
             <InnerPageFrame
-                title="Product"
-                subtitle={["Premium", "Special", "Others"]}
+                title={menuTitle}
+                subtitle={menuSubtitle}
             >
 
                 {isLoading ? (
@@ -58,15 +61,17 @@ export default class Premium extends React.Component {
                                         
                                         <Link 
                                             to={{
-                                                pathname: `/board`,
+                                                pathname: `Premium-${post.index}`,
                                                 state: {
                                                     index: post.index,
                                                     title: post.title,
                                                     date: post.date,
                                                     writer: post.writer,
                                                     mainText: post.mainText,
-                                                    disqus: post.disqus
-                                                    
+                                                    disqus: post.disqus,
+
+                                                    menuTitle,
+                                                    menuSubtitle
                                                 }
                                             }}>
 
