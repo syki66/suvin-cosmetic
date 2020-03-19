@@ -18,17 +18,23 @@ import { MDBNav, MDBNavItem, MDBNavLink } from "mdbreact";
 */
 
 
-export default function SideNav ({title, subtitle }) {
+export default function SideNav ({title, subtitle, pickedIndex }) {
         return(
             <div>
                 <div className="h1" style={{color:"#7f304e"}}>{title}</div>
             
                 <MDBNav className="nav-pills nav-justified flex-md-column border border-light" style={{backgroundColor:"white"}} >        
-                    {subtitle.map((eachSubtitle) => (
-                        <MDBNavItem className="border-bottom border-light">
-                            <MDBNavLink to={eachSubtitle} className="black-text px-3 py-2 sideNavComponent">{eachSubtitle}</MDBNavLink>
-                        </MDBNavItem>
-                    ))}
+                    {subtitle.map((eachSubtitle, eachIndex) => {
+                            let active = null;
+                            if (pickedIndex === eachIndex) {
+                                active = "active"
+                            }
+                            return (
+                                <MDBNavItem className="border-bottom border-light">
+                                    <MDBNavLink to={eachSubtitle} className={`black-text px-3 py-2 ${active} sideNavComponent`}>{eachSubtitle}</MDBNavLink>
+                                </MDBNavItem>)
+                        }
+                    )}
                 </MDBNav>
             </div>
         );

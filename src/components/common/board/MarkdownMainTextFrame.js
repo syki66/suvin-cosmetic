@@ -32,28 +32,38 @@ import { Link } from "react-router-dom";
     개별페이지에 인덱스 부여는 했지만 애초에 fetch 도 못한 상태여서 외부에서 직접 접속 못하기 때문에 의미 없음
 */
 
-export default function MainTextFrame(props) {
+export default function MarkdownMainTextFrame(props) {
     const post = props.location.state;
-    const trimmedPath = props.location.pathname.substr(1)
     const parentPath = props.location.pathname.substring(1,props.location.pathname.indexOf('-'));
+
+    //사이드 메뉴 색칠 고정
+
 
     if (post === undefined) {
         props.history.push(parentPath);
         return null;
     }
 
-    else{
+    else {
         const disqusShortname = "suvin" 
         const disqusConfig = {
           url: `http://localhost:3000${props.location.pathname}/${post.index}`,
           identifier: `${props.location.pathname}/${post.index}`,
-          title: `${trimmedPath} page : "${post.index}"`
+          title: `${parentPath}, page : "${post.index}"`
         }
+        
+        let pickedIndex;
+        post.menuSubtitle.map((name, index) => {
+            if (parentPath === name) {
+                pickedIndex = index;
+            }
+        })
 
         return(
             <InnerPageFrame
                 title={post.menuTitle}
                 subtitle={post.menuSubtitle}
+                pickedIndex={pickedIndex}
             >
                 <div className="h2 py-2">{parentPath}</div>
     
@@ -64,7 +74,7 @@ export default function MainTextFrame(props) {
                     <div className="border-bottom border-light pb-3 mb-2" style={{color:"gray"}}>
                         <MDBRow>
                             <MDBCol size="9">작성자 : {post.writer} &nbsp;&nbsp;&nbsp;&nbsp; {post.date}</MDBCol>
-                            <MDBCol size="3" style={{ textAlign:"right"}}><Link to={post.menuSubtitle[0]} className="border border-light p-1 p-lg-2" style={{backgroundColor:"#e5ecef", color:"black"}}>목록</Link></MDBCol>
+                            <MDBCol size="3" style={{ textAlign:"right"}}><Link to={parentPath} className="border border-light p-1 p-lg-2" style={{backgroundColor:"#e5ecef", color:"black"}}>목록</Link></MDBCol>
                         </MDBRow>
                     </div>
 

@@ -16,6 +16,7 @@ export default class InnerPageFrame extends React.Component {
                         <SideNav
                             title={this.props.title}
                             subtitle={this.props.subtitle}
+                            pickedIndex={this.props.pickedIndex}
                         />
                     </MDBCol>
                     <MDBCol size="12" sm="12" md="9">
