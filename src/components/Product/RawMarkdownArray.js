@@ -1,8 +1,8 @@
-const RawMarkdownUrl = "https://raw.githubusercontent.com/syki66/suvin-cosmetic/master/src/markdowns/posts";
+const RawMarkdownUrl = "https://raw.githubusercontent.com/syki66/suvin-cosmetic/master/src/posts";
 
 //제목만 가져오기
 const importAll = (r) => r.keys().map(r);
-const markdownFolder = importAll(require.context('../../markdowns/posts/', false, /\.md$/)).sort().reverse();
+const markdownFolder = importAll(require.context('../../posts/', false, /\.md$/)).sort().reverse();
 
 //마크다운 이름 다듬기
 const trimedmarkdownName = markdownFolder.map((eachMD) => {
