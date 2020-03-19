@@ -17,7 +17,7 @@ const rawMarkdownUrlArray = (path) => {
     
     // 깃허브 레포 raw 파일에 연결
     return trimedmarkdownName.map((each) => {
-        return `${rawMarkdownUrl}/${each}.md`
+        return `${rawMarkdownUrl}/${each}.${path}.md`
     })
 }
 

@@ -26,17 +26,11 @@ export default class Notice extends React.Component {
         posts: []
     }
 
-
-
-
     // 서버에서 md 파일 가져오기
     async componentDidMount() {
         const posts = await fetchMarkdowns("posts");
         this.setState({ posts, isLoading: false })
     }
-
-
-
 
     render() {
         const { posts, isLoading } = this.state;

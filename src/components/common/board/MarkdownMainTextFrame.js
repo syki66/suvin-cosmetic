@@ -29,16 +29,16 @@ import { Link } from "react-router-dom";
 
     notice페이지의 link의 state를 가져와서 활용했고, 리다이렉팅 시키는데 인자들 undefined 에러나서 else 구문에 다 넣어버림
 
-    개별페이지에 인덱스 부여하는거는 여전히 오류나서 그냥 추후에 추가하는걸로..
+    개별페이지에 인덱스 부여는 했지만 애초에 fetch 도 못한 상태여서 외부에서 직접 접속 못하기 때문에 의미 없음
 */
 
 export default function MainTextFrame(props) {
     const post = props.location.state;
     const trimmedPath = props.location.pathname.substr(1)
-    console.log(trimmedPath)
+    const parentPath = props.location.pathname.substring(1,props.location.pathname.indexOf('-'));
 
     if (post === undefined) {
-        props.history.push(`/`);
+        props.history.push(parentPath);
         return null;
     }
 
@@ -55,7 +55,7 @@ export default function MainTextFrame(props) {
                 title={post.menuTitle}
                 subtitle={post.menuSubtitle}
             >
-                <div className="h2 py-2">Notice</div>
+                <div className="h2 py-2">{parentPath}</div>
     
                 <div className="border-top border-light pt-5">
                     
