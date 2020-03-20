@@ -3,7 +3,7 @@ title: "아르시아 스템셀 토탈솔루션 크림 Arsia Stemcell cream \150,
 date: "2015-04-17"
 writer: "관리자"
 disqus: "true"
-thumbnail: "https://user-images.githubusercontent.com/59393359/77144646-cab43580-6ac9-11ea-9155-2c30149596c0.png"
+thumbnail: "https://user-images.githubusercontent.com/59393359/77164504-cac92b00-6af3-11ea-8416-30fb9ebc647f.png"
 ---
 
 <img style="width:100%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76970589-76953e00-696f-11ea-8cc5-c83cdb001e65.png" />

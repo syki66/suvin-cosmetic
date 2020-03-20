@@ -3,7 +3,7 @@ title: "Dewins Stemcell total solution Cream \27,000"
 date: "2019-05-20"
 writer: "관리자"
 disqus: "true"
-thumbnail: "https://user-images.githubusercontent.com/59393359/77144651-cb4ccc00-6ac9-11ea-878f-179b738ffa9d.png"
+thumbnail: "https://user-images.githubusercontent.com/59393359/77164508-cbfa5800-6af3-11ea-9dee-d870d628e7dd.png"
 ---
 
 <img style="width:100%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76972551-16ec6200-6972-11ea-9010-b86dc13a8f0e.png" />
