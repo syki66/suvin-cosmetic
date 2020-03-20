@@ -49,7 +49,7 @@ export default function MarkdownMainTextFrame(props) {
         const disqusConfig = {
           url: `http://localhost:3000${props.location.pathname}/${post.index}`,
           identifier: `${props.location.pathname}/${post.index}`,
-          title: `${parentPath}, page : "${post.index}"`
+          title: `${parentPath} Page : "${post.index}"`
         }
         
         let pickedIndex;

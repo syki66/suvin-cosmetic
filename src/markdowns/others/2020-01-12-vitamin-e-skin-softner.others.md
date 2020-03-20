@@ -1,6 +1,6 @@
 ---
-title: ""
-date: ""
+title: "수빈 비타민E 스킨소프너"
+date: "2020-01-12"
 writer: "관리자"
 disqus: "true"
 ---

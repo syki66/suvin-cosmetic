@@ -8,6 +8,7 @@ import SideNav from "./SideNav";
 
 
 export default class InnerPageFrame extends React.Component {
+    
     render() {
         return(
             <MDBContainer className="px-md-0">
