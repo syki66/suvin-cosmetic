@@ -2,6 +2,8 @@
 
 ProductFrame.js 만들어서 게시판 프레임 따로 분리해서 관리
 
+product 페이지의 마크다운 파일들에 frontmatter 부분에 thumnail 항목 추가
+
 
 ---
 

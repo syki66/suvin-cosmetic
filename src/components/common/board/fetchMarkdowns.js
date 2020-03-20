@@ -10,11 +10,13 @@ const fetchMarkdowns = async (path) => {
         const title = parsedText.substring(parsedText.indexOf('title: "')+8, parsedText.indexOf('"' , parsedText.indexOf('title: "')+8) );
         const writer = parsedText.substring(parsedText.indexOf('writer: "')+9, parsedText.indexOf('"' , parsedText.indexOf('writer: "')+9) );
         const disqus = parsedText.substring(parsedText.indexOf('disqus: "')+9, parsedText.indexOf('"' , parsedText.indexOf('disqus: "')+9) );
+        const thumbnail = parsedText.substring(parsedText.indexOf('thumbnail: "')+12, parsedText.indexOf('"' , parsedText.indexOf('thumbnail: "')+12) );
+
         const mainText = text.substr(text.indexOf("---",1)+5);
         
         index = rawMarkdownUrlArray(path).length - index; // 인덱스 순서 역순으로 변환
     
-        return { index, date, title, writer, disqus, mainText }
+        return { index, date, title, writer, disqus, thumbnail, mainText }
     }
     
     try {

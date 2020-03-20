@@ -3,6 +3,7 @@ title: "suvin snail mucin repair cream 수빈 스네일 뮤신 리페어 크림 
 date: "2015-04-15"
 writer: "관리자"
 disqus: "true"
+thumbnail: "https://user-images.githubusercontent.com/59393359/77144645-ca1b9f00-6ac9-11ea-8991-3173b5eff709.png"
 ---
 
 <img style="width:100%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76970275-f7a00580-696e-11ea-9e4e-3b864596626f.png" />
