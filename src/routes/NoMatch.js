@@ -1,18 +1,9 @@
-
 import React from "react";
-import {
-  useLocation
-} from "react-router-dom";
 
-
-export default function NoMatch() {
-    let location = useLocation();
-  
+export default function NoMatch() {  
     return (
-      <div>
-        <h3>
-          No match for <code>{location.pathname}</code>
-        </h3>
+      <div style={{height:"640px", display:"flex", justifyContent:"center", alignItems:"center"}}>
+        <h1 className="font-weight-bold">없는 페이지 입니다. 뒤로가기 버튼을 클릭해주세요.</h1>
       </div>
     );
   }
