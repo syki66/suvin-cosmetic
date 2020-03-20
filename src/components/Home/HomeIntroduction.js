@@ -2,11 +2,11 @@ import React from "react";
 
 import { MDBMask, MDBView, MDBContainer, MDBRow, MDBCol, MDBNavLink } from "mdbreact";
 
-import intro_pic_1 from "../../images/Home/intro01.png"
-import intro_pic_2 from "../../images/Home/intro02.png"
-import intro_pic_3 from "../../images/Home/intro03.png"
-import notice from "../../images/Home/notice.jpg"
-import telephone from "../../images/Home/telephone.jpg"
+const intro_pic_1 = "https://user-images.githubusercontent.com/59393359/77156957-cbf25c00-6ae3-11ea-8329-0a7734145777.png";
+const intro_pic_2 = "https://user-images.githubusercontent.com/59393359/77156961-cd238900-6ae3-11ea-9d5d-a1ed508d781c.png";
+const intro_pic_3 = "https://user-images.githubusercontent.com/59393359/77156963-cdbc1f80-6ae3-11ea-8187-f79ef8eb2e09.png";
+const notice = "https://user-images.githubusercontent.com/59393359/77156965-cdbc1f80-6ae3-11ea-92c7-0442df30e270.jpg";
+const telephone = "https://user-images.githubusercontent.com/59393359/77156966-ce54b600-6ae3-11ea-9e15-e9d60d7a2b31.jpg";
 
 
 /*

@@ -5,16 +5,16 @@ import FittedImage from "react-fitted-image";
 
 import InnerPageFrame from "../common/InnerPageFrame";
 
-import conduct from "../../images/Business/RnD/conduct.png";
-import rnd from "../../images/Business/RnD/rnd.jpg";
-import nanoTech from "../../images/Business/RnD/nanoTech.png";
-import bioTech from "../../images/Business/RnD/bioTech.png";
-import fusionTech from "../../images/Business/RnD/fusionTech.png";
-import basicTech from "../../images/Business/RnD/basicTech.png";
-import research_01 from "../../images/Business/RnD/research_01.png";
-import research_02 from "../../images/Business/RnD/research_02.png";
-import research_03 from "../../images/Business/RnD/research_03.png";
-import research_04 from "../../images/Business/RnD/research_04.png";
+const conduct = "https://user-images.githubusercontent.com/59393359/77156175-2ee2f380-6ae2-11ea-9bfa-e55cd30aa77e.png";
+const rnd = "https://user-images.githubusercontent.com/59393359/77156184-31454d80-6ae2-11ea-9e5d-3741b95360a8.jpg";
+const nanoTech = "https://user-images.githubusercontent.com/59393359/77156179-2f7b8a00-6ae2-11ea-9814-c2e79454694b.png";
+const bioTech = "https://user-images.githubusercontent.com/59393359/77156174-2e4a5d00-6ae2-11ea-944d-d75009448f70.png";
+const fusionTech = "https://user-images.githubusercontent.com/59393359/77156176-2f7b8a00-6ae2-11ea-9f3c-8f3353ea387f.png";
+const basicTech = "https://user-images.githubusercontent.com/59393359/77156173-2db1c680-6ae2-11ea-92fe-834c1fbc4a5c.png";
+const research_01 = "https://user-images.githubusercontent.com/59393359/77156180-30142080-6ae2-11ea-837b-6f4f848a8e0f.png";
+const research_02 = "https://user-images.githubusercontent.com/59393359/77156181-30142080-6ae2-11ea-9b8d-790e78b74ceb.png";
+const research_03 = "https://user-images.githubusercontent.com/59393359/77156182-30acb700-6ae2-11ea-85d2-3843842800d2.png";
+const research_04 = "https://user-images.githubusercontent.com/59393359/77156183-30acb700-6ae2-11ea-9c3a-8a60e59aff28.png";
 
 
 export default function RnD() {

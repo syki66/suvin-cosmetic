@@ -5,13 +5,12 @@ import FittedImage from "react-fitted-image";
 
 import InnerPageFrame from "../common/InnerPageFrame";
 
-import Global_Suvin from "../../images/Global_Network/Global_Suvin.jpg"
-import AU from "../../images/Global_Network/australia-flag-xs.png";
-import CN from "../../images/Global_Network/china-flag-xs.png";
-import TW from "../../images/Global_Network/taiwan-flag-xs.png";
-import TL from "../../images/Global_Network/thailand-flag-xs.png";
-import USA from "../../images/Global_Network/usa-flag-xs.png";
-
+const Global_Suvin = "https://user-images.githubusercontent.com/59393359/77156540-e546d880-6ae2-11ea-8933-749e0c0bc09b.jpg";
+const AU = "https://user-images.githubusercontent.com/59393359/77156537-e4ae4200-6ae2-11ea-975b-4bf923bb5f15.png";
+const CN = "https://user-images.githubusercontent.com/59393359/77156539-e546d880-6ae2-11ea-92d4-d2419d5bd2b4.png";
+const TW = "https://user-images.githubusercontent.com/59393359/77156543-e6780580-6ae2-11ea-955f-656fb1a1386a.png";
+const TL = "https://user-images.githubusercontent.com/59393359/77156544-e7109c00-6ae2-11ea-92a8-6757401383ce.png";
+const USA = "https://user-images.githubusercontent.com/59393359/77156546-e7109c00-6ae2-11ea-85d7-530eb27a554c.png";
 
 export default function Global_Network() {
     return (

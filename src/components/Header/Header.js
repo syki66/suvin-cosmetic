@@ -5,9 +5,11 @@ import { useLocation } from "react-router-dom";
 
 import FittedImage from "react-fitted-image";
 
-import header_sub_bg from "../../images/Header/header_sub_bg.png";
-import logoImg from "../../images/Header/slicedLogo.png";
-
+const header_sub_bg = "https://user-images.githubusercontent.com/59393359/77156720-49699c80-6ae3-11ea-9a98-e308294ecedf.png";
+const slicedLogoImg = "https://user-images.githubusercontent.com/59393359/77156764-61d9b700-6ae3-11ea-9dac-a72e8cd55acd.png";
+const logo_32 = "https://user-images.githubusercontent.com/59393359/77156758-60a88a00-6ae3-11ea-9065-86e8a23a383b.png";
+const logo_192 = "https://user-images.githubusercontent.com/59393359/77156760-61412080-6ae3-11ea-96cc-a532a070cc71.png";
+const logo_512 = "https://user-images.githubusercontent.com/59393359/77156761-61412080-6ae3-11ea-95c4-0de1eeda49b1.png";
 
 /*
     isOpen은 모바일형으로 네비게이션바 변경되었을때 메뉴 열리게 하는 토글의 스테이트 변경하는거
@@ -40,7 +42,7 @@ export default class Header extends Component {
 
                         <MDBNavbarBrand>
                             <MDBNavLink to="/">
-                                <img src={logoImg} className="pr-1"/>
+                                <img src={slicedLogoImg} className="pr-1"/>
                                 <strong className="white-text">Suvin Cosmetic</strong>
                             </MDBNavLink>
                         </MDBNavbarBrand>

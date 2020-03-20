@@ -3,8 +3,8 @@ import React from "react";
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from "mdbreact";
 import FittedImage from "react-fitted-image";
 
-import suvin_pic_1 from "../../images/Home/suvin01.png"
-import suvin_pic_2 from "../../images/Home/suvin02.png"
+const suvin_pic_1 = "https://user-images.githubusercontent.com/59393359/77156900-b11fe780-6ae3-11ea-8111-7b5386249d5c.png";
+const suvin_pic_2 = "https://user-images.githubusercontent.com/59393359/77156904-b2e9ab00-6ae3-11ea-9e69-70377787cc3b.png";
 
 
 /*

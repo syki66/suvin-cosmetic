@@ -3,22 +3,23 @@ import { MDBCol, MDBRow } from "mdbreact";
 
 import InnerPageFrame from "../common/InnerPageFrame";
 
-import certificate from "../../images/Business/Competence/certificate.jpg";
-import certificate_01 from "../../images/Business/Competence/certificate_01.jpg";
-import certificate_02 from "../../images/Business/Competence/certificate_02.jpg";
-import certificate_03 from "../../images/Business/Competence/certificate_03.jpg";
-import certificate_04 from "../../images/Business/Competence/certificate_04.jpg";
-import certificate_05 from "../../images/Business/Competence/certificate_05.jpg";
-import certificate_06 from "../../images/Business/Competence/certificate_06.jpg";
-import certificate_07 from "../../images/Business/Competence/certificate_07.jpg";
-import certificate_08 from "../../images/Business/Competence/certificate_08.jpg";
-import certificate_09 from "../../images/Business/Competence/certificate_09.jpg";
-import certificate_10 from "../../images/Business/Competence/certificate_10.jpg";
-import certificate_11 from "../../images/Business/Competence/certificate_11.jpg";
-import certificate_12 from "../../images/Business/Competence/certificate_12.jpg";
-import dutyfreeStore from "../../images/Business/Competence/dutyfreeStore.jpg";
-import overseasMarketing from "../../images/Business/Competence/overseasMarketing.jpg";
-import diverseDistribution from "../../images/Business/Competence/diverseDistribution.jpg";
+const certificate_01 = "https://user-images.githubusercontent.com/59393359/128684502-bc1e9521-bf6c-49e7-ab73-18c669c6e1c4.jpg";
+const certificate_02 = "https://user-images.githubusercontent.com/59393359/128684505-e4a06e8d-2358-45fb-aab9-9b3c9080ac1a.jpg";
+const certificate_03 = "https://user-images.githubusercontent.com/59393359/128684485-7c1b3380-af7b-4bdf-876f-320e55605c73.jpg";
+const certificate_04 = "https://user-images.githubusercontent.com/59393359/128684491-98126e15-e57f-407e-b073-511e8f2be9fb.jpg";
+const certificate_05 = "https://user-images.githubusercontent.com/59393359/128684492-a93cceb1-3603-48d8-a2ab-9530f459e6e1.jpg";
+const certificate_06 = "https://user-images.githubusercontent.com/59393359/128684506-f2411354-efbe-4475-b5b5-847277fb893d.jpg";
+const certificate_07 = "https://user-images.githubusercontent.com/59393359/128684494-0d26ed1b-6dd9-40f1-bbdd-0ca49f3de179.jpg";
+const certificate_08 = "https://user-images.githubusercontent.com/59393359/128684507-3cc2e61a-78b6-4c20-8ec7-778ace6b6720.jpg";
+const certificate_09 = "https://user-images.githubusercontent.com/59393359/128684495-6a421d64-216d-4132-9c6c-16973962f7b3.jpg";
+const certificate_10 = "https://user-images.githubusercontent.com/59393359/128684508-c72b0891-ec2b-4dd5-bc24-66f0e768a3f8.jpg";
+const certificate_11 = "https://user-images.githubusercontent.com/59393359/128684499-1c59c2eb-2e79-4d68-a91c-23a8bb1491a8.jpg";
+const certificate_12 = "https://user-images.githubusercontent.com/59393359/128684498-ee7fadb6-a29f-4290-a10b-cabff27d8da7.jpg";
+
+const certificate = "https://user-images.githubusercontent.com/59393359/128689832-3c245fef-100f-4d83-8d27-7edfd8b683c7.jpg";
+const dutyfreeStore = "https://user-images.githubusercontent.com/59393359/77156014-d4499780-6ae1-11ea-83bb-85722fd058fc.jpg";
+const overseasMarketing = "https://user-images.githubusercontent.com/59393359/77156015-d4e22e00-6ae1-11ea-92d9-9d54aa18e226.jpg";
+const diverseDistribution = "https://user-images.githubusercontent.com/59393359/77156013-d3b10100-6ae1-11ea-9a7b-b47da6925a61.jpg";
 
 
 /*

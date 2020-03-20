@@ -5,12 +5,12 @@ import FittedImage from "react-fitted-image";
 
 import InnerPageFrame from "../common/InnerPageFrame";
 
-import contract from "../../images/Business/OEMnODM/contract.jpg";
-import shaking_hands from "../../images/Business/OEMnODM/shaking_hands.jpg";
-import consulting from "../../images/Business/OEMnODM/consulting.jpg";
-import production from "../../images/Business/OEMnODM/production.png";
-import product from "../../images/Business/OEMnODM/product.png";
-import procurement from "../../images/Business/OEMnODM/procurement.jpg";
+const contract = "https://user-images.githubusercontent.com/59393359/77156081-fc38fb00-6ae1-11ea-81bf-235c5aee68fe.jpg";
+const shaking_hands = "https://user-images.githubusercontent.com/59393359/77156088-fe9b5500-6ae1-11ea-92cf-4ee47893de79.jpg";
+const consulting = "https://user-images.githubusercontent.com/59393359/77156079-fb07ce00-6ae1-11ea-9c7f-262e27a00008.jpg";
+const production = "https://user-images.githubusercontent.com/59393359/77156087-fe02be80-6ae1-11ea-824e-a7301ec5b578.png";
+const product = "https://user-images.githubusercontent.com/59393359/77156085-fcd19180-6ae1-11ea-9acc-3515ce5ce77d.png";
+const procurement = "https://user-images.githubusercontent.com/59393359/77156082-fc38fb00-6ae1-11ea-8ea0-73035f2b2714.jpg";
 
 
 /*

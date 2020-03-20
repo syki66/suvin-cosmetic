@@ -4,6 +4,8 @@ ProductFrame.js 만들어서 게시판 프레임 따로 분리해서 관리
 
 product 페이지의 마크다운 파일들에 frontmatter 부분에 thumnail 항목 추가
 
+깃허브 용량제한 때문에 모든 이미지 파일들 cdn 서버로 업로드
+
 
 ---
 
@@ -235,3 +237,5 @@ information page added 부터
 - 화면작은 폰에서 오른쪽 부분 추가로 생성되는 에러 해결하기
 
 - 각 컴포넌트에 key 모두 할당하기 (안하면 속도 느리다함)
+
+- yml에 가격 따로 빼기

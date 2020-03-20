@@ -1,9 +1,13 @@
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
-import youtubeIcon from "../../images/Footer/youtube-icon32.png"
-import emailIcon from "../../images/Footer/email-icon32.png"
-import callIcon from "../../images/Footer/call-icon32.png"
+const youtubeIcon_32 = "https://user-images.githubusercontent.com/59393359/77156353-926d2100-6ae2-11ea-8fe9-bf26b085ed34.png";
+const emailIcon_32 = "https://user-images.githubusercontent.com/59393359/77156352-91d48a80-6ae2-11ea-8b5a-8cbb6645ddd7.png";
+const callIcon_32 = "https://user-images.githubusercontent.com/59393359/77156350-913bf400-6ae2-11ea-8bf1-2b3cb5f77598.png";
+
+const youtubeIcon_64 = "https://user-images.githubusercontent.com/59393359/77156475-cba59100-6ae2-11ea-9f7e-113529ce7064.png";
+const emailIcon_64 = "https://user-images.githubusercontent.com/59393359/77156477-cc3e2780-6ae2-11ea-93e4-197b88ff19cb.png";
+const callIcon_64 = "https://user-images.githubusercontent.com/59393359/77156479-ccd6be00-6ae2-11ea-80c4-0ed01c62d3aa.png";
 
 
 export default function Footer() {
@@ -23,9 +27,9 @@ export default function Footer() {
                         </div>
                     </MDBCol>
                     <MDBCol size="12" lg="3" className="py-3 py-lg-2 footer-lg-right" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-                        <a className="px-5 px-lg-1" href="tel:16889028" title="click to call"><img src={callIcon} /></a>
-                        <a className="px-5 px-lg-1" href="mailto:dhkkis@daum.net" title="click to E-mail"><img src={emailIcon} /></a>
-                        <a className="px-5 px-lg-1" href="https://www.youtube.com/channel/UCtvbYNAaLD4ZybrkxIevgxA" title="click to youtube"><img src={youtubeIcon} /></a>
+                        <a className="px-5 px-lg-1" href="tel:16889028" title="click to call"><img src={callIcon_32} /></a>
+                        <a className="px-5 px-lg-1" href="mailto:dhkkis@daum.net" title="click to E-mail"><img src={emailIcon_32} /></a>
+                        <a className="px-5 px-lg-1" href="https://www.youtube.com/channel/UCtvbYNAaLD4ZybrkxIevgxA" title="click to youtube"><img src={youtubeIcon_32} /></a>
                     </MDBCol>
                 </MDBRow>
             </MDBContainer>

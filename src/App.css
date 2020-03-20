@@ -1,4 +1,3 @@
-
 body {
     background-color: green;
 }
@@ -161,16 +160,16 @@ body {
     }
 
     .first_carousel {
-        background-image: url('./images/Home/suvin01.png');
+        background-image: url("https://user-images.githubusercontent.com/59393359/77156900-b11fe780-6ae3-11ea-8111-7b5386249d5c.png");
     }
 
     .second_carousel {
-        background-image: url('./images/Home/suvin02.png');
+        background-image: url("https://user-images.githubusercontent.com/59393359/77156904-b2e9ab00-6ae3-11ea-9e69-70377787cc3b.png");
     }
 
     .headerBG__css {
         object-fit: contain !important; 
-        background-image: url('./images/Header/header_sub_bg.png');
+        background-image: url("https://user-images.githubusercontent.com/59393359/77156720-49699c80-6ae3-11ea-9a98-e308294ecedf.png");
         background-repeat: repeat-x;
         background-position-x: center;
         

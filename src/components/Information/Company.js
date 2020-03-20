@@ -5,8 +5,8 @@ import InnerPageFrame from "../common/InnerPageFrame";
 
 import FittedImage from "react-fitted-image";
 
-import CEO_IMG from "../../images/Company/ceo.jpg";
-import Motto from "../../images/Company/motto.png";
+const CEO_IMG = "https://user-images.githubusercontent.com/59393359/77157050-f6441980-6ae3-11ea-896f-59ff834df730.jpg";
+const Motto = "https://user-images.githubusercontent.com/59393359/77157055-f7754680-6ae3-11ea-9985-95e667930cc6.png";
 
 
 /*
