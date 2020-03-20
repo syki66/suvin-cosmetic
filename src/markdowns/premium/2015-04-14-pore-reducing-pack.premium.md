@@ -3,7 +3,7 @@ title: "Arsia pore reducing pack 아르시아 모공축소팩 \44,000"
 date: "2015-04-14"
 writer: "관리자"
 disqus: "true"
-thumbnail: "https://user-images.githubusercontent.com/59393359/77165721-390eed00-6af6-11ea-85e4-bf159ea182a9.png"
+thumbnail: "https://user-images.githubusercontent.com/59393359/77167716-de779000-6af9-11ea-8ffb-6dc978577773.png"
 ---
 
 <img style="width:100%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76969612-f4584a00-696d-11ea-8b29-729847d8d6da.png" />

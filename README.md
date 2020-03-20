@@ -6,6 +6,8 @@ product 페이지의 마크다운 파일들에 frontmatter 부분에 thumnail �
 
 깃허브 용량제한 때문에 모든 이미지 파일들 cdn 서버로 업로드
 
+product 페이지 규격 완성 및 적용
+
 
 ---
 
@@ -241,3 +243,5 @@ information page added 부터
 - yml에 가격 따로 빼기
 
 - 프록시로 사이트 속도 올릴수 있는지 알아보기
+
+- product 페이지에 구매링크 올리기

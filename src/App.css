@@ -1,5 +1,5 @@
 body {
-    background-color: green;
+    background-color: brown;
 }
 
 .nav__link-group {
@@ -16,6 +16,14 @@ body {
 @media (min-width: 576px)  {
     body {
         background-color: greenyellow;
+    }
+
+    .product__img_resize{
+        height: 200px !important;
+    }
+
+    .product-sm-border-none{
+        border: none !important;
     }
 
 }
