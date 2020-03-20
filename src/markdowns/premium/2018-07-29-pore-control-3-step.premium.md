@@ -3,7 +3,7 @@ title: "Arsia pore control 3 step (5sheets) \19,500"
 date: "2018-07-29"
 writer: "관리자"
 disqus: "true"
-thumbnail: "https://user-images.githubusercontent.com/59393359/77164506-cb61c180-6af3-11ea-8cf2-0b83e13281c9.jpg"
+thumbnail: "https://user-images.githubusercontent.com/59393359/77165726-3b714700-6af6-11ea-8255-9a22b33637c3.jpg"
 ---
 
 <img style="width:100%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76971718-e526cb80-6970-11ea-87da-ae1d6c12b9b8.jpg" />

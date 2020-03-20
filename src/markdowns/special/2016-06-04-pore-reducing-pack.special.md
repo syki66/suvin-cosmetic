@@ -3,7 +3,7 @@ title: "Arsia Pore Reducing Pack (New) \48,000"
 date: "2016-06-04"
 writer: "관리자"
 disqus: "true"
-thumbnail: ""
+thumbnail: "https://user-images.githubusercontent.com/59393359/77165135-10d2be80-6af5-11ea-8d83-b42b90cfc0d9.png"
 ---
 
 <img style="width:50%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76975335-c0812280-6975-11ea-910d-0e446388dd00.png" />

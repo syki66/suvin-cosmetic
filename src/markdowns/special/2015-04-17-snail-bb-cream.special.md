@@ -3,7 +3,7 @@ title: "스네일 비비크림 Snail BB Cream \45,000"
 date: "2015-04-17"
 writer: "관리자"
 disqus: "true"
-thumbnail: ""
+thumbnail: "https://user-images.githubusercontent.com/59393359/77165128-0f08fb00-6af5-11ea-8981-d2cf0f52a609.png"
 ---
 
 <img style="width:100%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76973732-ac3c2600-6973-11ea-93ad-0bbccaa63b0d.png" />
