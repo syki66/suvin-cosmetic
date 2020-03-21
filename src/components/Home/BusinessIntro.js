@@ -5,8 +5,7 @@ import { MDBMask, MDBView, MDBContainer, MDBRow, MDBCol, MDBNavLink } from "mdbr
 const intro_pic_1 = "https://user-images.githubusercontent.com/59393359/77156957-cbf25c00-6ae3-11ea-8329-0a7734145777.png";
 const intro_pic_2 = "https://user-images.githubusercontent.com/59393359/77156961-cd238900-6ae3-11ea-9d5d-a1ed508d781c.png";
 const intro_pic_3 = "https://user-images.githubusercontent.com/59393359/77156963-cdbc1f80-6ae3-11ea-8187-f79ef8eb2e09.png";
-const notice = "https://user-images.githubusercontent.com/59393359/77156965-cdbc1f80-6ae3-11ea-92c7-0442df30e270.jpg";
-const telephone = "https://user-images.githubusercontent.com/59393359/77156966-ce54b600-6ae3-11ea-9e15-e9d60d7a2b31.jpg";
+
 
 
 /*
@@ -63,7 +62,7 @@ const telephone = "https://user-images.githubusercontent.com/59393359/77156966-c
 */
 
 
-export default function HomeIntroduction() {
+export default function BusinessIntro() {
   return (
     <MDBContainer>
 
@@ -71,11 +70,7 @@ export default function HomeIntroduction() {
 
         <MDBCol size="4" className="px-0">
           <MDBView hover zoom>
-            <img
-              src={intro_pic_1}
-              className="img-fluid mx-auto rounded"
-              alt=""
-            />
+            <img src={intro_pic_1} className="img-fluid mx-auto rounded" />
             <MDBMask overlay="white-strong">
                 <MDBNavLink to="Competence" className="home__intro">Competence</MDBNavLink>
             </MDBMask>
@@ -84,11 +79,7 @@ export default function HomeIntroduction() {
 
         <MDBCol size="4" className="px-0">
           <MDBView hover zoom>
-            <img
-              src={intro_pic_2}
-              className="img-fluid mx-auto rounded"
-              alt=""
-            />
+            <img src={intro_pic_2} className="img-fluid mx-auto rounded" />
             <MDBMask overlay="white-strong">
               <MDBNavLink to="R & D" className="home__intro">R & D</MDBNavLink>
             </MDBMask>
@@ -97,55 +88,9 @@ export default function HomeIntroduction() {
         
         <MDBCol size="4" className="px-0">
           <MDBView hover zoom>
-            <img
-              src={intro_pic_3}
-              className="img-fluid mx-auto rounded"
-              alt=""
-            />
+            <img src={intro_pic_3} className="img-fluid mx-auto rounded" />
             <MDBMask overlay="white-strong">
             <MDBNavLink to="OEM & ODM" className="home__intro">OEM & ODM</MDBNavLink>
-            </MDBMask>
-          </MDBView>
-        </MDBCol>
-
-      </MDBRow>
-
-
-      <MDBRow className="pb-sm-4 pb-md-5">
-
-        <MDBCol size="12" sm="6" className="px-0 px-lg-3 px-xl-4">
-          <MDBView className="hoverable">
-            <img
-              src={notice}
-              alt="notice"
-              className="img-fluid"
-            />
-            <MDBMask className="flex-center" overlay="black-strong">
-              <p className="home__notice">
-                <span className="home__noticeTitle">NOTICE</span><br />
-                <span className="home__noticeText">test</span>
-              </p>
-            </MDBMask>
-          </MDBView>
-        </MDBCol>
-
-        <MDBCol size="12" sm="6" className="px-0 px-lg-3 px-xl-4">
-          <MDBView className="hoverable">
-            <img
-              src={telephone}
-              alt="telephone"
-              className="img-fluid"
-              onclick="location.href='tel:01066443665'"
-            />
-            <MDBMask className="flex-center" overlay="black-strong">
-              <p className="home__contact">
-                <span className="home__contactTitle">CONTACT</span><br />
-                <span className="home__contactText"><a href="tel:16889028" id="device_change">Tel.1688-9028</a></span><br />
-                <span className="home__contactText">Mobile : 010-6644-3665</span><br />
-                <span className="home__contactText">Bussiness hours : 09:00~18:00</span><br />
-                <span className="home__contactText">E-mail : suvin@suvincos.com</span><br />
-                <span className="home__contactText">계좌: 210702-04-163993(국민은행 김덕훈)</span><br />
-              </p>
             </MDBMask>
           </MDBView>
         </MDBCol>

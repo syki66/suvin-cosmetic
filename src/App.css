@@ -199,35 +199,6 @@ body {
     align-items: center;
 }
 
-.home__notice {
-    color: snow;
-}
-
-.home__noticeTitle {
-    color: snow;
-}
-
-.home__noticeText {
-    color: snow;
-}
-
-
-.home__contact {
-    color: snow;
-    line-height: 2vw;
-}
-
-.home__contactTitle {
-    color: snow;
-    font-size:4vw;
-}
-
-.home__contactText {
-    color: snow;
-    font-size: 1vmin;
-}
-
-
 
 /*사이드 네비게이션 용 css*/
 .active.sideNavComponent {

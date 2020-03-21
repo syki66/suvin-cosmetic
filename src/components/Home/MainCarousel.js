@@ -27,7 +27,7 @@ const suvin_pic_2 = "https://user-images.githubusercontent.com/59393359/77156904
 */
 
 
-export default function HomeCarousel() {
+export default function MainCarousel() {
   return (
     <MDBContainer fluid className="px-0">
       <MDBCarousel
