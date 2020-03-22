@@ -29,11 +29,12 @@ export default class NoticeContact extends React.Component {
         const menuTitle = "Customer"
         const menuSubtitle = ["Notice", "Comments"]
         const postsLength = rawMarkdownUrlArray("posts").length
+        
         return(
             <div style={{backgroundColor:"snow"}}>
-                <MDBContainer >
+                <MDBContainer className="py-5">
         
-                    <MDBRow className="py-5">
+                    <MDBRow>
         
                         <MDBCol size="12" md="6" className="px-4 px-xl-5 pb-5 pb-md-0">
 
@@ -69,7 +70,7 @@ export default class NoticeContact extends React.Component {
                                                     
                                                     <MDBRow style={{color:"gray"}}>
                                                         <MDBCol size="10"><li className="home__notice" style={{color:"black"}}>{post.title}</li></MDBCol>
-                                                        <MDBCol size="2" className="p-0 home__notice" style={{textAlign:"right"}}>{post.date}</MDBCol>
+                                                        <MDBCol size="2" className="px-0 home__notice" style={{textAlign:"right"}}>{post.date}</MDBCol>
                                                     </MDBRow>
                                                     
                                                 </Link>

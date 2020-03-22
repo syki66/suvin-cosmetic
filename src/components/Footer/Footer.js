@@ -27,9 +27,9 @@ export default function Footer() {
                         </div>
                     </MDBCol>
                     <MDBCol size="12" lg="3" className="py-3 py-lg-2 footer-lg-right" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-                        <a className="px-5 px-lg-1" href="tel:16889028" title="click to call"><img src={callIcon_32} /></a>
+                        <a className="pr-5 px-lg-1" href="tel:16889028" title="click to call"><img src={callIcon_32} /></a>
                         <a className="px-5 px-lg-1" href="mailto:dhkkis@daum.net" title="click to E-mail"><img src={emailIcon_32} /></a>
-                        <a className="px-5 px-lg-1" href="https://www.youtube.com/channel/UCtvbYNAaLD4ZybrkxIevgxA" title="click to youtube"><img src={youtubeIcon_32} /></a>
+                        <a className="pl-5 px-lg-1" href="https://www.youtube.com/channel/UCtvbYNAaLD4ZybrkxIevgxA" title="click to youtube"><img src={youtubeIcon_32} /></a>
                     </MDBCol>
                 </MDBRow>
             </MDBContainer>

@@ -6,6 +6,10 @@ home-notice와 notice페이지의 디스커스 댓글 주소를 공유 (url이 �
 
 home-notice 및 home-contact 부분 레이아웃 및 디자인 변경 완료
 
+가로가 작은 핸드폰에서 오른쪽부분에 여백이 남는 오류 수정(footer의 아이콘 간격때문에 생긴오류였음)
+
+home-intro 부분 MDB 컴포넌트들 삭제하고 css 직접조정 
+
 ---
 
 ### 2020-03-21 수정사항
@@ -249,8 +253,6 @@ information page added 부터
 
 - 위챗 정보 추가 소셜버튼이나 아이디
 
-- 화면작은 폰에서 오른쪽 부분 추가로 생성되는 에러 해결하기
-
 - 각 컴포넌트에 key 모두 할당하기 (안하면 속도 느리다함)
 
 - yml에 가격 따로 빼기
@@ -264,3 +266,5 @@ information page added 부터
 - product 페이지 xl에서 사진 비율 안맞는거 고치기
 
 - notice product 링크에서 마우스 hover 할때 색변화
+
+- 모바일 페이지에서 product에 이미지를 너비 기준으로 높이 정하기

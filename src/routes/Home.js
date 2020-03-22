@@ -1,8 +1,8 @@
 import React from "react";
 
 import MainCarousel from "../components/Home/MainCarousel";
-import BusinessIntro from "../components/Home/BusinessIntro";
 import NoticeContact from "../components/Home/NoticeContact";
+import Introduction from "../components/Home/Introduction";
 
 
 export default class Home extends React.Component {
@@ -10,7 +10,7 @@ export default class Home extends React.Component {
     return (
       <div>
         <MainCarousel />
-        <BusinessIntro />
+        <Introduction />
         <NoticeContact />
       </div>
     );

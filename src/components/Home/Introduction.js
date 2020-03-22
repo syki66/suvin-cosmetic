@@ -62,37 +62,31 @@ const intro_pic_3 = "https://user-images.githubusercontent.com/59393359/77156963
 */
 
 
-export default function BusinessIntro() {
+export default function Introduction() {
   return (
-    <MDBContainer>
+    <MDBContainer className="py-5">
 
-      <MDBRow className="pb-sm-4 pt-sm-4 pb-md-5 pt-md-5">
+      <MDBRow>
 
-        <MDBCol size="4" className="px-0">
-          <MDBView hover zoom className="hoverable">
-            <img src={intro_pic_1} className="img-fluid mx-auto rounded" />
-            <MDBMask overlay="white-strong">
-                <MDBNavLink to="Competence" className="home__intro">Competence</MDBNavLink>
-            </MDBMask>
-          </MDBView>
+        <MDBCol>
+          <div className="home__intro_parent">
+            <img src={intro_pic_1} className="img-fluid" />
+            <div className="home__intro_child">Competence</div>
+          </div>
         </MDBCol>
 
-        <MDBCol size="4" className="px-0">
-          <MDBView hover zoom className="hoverable">
-            <img src={intro_pic_2} className="img-fluid mx-auto rounded" />
-            <MDBMask overlay="white-strong">
-              <MDBNavLink to="R & D" className="home__intro">R & D</MDBNavLink>
-            </MDBMask>
-          </MDBView>
+        <MDBCol>
+          <div className="home__intro_parent">
+            <img src={intro_pic_2} className="img-fluid" />
+            <div className="home__intro_child">R & D</div>
+          </div>
         </MDBCol>
-        
-        <MDBCol size="4" className="px-0">
-          <MDBView hover zoom className="hoverable">
-            <img src={intro_pic_3} className="img-fluid mx-auto rounded" />
-            <MDBMask overlay="white-strong">
-            <MDBNavLink to="OEM & ODM" className="home__intro">OEM & ODM</MDBNavLink>
-            </MDBMask>
-          </MDBView>
+
+        <MDBCol >
+          <div className="home__intro_parent">
+            <img src={intro_pic_3} className="img-fluid" />
+            <div className="home__intro_child">OEM & ODM</div>
+          </div>
         </MDBCol>
 
       </MDBRow>
