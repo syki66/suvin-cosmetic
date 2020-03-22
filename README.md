@@ -1,3 +1,11 @@
+### 2020-03-22 수정사항
+
+home-notice 부분에 notice꺼 posts 출력되도록함 (notice 부분과 별개로 home에서 따로 fetch 함)
+
+home-notice와 notice페이지의 디스커스 댓글 주소를 공유 (url이 동일해야하기때문에 rawMarkdownUrlArray 함수 2개로 분리함)
+
+---
+
 ### 2020-03-21 수정사항
 
 홈화면 레이아웃 수정 및 파일 분리
@@ -252,3 +260,5 @@ information page added 부터
 - 헤더메뉴 글씨 등 조금더 크게하기
 
 - product 페이지 xl에서 사진 비율 안맞는거 고치기
+
+- notice product 링크에서 마우스 hover 할때 색변화

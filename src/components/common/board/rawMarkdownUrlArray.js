@@ -1,3 +1,8 @@
+/*
+    isMain 을 써서 home 화면에는 3개만 출력되도록 했고, 함수 두개로 분리시켜서 총 마크다운의 길이도 리턴해줄수 있도록 했음(디스커스 댓글 내용 공유때문에 url이 똑같아야되서)
+*/
+
+
 const rawMarkdownUrlArray = (path) => {
     const rawMarkdownUrl = `https://raw.githubusercontent.com/syki66/suvin-cosmetic/master/src/markdowns/${path}`;
 
@@ -19,6 +24,11 @@ const rawMarkdownUrlArray = (path) => {
     return trimedmarkdownName.map((each) => {
         return `${rawMarkdownUrl}/${each}.${path}.md`
     })
+
 }
 
-export default rawMarkdownUrlArray;
+const rawMarkdownUrlArrayBroker = (path, isMain) => {
+    return (isMain) ? (rawMarkdownUrlArray(path).slice(0,3)) : (rawMarkdownUrlArray(path))
+}
+
+export {rawMarkdownUrlArray, rawMarkdownUrlArrayBroker};
