@@ -4,6 +4,8 @@ home-notice 부분에 notice꺼 posts 출력되도록함 (notice 부분과 별�
 
 home-notice와 notice페이지의 디스커스 댓글 주소를 공유 (url이 동일해야하기때문에 rawMarkdownUrlArray 함수 2개로 분리함)
 
+home-notice 및 home-contact 부분 레이아웃 및 디자인 변경 완료
+
 ---
 
 ### 2020-03-21 수정사항

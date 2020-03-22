@@ -69,7 +69,7 @@ export default function BusinessIntro() {
       <MDBRow className="pb-sm-4 pt-sm-4 pb-md-5 pt-md-5">
 
         <MDBCol size="4" className="px-0">
-          <MDBView hover zoom>
+          <MDBView hover zoom className="hoverable">
             <img src={intro_pic_1} className="img-fluid mx-auto rounded" />
             <MDBMask overlay="white-strong">
                 <MDBNavLink to="Competence" className="home__intro">Competence</MDBNavLink>
@@ -78,7 +78,7 @@ export default function BusinessIntro() {
         </MDBCol>
 
         <MDBCol size="4" className="px-0">
-          <MDBView hover zoom>
+          <MDBView hover zoom className="hoverable">
             <img src={intro_pic_2} className="img-fluid mx-auto rounded" />
             <MDBMask overlay="white-strong">
               <MDBNavLink to="R & D" className="home__intro">R & D</MDBNavLink>
@@ -87,7 +87,7 @@ export default function BusinessIntro() {
         </MDBCol>
         
         <MDBCol size="4" className="px-0">
-          <MDBView hover zoom>
+          <MDBView hover zoom className="hoverable">
             <img src={intro_pic_3} className="img-fluid mx-auto rounded" />
             <MDBMask overlay="white-strong">
             <MDBNavLink to="OEM & ODM" className="home__intro">OEM & ODM</MDBNavLink>

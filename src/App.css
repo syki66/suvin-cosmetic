@@ -1,5 +1,5 @@
 body {
-    background-color: brown;
+    background-color: green;
 }
 
 .nav__link-group {
@@ -102,7 +102,7 @@ body {
 
 @media (min-width: 992px)  {
     body {
-        background-color: #b4d491;
+        background-color: darkgray;
     }
 
     .showing__cosmetic {
@@ -130,7 +130,7 @@ body {
 
 @media (min-width: 1200px)  {
     body {
-        background-color: #a2cba1;
+        background-color: cornsilk;
     }
 
     .carousel__css{
@@ -197,6 +197,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.home__notice {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 
