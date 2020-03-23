@@ -65,6 +65,30 @@ body {
 
 
 
+/*home-youtube*/
+
+
+
+.home__youtube_parent{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+}
+
+
+.home__youtube_child{
+    z-index: 1;
+    margin-right: 6vw;
+    margin-bottom: 2vw;
+    height: 20vw;
+    width: 28vw;
+}
+
+
 
 
 
@@ -256,6 +280,18 @@ body {
     }
 
     
+
+
+    .home__youtube_child{
+        z-index: 1;
+        margin-right: 6vw + 0.5vw ;
+        margin-bottom: 24px;
+        height: 240px;
+        width: 336px;
+    }
+
+
+
 
 }
 

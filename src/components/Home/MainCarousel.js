@@ -1,6 +1,6 @@
 import React from "react";
 
-import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from "mdbreact";
+import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer, MDBIframe } from "mdbreact";
 import FittedImage from "react-fitted-image";
 
 const suvin_pic_1 = "https://user-images.githubusercontent.com/59393359/77156900-b11fe780-6ae3-11ea-8111-7b5386249d5c.png";
@@ -36,7 +36,7 @@ export default function MainCarousel() {
         showControls={false}
         showIndicators={true}
       >
-        <MDBCarouselInner>
+        <MDBCarouselInner  style={{position:"relative"}}>
 
           <MDBCarouselItem itemId="1">
             <MDBView>
@@ -50,8 +50,15 @@ export default function MainCarousel() {
             </MDBView>
           </MDBCarouselItem>
 
+          <div className="home__youtube_parent">
+            <iframe className="home__youtube_child" width="560" height="315" src="https://www.youtube.com/embed/qn_xoSpFdlA?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
         </MDBCarouselInner>
       </MDBCarousel>
+
+      <div className="px-3 py-5">
+        <MDBIframe className="" autoplay src="https://www.youtube.com/embed/qn_xoSpFdlA?autoplay=1&mute=1" />
+      </div>
     </MDBContainer>
   );
 }
