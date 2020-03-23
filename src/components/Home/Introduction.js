@@ -1,6 +1,7 @@
 import React from "react";
 
 import { MDBMask, MDBView, MDBContainer, MDBRow, MDBCol, MDBNavLink } from "mdbreact";
+import { Link } from "react-router-dom";
 
 const intro_pic_1 = "https://user-images.githubusercontent.com/59393359/77156957-cbf25c00-6ae3-11ea-8329-0a7734145777.png";
 const intro_pic_2 = "https://user-images.githubusercontent.com/59393359/77156961-cd238900-6ae3-11ea-9d5d-a1ed508d781c.png";
@@ -64,33 +65,41 @@ const intro_pic_3 = "https://user-images.githubusercontent.com/59393359/77156963
 
 export default function Introduction() {
   return (
-    <MDBContainer className="py-5">
+    <div style={{backgroundColor:"snow"}}>
+      <MDBContainer className="py-5">
 
-      <MDBRow>
+        <MDBRow>
 
-        <MDBCol>
-          <div className="home__intro_parent">
-            <img src={intro_pic_1} className="img-fluid" />
-            <div className="home__intro_child">Competence</div>
-          </div>
-        </MDBCol>
+          <MDBCol size="12" style={{display:"flex", justifyContent:"center"}}>
+            <Link to="Competence">
+              <div className="home__intro_parent">
+                <img src={intro_pic_1} className="img-fluid" />
+                <div className="home__intro_child">Competence</div>
+              </div>
+            </Link>
+          </MDBCol>
 
-        <MDBCol>
-          <div className="home__intro_parent">
-            <img src={intro_pic_2} className="img-fluid" />
-            <div className="home__intro_child">R & D</div>
-          </div>
-        </MDBCol>
+          <MDBCol size="12" style={{display:"flex", justifyContent:"center"}}>
+            <Link to="R & D">
+              <div className="home__intro_parent">
+                <img src={intro_pic_2} className="img-fluid" />
+                <div className="home__intro_child">R & D</div>
+              </div>
+            </Link>
+          </MDBCol>
 
-        <MDBCol >
-          <div className="home__intro_parent">
-            <img src={intro_pic_3} className="img-fluid" />
-            <div className="home__intro_child">OEM & ODM</div>
-          </div>
-        </MDBCol>
+          <MDBCol size="12" style={{display:"flex", justifyContent:"center"}}>
+            <Link to="OEM & ODM">
+              <div className="home__intro_parent">
+                <img src={intro_pic_3} className="img-fluid" />
+                <div className="home__intro_child">OEM & ODM</div>
+              </div>
+            </Link>
+          </MDBCol>
 
-      </MDBRow>
+        </MDBRow>
 
-    </MDBContainer>
+      </MDBContainer>
+    </div>
   );
 }

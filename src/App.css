@@ -197,21 +197,38 @@ body {
     transition: transform .4s;
 }
 
-.home__intro_parent:hover {
-    transform: scale(1.2)
+.home__intro_parent:hover{
+    transform: scale(1.2);
+}
+
+.home__intro_parent:hover > .home__intro_child{
+    height: 100%;
+    color:white;
+    font-size: xx-large;
 }
 
 .home__intro_child {
     position: absolute;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     width: 100%;
 
-    background-color: rgba(232,123,12, 0.7);
+    color:black;
+    background-color: rgba(255,182,193, 0.7);
 
     font-weight: 600;
     font-size: larger;
-    padding: 5px;    
+    padding: 5px;
+
+    height: 40px;
+
+    transition: all 0.5s;
 }
+
+
+
 
 
 

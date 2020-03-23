@@ -31,7 +31,7 @@ export default class NoticeContact extends React.Component {
         const postsLength = rawMarkdownUrlArray("posts").length
         
         return(
-            <div style={{backgroundColor:"snow"}}>
+            <div style={{backgroundColor:"white"}}>
                 <MDBContainer className="py-5">
         
                     <MDBRow>

@@ -1,3 +1,9 @@
+### 2020-03-23 수정사항
+
+home-intro 부분에 css 애니메이션 적용 및 모바일 레이아웃 배치 변경
+
+---
+
 ### 2020-03-22 수정사항
 
 home-notice 부분에 notice꺼 posts 출력되도록함 (notice 부분과 별개로 home에서 따로 fetch 함)
