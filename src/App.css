@@ -13,6 +13,61 @@ body {
 }
 
 
+
+/*
+    직접 home-intro 부분. 모바일용
+*/
+.home__link{
+    width: 100%;
+}
+
+.home__intro_parent {
+    position: relative;
+    
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    width:100%;
+
+}
+
+.home__intro_parent:hover > .home__intro_child{
+    font-size: 45px;
+}
+
+.home__intro_child {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    color:white;
+    background-color: rgba(255,182,193, 0.7);
+
+    font-weight: 600;
+    font-size: xx-large;
+    padding: 5px;
+
+    height: 100%;
+
+    transition: all 0.2s;
+}
+
+.home__intro_img{
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    object-position: middle;
+}
+
+
+
+
+
+
 @media (min-width: 576px)  {
     body {
         background-color: greenyellow;
@@ -94,8 +149,53 @@ body {
 
 
 
+    /* 홈 intro 부분 css */
+    .home__intro_parent {
+        position: relative;
+        width: fit-content;
+        display: flex;
+        align-items: flex-end;
+    
+        transition: transform .4s;
+    }
+    
+    .home__intro_parent:hover{
+        transform: scale(1.2);
+    }
+    
+    .home__intro_parent:hover > .home__intro_child{
+        height: 100%;
+        color:white;
+        font-size: xx-large;
+    }
+    
+    .home__intro_child {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        width: 100%;
+    
+        color:black;
+        background-color: rgba(255,182,193, 0.7);
+    
+        font-weight: 600;
+        font-size: larger;
+        padding: 5px;
+    
+        height: 40px;
+    
+        transition: all 0.5s;
+    }
 
+    .home__link{
+        width: fit-content;
+    }
 
+    .home__intro_img{
+        height: 100%;
+    }
 
 }
 
@@ -185,47 +285,7 @@ body {
 }
 
 
-/*
-    직접 home-intro 부분 css 변경
-*/
-.home__intro_parent {
-    position: relative;
-    width: fit-content;
-    display: flex;
-    align-items: flex-end;
 
-    transition: transform .4s;
-}
-
-.home__intro_parent:hover{
-    transform: scale(1.2);
-}
-
-.home__intro_parent:hover > .home__intro_child{
-    height: 100%;
-    color:white;
-    font-size: xx-large;
-}
-
-.home__intro_child {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
-
-    color:black;
-    background-color: rgba(255,182,193, 0.7);
-
-    font-weight: 600;
-    font-size: larger;
-    padding: 5px;
-
-    height: 40px;
-
-    transition: all 0.5s;
-}
 
 
 
