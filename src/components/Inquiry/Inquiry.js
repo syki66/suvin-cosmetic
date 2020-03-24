@@ -22,7 +22,7 @@ export default class Inquiry extends Component {
                 <div className="h2 py-2">Inquiry</div>
                 <div className="h4 border-top border-light pt-5 pb-1">Total 1 / 1 page</div>
 
-                <div>Please write freely about business matter here or use email directly (dhkkis@hanmail.net)</div>
+                <div>Please write freely about business matter here or use email directly (suvin@suvincos.com)</div>
 
                 <div className="pt-3">
                     <Disqus.DiscussionEmbed

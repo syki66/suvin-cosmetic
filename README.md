@@ -4,7 +4,9 @@ react hook의 useState 사용해서 width 값 받아오고, iframe 오른쪽 패
 
 모바일 버전에서는 iframe을 carousel 아래쪽에 배치하고, 재생목록 루프 적용
 
-suvincos.com 도메인 연결 및 1.0.0 버전업
+suvincos.com 도메인 연결(https는 깃허브 페이지에서 자동 설정해준듯) 및 1.0.0 버전업
+
+https로 적용되고 나서 favicon.ico가 적용 안되는 문제 해결 index.html의 link-favicon 경로에 ? 추가
 
 
 ### 2020-03-23 수정사항
@@ -291,3 +293,7 @@ information page added 부터
 - iframe 모바일 자동재생 설정하기
 
 - iframe 임시로 두개 사용한거 하나로 줄이기
+
+- https로 바꾸기
+
+- 깃허브 자체 페이지 커스텀 404 로 바꾸기
