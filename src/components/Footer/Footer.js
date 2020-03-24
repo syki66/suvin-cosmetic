@@ -21,14 +21,14 @@ export default function Footer() {
                             <div className="footer_display">Tel : 1688-9028 / 010-6644-3665 </div>
                         </div>
                         <div>
-                            <div className="footer_display">E-mail : dhkkis@daum.net </div>
+                            <div className="footer_display">E-mail : dhkkis@suvincos.com </div>
                             <div className="footer_display">사업자 번호 : 130-42-62423 </div>
                             <div className="footer_display">상호 : 수빈코스메틱, 대표 : 김덕훈</div>
                         </div>
                     </MDBCol>
                     <MDBCol size="12" lg="3" className="py-3 py-lg-2 footer-lg-right" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
                         <a className="pr-5 px-lg-1" href="tel:16889028" title="click to call"><img src={callIcon_32} /></a>
-                        <a className="px-5 px-lg-1" href="mailto:dhkkis@daum.net" title="click to E-mail"><img src={emailIcon_32} /></a>
+                        <a className="px-5 px-lg-1" href="mailto:dhkkis@suvincos.com" title="click to E-mail"><img src={emailIcon_32} /></a>
                         <a className="pl-5 px-lg-1" href="https://www.youtube.com/channel/UCtvbYNAaLD4ZybrkxIevgxA" title="click to youtube"><img src={youtubeIcon_32} /></a>
                     </MDBCol>
                 </MDBRow>

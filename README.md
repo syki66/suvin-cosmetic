@@ -2,6 +2,10 @@
 
 react hook의 useState 사용해서 width 값 받아오고, iframe 오른쪽 패딩값에 대한 수식(input은 창너비, output은 vw)에 대입해서, (가로길이가 1200px 이상일때) 유투브가 carousel 위에 항상 일정한 위치에서 보이도록함
 
+모바일 버전에서는 iframe을 carousel 아래쪽에 배치하고, 재생목록 루프 적용
+
+suvincos.com 도메인 연결 및 1.0.0 버전업
+
 
 ### 2020-03-23 수정사항
 
@@ -285,3 +289,5 @@ information page added 부터
 - 모바일 페이지에서 product에 이미지를 너비 기준으로 높이 정하기
 
 - iframe 모바일 자동재생 설정하기
+
+- iframe 임시로 두개 사용한거 하나로 줄이기

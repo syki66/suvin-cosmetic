@@ -73,8 +73,8 @@ export default function Introduction() {
           <MDBCol size="12" md="4" className="pb-5 pb-md-0" style={{display:"flex", justifyContent:"center"}}>
             <Link to="Competence" className="home__link">
               <div className="home__intro_parent">
-                <img src={intro_pic_1} className="img-fluid home__intro_img" />
-                <div className="home__intro_child">Competence</div>
+                <img src={intro_pic_1} className="img-fluid home__intro_img rounded" />
+                <div className="home__intro_child z-depth-1 rounded">Competence</div>
               </div>
             </Link>
           </MDBCol>
@@ -82,8 +82,8 @@ export default function Introduction() {
           <MDBCol size="12" md="4" className="pb-5 pb-md-0" style={{display:"flex", justifyContent:"center"}}>
             <Link to="R & D" className="home__link">
               <div className="home__intro_parent">
-                <img src={intro_pic_2} className="img-fluid home__intro_img" />
-                <div className="home__intro_child">R & D</div>
+                <img src={intro_pic_2} className="img-fluid home__intro_img rounded" />
+                <div className="home__intro_child z-depth-1 rounded">R & D</div>
               </div>
             </Link>
           </MDBCol>
@@ -91,8 +91,8 @@ export default function Introduction() {
           <MDBCol size="12" md="4" style={{display:"flex", justifyContent:"center"}}>
             <Link to="OEM & ODM" className="home__link">
               <div className="home__intro_parent">
-                <img src={intro_pic_3} className="img-fluid home__intro_img" />
-                <div className="home__intro_child">OEM & ODM</div>
+                <img src={intro_pic_3} className="img-fluid home__intro_img rounded" />
+                <div className="home__intro_child z-depth-1 rounded">OEM & ODM</div>
               </div>
             </Link>
           </MDBCol>

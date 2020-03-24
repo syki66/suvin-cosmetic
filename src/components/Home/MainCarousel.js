@@ -1,5 +1,4 @@
 import React from "react";
-import Dimensions from 'react-dimensions'
 
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer, MDBIframe } from "mdbreact";
 import FittedImage from "react-fitted-image";
@@ -32,9 +31,10 @@ const suvin_pic_2 = "https://user-images.githubusercontent.com/59393359/77156904
 
   autoplay=1 
   mute=1 무음(오토플레이 하려면 필수)
-  loop=1 재생 반복
+  loop=1 재생 반복 (플레이리스트랑 같이써야됨)
+  playlist=qn_xoSpFdlA
   modestbranding=1 유투브 로고삭제
-
+  controls=0 컨트롤 불능
 */
 
 
@@ -79,14 +79,14 @@ export default function MainCarousel() {
             </MDBView>
           </MDBCarouselItem>
 
-          <div className="home__youtube_parent">
-            <iframe style={{marginRight: `${(width >= 1200) ? (`${marginRightVW}vw`) : ("6vw")}` }} className="home__youtube_child" width="560" height="315" src="https://www.youtube.com/embed/qn_xoSpFdlA?autoplay=1&mute=1&loop=1&modestbranding=1&controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div className="home__youtube_parent_pc">
+            <iframe style={{marginRight: `${(width >= 1200) ? (`${marginRightVW}vw`) : ("6vw")}` }} className="home__youtube_child" width="560" height="315" src="https://www.youtube.com/embed/qn_xoSpFdlA?autoplay=1&mute=1&loop=1&modestbranding=1&playlist=qn_xoSpFdlA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </MDBCarouselInner>
       </MDBCarousel>
-      {/* <div className="px-3 py-5">
-        <MDBIframe className="" autoplay src="https://www.youtube.com/embed/qn_xoSpFdlA?autoplay=1&mute=1" />
-      </div> */}
+      <MDBContainer className="pt-5 home__youtube_parent_mobile">
+        <MDBIframe className="rounded" src="https://www.youtube.com/embed/qn_xoSpFdlA?loop=1&modestbranding=1&playlist=qn_xoSpFdlA" />
+      </MDBContainer>
     </MDBContainer>
   );
 }
