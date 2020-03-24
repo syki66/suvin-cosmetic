@@ -1,4 +1,5 @@
 import React from "react";
+import Dimensions from 'react-dimensions'
 
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer, MDBIframe } from "mdbreact";
 import FittedImage from "react-fitted-image";
@@ -26,8 +27,36 @@ const suvin_pic_2 = "https://user-images.githubusercontent.com/59393359/77156904
   showControls는 드롭다운 메뉴가 안열리는 에러때문에 false로 둠
 */
 
+/*
+  youtube iframe 매개변수
+
+  autoplay=1 
+  mute=1 무음(오토플레이 하려면 필수)
+  loop=1 재생 반복
+  modestbranding=1 유투브 로고삭제
+
+*/
+
 
 export default function MainCarousel() {
+  const [width, setWidth] = React.useState(window.innerWidth);
+  //const [height, setHeight] = React.useState(window.innerHeight);
+
+
+  const updateWidthAndHeight = () => {
+    setWidth(window.innerWidth);
+    //setHeight(window.innerHeight);
+  };
+
+
+  React.useEffect(() => {
+    window.addEventListener("resize", updateWidthAndHeight);
+    return () => window.removeEventListener("resize", updateWidthAndHeight);
+  });  
+
+  let w = (width - 1200) / 100
+  let marginRightVW = ((50*w) + 72) / (w + 12);
+
   return (
     <MDBContainer fluid className="px-0">
       <MDBCarousel
@@ -51,14 +80,13 @@ export default function MainCarousel() {
           </MDBCarouselItem>
 
           <div className="home__youtube_parent">
-            <iframe className="home__youtube_child" width="560" height="315" src="https://www.youtube.com/embed/qn_xoSpFdlA?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe style={{marginRight: `${(width >= 1200) ? (`${marginRightVW}vw`) : ("6vw")}` }} className="home__youtube_child" width="560" height="315" src="https://www.youtube.com/embed/qn_xoSpFdlA?autoplay=1&mute=1&loop=1&modestbranding=1&controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </MDBCarouselInner>
       </MDBCarousel>
-
-      <div className="px-3 py-5">
+      {/* <div className="px-3 py-5">
         <MDBIframe className="" autoplay src="https://www.youtube.com/embed/qn_xoSpFdlA?autoplay=1&mute=1" />
-      </div>
+      </div> */}
     </MDBContainer>
   );
 }
