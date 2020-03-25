@@ -1,3 +1,9 @@
+### 2020-03-25 수정사항
+
+구형 인터넷 익스플로러에서 화면이 뜨지 않는 문제를 해결함
+
+---
+
 ### 2020-03-24 수정사항
 
 react hook의 useState 사용해서 width 값 받아오고, iframe 오른쪽 패딩값에 대한 수식(input은 창너비, output은 vw)에 대입해서, (가로길이가 1200px 이상일때) 유투브가 carousel 위에 항상 일정한 위치에서 보이도록함
@@ -8,6 +14,7 @@ suvincos.com 도메인 연결(https는 깃허브 페이지에서 자동 설정�
 
 https로 적용되고 나서 favicon.ico가 적용 안되는 문제 해결 index.html의 link-favicon 경로에 ? 추가
 
+---
 
 ### 2020-03-23 수정사항
 
