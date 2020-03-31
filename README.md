@@ -12,7 +12,7 @@ react hook의 useState 사용해서 width 값 받아오고, iframe 오른쪽 패
 
 suvincos.com 도메인 연결(https는 깃허브 페이지에서 자동 설정해준듯) 및 1.0.0 버전업
 
-https로 적용되고 나서 favicon.ico가 적용 안되는 문제 해결 index.html의 link-favicon 경로에 ? 추가
+~~https로 적용되고 나서 favicon.ico가 적용 안되는 문제 해결 index.html의 link-favicon 경로에 ? 추가~~ *자동해결됨*
 
 ---
 
