@@ -304,3 +304,5 @@ information page added 부터
 - https로 바꾸기
 
 - 깃허브 자체 페이지 커스텀 404 로 바꾸기
+
+- 네이버 구글에 사이트맵 제출
