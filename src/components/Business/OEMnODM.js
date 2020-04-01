@@ -9,8 +9,11 @@ const contract = "https://user-images.githubusercontent.com/59393359/77156081-fc
 const shaking_hands = "https://user-images.githubusercontent.com/59393359/77156088-fe9b5500-6ae1-11ea-92cf-4ee47893de79.jpg";
 const consulting = "https://user-images.githubusercontent.com/59393359/77156079-fb07ce00-6ae1-11ea-9c7f-262e27a00008.jpg";
 const production = "https://user-images.githubusercontent.com/59393359/77156087-fe02be80-6ae1-11ea-824e-a7301ec5b578.png";
-const product = "https://user-images.githubusercontent.com/59393359/77156085-fcd19180-6ae1-11ea-9acc-3515ce5ce77d.png";
-const procurement = "https://user-images.githubusercontent.com/59393359/77156082-fc38fb00-6ae1-11ea-8ea0-73035f2b2714.jpg";
+
+const product = "https://user-images.githubusercontent.com/59393359/78125696-5627b200-744c-11ea-982b-7a2dc616f93b.png";
+//const product2 = "https://user-images.githubusercontent.com/59393359/78125327-d4d01f80-744b-11ea-93d8-d8004a751bf3.png";
+
+const procurement = "https://user-images.githubusercontent.com/59393359/78125463-0812ae80-744c-11ea-97ba-b9f5035f2e35.png";
 
 
 /*
