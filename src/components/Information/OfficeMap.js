@@ -4,6 +4,7 @@ import InnerPageFrame from "../common/InnerPageFrame";
 
 import { RenderAfterNavermapsLoaded, NaverMap, Marker } from 'react-naver-maps'
 
+// 루트폴더에 .env 파일 하나 만들고, REACT_APP_NAVER_CLIENT_ID=여기다네이버클라이언트아이디따옴표없이쓰면됨
 
 const CLIENT_ID = process.env.REACT_APP_NAVER_CLIENT_ID;
 
