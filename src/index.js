@@ -1,6 +1,6 @@
 // 인터넷 익스플로러 호환 위해서 추가
-//import 'react-app-polyfill/ie9';
-import 'react-app-polyfill/ie11';
+//import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/ie9';
 import 'react-app-polyfill/stable';
 
 import React from 'react';
