@@ -1,6 +1,6 @@
 {
   "name": "suvin_cos_official_website",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "dependencies": {
     "@farbenmeer/react-spring-slider": "^1.1.0",
