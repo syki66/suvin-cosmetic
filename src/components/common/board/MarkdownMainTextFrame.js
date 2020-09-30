@@ -45,7 +45,7 @@ export default function MarkdownMainTextFrame(props) {
     }
 
     else {
-        const disqusShortname = "suvin" 
+        const disqusShortname = "suvincos" 
         const disqusConfig = {
           url: `http://localhost:3000${props.location.pathname}/${post.index}`,
           identifier: `${props.location.pathname}/${post.index}`,

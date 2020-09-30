@@ -16,7 +16,7 @@ import InnerPageFrame from "../common/InnerPageFrame";
 
 export default class Comments extends Component {
     render() {
-        const disqusShortname = "suvin" //found in your Disqus.com dashboard
+        const disqusShortname = "suvincos" //found in your Disqus.com dashboard
         const disqusConfig = {
           url: "http://localhost:3000/Comments", //this.props.pageUrl
           identifier: "Comments", //this.props.uniqueId
