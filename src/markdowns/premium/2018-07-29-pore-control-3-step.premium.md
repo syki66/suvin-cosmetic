@@ -6,7 +6,7 @@ disqus: "true"
 thumbnail: "https://user-images.githubusercontent.com/59393359/77165726-3b714700-6af6-11ea-8255-9a22b33637c3.jpg"
 ---
 
-<div style="text-align: center; font-size: xx-large">
+<div style="text-align: center; font-size: xx-large; padding: 10px 0px;">
     <a href="https://front.wemakeprice.com/product/216660104?search_keyword=%25EC%2595%2584%25EB%25A5%25B4%25EC%258B%259C%25EC%2595%2584&_service=5&_no=1">제품 구매하기</a>
 </div>
 
