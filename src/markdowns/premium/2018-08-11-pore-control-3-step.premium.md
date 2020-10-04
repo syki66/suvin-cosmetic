@@ -1,5 +1,5 @@
 ---
-title: "아르시아 포어컨트롤 3스텝(Arsia pore control 3 step) : 5매1팩 \19,500"
+title: "아르시아 포어컨트롤 3스텝(Arsia pore control 3 step) : 5매1팩 ₩19,500"
 date: "2018-08-11"
 writer: "관리자"
 disqus: "true"

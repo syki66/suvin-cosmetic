@@ -1,5 +1,5 @@
 ---
-title: "Arsia pore reducing pack 아르시아 모공축소팩 \44,000"
+title: "Arsia pore reducing pack 아르시아 모공축소팩 ₩44,000"
 date: "2015-04-14"
 writer: "관리자"
 disqus: "true"
@@ -12,7 +12,7 @@ Arsia pore reducing pack
 
 ​​아르시아 모공축소팩
 
-\44,000
+₩44,000
 
 ---
 

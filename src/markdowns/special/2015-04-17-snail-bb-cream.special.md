@@ -1,5 +1,5 @@
 ---
-title: "스네일 비비크림 Snail BB Cream \45,000"
+title: "스네일 비비크림 Snail BB Cream ₩45,000"
 date: "2015-04-17"
 writer: "관리자"
 disqus: "true"
@@ -10,7 +10,7 @@ thumbnail: "https://user-images.githubusercontent.com/59393359/77165128-0f08fb00
 
 스네일 비비크림 Snail BB Cream
 
-\45,000
+₩45,000
 
 ---
 

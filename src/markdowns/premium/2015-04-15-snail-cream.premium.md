@@ -1,5 +1,5 @@
 ---
-title: "suvin snail mucin repair cream 수빈 스네일 뮤신 리페어 크림 \44,000"
+title: "suvin snail mucin repair cream 수빈 스네일 뮤신 리페어 크림 ₩44,000"
 date: "2015-04-15"
 writer: "관리자"
 disqus: "true"
@@ -11,7 +11,7 @@ thumbnail: "https://user-images.githubusercontent.com/59393359/77165724-3a401a00
 suvin snail mucin repair cream
 수빈 스네일 뮤신 리페어 크림 
 
-\44,000
+₩44,000
 
 ---
 

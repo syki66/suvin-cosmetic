@@ -1,10 +1,14 @@
 ---
-title: "Arsia pore control 3 step (5sheets) \19,500"
+title: "Arsia pore control 3 step (5sheets) ₩19,500"
 date: "2018-07-29"
 writer: "관리자"
 disqus: "true"
 thumbnail: "https://user-images.githubusercontent.com/59393359/77165726-3b714700-6af6-11ea-8255-9a22b33637c3.jpg"
 ---
+
+<div style="text-align: center; font-size: xx-large">
+    <a href="https://front.wemakeprice.com/product/216660104?search_keyword=%25EC%2595%2584%25EB%25A5%25B4%25EC%258B%259C%25EC%2595%2584&_service=5&_no=1">제품 구매하기</a>
+</div>
 
 <img style="width:100%; padding: 10px 0px;" src="https://user-images.githubusercontent.com/59393359/76971718-e526cb80-6970-11ea-87da-ae1d6c12b9b8.jpg" />
 
@@ -12,7 +16,7 @@ Arsia pore control 3 step
 
 (22ml x 5 Sheets)
 
- \19,500
+ ₩19,500
 
 ​ ​
  

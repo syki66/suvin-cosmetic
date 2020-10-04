@@ -1,5 +1,5 @@
 ---
-title: "Dewins Stemcell total solution Cream ₩27,000"
+title: "Dewins Stemcell total solution Cream ₩100,000"
 date: "2019-05-20"
 writer: "관리자"
 disqus: "true"
@@ -16,7 +16,7 @@ Dewins Stemcell Total Solution Cream
 
 60g
 
-₩ 27,000
+₩100,000
 
 ---
 
