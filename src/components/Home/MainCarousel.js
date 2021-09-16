@@ -32,7 +32,7 @@ const suvin_pic_2 = "https://user-images.githubusercontent.com/59393359/77156904
   autoplay=1 
   mute=1 무음(오토플레이 하려면 필수)
   loop=1 재생 반복 (플레이리스트랑 같이써야됨)
-  playlist=qn_xoSpFdlA
+  list= 재생목록ID
   modestbranding=1 유투브 로고삭제
   controls=0 컨트롤 불능
 */
@@ -57,6 +57,12 @@ export default function MainCarousel() {
   let w = (width - 1200) / 100
   let marginRightVW = ((50*w) + 72) / (w + 12);
 
+
+  const playListID = "PLPR1dl0wge2aQoGiFSmiF8iNlLU949f8k";
+  const playID = "qn_xoSpFdlA";
+  const videoHeight = "1000";
+  const videoWidth = "600";
+
   return (
     <MDBContainer fluid className="px-0">
       <MDBCarousel
@@ -80,12 +86,12 @@ export default function MainCarousel() {
           </MDBCarouselItem>
 
           <div className="home__youtube_parent_pc">
-            <iframe style={{marginRight: `${(width >= 1200) ? (`${marginRightVW}vw`) : ("6vw")}` }} className="home__youtube_child" width="560" height="315" src="https://www.youtube.com/embed/qn_xoSpFdlA?autoplay=1&mute=1&loop=1&modestbranding=1&playlist=qn_xoSpFdlA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe style={{marginRight: `${(width >= 1200) ? (`${marginRightVW}vw`) : ("6vw")}` }} className="home__youtube_child" width={{videoWidth}} height={{videoHeight}} src={`https://www.youtube.com/embed/${playID}?autoplay=1&mute=1&loop=1&modestbranding=1&list=${playListID}`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </MDBCarouselInner>
       </MDBCarousel>
       <MDBContainer className="pt-5 home__youtube_parent_mobile">
-        <MDBIframe className="rounded" src="https://www.youtube.com/embed/qn_xoSpFdlA?loop=1&modestbranding=1&playlist=qn_xoSpFdlA" />
+        <MDBIframe className="rounded" src={`https://www.youtube.com/embed/${playID}?loop=1&modestbranding=1&list=${playListID}`} />
       </MDBContainer>
     </MDBContainer>
   );
