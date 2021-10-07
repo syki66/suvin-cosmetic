@@ -51,10 +51,18 @@ An official webpage of suvin cosmetic
 
 ---
 
+## Run
+
+> npm install
+
+> npm start
+
+---
+
 ## Build
 
 `npm install gh-pages`
 
-`.env` 파일 생성 후 `REACT_APP_NAVER_CLIENT_ID=클라이언트아이디` 적어주기
+<!-- `.env` 파일 생성 후 `REACT_APP_NAVER_CLIENT_ID=클라이언트아이디` 적어주기 -->
 
 `npm run deploy`
