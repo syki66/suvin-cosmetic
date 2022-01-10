@@ -68,7 +68,7 @@ export default class NoticeContact extends React.Component {
                                                         }
                                                     }}>
                                                     
-                                                    <MDBRow style={{color:"gray"}}>
+                                                    <MDBRow style={{color:"gray"}} className="home__notice_parent">
                                                         <MDBCol size="10"><li className="home__notice" style={{color:"black"}}>{post.title}</li></MDBCol>
                                                         <MDBCol size="2" className="px-0 home__notice" style={{textAlign:"right"}}>{post.date}</MDBCol>
                                                     </MDBRow>

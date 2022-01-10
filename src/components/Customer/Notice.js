@@ -96,7 +96,7 @@ export default class Notice extends React.Component {
                                                 <MDBCol size="9">
                                                     <MDBRow>
                                                         <MDBCol size="1" className="p-0" style={{ display:"flex", alignItems:"center", justifyContent:"center" }}>{post.index}</MDBCol>
-                                                        <MDBCol size="11" className="font-weight-bolder" style={{ color:"black" }}>{post.title}</MDBCol>
+                                                        <MDBCol size="11" className="font-weight-bolder notice__title" style={{ color:"black" }}>{post.title}</MDBCol>
                                                     </MDBRow>
                                                 </MDBCol>
 

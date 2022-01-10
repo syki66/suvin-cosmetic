@@ -319,7 +319,14 @@
     white-space: nowrap;
 }
 
+.home__notice_parent:hover{
+    text-decoration: underline;
+}
 
+
+.notice__title:hover{
+    text-decoration: underline;
+}
 
 
 /*사이드 네비게이션 용 css*/

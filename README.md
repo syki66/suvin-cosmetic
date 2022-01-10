@@ -1,6 +1,17 @@
 # suvin-cosmetic
 
-An official webpage of suvin cosmetic
+수빈코스메틱 공식 홈페이지 **[(링크)](https://suvincos.com/)**
+
+|PC|모바일|
+|:---:|:---:|
+|![pc](https://user-images.githubusercontent.com/59393359/148419257-fa796517-301a-43f0-9f35-073a6a6c8091.png)|![mobile](https://user-images.githubusercontent.com/59393359/148786314-98bc0511-e416-4a84-aa5e-76519fccaeaa.png)|
+
+---
+
+## Feature
+
+- 회사 정보 제공
+- 가로 사이즈에 따라 레이아웃 변경 (576px, 768px, 992px, 1200px)
 
 ---
 
@@ -17,7 +28,6 @@ An official webpage of suvin cosmetic
 - xl일때 창 폭늘리고, 사이드메뉴 가로길이 조금 줄이기
 - 메인페이지에 youtube 삽입
 - company의 Management Motto 에 그립삽입하고 모바일버전에서는 리스트의 좌측패딩값 없애고 사진 배경으로 해놓고 흰색 마스크 씌우기
-- company에 ceo 인사말 하단부분에 "대표 김덕훈" 자필 png 파일로 받아서 넣기
 - 모바일에서 메뉴열고서 서브메뉴 클릭했으면 햄버거 메뉴 닫히게 하기
 - carasel 모바일에서는 더 큰걸로 넣기
 - 백그라운드 이미지랑 그냥 이미지 중첩되있는데 bg만 남겨놓기
