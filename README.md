@@ -2,9 +2,9 @@
 
 수빈코스메틱 공식 홈페이지 **[(링크)](https://suvincos.com/)**
 
-|PC|모바일|
-|:---:|:---:|
-|![pc](https://user-images.githubusercontent.com/59393359/148419257-fa796517-301a-43f0-9f35-073a6a6c8091.png)|![mobile](https://user-images.githubusercontent.com/59393359/148786314-98bc0511-e416-4a84-aa5e-76519fccaeaa.png)|
+|                                                      PC                                                      |                                                      모바일                                                      |
+| :----------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: |
+| ![pc](https://user-images.githubusercontent.com/59393359/148419257-fa796517-301a-43f0-9f35-073a6a6c8091.png) | ![mobile](https://user-images.githubusercontent.com/59393359/148786314-98bc0511-e416-4a84-aa5e-76519fccaeaa.png) |
 
 ---
 
@@ -70,8 +70,6 @@
 ---
 
 ## Build
-
-`npm install gh-pages`
 
 <!-- `.env` 파일 생성 후 `REACT_APP_NAVER_CLIENT_ID=클라이언트아이디` 적어주기 -->
 
