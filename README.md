@@ -23,6 +23,7 @@
 
 ## Todo List
 
+- 마크다운 파일들 연결 해제하고 _header 파일 삭제하고 파이어베이스로 게시판 구현하기
 - 폰트 바꾸기
 - 모바일에서 작은 폰에서 사이드메뉴바가 글씨 오버플로우 해결하기
 - xl일때 창 폭늘리고, 사이드메뉴 가로길이 조금 줄이기
@@ -67,10 +68,16 @@
 
 > npm start
 
+npm 오류 시 아래 명령어 실행
+
+export NODE_OPTIONS=--openssl-legacy-provider
+
 ---
 
 ## Build
 
 <!-- `.env` 파일 생성 후 `REACT_APP_NAVER_CLIENT_ID=클라이언트아이디` 적어주기 -->
 
-`npm run deploy`
+<!-- `npm run deploy` -->
+
+npm run build -> build/static/media 파일에 수동으로 깃허브의 markdown/ 넣고, nelify에 build파일 수동 배포
