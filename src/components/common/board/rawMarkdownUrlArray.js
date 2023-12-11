@@ -4,7 +4,7 @@
 
 
 const rawMarkdownUrlArray = (path) => {
-    const rawMarkdownUrl = `https://raw.githubusercontent.com/syki66/suvin-cosmetic/master/src/markdowns/${path}`;
+    const rawMarkdownUrl = `https://suvincos.com/static/media/${path}`;
 
     //제목만 가져오기
     const importAll = (r) => r.keys().map(r);
