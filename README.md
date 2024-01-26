@@ -23,7 +23,7 @@
 
 ## Todo List
 
-- 마크다운 파일들 연결 해제하고 _header 파일 삭제하고 파이어베이스로 게시판 구현하기
+- 마크다운 파일들 연결 해제하고 \_header 파일 삭제하고 파이어베이스로 게시판 구현하기
 - 폰트 바꾸기
 - 모바일에서 작은 폰에서 사이드메뉴바가 글씨 오버플로우 해결하기
 - xl일때 창 폭늘리고, 사이드메뉴 가로길이 조금 줄이기
@@ -61,6 +61,10 @@
 - [change log](https://github.com/syki66/suvin-cosmetic/blob/master/CHANGELOG.MD)
 
 ---
+
+## Requirements
+
+node v16
 
 ## Run
 
