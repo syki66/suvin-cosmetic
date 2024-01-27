@@ -1,15 +1,18 @@
-import React from "react";
-import { HashRouter, Route, Switch } from "react-router-dom";
+import React from 'react';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 
 //css
 import 'bootstrap/dist/css/bootstrap.min.css'; // react bootstrap css
 import 'bootstrap-css-only/css/bootstrap.min.css'; // navigation bar css
 import 'mdbreact/dist/css/mdb.css'; // hover effect css
 
-import "./App.css";
+import './App.css';
+
+//Sign in
+import Login from './components/Login/Login.js';
 
 //routes
-import Home from "./routes/Home";
+import Home from './routes/Home';
 import NoMatch from './routes/NoMatch';
 
 //footer and header
@@ -28,26 +31,25 @@ import Premium from './components/Product/Premium';
 import Special from './components/Product/Special';
 import Others from './components/Product/Others';
 
-import Global_Network from "./components/Global_Network/Global_Network.js";
+import Global_Network from './components/Global_Network/Global_Network.js';
 
-import Inquiry from "./components/Inquiry/Inquiry";
+import Inquiry from './components/Inquiry/Inquiry';
 
-import Notice from "./components/Customer/Notice";
-import Comments from "./components/Customer/Comments";
-
+import Notice from './components/Customer/Notice';
+import Comments from './components/Customer/Comments';
 
 //common components
-import MarkdownMainTextFrame from "./components/common/board/MarkdownMainTextFrame";
+import MarkdownMainTextFrame from './components/common/board/MarkdownMainTextFrame';
 
 export default function App() {
-
   return (
     <HashRouter>
-
       <Header />
 
       <Switch>
         <Route path="/" exact={true} component={Home} />
+
+        <Route path="/Login" component={Login} />
 
         <Route path="/Company" component={Company} />
         <Route path="/Office Map" component={OfficeMap} />
@@ -66,14 +68,13 @@ export default function App() {
 
         <Route path="/Notice" exact={true} component={Notice} />
         <Route path="/Comments" component={Comments} />
-        
+
         <Route path="/:id" component={MarkdownMainTextFrame} />
 
         <Route path="*" component={NoMatch} />
       </Switch>
 
       <Footer />
-
     </HashRouter>
   );
 }
