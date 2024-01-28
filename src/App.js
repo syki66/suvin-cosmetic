@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 //css
 import 'bootstrap/dist/css/bootstrap.min.css'; // react bootstrap css
@@ -44,7 +44,7 @@ import MarkdownMainTextFrame from './components/common/board/MarkdownMainTextFra
 
 export default function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Header />
 
       <Switch>
@@ -77,6 +77,6 @@ export default function App() {
       </Switch>
 
       <Footer />
-    </HashRouter>
+    </BrowserRouter>
   );
 }
