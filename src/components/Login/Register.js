@@ -149,7 +149,7 @@ export default function Register() {
         <div style={{ textAlign: 'center', margin: '10px' }}>
           Already have an account?&nbsp;
           <Link
-            to="Login"
+            to="/Login"
             style={{ textDecoration: 'underline', color: 'gray' }}
           >
             SIGN IN

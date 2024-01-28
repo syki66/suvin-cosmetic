@@ -161,7 +161,7 @@ export default function Login() {
         <div style={{ textAlign: 'center', margin: '10px' }}>
           Need an account?&nbsp;
           <Link
-            to="Register"
+            to="/Register"
             style={{ textDecoration: 'underline', color: 'gray' }}
           >
             SIGN UP

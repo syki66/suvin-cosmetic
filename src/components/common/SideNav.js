@@ -1,6 +1,5 @@
-import React from "react";
-import { MDBNav, MDBNavItem, MDBNavLink } from "mdbreact";
-
+import React from 'react';
+import { MDBNav, MDBNavItem, MDBNavLink } from 'mdbreact';
 
 /*
     nav-pills 는 기본 파랑색 값으로 클릭했을때 색칠되고,
@@ -17,26 +16,34 @@ import { MDBNav, MDBNavItem, MDBNavLink } from "mdbreact";
     
 */
 
+export default function SideNav({ title, subtitle, pickedIndex }) {
+  return (
+    <div>
+      <div className="h1" style={{ color: '#7f304e' }}>
+        {title}
+      </div>
 
-export default function SideNav ({title, subtitle, pickedIndex }) {
-        return(
-            <div>
-                <div className="h1" style={{color:"#7f304e"}}>{title}</div>
-            
-                <MDBNav className="nav-pills nav-justified flex-md-column border border-light" style={{backgroundColor:"white"}} >        
-                    {subtitle.map((eachSubtitle, eachIndex) => {
-                            let active = null;
-                            if (pickedIndex === eachIndex) {
-                                active = "active"
-                            }
-                            return (
-                                <MDBNavItem className="border-bottom border-light">
-                                    <MDBNavLink to={eachSubtitle} className={`black-text px-3 py-2 ${active} sideNavComponent`}>{eachSubtitle}</MDBNavLink>
-                                </MDBNavItem>)
-                        }
-                    )}
-                </MDBNav>
-            </div>
-        );
-
+      <MDBNav
+        className="nav-pills nav-justified flex-md-column border border-light"
+        style={{ backgroundColor: 'white' }}
+      >
+        {subtitle.map((eachSubtitle, eachIndex) => {
+          let active = null;
+          if (pickedIndex === eachIndex) {
+            active = 'active';
+          }
+          return (
+            <MDBNavItem className="border-bottom border-light">
+              <MDBNavLink
+                to={'/' + eachSubtitle}
+                className={`black-text px-3 py-2 ${active} sideNavComponent`}
+              >
+                {eachSubtitle}
+              </MDBNavLink>
+            </MDBNavItem>
+          );
+        })}
+      </MDBNav>
+    </div>
+  );
 }

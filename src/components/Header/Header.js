@@ -109,17 +109,17 @@ export default function Header() {
                 <nav className="nav">
                   <div className="nav__link p-0" style={{ width: '100%' }}>
                     <MDBNavLink
-                      to="Company"
+                      to="/Company"
                       className="py-md-3 headerMenu_css"
                       style={{ textAlign: 'center' }}
                     >
                       Information
                     </MDBNavLink>
                     <div className="nav__link-group" style={{ zIndex: '2' }}>
-                      <MDBNavLink to="Company" className="nav__link">
+                      <MDBNavLink to="/Company" className="nav__link">
                         Company
                       </MDBNavLink>
-                      <MDBNavLink to="Office Map" className="nav__link">
+                      <MDBNavLink to="/Office Map" className="nav__link">
                         Office Map
                       </MDBNavLink>
                     </div>
@@ -131,20 +131,20 @@ export default function Header() {
                 <nav className="nav">
                   <div className="nav__link p-0" style={{ width: '100%' }}>
                     <MDBNavLink
-                      to="Competence"
+                      to="/Competence"
                       className="py-md-3 headerMenu_css"
                       style={{ textAlign: 'center' }}
                     >
                       Business
                     </MDBNavLink>
                     <div className="nav__link-group" style={{ zIndex: '2' }}>
-                      <MDBNavLink to="Competence" className="nav__link">
+                      <MDBNavLink to="/Competence" className="nav__link">
                         Competence
                       </MDBNavLink>
-                      <MDBNavLink to="R & D" className="nav__link">
+                      <MDBNavLink to="/R & D" className="nav__link">
                         R & D
                       </MDBNavLink>
-                      <MDBNavLink to="OEM & ODM" className="nav__link">
+                      <MDBNavLink to="/OEM & ODM" className="nav__link">
                         OEM & ODM
                       </MDBNavLink>
                     </div>
@@ -156,20 +156,20 @@ export default function Header() {
                 <nav className="nav">
                   <div className="nav__link p-0" style={{ width: '100%' }}>
                     <MDBNavLink
-                      to="Premium"
+                      to="/Premium"
                       className="py-md-3 headerMenu_css"
                       style={{ textAlign: 'center' }}
                     >
                       Product
                     </MDBNavLink>
                     <div className="nav__link-group" style={{ zIndex: '2' }}>
-                      <MDBNavLink to="Premium" className="nav__link">
+                      <MDBNavLink to="/Premium" className="nav__link">
                         Premium
                       </MDBNavLink>
-                      <MDBNavLink to="Special" className="nav__link">
+                      <MDBNavLink to="/Special" className="nav__link">
                         Special
                       </MDBNavLink>
-                      <MDBNavLink to="Others" className="nav__link">
+                      <MDBNavLink to="/Others" className="nav__link">
                         Others
                       </MDBNavLink>
                     </div>
@@ -181,14 +181,14 @@ export default function Header() {
                 <nav className="nav">
                   <div className="nav__link p-0" style={{ width: '100%' }}>
                     <MDBNavLink
-                      to="Global Network"
+                      to="/Global Network"
                       className="py-md-3 headerMenu_css"
                       style={{ textAlign: 'center' }}
                     >
                       Global Network
                     </MDBNavLink>
                     <div className="nav__link-group" style={{ zIndex: '2' }}>
-                      <MDBNavLink to="Global Network" className="nav__link">
+                      <MDBNavLink to="/Global Network" className="nav__link">
                         Global Network
                       </MDBNavLink>
                     </div>
@@ -200,14 +200,14 @@ export default function Header() {
                 <nav className="nav">
                   <div className="nav__link p-0" style={{ width: '100%' }}>
                     <MDBNavLink
-                      to="Inquiry"
+                      to="/Inquiry"
                       className="py-md-3 headerMenu_css"
                       style={{ textAlign: 'center' }}
                     >
                       Inquiry
                     </MDBNavLink>
                     <div className="nav__link-group" style={{ zIndex: '2' }}>
-                      <MDBNavLink to="Inquiry" className="nav__link">
+                      <MDBNavLink to="/Inquiry" className="nav__link">
                         Inquiry
                       </MDBNavLink>
                     </div>
@@ -219,17 +219,17 @@ export default function Header() {
                 <nav className="nav">
                   <div className="nav__link p-0" style={{ width: '100%' }}>
                     <MDBNavLink
-                      to="Notice"
+                      to="/Notice"
                       className="py-md-3 headerMenu_css"
                       style={{ textAlign: 'center' }}
                     >
                       Customer
                     </MDBNavLink>
                     <div className="nav__link-group" style={{ zIndex: '2' }}>
-                      <MDBNavLink to="Notice" className="nav__link">
+                      <MDBNavLink to="/Notice" className="nav__link">
                         Notice
                       </MDBNavLink>
-                      <MDBNavLink to="Comments" className="nav__link">
+                      <MDBNavLink to="/Comments" className="nav__link">
                         Comments
                       </MDBNavLink>
                     </div>
@@ -268,7 +268,7 @@ export default function Header() {
                   <nav className="nav">
                     <div className="nav__link p-0" style={{ width: '100%' }}>
                       <MDBNavLink
-                        to="Login"
+                        to="/Login"
                         className="py-md-3 headerMenu_css"
                         style={{ textAlign: 'center' }}
                       >
