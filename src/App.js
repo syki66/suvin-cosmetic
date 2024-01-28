@@ -10,6 +10,7 @@ import './App.css';
 
 //Sign in
 import Login from './components/Login/Login.js';
+import Register from './components/Login/Register.js';
 
 //routes
 import Home from './routes/Home';
@@ -50,6 +51,7 @@ export default function App() {
         <Route path="/" exact={true} component={Home} />
 
         <Route path="/Login" component={Login} />
+        <Route path="/Register" component={Register} />
 
         <Route path="/Company" component={Company} />
         <Route path="/Office Map" component={OfficeMap} />
