@@ -13,7 +13,12 @@ import { useLocation } from 'react-router-dom';
 
 import FittedImage from 'react-fitted-image';
 
-import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+import {
+  getAuth,
+  onAuthStateChanged,
+  sendEmailVerification,
+  signOut,
+} from 'firebase/auth';
 
 const header_sub_bg =
   'https://user-images.githubusercontent.com/59393359/77156720-49699c80-6ae3-11ea-9a98-e308294ecedf.png';
@@ -42,9 +47,18 @@ export default function Header() {
   const auth = getAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [userEmail, setUserEmail] = useState('');
+  const [emailVerified, setEmailVerified] = useState(false);
 
   const toggleCollapse = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleSendEmail = () => {
+    sendEmailVerification(auth.currentUser).then(() => {
+      alert(
+        'Verify Your Email.\nCheck your email & click the link to activate your account.'
+      );
+    });
   };
 
   const handleLogout = () => {
@@ -62,9 +76,11 @@ export default function Header() {
       if (user) {
         const uid = user.uid;
         setUserEmail(user.email.split('@')[0]);
+        setEmailVerified(user.emailVerified);
       } else {
         console.log('로그아웃 상태');
         setUserEmail('');
+        setEmailVerified(false);
       }
     });
   }, []);
@@ -226,14 +242,20 @@ export default function Header() {
                   <nav className="nav">
                     <div className="nav__link p-0" style={{ width: '100%' }}>
                       <MDBNavLink
-                        to="Login"
+                        to=""
                         className="py-md-3 headerMenu_css"
                         style={{ textAlign: 'center' }}
                       >
                         {userEmail}
                       </MDBNavLink>
-
                       <div className="nav__link-group" style={{ zIndex: '2' }}>
+                        {emailVerified ? (
+                          <></>
+                        ) : (
+                          <div onClick={handleSendEmail} className="nav__link">
+                            Resend Verification email
+                          </div>
+                        )}
                         <div onClick={handleLogout} className="nav__link">
                           Sign-out
                         </div>
