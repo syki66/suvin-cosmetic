@@ -6,9 +6,8 @@ import {
   onAuthStateChanged,
   GoogleAuthProvider,
   signInWithPopup,
-  signOut,
 } from 'firebase/auth';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 export default function Login() {
   const auth = getAuth();
@@ -36,18 +35,6 @@ export default function Login() {
       });
   };
 
-  const handleLogout = () => {
-    signOut(auth)
-      .then(() => {
-        // 로그아웃 성공
-        console.log('로그아웃 성공');
-      })
-      .catch((error) => {
-        // 에러 핸들링
-        console.log('로그아웃 실패', error);
-      });
-  };
-
   const handleLogin = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -60,9 +47,13 @@ export default function Login() {
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
         if (errorCode === 'auth/invalid-email') {
-          alert('email is wrong');
+          alert('The email is incorrect');
         } else if (errorCode === 'auth/invalid-credential') {
-          alert('password is wrong');
+          alert('Password is incorrect');
+        } else if (errorCode === 'auth/missing-email') {
+          alert('Please enter your Email');
+        } else if (errorCode === 'auth/missing-password') {
+          alert('Please enter your password');
         } else {
           alert(errorCode);
         }
@@ -94,7 +85,7 @@ export default function Login() {
           borderRadius: '15px',
         }}
       >
-        <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>Sign in</h2>
+        <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>Sign In</h2>
         <input
           style={{
             fontSize: '19px',
@@ -168,8 +159,13 @@ export default function Login() {
         </div>
         <GoogleLoginButton onClick={handleGoogleLogin} />
         <div style={{ textAlign: 'center', margin: '10px' }}>
-          Need an account?{' '}
-          <a style={{ textDecoration: 'underline', color: 'gray' }}>SIGN UP</a>
+          Need an account?&nbsp;
+          <Link
+            to="Register"
+            style={{ textDecoration: 'underline', color: 'gray' }}
+          >
+            SIGN UP
+          </Link>
         </div>
       </div>
     </>
