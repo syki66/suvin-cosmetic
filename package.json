@@ -23,7 +23,8 @@
     "react-quill": "^2.0.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
-    "react-social-login-buttons": "^3.9.1"
+    "react-social-login-buttons": "^3.9.1",
+    "uuid": "^9.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

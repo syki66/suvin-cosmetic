@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import ' ../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-import { useEffect } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { db } from '../../firebase-config';
+import { db, storage } from '../../firebase-config';
 import InnerPageFrame from '../common/InnerPageFrame';
 import { MDBCol, MDBRow } from 'mdbreact';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { v4 } from 'uuid';
 
 let newDate = new Date();
 let dateToday = newDate.getDate();
@@ -24,6 +24,7 @@ export default function NoticeAdd() {
   const [author, setAuthor] = useState('');
 
   const auth = getAuth();
+  const history = useHistory();
 
   const modules = {
     toolbar: [
@@ -48,15 +49,58 @@ export default function NoticeAdd() {
     ],
   };
 
-  const handleSubmit = () => {
+  function b64toBlob(dataURI) {
+    var byteString = atob(dataURI.split(',')[1]);
+    var ab = new ArrayBuffer(byteString.length);
+    var ia = new Uint8Array(ab);
+
+    for (var i = 0; i < byteString.length; i++) {
+      ia[i] = byteString.charCodeAt(i);
+    }
+    return new Blob([ab], { type: 'image/jpeg' });
+  }
+
+  const uploadImage = async (imageBlob) => {
+    const FolderUUID = v4();
+    const FileUUID = v4();
+    const imagePath = `notice/${FolderUUID}/${FileUUID}`;
+    const imageRef = ref(storage, imagePath);
+    const response = await uploadBytes(imageRef, imageBlob);
+    const imageURL = await getDownloadURL(response.ref);
+    return { imageURL, imagePath };
+  };
+
+  const handleSubmit = async () => {
+    const newContent = content.slice();
+    const htmlObject = document.createElement('div');
+    htmlObject.innerHTML = newContent;
+
+    const imgs = [...htmlObject.querySelectorAll('img')];
+    const imagePathUrlArrayPromise = imgs.map(async (img) => {
+      if (img.src.startsWith('data')) {
+        const imageBlob = b64toBlob(img.src);
+        const { imagePath, imageURL } = await uploadImage(imageBlob);
+        img.src = imageURL;
+        img.style.width = '100%';
+        return { imagePath: imagePath, imageURL: imageURL };
+      }
+    });
+
+    const imagePathUrlArray = await Promise.all(imagePathUrlArrayPromise);
+
+    // imagePathUrlArray undefined 제거 처리
+    // 외부 url 이미지일 경우 처리
+
     addDoc(collection(db, 'notice'), {
       title: title,
-      content: content,
+      content: htmlObject.outerHTML,
       date: date,
       author: 'admin',
+      imagePathUrlArray: imagePathUrlArray,
     })
       .then(() => {
         alert('success');
+        history.push('/notice');
       })
       .catch((error) => {
         alert(error);
@@ -109,7 +153,6 @@ export default function NoticeAdd() {
                 List
               </Link>
               <Link
-                to="/notice"
                 className="border border-light p-1 p-lg-2 ml-3"
                 style={{
                   backgroundColor: '#e5ecef',
