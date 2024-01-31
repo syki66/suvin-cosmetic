@@ -11,7 +11,7 @@ export default function Notice() {
   const [posts, setPosts] = useState([]);
 
   const getNoticeList = async () => {
-    const q = query(collection(db, 'notice'), orderBy('date', 'desc'));
+    const q = query(collection(db, 'notice'), orderBy('timestamp', 'desc'));
     const querySnapshot = await getDocs(q);
     const _posts = [];
     querySnapshot.forEach((doc) => {
@@ -20,7 +20,7 @@ export default function Notice() {
         title: doc.data().title,
         content: doc.data().content,
         author: doc.data().author,
-        date: doc.data().date,
+        timestamp: doc.data().timestamp,
       });
     });
     setPosts(_posts);
@@ -109,8 +109,14 @@ export default function Notice() {
           </MDBRow>
 
           {posts.map((post, index) => {
+            let newDate = new Date();
+            let dateToday = newDate.getDate();
+            let month = newDate.getMonth() + 1;
+            let year = newDate.getFullYear();
+            month = month < 10 ? '0' + month : month;
+            dateToday = dateToday < 10 ? '0' + dateToday : dateToday;
             return (
-              <div>
+              <div key={post.id}>
                 <Link
                   to={{
                     pathname: `notice/${post.id}`,
@@ -163,7 +169,7 @@ export default function Notice() {
                           className="px-0 pl-lg-2 pl-xl-4 notice-lg-right"
                           style={{ textAlign: 'right' }}
                         >
-                          {post.date}
+                          {`${year}-${month}-${dateToday}`}
                         </MDBCol>
                       </MDBRow>
                     </MDBCol>

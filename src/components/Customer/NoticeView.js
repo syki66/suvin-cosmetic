@@ -16,8 +16,26 @@ export default function NoticeView({}) {
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      console.log('Document data:', docSnap.data());
-      setData(docSnap.data());
+      let newDate = new Date(docSnap.data().timestamp);
+      let dateToday = newDate.getDate();
+      let month = newDate.getMonth() + 1;
+      let year = newDate.getFullYear();
+      let hours = newDate.getHours();
+      let minutes = newDate.getMinutes();
+      let seconds = newDate.getSeconds();
+      let AM_PM = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12;
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+      month = month < 10 ? '0' + month : month;
+      dateToday = dateToday < 10 ? '0' + dateToday : dateToday;
+      const date = `${year}-${month}-${dateToday} ${hours}:${minutes}:${seconds} ${AM_PM}`;
+
+      setData({
+        ...docSnap.data(),
+        date: date,
+      });
     } else {
       // docSnap.data() will be undefined in this case
       console.log('No such document!');

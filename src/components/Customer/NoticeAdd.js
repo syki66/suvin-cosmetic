@@ -14,14 +14,25 @@ let newDate = new Date();
 let dateToday = newDate.getDate();
 let month = newDate.getMonth() + 1;
 let year = newDate.getFullYear();
+let hours = newDate.getHours();
+let minutes = newDate.getMinutes();
+let seconds = newDate.getSeconds();
+hours = hours < 10 ? '0' + hours : hours;
+minutes = minutes < 10 ? '0' + minutes : minutes;
+seconds = seconds < 10 ? '0' + seconds : seconds;
+month = month < 10 ? '0' + month : month;
+dateToday = dateToday < 10 ? '0' + dateToday : dateToday;
+
+const adminUID = `twz9x2SgElgzdPQhBH1VDujDIqw2`;
 
 export default function NoticeAdd() {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [date, setDate] = useState(
-    `${year}-${month < 10 ? `0${month}` : `${month}`}-${dateToday}`
-  );
+  const [date, setDate] = useState(`${year}-${month}-${dateToday}`);
+  const [time, setTime] = useState(`${hours}:${minutes}:${seconds}`);
   const [author, setAuthor] = useState('');
+
+  const [currUserUID, setCurrUserUID] = useState('');
 
   const auth = getAuth();
   const history = useHistory();
@@ -49,7 +60,12 @@ export default function NoticeAdd() {
     ],
   };
 
-  function b64toBlob(dataURI) {
+  const toTimestamp = (strDate) => {
+    var datum = Date.parse(strDate);
+    return datum;
+  };
+
+  const b64toBlob = (dataURI) => {
     var byteString = atob(dataURI.split(',')[1]);
     var ab = new ArrayBuffer(byteString.length);
     var ia = new Uint8Array(ab);
@@ -58,7 +74,7 @@ export default function NoticeAdd() {
       ia[i] = byteString.charCodeAt(i);
     }
     return new Blob([ab], { type: 'image/jpeg' });
-  }
+  };
 
   const uploadImage = async (imageBlob) => {
     const FolderUUID = v4();
@@ -71,6 +87,11 @@ export default function NoticeAdd() {
   };
 
   const handleSubmit = async () => {
+    if (!author || !date || !time || !title | !content) {
+      alert('Please Fill all field');
+      return false;
+    }
+
     const newContent = content.slice();
     const htmlObject = document.createElement('div');
     htmlObject.innerHTML = newContent;
@@ -83,23 +104,28 @@ export default function NoticeAdd() {
         img.src = imageURL;
         img.style.width = '100%';
         return { imagePath: imagePath, imageURL: imageURL };
+      } else if (img.src.startsWith('http')) {
+        // 외부 이미지일 경우 pass
+      } else {
+        // pass
       }
     });
 
-    const imagePathUrlArray = await Promise.all(imagePathUrlArrayPromise);
+    let imagePathUrlArray = await Promise.all(imagePathUrlArrayPromise);
+    imagePathUrlArray = imagePathUrlArray.filter((el) => el !== undefined);
 
-    // imagePathUrlArray undefined 제거 처리
-    // 외부 url 이미지일 경우 처리
+    const timestamp =
+      currUserUID === adminUID ? toTimestamp(`${date} ${time}`) : Date.now();
 
     addDoc(collection(db, 'notice'), {
       title: title,
       content: htmlObject.outerHTML,
-      date: date,
-      author: 'admin',
+      author: author,
       imagePathUrlArray: imagePathUrlArray,
+      timestamp: timestamp,
     })
       .then(() => {
-        alert('success');
+        alert('Saved Successfully');
         history.push('/notice');
       })
       .catch((error) => {
@@ -111,7 +137,12 @@ export default function NoticeAdd() {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const uid = user.uid;
-        setAuthor(user.email.split('@')[0]);
+        setCurrUserUID(uid);
+        if (uid === adminUID) {
+          setAuthor('관리자');
+        } else {
+          setAuthor(user.email.split('@')[0]);
+        }
       } else {
         console.log('로그아웃 상태');
       }
@@ -126,22 +157,11 @@ export default function NoticeAdd() {
         pickedIndex={0}
       >
         <MDBRow>
-          <MDBCol size="7">
+          <MDBCol size="8">
             <div className="h2 py-2">Notice</div>
           </MDBCol>
-          <MDBCol size="5">
+          <MDBCol size="4">
             <div className="py-2 mt-2" style={{ textAlign: 'right' }}>
-              <input
-                type="date"
-                onChange={(e) => {
-                  setDate(e.target.value);
-                }}
-                defaultValue={`${year}-${
-                  month < 10 ? `0${month}` : `${month}`
-                }-${dateToday}`}
-                style={{ textAlign: 'center' }}
-                className="mb-4 mr-4"
-              />
               <Link
                 to="/notice"
                 className="border border-light p-1 p-lg-2"
@@ -174,6 +194,37 @@ export default function NoticeAdd() {
             <div
               style={{ width: '100%', height: '800px', textAlign: 'center' }}
             >
+              {currUserUID === adminUID && (
+                <div className="mb-4" style={{ textAlign: 'right' }}>
+                  <input
+                    value={author}
+                    onChange={(e) => {
+                      setAuthor(e.target.value);
+                    }}
+                    placeholder="Author"
+                    className="mr-2"
+                    style={{ width: '85px' }}
+                  />
+                  <input
+                    type="date"
+                    onChange={(e) => {
+                      setDate(e.target.value);
+                    }}
+                    defaultValue={`${year}-${month}-${dateToday}`}
+                    style={{ textAlign: 'center', width: '130px' }}
+                    className="mr-2"
+                  />
+                  <input
+                    type="time"
+                    step="1"
+                    onChange={(e) => {
+                      setTime(e.target.value);
+                    }}
+                    defaultValue={`${hours}:${minutes}:${seconds}`}
+                    style={{ textAlign: 'center' }}
+                  />
+                </div>
+              )}
               <input
                 value={title}
                 onChange={(e) => {
