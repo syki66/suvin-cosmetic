@@ -24,30 +24,36 @@ export default function NoticeView({}) {
   const [currAuthor, setCurrAuthor] = useState();
   const [commentList, setCommentList] = useState();
 
+  const timestampToDate = (timestamp) => {
+    let newDate = new Date(timestamp);
+    let dateToday = newDate.getDate();
+    let month = newDate.getMonth() + 1;
+    let year = newDate.getFullYear();
+    let hours = newDate.getHours();
+    let minutes = newDate.getMinutes();
+    let seconds = newDate.getSeconds();
+    let AM_PM = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    hours = hours < 10 ? '0' + hours : hours;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    month = month < 10 ? '0' + month : month;
+    dateToday = dateToday < 10 ? '0' + dateToday : dateToday;
+    const contentDate = `${year}-${month}-${dateToday} ${hours}:${minutes}:${seconds} ${AM_PM}`;
+    const commentDate = `${year}/${month}/${dateToday} ${hours}:${minutes} ${AM_PM}`;
+    return { contentDate, commentDate };
+  };
+
   const getNotice = async () => {
     const docRef = doc(db, 'notice', id);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      let newDate = new Date(docSnap.data().timestamp);
-      let dateToday = newDate.getDate();
-      let month = newDate.getMonth() + 1;
-      let year = newDate.getFullYear();
-      let hours = newDate.getHours();
-      let minutes = newDate.getMinutes();
-      let seconds = newDate.getSeconds();
-      let AM_PM = hours >= 12 ? 'PM' : 'AM';
-      hours = hours % 12;
-      hours = hours ? hours : 12;
-      minutes = minutes < 10 ? '0' + minutes : minutes;
-      seconds = seconds < 10 ? '0' + seconds : seconds;
-      month = month < 10 ? '0' + month : month;
-      dateToday = dateToday < 10 ? '0' + dateToday : dateToday;
-      const date = `${year}-${month}-${dateToday} ${hours}:${minutes}:${seconds} ${AM_PM}`;
-
+      const { contentDate } = timestampToDate(docSnap.data().timestamp);
       setData({
         ...docSnap.data(),
-        date: date,
+        date: contentDate,
       });
     } else {
       // docSnap.data() will be undefined in this case
@@ -150,7 +156,7 @@ export default function NoticeView({}) {
         }}
         maxLength={1000}
       />
-      <div style={{ textAlign: 'right' }}>
+      <div className="pb-5" style={{ textAlign: 'right' }}>
         <Link
           className="border border-light p-1 p-lg-2"
           style={{
@@ -163,8 +169,16 @@ export default function NoticeView({}) {
         </Link>
       </div>
       {commentList?.map((comment) => (
-        <div>
-          {comment.author}, {comment.timestamp}, {comment.content}
+        <div key={comment.id} className="border-bottom border-light py-4 mb-2">
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <span style={{ fontSize: 18, fontWeight: 600 }}>
+              {comment.author}
+            </span>
+            <span className="pb-3" style={{ color: 'gray', fontSize: 14 }}>
+              {timestampToDate(comment.timestamp).commentDate}
+            </span>
+          </div>
+          <div>{comment.content}</div>
         </div>
       ))}
     </InnerPageFrame>
