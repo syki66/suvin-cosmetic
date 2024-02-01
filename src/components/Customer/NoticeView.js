@@ -10,6 +10,8 @@ export default function NoticeView({}) {
   const id = location.pathname.split('/').pop();
 
   const [data, setData] = useState();
+  const [newComment, setNewComment] = useState('');
+  const [commentList, setCommentList] = useState([]);
 
   const getNotice = async () => {
     const docRef = doc(db, 'notice', id);
@@ -53,7 +55,7 @@ export default function NoticeView({}) {
     >
       <div className="h2 py-2">Notice</div>
 
-      <div className="border-top border-light pt-5">
+      <div className="border-top border-light py-5">
         <div className="h5">{data?.title}</div>
         <div
           className="border-bottom border-light pb-3 mb-2"
@@ -78,6 +80,31 @@ export default function NoticeView({}) {
           dangerouslySetInnerHTML={{ __html: data?.content }}
           style={{ width: '100%', wordWrap: 'break-word' }}
         />
+      </div>
+      <div className="border-top border-light pt-5 pb-3">
+        Commment {commentList?.length}
+      </div>
+      <textarea
+        className="w-100 mb-3"
+        placeholder="Write a comment"
+        rows="5"
+        style={{ resize: 'none' }}
+        value={newComment}
+        onChange={(e) => {
+          setNewComment(e.target.value);
+        }}
+        maxLength={1000}
+      />
+      <div style={{ textAlign: 'right' }}>
+        <Link
+          className="border border-light p-1 p-lg-2"
+          style={{
+            backgroundColor: '#e5ecef',
+            color: 'black',
+          }}
+        >
+          Add comment
+        </Link>
       </div>
     </InnerPageFrame>
   );
