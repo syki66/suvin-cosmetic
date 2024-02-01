@@ -2,16 +2,27 @@ import React, { useEffect, useState } from 'react';
 import InnerPageFrame from '../common/InnerPageFrame';
 import { MDBCol, MDBRow } from 'mdbreact';
 import { Link, useLocation } from 'react-router-dom';
-import { doc, getDoc } from 'firebase/firestore';
+import {
+  addDoc,
+  collection,
+  doc,
+  getDoc,
+  onSnapshot,
+  orderBy,
+  query,
+} from 'firebase/firestore';
 import { db } from '../../firebase-config';
+import { onAuthStateChanged, getAuth } from 'firebase/auth';
 
 export default function NoticeView({}) {
   const location = useLocation();
   const id = location.pathname.split('/').pop();
+  const auth = getAuth();
 
   const [data, setData] = useState();
   const [newComment, setNewComment] = useState('');
-  const [commentList, setCommentList] = useState([]);
+  const [currAuthor, setCurrAuthor] = useState();
+  const [commentList, setCommentList] = useState();
 
   const getNotice = async () => {
     const docRef = doc(db, 'notice', id);
@@ -43,8 +54,52 @@ export default function NoticeView({}) {
       console.log('No such document!');
     }
   };
+
+  const handleAddComment = () => {
+    addDoc(collection(db, 'notice', id, 'comments'), {
+      author: currAuthor,
+      timestamp: Date.now(),
+      content: newComment,
+    })
+      .then(() => {
+        setNewComment('');
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  };
+
+  useEffect(() => {
+    const q = query(
+      collection(db, 'notice', id, 'comments'),
+      orderBy('timestamp', 'desc')
+    );
+    onSnapshot(q, (snapshot) => {
+      setCommentList(
+        snapshot.docs.map((doc) => {
+          return {
+            id: doc.id,
+            author: doc.data().author,
+            content: doc.data().content,
+            timestamp: doc.data().timestamp,
+          };
+        })
+      );
+    });
+  }, []);
+
   useEffect(() => {
     getNotice();
+  }, []);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setCurrAuthor(user.email.split('@')[0]);
+      } else {
+        console.log('로그아웃 상태');
+      }
+    });
   }, []);
 
   return (
@@ -102,10 +157,16 @@ export default function NoticeView({}) {
             backgroundColor: '#e5ecef',
             color: 'black',
           }}
+          onClick={handleAddComment}
         >
           Add comment
         </Link>
       </div>
+      {commentList?.map((comment) => (
+        <div>
+          {comment.author}, {comment.timestamp}, {comment.content}
+        </div>
+      ))}
     </InnerPageFrame>
   );
 }
