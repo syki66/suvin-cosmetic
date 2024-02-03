@@ -39,6 +39,7 @@ import Inquiry from './components/Inquiry/Inquiry';
 import Notice from './components/Customer/Notice';
 import NoticeAdd from './components/Customer/NoticeAdd.js';
 import NoticeView from './components/Customer/NoticeView.js';
+import NoticeEdit from './components/Customer/NoticeEdit.js';
 import Comments from './components/Customer/Comments';
 
 //common components
@@ -72,6 +73,7 @@ export default function App() {
 
         <Route path="/notice" exact={true} component={Notice} />
         <Route path="/notice/new" component={NoticeAdd} />
+        <Route path="/notice/edit/:id" component={NoticeEdit} />
         <Route path="/notice/:id" component={NoticeView} />
 
         <Route path="/Comments" component={Comments} />

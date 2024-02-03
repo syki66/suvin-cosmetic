@@ -172,25 +172,34 @@ export default function NoticeView({}) {
           style={{ color: 'gray' }}
         >
           <MDBRow>
-            <MDBCol size="9">
+            <MDBCol size="7">
               작성자 : {data?.author} &nbsp;&nbsp;&nbsp;&nbsp; {data?.date}
             </MDBCol>
-            <MDBCol size="3" style={{ textAlign: 'right' }}>
-              {(data?.author === currAuthor || data?.authorID === adminUID) && (
-                <Link
-                  className="border border-light p-1 p-lg-2 mr-2"
-                  style={{ backgroundColor: '#e5ecef', color: 'black' }}
-                  onClick={() => handleNoticeDelete()}
-                >
-                  삭제
-                </Link>
+            <MDBCol size="5" style={{ textAlign: 'right' }}>
+              {(data?.author === currAuthor || authorID === adminUID) && (
+                <>
+                  <Link
+                    className="border border-light p-1 p-lg-2 mr-2"
+                    style={{ backgroundColor: '#e5ecef', color: 'black' }}
+                    onClick={() => history.push(`/notice/edit/${id}`)}
+                  >
+                    Edit
+                  </Link>
+                  <Link
+                    className="border border-light p-1 p-lg-2 mr-2"
+                    style={{ backgroundColor: '#e5ecef', color: 'black' }}
+                    onClick={() => handleNoticeDelete()}
+                  >
+                    Delete
+                  </Link>
+                </>
               )}
               <Link
                 to={'/notice'}
                 className="border border-light p-1 p-lg-2"
                 style={{ backgroundColor: '#e5ecef', color: 'black' }}
               >
-                목록
+                List
               </Link>
             </MDBCol>
           </MDBRow>
