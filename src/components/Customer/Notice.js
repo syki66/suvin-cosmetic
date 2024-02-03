@@ -6,9 +6,15 @@ import InnerPageFrame from '../common/InnerPageFrame';
 
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../../firebase-config';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { useHistory } from 'react-router-dom';
 
 export default function Notice() {
   const [posts, setPosts] = useState([]);
+  const [authorID, setAuthorID] = useState('');
+
+  const auth = getAuth();
+  const history = useHistory();
 
   const getNoticeList = async () => {
     const q = query(collection(db, 'notice'), orderBy('timestamp', 'desc'));
@@ -30,6 +36,16 @@ export default function Notice() {
     getNoticeList();
   }, []);
 
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setAuthorID(user.uid);
+      } else {
+        console.log('로그아웃 상태');
+      }
+    });
+  }, []);
+
   return (
     <>
       <InnerPageFrame title="Customer" subtitle={['Notice', 'Comments']}>
@@ -39,16 +55,26 @@ export default function Notice() {
           </MDBCol>
           <MDBCol size="3">
             <div className="py-2 mt-2" style={{ textAlign: 'right' }}>
-              <Link
-                to="/notice/new"
-                className="border border-light p-1 p-lg-2"
-                style={{
-                  backgroundColor: '#e5ecef',
-                  color: 'black',
-                }}
-              >
-                Write
-              </Link>
+              {authorID === process.env.REACT_APP_ADMIN_UID && (
+                <Link
+                  onClick={() => {
+                    if (authorID) {
+                      history.push('/notice/new');
+                    } else {
+                      alert('Login is required');
+                      history.push('/login');
+                      return false;
+                    }
+                  }}
+                  className="border border-light p-1 p-lg-2"
+                  style={{
+                    backgroundColor: '#e5ecef',
+                    color: 'black',
+                  }}
+                >
+                  Write
+                </Link>
+              )}
             </div>
           </MDBCol>
         </MDBRow>

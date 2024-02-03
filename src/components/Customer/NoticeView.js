@@ -69,6 +69,16 @@ export default function NoticeView({}) {
   };
 
   const handleAddComment = () => {
+    if (!authorID) {
+      alert('Login is required');
+      history.push('/login');
+      return false;
+    }
+
+    if (newComment === '') {
+      alert('Please write a comment');
+    }
+
     addDoc(collection(db, 'notice', id, 'comments'), {
       author: currAuthor,
       authorID: authorID,
@@ -84,6 +94,10 @@ export default function NoticeView({}) {
   };
 
   const handleNoticeDelete = async () => {
+    if (!window.confirm('Are you sure you want to delete your content?')) {
+      return false;
+    }
+
     try {
       const comments = await getDocs(collection(db, 'notice', id, 'comments'));
       comments.forEach(async (comment) => {
@@ -98,6 +112,10 @@ export default function NoticeView({}) {
   };
 
   const handleCommentDelete = async (commentId) => {
+    if (!window.confirm('Are you sure you want to delete your comment?')) {
+      return false;
+    }
+
     try {
       await deleteDoc(doc(db, 'notice', id, 'comments', commentId));
     } catch (error) {
@@ -223,8 +241,12 @@ export default function NoticeView({}) {
             {(comment.author === currAuthor || authorID === adminUID) && (
               <Link
                 onClick={() => handleCommentDelete(comment.id)}
-                className="border border-light p-1 p-lg-2"
-                style={{ backgroundColor: '#e5ecef', color: 'black' }}
+                className="border border-light p-1"
+                style={{
+                  backgroundColor: '#e5ecef',
+                  color: 'black',
+                  fontSize: 12,
+                }}
               >
                 Delete
               </Link>
