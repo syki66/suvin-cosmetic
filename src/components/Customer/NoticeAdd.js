@@ -23,7 +23,7 @@ seconds = seconds < 10 ? '0' + seconds : seconds;
 month = month < 10 ? '0' + month : month;
 dateToday = dateToday < 10 ? '0' + dateToday : dateToday;
 
-const adminUID = `twz9x2SgElgzdPQhBH1VDujDIqw2`;
+const adminUID = process.env.REACT_APP_ADMIN_UID;
 
 export default function NoticeAdd() {
   const [title, setTitle] = useState('');
@@ -121,6 +121,7 @@ export default function NoticeAdd() {
       title: title,
       content: htmlObject.outerHTML,
       author: author,
+      authorID: currUserUID,
       imagePathUrlArray: imagePathUrlArray,
       timestamp: timestamp,
     })

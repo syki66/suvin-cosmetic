@@ -5,23 +5,30 @@ import { Link, useLocation } from 'react-router-dom';
 import {
   addDoc,
   collection,
+  deleteDoc,
   doc,
   getDoc,
+  getDocs,
   onSnapshot,
   orderBy,
   query,
 } from 'firebase/firestore';
 import { db } from '../../firebase-config';
 import { onAuthStateChanged, getAuth } from 'firebase/auth';
+import { useHistory } from 'react-router-dom';
+
+const adminUID = process.env.REACT_APP_ADMIN_UID;
 
 export default function NoticeView({}) {
   const location = useLocation();
   const id = location.pathname.split('/').pop();
   const auth = getAuth();
+  const history = useHistory();
 
   const [data, setData] = useState();
   const [newComment, setNewComment] = useState('');
   const [currAuthor, setCurrAuthor] = useState();
+  const [authorID, setAuthorID] = useState('');
   const [commentList, setCommentList] = useState();
 
   const timestampToDate = (timestamp) => {
@@ -64,6 +71,7 @@ export default function NoticeView({}) {
   const handleAddComment = () => {
     addDoc(collection(db, 'notice', id, 'comments'), {
       author: currAuthor,
+      authorID: authorID,
       timestamp: Date.now(),
       content: newComment,
     })
@@ -124,6 +132,7 @@ export default function NoticeView({}) {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setCurrAuthor(user.email.split('@')[0]);
+        setAuthorID(user.uid);
       } else {
         console.log('로그아웃 상태');
       }
@@ -149,6 +158,7 @@ export default function NoticeView({}) {
               작성자 : {data?.author} &nbsp;&nbsp;&nbsp;&nbsp; {data?.date}
             </MDBCol>
             <MDBCol size="3" style={{ textAlign: 'right' }}>
+              {(data?.author === currAuthor || data?.authorID === adminUID) && (
                 <Link
                   className="border border-light p-1 p-lg-2 mr-2"
                   style={{ backgroundColor: '#e5ecef', color: 'black' }}
@@ -156,6 +166,7 @@ export default function NoticeView({}) {
                 >
                   삭제
                 </Link>
+              )}
               <Link
                 to={'/notice'}
                 className="border border-light p-1 p-lg-2"
@@ -209,6 +220,7 @@ export default function NoticeView({}) {
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <div>{comment.content}</div>
+            {(comment.author === currAuthor || authorID === adminUID) && (
               <Link
                 onClick={() => handleCommentDelete(comment.id)}
                 className="border border-light p-1 p-lg-2"
@@ -216,6 +228,7 @@ export default function NoticeView({}) {
               >
                 Delete
               </Link>
+            )}
           </div>
         </div>
       ))}
