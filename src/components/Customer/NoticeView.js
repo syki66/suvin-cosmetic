@@ -74,6 +74,21 @@ export default function NoticeView({}) {
         alert(error);
       });
   };
+
+  const handleNoticeDelete = async () => {
+    try {
+      const comments = await getDocs(collection(db, 'notice', id, 'comments'));
+      comments.forEach(async (comment) => {
+        await deleteDoc(doc(db, 'notice', id, 'comments', comment.id));
+      });
+      await deleteDoc(doc(db, 'notice', id));
+      alert('Successfully Deleted');
+      history.push('/notice');
+    } catch (error) {
+      alert(error);
+    }
+  };
+
   const handleCommentDelete = async (commentId) => {
     try {
       await deleteDoc(doc(db, 'notice', id, 'comments', commentId));
@@ -134,6 +149,13 @@ export default function NoticeView({}) {
               작성자 : {data?.author} &nbsp;&nbsp;&nbsp;&nbsp; {data?.date}
             </MDBCol>
             <MDBCol size="3" style={{ textAlign: 'right' }}>
+                <Link
+                  className="border border-light p-1 p-lg-2 mr-2"
+                  style={{ backgroundColor: '#e5ecef', color: 'black' }}
+                  onClick={() => handleNoticeDelete()}
+                >
+                  삭제
+                </Link>
               <Link
                 to={'/notice'}
                 className="border border-light p-1 p-lg-2"
