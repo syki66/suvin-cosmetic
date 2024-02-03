@@ -74,6 +74,13 @@ export default function NoticeView({}) {
         alert(error);
       });
   };
+  const handleCommentDelete = async (commentId) => {
+    try {
+      await deleteDoc(doc(db, 'notice', id, 'comments', commentId));
+    } catch (error) {
+      alert(error);
+    }
+  };
 
   useEffect(() => {
     const q = query(
@@ -178,7 +185,16 @@ export default function NoticeView({}) {
               {timestampToDate(comment.timestamp).commentDate}
             </span>
           </div>
-          <div>{comment.content}</div>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <div>{comment.content}</div>
+              <Link
+                onClick={() => handleCommentDelete(comment.id)}
+                className="border border-light p-1 p-lg-2"
+                style={{ backgroundColor: '#e5ecef', color: 'black' }}
+              >
+                Delete
+              </Link>
+          </div>
         </div>
       ))}
     </InnerPageFrame>
