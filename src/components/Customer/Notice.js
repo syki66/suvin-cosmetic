@@ -17,9 +17,10 @@ export default function Notice() {
 
   const [allPost, setAllpost] = useState([]);
   const [postPerPage] = useState(10);
-  const [currPage] = useState(params.id);
+  const [currPage, setCurrPage] = useState(params.id);
   const [pagenationLength] = useState(10);
-  const [pageArray, setPageArray] = useState([]);
+  const [pagenationArray, setPagenationArray] = useState([]);
+  const [lastPaginationNumber, setLastPaginationNumber] = useState();
 
   const auth = getAuth();
   const history = useHistory();
@@ -48,20 +49,25 @@ export default function Notice() {
     const currentPage = currPage - 1;
     const lastPageNum = Math.ceil(allPost.length / postPerPage);
     const startPageNum = currentPage - (currentPage % pagenationLength) + 1;
-    const pageArray = [];
+    const pagenationArray = [];
     for (let i = startPageNum; i < startPageNum + pagenationLength; i++) {
       if (i <= lastPageNum) {
-        pageArray.push(i);
+        pagenationArray.push(i);
       }
     }
-    setPageArray(pageArray);
+    setLastPaginationNumber(lastPageNum);
+    setPagenationArray(pagenationArray);
     setPosts(
       allPost.slice(
         currentPage * postPerPage,
         currentPage * postPerPage + postPerPage
       )
     );
-  }, [allPost]);
+  }, [allPost, currPage]);
+
+  useEffect(() => {
+    setCurrPage(params.id);
+  }, [params]);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -236,25 +242,37 @@ export default function Notice() {
 
           <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center pagination-circle mt-3">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              {pageArray.map((e) => (
+              {pagenationArray[0] !== 1 && (
+                <li class="page-item">
+                  <Link
+                    class="page-link"
+                    to={`/notice/page/${pagenationArray[0] - 1}`}
+                    aria-label="Previous"
+                  >
+                    <span aria-hidden="true">&laquo;</span>
+                  </Link>
+                </li>
+              )}
+              {pagenationArray.map((e) => (
                 <li
                   class={`page-item ${e === Number(params.id) ? 'active' : ''}`}
                 >
-                  <a class="page-link" href={e}>
+                  <Link class="page-link" to={`/notice/page/${e}`}>
                     {e}
-                  </a>
+                  </Link>
                 </li>
               ))}
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
+              {[...pagenationArray].pop() < lastPaginationNumber && (
+                <li class="page-item">
+                  <Link
+                    class="page-link"
+                    to={`/notice/page/${[...pagenationArray].pop() + 1}`}
+                    aria-label="Next"
+                  >
+                    <span aria-hidden="true">&raquo;</span>
+                  </Link>
+                </li>
+              )}
             </ul>
           </nav>
         </div>

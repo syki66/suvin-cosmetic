@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 //css
 import 'bootstrap/dist/css/bootstrap.min.css'; // react bootstrap css
@@ -75,6 +75,9 @@ export default function App() {
         <Route path="/notice/new" component={NoticeAdd} />
         <Route path="/notice/edit/:id" component={NoticeEdit} />
         <Route path="/notice/:id" component={NoticeView} />
+        <Route path="/notice">
+          <Redirect to="/notice/page/1" />
+        </Route>
 
         <Route path="/Comments" component={Comments} />
 
