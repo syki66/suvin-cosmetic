@@ -83,10 +83,9 @@ export default function NoticeEdit() {
     return new Blob([ab], { type: 'image/jpeg' });
   };
 
-  const uploadImage = async (imageBlob) => {
-    const FolderUUID = v4();
-    const FileUUID = v4();
-    const imagePath = `notice/${FolderUUID}/${FileUUID}`;
+  const uploadImage = async (imageBlob, folderUUID) => {
+    const fileUUID = v4();
+    const imagePath = `notice/${folderUUID}/${fileUUID}`;
     const imageRef = ref(storage, imagePath);
     const response = await uploadBytes(imageRef, imageBlob);
     const imageURL = await getDownloadURL(response.ref);
@@ -107,7 +106,7 @@ export default function NoticeEdit() {
     const imagePathUrlArrayPromise = imgs.map(async (img) => {
       if (img.src.startsWith('data')) {
         const imageBlob = b64toBlob(img.src);
-        const { imagePath, imageURL } = await uploadImage(imageBlob);
+        const { imagePath, imageURL } = await uploadImage(imageBlob, id);
         img.src = imageURL;
         img.style.width = '100%';
         return { imagePath: imagePath, imageURL: imageURL };
@@ -162,7 +161,7 @@ export default function NoticeEdit() {
         const uid = user.uid;
         setCurrUserUID(uid);
         if (uid === adminUID) {
-          setAuthor('관리자');
+          setAuthor('admin');
         } else {
           setAuthor(user.email.split('@')[0]);
         }

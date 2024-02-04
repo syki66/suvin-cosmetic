@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import { collection, addDoc } from 'firebase/firestore';
+import { setDoc, doc } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { db, storage } from '../../firebase-config';
 import InnerPageFrame from '../common/InnerPageFrame';
@@ -76,10 +76,9 @@ export default function NoticeAdd() {
     return new Blob([ab], { type: 'image/jpeg' });
   };
 
-  const uploadImage = async (imageBlob) => {
-    const FolderUUID = v4();
-    const FileUUID = v4();
-    const imagePath = `notice/${FolderUUID}/${FileUUID}`;
+  const uploadImage = async (imageBlob, folderUUID) => {
+    const fileUUID = v4();
+    const imagePath = `notice/${folderUUID}/${fileUUID}`;
     const imageRef = ref(storage, imagePath);
     const response = await uploadBytes(imageRef, imageBlob);
     const imageURL = await getDownloadURL(response.ref);
@@ -96,11 +95,12 @@ export default function NoticeAdd() {
     const htmlObject = document.createElement('div');
     htmlObject.innerHTML = newContent;
 
+    const docUUID = v4();
     const imgs = [...htmlObject.querySelectorAll('img')];
     const imagePathUrlArrayPromise = imgs.map(async (img) => {
       if (img.src.startsWith('data')) {
         const imageBlob = b64toBlob(img.src);
-        const { imagePath, imageURL } = await uploadImage(imageBlob);
+        const { imagePath, imageURL } = await uploadImage(imageBlob, docUUID);
         img.src = imageURL;
         img.style.width = '100%';
         return { imagePath: imagePath, imageURL: imageURL };
@@ -117,7 +117,7 @@ export default function NoticeAdd() {
     const timestamp =
       currUserUID === adminUID ? toTimestamp(`${date} ${time}`) : Date.now();
 
-    addDoc(collection(db, 'notice'), {
+    setDoc(doc(db, 'notice', docUUID), {
       title: title,
       content: htmlObject.outerHTML,
       author: author,
@@ -140,7 +140,7 @@ export default function NoticeAdd() {
         const uid = user.uid;
         setCurrUserUID(uid);
         if (uid === adminUID) {
-          setAuthor('관리자');
+          setAuthor('admin');
         } else {
           setAuthor(user.email.split('@')[0]);
         }
