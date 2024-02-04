@@ -102,12 +102,12 @@ export default function NoticeAdd() {
         const imageBlob = b64toBlob(img.src);
         const { imageURL } = await uploadImage(imageBlob, docUUID);
         img.src = imageURL;
-        img.style.width = '100%';
       } else if (img.src.startsWith('http')) {
         // 외부 이미지일 경우 pass
       } else {
         // pass
       }
+      img.style.width = '100%';
     });
 
     await Promise.all(imageUploadsPromise);

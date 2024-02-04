@@ -7,7 +7,13 @@ import { db, storage } from '../../firebase-config';
 import InnerPageFrame from '../common/InnerPageFrame';
 import { MDBCol, MDBRow } from 'mdbreact';
 import { Link, useHistory, useLocation } from 'react-router-dom';
-import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import {
+  deleteObject,
+  getDownloadURL,
+  listAll,
+  ref,
+  uploadBytes,
+} from 'firebase/storage';
 import { v4 } from 'uuid';
 
 const adminUID = process.env.REACT_APP_ADMIN_UID;
@@ -92,6 +98,28 @@ export default function NoticeEdit() {
     return { imageURL };
   };
 
+  const uploadedImagesInfo = async () => {
+    const storageRef = ref(storage, `notice/${id}`);
+    const result = await listAll(storageRef);
+    const fileList = await Promise.all(
+      result.items.map(async (item) => {
+        const downloadURL = await getDownloadURL(item);
+        return {
+          name: item.name,
+          fullPath: item.fullPath,
+          downloadURL: downloadURL,
+        };
+      })
+    );
+    return fileList;
+  };
+
+  const deleteUnusedImages = async (imageArray) => {
+    imageArray.forEach(async (image) => {
+      await deleteObject(ref(storage, image.fullPath));
+    });
+  };
+
   const handleSubmit = async () => {
     if (!author || !date || !time || !title | !content) {
       alert('Please Fill all field');
@@ -102,22 +130,24 @@ export default function NoticeEdit() {
     const htmlObject = document.createElement('div');
     htmlObject.innerHTML = newContent;
 
+    let oldImagesInfo = await uploadedImagesInfo();
+
     const imgs = [...htmlObject.querySelectorAll('img')];
     const imageUploadsPromise = imgs.map(async (img) => {
       if (img.src.startsWith('data')) {
         const imageBlob = b64toBlob(img.src);
         const { imageURL } = await uploadImage(imageBlob, id);
         img.src = imageURL;
-        img.style.width = '100%';
-        return { imagePath: imagePath, imageURL: imageURL };
       } else if (img.src.startsWith('http')) {
-        // 외부 이미지일 경우 pass
+        oldImagesInfo = oldImagesInfo.filter((x) => x.downloadURL !== img.src);
       } else {
         // pass
       }
+      img.style.width = '100%';
     });
 
     await Promise.all(imageUploadsPromise);
+    await deleteUnusedImages(oldImagesInfo);
 
     updateDoc(doc(db, 'notice', id), {
       title: title,
