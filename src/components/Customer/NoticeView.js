@@ -13,9 +13,10 @@ import {
   orderBy,
   query,
 } from 'firebase/firestore';
-import { db } from '../../firebase-config';
+import { db, storage } from '../../firebase-config';
 import { onAuthStateChanged, getAuth } from 'firebase/auth';
 import { useHistory } from 'react-router-dom';
+import { deleteObject, getDownloadURL, listAll, ref } from 'firebase/storage';
 
 const adminUID = process.env.REACT_APP_ADMIN_UID;
 
@@ -99,6 +100,8 @@ export default function NoticeView({}) {
     }
 
     try {
+      const imagesInfo = await uploadedImagesInfo();
+      await handleImagesDelete(imagesInfo);
       const comments = await getDocs(collection(db, 'notice', id, 'comments'));
       comments.forEach(async (comment) => {
         await deleteDoc(doc(db, 'notice', id, 'comments', comment.id));
@@ -121,6 +124,28 @@ export default function NoticeView({}) {
     } catch (error) {
       alert(error);
     }
+  };
+
+  const uploadedImagesInfo = async () => {
+    const storageRef = ref(storage, `notice/${id}`);
+    const result = await listAll(storageRef);
+    const fileList = await Promise.all(
+      result.items.map(async (item) => {
+        const downloadURL = await getDownloadURL(item);
+        return {
+          name: item.name,
+          fullPath: item.fullPath,
+          downloadURL: downloadURL,
+        };
+      })
+    );
+    return fileList;
+  };
+
+  const handleImagesDelete = async (imageArray) => {
+    imageArray.forEach(async (image) => {
+      await deleteObject(ref(storage, image.fullPath));
+    });
   };
 
   useEffect(() => {
