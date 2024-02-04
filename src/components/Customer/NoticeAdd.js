@@ -10,22 +10,22 @@ import { Link, useHistory } from 'react-router-dom';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { v4 } from 'uuid';
 
-let newDate = new Date();
-let dateToday = newDate.getDate();
-let month = newDate.getMonth() + 1;
-let year = newDate.getFullYear();
-let hours = newDate.getHours();
-let minutes = newDate.getMinutes();
-let seconds = newDate.getSeconds();
-hours = hours < 10 ? '0' + hours : hours;
-minutes = minutes < 10 ? '0' + minutes : minutes;
-seconds = seconds < 10 ? '0' + seconds : seconds;
-month = month < 10 ? '0' + month : month;
-dateToday = dateToday < 10 ? '0' + dateToday : dateToday;
-
 const adminUID = process.env.REACT_APP_ADMIN_UID;
 
 export default function NoticeAdd() {
+  let newDate = new Date();
+  let dateToday = newDate.getDate();
+  let month = newDate.getMonth() + 1;
+  let year = newDate.getFullYear();
+  let hours = newDate.getHours();
+  let minutes = newDate.getMinutes();
+  let seconds = newDate.getSeconds();
+  hours = hours < 10 ? '0' + hours : hours;
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+  seconds = seconds < 10 ? '0' + seconds : seconds;
+  month = month < 10 ? '0' + month : month;
+  dateToday = dateToday < 10 ? '0' + dateToday : dateToday;
+
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [date, setDate] = useState(`${year}-${month}-${dateToday}`);
