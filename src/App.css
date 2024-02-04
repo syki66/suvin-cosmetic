@@ -342,3 +342,7 @@
 .btn-click:active {
   background-color: #bebdb8 !important;
 }
+
+.page-item.active > .page-link {
+  background-color: #7f304e !important;
+}

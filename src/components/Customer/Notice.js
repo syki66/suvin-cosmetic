@@ -16,9 +16,9 @@ export default function Notice() {
   const [authorID, setAuthorID] = useState('');
 
   const [allPost, setAllpost] = useState([]);
-  const [postPerPage] = useState(3);
+  const [postPerPage] = useState(10);
   const [currPage] = useState(params.id);
-  const [pagenationLength] = useState(5);
+  const [pagenationLength] = useState(10);
   const [pageArray, setPageArray] = useState([]);
 
   const auth = getAuth();
@@ -235,7 +235,7 @@ export default function Notice() {
           })}
 
           <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center mt-3">
+            <ul class="pagination justify-content-center pagination-circle mt-3">
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="Previous">
                   <span aria-hidden="true">&laquo;</span>
