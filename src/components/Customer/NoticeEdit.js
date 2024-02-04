@@ -89,7 +89,7 @@ export default function NoticeEdit() {
     const imageRef = ref(storage, imagePath);
     const response = await uploadBytes(imageRef, imageBlob);
     const imageURL = await getDownloadURL(response.ref);
-    return { imageURL, imagePath };
+    return { imageURL };
   };
 
   const handleSubmit = async () => {
@@ -103,10 +103,10 @@ export default function NoticeEdit() {
     htmlObject.innerHTML = newContent;
 
     const imgs = [...htmlObject.querySelectorAll('img')];
-    const imagePathUrlArrayPromise = imgs.map(async (img) => {
+    const imageUploadsPromise = imgs.map(async (img) => {
       if (img.src.startsWith('data')) {
         const imageBlob = b64toBlob(img.src);
-        const { imagePath, imageURL } = await uploadImage(imageBlob, id);
+        const { imageURL } = await uploadImage(imageBlob, id);
         img.src = imageURL;
         img.style.width = '100%';
         return { imagePath: imagePath, imageURL: imageURL };
@@ -117,15 +117,13 @@ export default function NoticeEdit() {
       }
     });
 
-    let imagePathUrlArray = await Promise.all(imagePathUrlArrayPromise);
-    imagePathUrlArray = imagePathUrlArray.filter((el) => el !== undefined);
+    await Promise.all(imageUploadsPromise);
 
     updateDoc(doc(db, 'notice', id), {
       title: title,
       content: htmlObject.outerHTML,
       author: author,
       authorID: currUserUID,
-      imagePathUrlArray: imagePathUrlArray,
       timestamp: toTimestamp(`${date} ${time}`),
     })
       .then(() => {
