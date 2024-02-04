@@ -338,3 +338,7 @@
     transform: rotate(360deg);
   }
 }
+
+.btn-click:active {
+  background-color: #bebdb8 !important;
+}

@@ -162,7 +162,7 @@ export default function NoticeAdd() {
             <div className="py-2 mt-2" style={{ textAlign: 'right' }}>
               <Link
                 to="/notice"
-                className="border border-light p-1 p-lg-2"
+                className="border border-light p-1 p-lg-2 btn-click"
                 style={{
                   backgroundColor: '#e5ecef',
                   color: 'black',
@@ -171,7 +171,7 @@ export default function NoticeAdd() {
                 List
               </Link>
               <Link
-                className="border border-light p-1 p-lg-2 ml-3"
+                className="border border-light p-1 p-lg-2 ml-3 btn-click"
                 style={{
                   backgroundColor: '#e5ecef',
                   color: 'black',

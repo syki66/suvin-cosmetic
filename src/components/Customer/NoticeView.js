@@ -204,14 +204,14 @@ export default function NoticeView({}) {
               {(data?.author === currAuthor || authorID === adminUID) && (
                 <>
                   <Link
-                    className="border border-light p-1 p-lg-2 mr-2"
+                    className="border border-light p-1 p-lg-2 mr-2 btn-click"
                     style={{ backgroundColor: '#e5ecef', color: 'black' }}
                     onClick={() => history.push(`/notice/edit/${id}`)}
                   >
                     Edit
                   </Link>
                   <Link
-                    className="border border-light p-1 p-lg-2 mr-2"
+                    className="border border-light p-1 p-lg-2 mr-2 btn-click"
                     style={{ backgroundColor: '#e5ecef', color: 'black' }}
                     onClick={() => handleNoticeDelete()}
                   >
@@ -221,7 +221,7 @@ export default function NoticeView({}) {
               )}
               <Link
                 to={'/notice'}
-                className="border border-light p-1 p-lg-2"
+                className="border border-light p-1 p-lg-2 btn-click"
                 style={{ backgroundColor: '#e5ecef', color: 'black' }}
               >
                 List
@@ -250,7 +250,7 @@ export default function NoticeView({}) {
       />
       <div className="pb-5" style={{ textAlign: 'right' }}>
         <Link
-          className="border border-light p-1 p-lg-2"
+          className="border border-light p-1 p-lg-2 btn-click"
           style={{
             backgroundColor: '#e5ecef',
             color: 'black',
@@ -275,7 +275,7 @@ export default function NoticeView({}) {
             {(comment.author === currAuthor || authorID === adminUID) && (
               <Link
                 onClick={() => handleCommentDelete(comment.id)}
-                className="border border-light p-1"
+                className="border border-light p-1 btn-click"
                 style={{
                   backgroundColor: '#e5ecef',
                   color: 'black',

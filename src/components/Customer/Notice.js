@@ -66,7 +66,7 @@ export default function Notice() {
                       return false;
                     }
                   }}
-                  className="border border-light p-1 p-lg-2"
+                  className="border border-light p-1 p-lg-2 btn-click"
                   style={{
                     backgroundColor: '#e5ecef',
                     color: 'black',
