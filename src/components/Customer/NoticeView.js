@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import InnerPageFrame from '../common/InnerPageFrame';
 import { MDBCol, MDBRow } from 'mdbreact';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import {
   addDoc,
   collection,
@@ -21,8 +21,8 @@ import { deleteObject, getDownloadURL, listAll, ref } from 'firebase/storage';
 const adminUID = process.env.REACT_APP_ADMIN_UID;
 
 export default function NoticeView({}) {
-  const location = useLocation();
-  const id = location.pathname.split('/').pop();
+  const params = useParams();
+  const id = params.id;
   const auth = getAuth();
   const history = useHistory();
 
@@ -220,7 +220,9 @@ export default function NoticeView({}) {
                 </>
               )}
               <Link
-                to={'/notice'}
+                onClick={() => {
+                  history.goBack();
+                }}
                 className="border border-light p-1 p-lg-2 btn-click"
                 style={{ backgroundColor: '#e5ecef', color: 'black' }}
               >

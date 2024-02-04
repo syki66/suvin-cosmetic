@@ -6,7 +6,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { db, storage } from '../../firebase-config';
 import InnerPageFrame from '../common/InnerPageFrame';
 import { MDBCol, MDBRow } from 'mdbreact';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import {
   deleteObject,
   getDownloadURL,
@@ -27,8 +27,8 @@ export default function NoticeEdit() {
 
   const [currUserUID, setCurrUserUID] = useState('');
 
-  const location = useLocation();
-  const id = location.pathname.split('/').pop();
+  const params = useParams();
+  const id = params.id;
   const auth = getAuth();
   const history = useHistory();
 

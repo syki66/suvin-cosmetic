@@ -7,11 +7,19 @@ import InnerPageFrame from '../common/InnerPageFrame';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../../firebase-config';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
 export default function Notice() {
+  const params = useParams();
+
   const [posts, setPosts] = useState([]);
   const [authorID, setAuthorID] = useState('');
+
+  const [allPost, setAllpost] = useState([]);
+  const [postPerPage] = useState(3);
+  const [currPage] = useState(params.id);
+  const [pagenationLength] = useState(5);
+  const [pageArray, setPageArray] = useState([]);
 
   const auth = getAuth();
   const history = useHistory();
@@ -29,12 +37,31 @@ export default function Notice() {
         timestamp: doc.data().timestamp,
       });
     });
-    setPosts(_posts);
+    setAllpost(_posts);
   };
 
   useEffect(() => {
     getNoticeList();
   }, []);
+
+  useEffect(() => {
+    const currentPage = currPage - 1;
+    const lastPageNum = Math.ceil(allPost.length / postPerPage);
+    const startPageNum = currentPage - (currentPage % pagenationLength) + 1;
+    const pageArray = [];
+    for (let i = startPageNum; i < startPageNum + pagenationLength; i++) {
+      if (i <= lastPageNum) {
+        pageArray.push(i);
+      }
+    }
+    setPageArray(pageArray);
+    setPosts(
+      allPost.slice(
+        currentPage * postPerPage,
+        currentPage * postPerPage + postPerPage
+      )
+    );
+  }, [allPost]);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -96,7 +123,7 @@ export default function Notice() {
                   className="p-0 pl-1 notice-lg-center"
                   style={{ textAlign: 'left' }}
                 >
-                  번호
+                  No.
                 </MDBCol>
                 <MDBCol
                   size="10"
@@ -107,7 +134,7 @@ export default function Notice() {
                     justifyContent: 'center',
                   }}
                 >
-                  제목
+                  Title
                 </MDBCol>
               </MDBRow>
             </MDBCol>
@@ -120,7 +147,7 @@ export default function Notice() {
                   className="px-0 notice-lg-right"
                   style={{ textAlign: 'right' }}
                 >
-                  작성자
+                  Author
                 </MDBCol>
                 <MDBCol
                   size="4"
@@ -128,7 +155,7 @@ export default function Notice() {
                   className="px-0 pr-1 pr-lg-2 pr-xl-0 notice-lg-center"
                   style={{ textAlign: 'right' }}
                 >
-                  날짜
+                  Date
                 </MDBCol>
               </MDBRow>
             </MDBCol>
@@ -145,7 +172,7 @@ export default function Notice() {
               <div key={post.id}>
                 <Link
                   to={{
-                    pathname: `notice/${post.id}`,
+                    pathname: `/notice/${post.id}`,
                   }}
                 >
                   <MDBRow
@@ -167,7 +194,9 @@ export default function Notice() {
                             justifyContent: 'center',
                           }}
                         >
-                          {index}
+                          {allPost.length -
+                            currPage * postPerPage +
+                            (postPerPage - index)}
                         </MDBCol>
                         <MDBCol
                           size="11"
@@ -204,6 +233,30 @@ export default function Notice() {
               </div>
             );
           })}
+
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center mt-3">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              {pageArray.map((e) => (
+                <li
+                  class={`page-item ${e === Number(params.id) ? 'active' : ''}`}
+                >
+                  <a class="page-link" href={e}>
+                    {e}
+                  </a>
+                </li>
+              ))}
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </InnerPageFrame>
     </>

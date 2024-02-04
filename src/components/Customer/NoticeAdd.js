@@ -124,7 +124,7 @@ export default function NoticeAdd() {
     })
       .then(() => {
         alert('Saved Successfully');
-        history.push('/notice');
+        history.push('/notice/page/1');
       })
       .catch((error) => {
         alert(error);
@@ -161,7 +161,7 @@ export default function NoticeAdd() {
           <MDBCol size="4">
             <div className="py-2 mt-2" style={{ textAlign: 'right' }}>
               <Link
-                to="/notice"
+                to="/notice/page/1"
                 className="border border-light p-1 p-lg-2 btn-click"
                 style={{
                   backgroundColor: '#e5ecef',

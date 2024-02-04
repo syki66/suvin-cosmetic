@@ -71,7 +71,7 @@ export default function App() {
 
         <Route path="/Inquiry" component={Inquiry} />
 
-        <Route path="/notice" exact={true} component={Notice} />
+        <Route path="/notice/page/:id" exact={true} component={Notice} />
         <Route path="/notice/new" component={NoticeAdd} />
         <Route path="/notice/edit/:id" component={NoticeEdit} />
         <Route path="/notice/:id" component={NoticeView} />
