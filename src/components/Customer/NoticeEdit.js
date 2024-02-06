@@ -24,6 +24,7 @@ export default function NoticeEdit() {
   const [date, setDate] = useState(``);
   const [time, setTime] = useState(``);
   const [author, setAuthor] = useState('');
+  const [isPrivate, setIsPrivate] = useState(false);
 
   const [currUserUID, setCurrUserUID] = useState('');
 
@@ -98,6 +99,10 @@ export default function NoticeEdit() {
     return { imageURL };
   };
 
+  const handlePrivateChange = (event) => {
+    setIsPrivate(event.target.value === 'private');
+  };
+
   const uploadedImagesInfo = async () => {
     const storageRef = ref(storage, `notice/${id}`);
     const result = await listAll(storageRef);
@@ -155,6 +160,7 @@ export default function NoticeEdit() {
       author: author,
       authorID: currUserUID,
       timestamp: toTimestamp(`${date} ${time}`),
+      isPrivate: isPrivate,
     })
       .then(() => {
         alert('Saved Successfully');
@@ -169,7 +175,7 @@ export default function NoticeEdit() {
     const docRef = doc(db, 'notice', id);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
-      const { title, content, author, timestamp } = docSnap.data();
+      const { title, content, author, timestamp, isPrivate } = docSnap.data();
       const { date, time } = timestampToDate(timestamp);
 
       setTitle(title);
@@ -177,6 +183,7 @@ export default function NoticeEdit() {
       setDate(date);
       setTime(time);
       setAuthor(author);
+      setIsPrivate(isPrivate);
     } else {
       // docSnap.data() will be undefined in this case
       console.log('No such document!');
@@ -248,6 +255,29 @@ export default function NoticeEdit() {
             <div
               style={{ width: '100%', height: '800px', textAlign: 'center' }}
             >
+              <div style={{ textAlign: 'right' }}>
+                <input
+                  type="radio"
+                  id="public"
+                  name="visibility"
+                  value="public"
+                  checked={!isPrivate}
+                  onChange={handlePrivateChange}
+                />
+                &nbsp;
+                <label htmlFor="public">Public</label>
+                &nbsp;&nbsp;&nbsp;
+                <input
+                  type="radio"
+                  id="private"
+                  name="visibility"
+                  value="private"
+                  checked={isPrivate}
+                  onChange={handlePrivateChange}
+                />
+                &nbsp;
+                <label htmlFor="private">Private</label>
+              </div>
               {currUserUID === adminUID && (
                 <div className="mb-4" style={{ textAlign: 'right' }}>
                   <input

@@ -31,6 +31,7 @@ export default function NoticeAdd() {
   const [date, setDate] = useState(`${year}-${month}-${dateToday}`);
   const [time, setTime] = useState(`${hours}:${minutes}:${seconds}`);
   const [author, setAuthor] = useState('');
+  const [isPrivate, setIsPrivate] = useState(false);
 
   const [currUserUID, setCurrUserUID] = useState('');
 
@@ -85,6 +86,10 @@ export default function NoticeAdd() {
     return { imageURL };
   };
 
+  const handlePrivateChange = (event) => {
+    setIsPrivate(event.target.value === 'private');
+  };
+
   const handleSubmit = async () => {
     if (!author || !date || !time || !title | !content) {
       alert('Please Fill all field');
@@ -121,6 +126,7 @@ export default function NoticeAdd() {
       author: author,
       authorID: currUserUID,
       timestamp: timestamp,
+      isPrivate: isPrivate,
     })
       .then(() => {
         alert('Saved Successfully');
@@ -192,6 +198,29 @@ export default function NoticeAdd() {
             <div
               style={{ width: '100%', height: '800px', textAlign: 'center' }}
             >
+              <div style={{ textAlign: 'right' }}>
+                <input
+                  type="radio"
+                  id="public"
+                  name="visibility"
+                  value="public"
+                  checked={!isPrivate}
+                  onChange={handlePrivateChange}
+                />
+                &nbsp;
+                <label htmlFor="public">Public</label>
+                &nbsp;&nbsp;&nbsp;
+                <input
+                  type="radio"
+                  id="private"
+                  name="visibility"
+                  value="private"
+                  checked={isPrivate}
+                  onChange={handlePrivateChange}
+                />
+                &nbsp;
+                <label htmlFor="private">Private</label>
+              </div>
               {currUserUID === adminUID && (
                 <div className="mb-4" style={{ textAlign: 'right' }}>
                   <input
