@@ -4,7 +4,7 @@ import { MDBRow, MDBCol } from 'mdbreact';
 
 import InnerPageFrame from '../common/InnerPageFrame';
 
-import { collection, getDocs, query, orderBy } from 'firebase/firestore';
+import { collection, getDocs, query, orderBy, where } from 'firebase/firestore';
 import { db } from '../../firebase-config';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { useHistory, useParams } from 'react-router-dom';
@@ -26,7 +26,14 @@ export default function Notice() {
   const history = useHistory();
 
   const getNoticeList = async () => {
-    const q = query(collection(db, 'notice'), orderBy('timestamp', 'desc'));
+    const q =
+      authorID === process.env.REACT_APP_ADMIN_UID
+        ? query(collection(db, 'notice'), orderBy('timestamp', 'desc'))
+        : query(
+            collection(db, 'notice'),
+            where('isPrivate', '==', false),
+            orderBy('timestamp', 'desc')
+          );
     const querySnapshot = await getDocs(q);
     const _posts = [];
     querySnapshot.forEach((doc) => {
@@ -36,6 +43,7 @@ export default function Notice() {
         content: doc.data().content,
         author: doc.data().author,
         timestamp: doc.data().timestamp,
+        isPrivate: doc.data().isPrivate,
       });
     });
     setAllpost(_posts);
@@ -44,6 +52,10 @@ export default function Notice() {
   useEffect(() => {
     getNoticeList();
   }, []);
+
+  useEffect(() => {
+    getNoticeList();
+  }, [authorID]);
 
   useEffect(() => {
     const currentPage = currPage - 1;
@@ -200,19 +212,26 @@ export default function Notice() {
                           currPage * postPerPage +
                           (postPerPage - index)}
                       </MDBCol>
-                      <Link
-                        to={{
-                          pathname: `/notice/${post.id}`,
+
+                      <MDBCol
+                        size="11"
+                        className="font-weight-bolder notice__title"
+                        style={{
+                          color: 'black',
+                          overflow: 'hidden',
+                          whiteSpace: 'nowrap',
+                          textOverflow: 'ellipsis',
                         }}
                       >
-                        <MDBCol
-                          size="11"
-                          className="font-weight-bolder notice__title"
+                        <Link
+                          to={{
+                            pathname: `/notice/${post.id}`,
+                          }}
                           style={{ color: 'black' }}
                         >
-                          {post.title}
-                        </MDBCol>
-                      </Link>
+                          {post.isPrivate ? '🔒︎' : ''}&nbsp;{post.title}
+                        </Link>
+                      </MDBCol>
                     </MDBRow>
                   </MDBCol>
 
