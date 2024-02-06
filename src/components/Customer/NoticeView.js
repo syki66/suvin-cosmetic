@@ -220,9 +220,7 @@ export default function NoticeView({}) {
                 </>
               )}
               <Link
-                onClick={() => {
-                  history.goBack();
-                }}
+                to={`/notice/page/${localStorage.getItem('noticeLastPage')}`}
                 className="border border-light p-1 p-lg-2 btn-click"
                 style={{ backgroundColor: '#e5ecef', color: 'black' }}
               >

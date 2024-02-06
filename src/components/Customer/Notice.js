@@ -67,6 +67,7 @@ export default function Notice() {
 
   useEffect(() => {
     setCurrPage(params.id);
+    localStorage.setItem('noticeLastPage', params.id);
   }, [params]);
 
   useEffect(() => {

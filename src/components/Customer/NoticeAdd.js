@@ -167,7 +167,7 @@ export default function NoticeAdd() {
           <MDBCol size="4">
             <div className="py-2 mt-2" style={{ textAlign: 'right' }}>
               <Link
-                to="/notice/page/1"
+                to={`/notice/page/${localStorage.getItem('noticeLastPage')}`}
                 className="border border-light p-1 p-lg-2 btn-click"
                 style={{
                   backgroundColor: '#e5ecef',
