@@ -191,7 +191,9 @@ export default function NoticeView({}) {
       <div className="h2 py-2">Notice</div>
 
       <div className="border-top border-light py-5">
-        <div className="h5">{data?.title}</div>
+        <div className="h5" style={{ wordWrap: 'break-word' }}>
+          {data?.title}
+        </div>
         <div
           className="border-bottom border-light pb-3 mb-2"
           style={{ color: 'gray' }}
