@@ -60,6 +60,12 @@ export default function Login() {
       });
   };
 
+  const handleEnterPress = (e) => {
+    if (e.key === 'Enter') {
+      handleLogin(user.email, user.password);
+    }
+  };
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -100,6 +106,7 @@ export default function Login() {
           onChange={(e) => {
             setUser({ ...user, email: e.target.value });
           }}
+          onKeyPress={handleEnterPress}
         />
         <input
           style={{
@@ -116,6 +123,7 @@ export default function Login() {
           onChange={(e) => {
             setUser({ ...user, password: e.target.value });
           }}
+          onKeyPress={handleEnterPress}
         />
         <button
           style={{

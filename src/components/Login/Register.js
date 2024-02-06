@@ -49,6 +49,12 @@ export default function Register() {
       });
   };
 
+  const handleEnterPress = (e) => {
+    if (e.key === 'Enter') {
+      handleRegister(user.email, user.password);
+    }
+  };
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -89,6 +95,7 @@ export default function Register() {
           onChange={(e) => {
             setUser({ ...user, email: e.target.value });
           }}
+          onKeyPress={handleEnterPress}
         />
         <input
           style={{
@@ -105,6 +112,7 @@ export default function Register() {
           onChange={(e) => {
             setUser({ ...user, password: e.target.value });
           }}
+          onKeyPress={handleEnterPress}
         />
         <button
           style={{
