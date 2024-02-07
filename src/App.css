@@ -260,14 +260,6 @@
     background-position-x: center;
   }
 
-  .first_carousel {
-    background-image: url('https://user-images.githubusercontent.com/59393359/77156900-b11fe780-6ae3-11ea-8111-7b5386249d5c.png');
-  }
-
-  .second_carousel {
-    background-image: url('https://user-images.githubusercontent.com/59393359/77156904-b2e9ab00-6ae3-11ea-9e69-70377787cc3b.png');
-  }
-
   .headerBG__css {
     object-fit: contain !important;
     background-image: url('https://user-images.githubusercontent.com/59393359/77156720-49699c80-6ae3-11ea-9a98-e308294ecedf.png');

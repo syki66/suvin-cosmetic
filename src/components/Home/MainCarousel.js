@@ -1,11 +1,16 @@
-import React from "react";
+import React from 'react';
 
-import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer, MDBIframe } from "mdbreact";
-import FittedImage from "react-fitted-image";
-
-const suvin_pic_1 = "https://user-images.githubusercontent.com/59393359/77156900-b11fe780-6ae3-11ea-8111-7b5386249d5c.png";
-const suvin_pic_2 = "https://user-images.githubusercontent.com/59393359/77156904-b2e9ab00-6ae3-11ea-9e69-70377787cc3b.png";
-
+import {
+  MDBCarousel,
+  MDBCarouselInner,
+  MDBCarouselItem,
+  MDBView,
+  MDBContainer,
+  MDBIframe,
+} from 'mdbreact';
+import FittedImage from 'react-fitted-image';
+import carousel_1 from './carousel_1.png';
+import carousel_2 from './carousel_2.png';
 
 /*
   px-0 : x축 마진제거
@@ -37,31 +42,27 @@ const suvin_pic_2 = "https://user-images.githubusercontent.com/59393359/77156904
   controls=0 컨트롤 불능
 */
 
-
 export default function MainCarousel() {
   const [width, setWidth] = React.useState(window.innerWidth);
   //const [height, setHeight] = React.useState(window.innerHeight);
-
 
   const updateWidthAndHeight = () => {
     setWidth(window.innerWidth);
     //setHeight(window.innerHeight);
   };
 
-
   React.useEffect(() => {
-    window.addEventListener("resize", updateWidthAndHeight);
-    return () => window.removeEventListener("resize", updateWidthAndHeight);
-  });  
+    window.addEventListener('resize', updateWidthAndHeight);
+    return () => window.removeEventListener('resize', updateWidthAndHeight);
+  });
 
-  let w = (width - 1200) / 100
-  let marginRightVW = ((50*w) + 72) / (w + 12);
+  let w = (width - 1200) / 100;
+  let marginRightVW = (50 * w + 72) / (w + 12);
 
-
-  const playListID = "PLPR1dl0wge2aQoGiFSmiF8iNlLU949f8k";
-  const playID = "qn_xoSpFdlA";
-  const videoHeight = "1000";
-  const videoWidth = "600";
+  const playListID = 'PLPR1dl0wge2aQoGiFSmiF8iNlLU949f8k';
+  const playID = 'qn_xoSpFdlA';
+  const videoHeight = '1000';
+  const videoWidth = '600';
 
   return (
     <MDBContainer fluid className="px-0">
@@ -71,27 +72,48 @@ export default function MainCarousel() {
         showControls={false}
         showIndicators={true}
       >
-        <MDBCarouselInner  style={{position:"relative"}}>
-
+        <MDBCarouselInner style={{ position: 'relative' }}>
           <MDBCarouselItem itemId="1">
             <MDBView>
-              <FittedImage fit="cover" src={suvin_pic_1} className="carousel__css first_carousel" />
+              <FittedImage
+                fit="cover"
+                src={carousel_1}
+                className="carousel__css"
+              />
             </MDBView>
           </MDBCarouselItem>
-          
+
           <MDBCarouselItem itemId="2">
             <MDBView>
-              <FittedImage fit="cover" src={suvin_pic_2} className="carousel__css second_carousel" />
+              <FittedImage
+                fit="cover"
+                src={carousel_2}
+                className="carousel__css"
+              />
             </MDBView>
           </MDBCarouselItem>
 
           <div className="home__youtube_parent_pc">
-            <iframe style={{marginRight: `${(width >= 1200) ? (`${marginRightVW}vw`) : ("6vw")}` }} className="home__youtube_child" width={{videoWidth}} height={{videoHeight}} src={`https://www.youtube.com/embed/${playID}?autoplay=1&mute=1&loop=1&modestbranding=1&list=${playListID}`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe
+              style={{
+                marginRight: `${width >= 1200 ? `${marginRightVW}vw` : '6vw'}`,
+              }}
+              className="home__youtube_child"
+              width={{ videoWidth }}
+              height={{ videoHeight }}
+              src={`https://www.youtube.com/embed/${playID}?autoplay=1&mute=1&loop=1&modestbranding=1&list=${playListID}`}
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
           </div>
         </MDBCarouselInner>
       </MDBCarousel>
       <MDBContainer className="pt-5 home__youtube_parent_mobile">
-        <MDBIframe className="rounded" src={`https://www.youtube.com/embed/${playID}?loop=1&modestbranding=1&list=${playListID}`} />
+        <MDBIframe
+          className="rounded"
+          src={`https://www.youtube.com/embed/${playID}?loop=1&modestbranding=1&list=${playListID}`}
+        />
       </MDBContainer>
     </MDBContainer>
   );

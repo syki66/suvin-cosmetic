@@ -1,13 +1,18 @@
-import React from "react";
+import React from 'react';
 
-import { MDBMask, MDBView, MDBContainer, MDBRow, MDBCol, MDBNavLink } from "mdbreact";
-import { Link } from "react-router-dom";
+import {
+  MDBMask,
+  MDBView,
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBNavLink,
+} from 'mdbreact';
+import { Link } from 'react-router-dom';
 
-const intro_pic_1 = "https://user-images.githubusercontent.com/59393359/77156957-cbf25c00-6ae3-11ea-8329-0a7734145777.png";
-const intro_pic_2 = "https://user-images.githubusercontent.com/59393359/77156961-cd238900-6ae3-11ea-9d5d-a1ed508d781c.png";
-const intro_pic_3 = "https://user-images.githubusercontent.com/59393359/77156963-cdbc1f80-6ae3-11ea-8187-f79ef8eb2e09.png";
-
-
+import intro_1 from './intro_1.png';
+import intro_2 from './intro_2.png';
+import intro_3 from './intro_3.png';
 
 /*
   사진 직접 경로설정하면 안되고 import 시켜줘야됨
@@ -62,43 +67,67 @@ const intro_pic_3 = "https://user-images.githubusercontent.com/59393359/77156963
   여기서 navlink는 이미 app.js에서 hash router 로 감싸져있어서 라우터 태그 따로 없어도됨
 */
 
-
 export default function Introduction() {
   return (
-    <div style={{backgroundColor:"snow"}}>
+    <div style={{ backgroundColor: 'snow' }}>
       <MDBContainer className="py-5">
-
         <MDBRow>
-
-          <MDBCol size="12" md="4" className="pb-5 pb-md-0" style={{display:"flex", justifyContent:"center"}}>
+          <MDBCol
+            size="12"
+            md="4"
+            className="pb-5 pb-md-0"
+            style={{ display: 'flex', justifyContent: 'center' }}
+          >
             <Link to="Competence" className="home__link">
               <div className="home__intro_parent">
-                <img src={intro_pic_1} className="img-fluid home__intro_img rounded" />
-                <div className="home__intro_child z-depth-1 rounded">Competence</div>
+                <img
+                  src={intro_1}
+                  className="img-fluid home__intro_img rounded"
+                />
+                <div className="home__intro_child z-depth-1 rounded">
+                  Competence
+                </div>
               </div>
             </Link>
           </MDBCol>
 
-          <MDBCol size="12" md="4" className="pb-5 pb-md-0" style={{display:"flex", justifyContent:"center"}}>
+          <MDBCol
+            size="12"
+            md="4"
+            className="pb-5 pb-md-0"
+            style={{ display: 'flex', justifyContent: 'center' }}
+          >
             <Link to="R & D" className="home__link">
               <div className="home__intro_parent">
-                <img src={intro_pic_2} className="img-fluid home__intro_img rounded" />
-                <div className="home__intro_child z-depth-1 rounded">R & D</div>
+                <img
+                  src={intro_2}
+                  className="img-fluid home__intro_img rounded"
+                />
+                <div className="home__intro_child z-depth-1 rounded">
+                  R&nbsp;&&nbsp;D
+                </div>
               </div>
             </Link>
           </MDBCol>
 
-          <MDBCol size="12" md="4" style={{display:"flex", justifyContent:"center"}}>
+          <MDBCol
+            size="12"
+            md="4"
+            style={{ display: 'flex', justifyContent: 'center' }}
+          >
             <Link to="OEM & ODM" className="home__link">
               <div className="home__intro_parent">
-                <img src={intro_pic_3} className="img-fluid home__intro_img rounded" />
-                <div className="home__intro_child z-depth-1 rounded">OEM & ODM</div>
+                <img
+                  src={intro_3}
+                  className="img-fluid home__intro_img rounded"
+                />
+                <div className="home__intro_child z-depth-1 rounded">
+                  OEM&nbsp;&&nbsp;ODM
+                </div>
               </div>
             </Link>
           </MDBCol>
-
         </MDBRow>
-
       </MDBContainer>
     </div>
   );
