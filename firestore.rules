@@ -10,13 +10,13 @@ service cloud.firestore {
     
     // 인증된 사용자는 자신의 글만 수정 가능
     match /notice/{noticeId} {
-			allow create: if request.auth != null;
-      allow update, delete: if request.auth != null && (request.auth.uid == resource.data.authorID || request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2");
+			allow create: if request.auth != null && request.auth.token.email_verified == true;
+      allow update, delete: if request.auth != null && request.auth.token.email_verified == true && (request.auth.uid == resource.data.authorID || request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2");
     }
     
     match /notice/{noticeId}/comments/{commentId} {
-      allow create: if request.auth != null;
-      allow update, delete: if request.auth != null && (request.auth.uid == resource.data.authorID || request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2");
+      allow create: if request.auth != null && request.auth.token.email_verified == true;
+      allow update, delete: if request.auth != null && request.auth.token.email_verified == true && (request.auth.uid == resource.data.authorID || request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2");
     }
     
   }

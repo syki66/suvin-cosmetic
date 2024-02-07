@@ -31,6 +31,7 @@ export default function NoticeView({}) {
   const [currAuthor, setCurrAuthor] = useState();
   const [authorID, setAuthorID] = useState('');
   const [commentList, setCommentList] = useState();
+  const [emailVerified, setEmailVerified] = useState(false);
 
   const timestampToDate = (timestamp) => {
     let newDate = new Date(timestamp);
@@ -76,8 +77,16 @@ export default function NoticeView({}) {
       return false;
     }
 
+    if (!emailVerified) {
+      alert(
+        'Email verification is required.\nYou can resend the email from the menu at the top right.\n\nPage Refresh is required after Verification'
+      );
+      return false;
+    }
+
     if (newComment === '') {
       alert('Please write a comment');
+      return false;
     }
 
     addDoc(collection(db, 'notice', id, 'comments'), {
@@ -174,8 +183,10 @@ export default function NoticeView({}) {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
+        user.getIdToken(true);
         setCurrAuthor(user.email.split('@')[0]);
         setAuthorID(user.uid);
+        setEmailVerified(user.emailVerified);
       } else {
         console.log('로그아웃 상태');
       }

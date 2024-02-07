@@ -198,58 +198,60 @@ export default function NoticeAdd() {
             <div
               style={{ width: '100%', height: '800px', textAlign: 'center' }}
             >
-              <div style={{ textAlign: 'right' }}>
-                <input
-                  type="radio"
-                  id="public"
-                  name="visibility"
-                  value="public"
-                  checked={!isPrivate}
-                  onChange={handlePrivateChange}
-                />
-                &nbsp;
-                <label htmlFor="public">Public</label>
-                &nbsp;&nbsp;&nbsp;
-                <input
-                  type="radio"
-                  id="private"
-                  name="visibility"
-                  value="private"
-                  checked={isPrivate}
-                  onChange={handlePrivateChange}
-                />
-                &nbsp;
-                <label htmlFor="private">Private</label>
-              </div>
               {currUserUID === adminUID && (
-                <div className="mb-4" style={{ textAlign: 'right' }}>
-                  <input
-                    value={author}
-                    onChange={(e) => {
-                      setAuthor(e.target.value);
-                    }}
-                    placeholder="Author"
-                    className="mr-2"
-                    style={{ width: '85px' }}
-                  />
-                  <input
-                    type="date"
-                    onChange={(e) => {
-                      setDate(e.target.value);
-                    }}
-                    defaultValue={`${year}-${month}-${dateToday}`}
-                    style={{ textAlign: 'center', width: '130px' }}
-                    className="mr-2"
-                  />
-                  <input
-                    type="time"
-                    step="1"
-                    onChange={(e) => {
-                      setTime(e.target.value);
-                    }}
-                    defaultValue={`${hours}:${minutes}:${seconds}`}
-                    style={{ textAlign: 'center' }}
-                  />
+                <div>
+                  <div style={{ textAlign: 'right' }}>
+                    <input
+                      type="radio"
+                      id="public"
+                      name="visibility"
+                      value="public"
+                      checked={!isPrivate}
+                      onChange={handlePrivateChange}
+                    />
+                    &nbsp;
+                    <label htmlFor="public">Public</label>
+                    &nbsp;&nbsp;&nbsp;
+                    <input
+                      type="radio"
+                      id="private"
+                      name="visibility"
+                      value="private"
+                      checked={isPrivate}
+                      onChange={handlePrivateChange}
+                    />
+                    &nbsp;
+                    <label htmlFor="private">Private</label>
+                  </div>
+                  <div className="mb-4" style={{ textAlign: 'right' }}>
+                    <input
+                      value={author}
+                      onChange={(e) => {
+                        setAuthor(e.target.value);
+                      }}
+                      placeholder="Author"
+                      className="mr-2"
+                      style={{ width: '85px' }}
+                    />
+                    <input
+                      type="date"
+                      onChange={(e) => {
+                        setDate(e.target.value);
+                      }}
+                      defaultValue={`${year}-${month}-${dateToday}`}
+                      style={{ textAlign: 'center', width: '130px' }}
+                      className="mr-2"
+                    />
+                    <input
+                      type="time"
+                      step="1"
+                      onChange={(e) => {
+                        setTime(e.target.value);
+                      }}
+                      defaultValue={`${hours}:${minutes}:${seconds}`}
+                      style={{ textAlign: 'center' }}
+                    />
+                  </div>
                 </div>
               )}
               <input
