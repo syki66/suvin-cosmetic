@@ -181,7 +181,7 @@ export default function Notice() {
           </MDBRow>
 
           {posts.map((post, index) => {
-            let newDate = new Date();
+            let newDate = new Date(post.timestamp);
             let dateToday = newDate.getDate();
             let month = newDate.getMonth() + 1;
             let year = newDate.getFullYear();

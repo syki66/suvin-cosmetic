@@ -192,6 +192,7 @@ export default function NoticeView({}) {
 
       <div className="border-top border-light py-5">
         <div className="h5" style={{ wordWrap: 'break-word' }}>
+          {data?.isPrivate ? '🔒︎' : ''}
           {data?.title}
         </div>
         <div
