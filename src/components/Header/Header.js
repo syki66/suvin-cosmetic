@@ -20,16 +20,11 @@ import {
   signOut,
 } from 'firebase/auth';
 
-const header_sub_bg =
-  'https://user-images.githubusercontent.com/59393359/77156720-49699c80-6ae3-11ea-9a98-e308294ecedf.png';
-const slicedLogoImg =
-  'https://user-images.githubusercontent.com/59393359/77156764-61d9b700-6ae3-11ea-9dac-a72e8cd55acd.png';
-const logo_32 =
-  'https://user-images.githubusercontent.com/59393359/77156758-60a88a00-6ae3-11ea-9065-86e8a23a383b.png';
-const logo_192 =
-  'https://user-images.githubusercontent.com/59393359/77156760-61412080-6ae3-11ea-96cc-a532a070cc71.png';
-const logo_512 =
-  'https://user-images.githubusercontent.com/59393359/77156761-61412080-6ae3-11ea-95c4-0de1eeda49b1.png';
+import header_sub_bg from './header_sub_bg.png';
+import slicedLogoImg from './slicedLogoImg.png';
+import logo_32 from './logo_32.png';
+import logo_192 from './logo_192.png';
+import logo_512 from './logo_512.png';
 
 /*
     isOpen은 모바일형으로 네비게이션바 변경되었을때 메뉴 열리게 하는 토글의 스테이트 변경하는거
