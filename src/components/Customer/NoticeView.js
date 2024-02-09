@@ -49,7 +49,7 @@ export default function NoticeView({}) {
     seconds = seconds < 10 ? '0' + seconds : seconds;
     month = month < 10 ? '0' + month : month;
     dateToday = dateToday < 10 ? '0' + dateToday : dateToday;
-    const contentDate = `${year}-${month}-${dateToday} ${hours}:${minutes}:${seconds} ${AM_PM}`;
+    const contentDate = `${year}-${month}-${dateToday} ${hours}:${minutes} ${AM_PM}`;
     const commentDate = `${year}/${month}/${dateToday} ${hours}:${minutes} ${AM_PM}`;
     return { contentDate, commentDate };
   };
@@ -211,10 +211,15 @@ export default function NoticeView({}) {
           style={{ color: 'gray' }}
         >
           <MDBRow>
-            <MDBCol size="7">
+            <MDBCol size="12" md="7">
               작성자 : {data?.author} &nbsp;&nbsp;&nbsp;&nbsp; {data?.date}
             </MDBCol>
-            <MDBCol size="5" style={{ textAlign: 'right' }}>
+            <MDBCol
+              size="12"
+              md="5"
+              className="mt-3 mt-md-0"
+              style={{ textAlign: 'right' }}
+            >
               {(data?.author === currAuthor || authorID === adminUID) && (
                 <>
                   <Link

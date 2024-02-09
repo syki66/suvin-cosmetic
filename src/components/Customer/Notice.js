@@ -189,73 +189,72 @@ export default function Notice() {
             dateToday = dateToday < 10 ? '0' + dateToday : dateToday;
             return (
               <div key={post.id}>
-                <MDBRow
-                  className="border-bottom border-light py-2 mx-1"
-                  style={{
-                    color: 'gray',
-                    display: 'flex',
-                    alignItems: 'center',
+                <Link
+                  to={{
+                    pathname: `/notice/${post.id}`,
                   }}
                 >
-                  <MDBCol size="9">
-                    <MDBRow>
-                      <MDBCol
-                        size="1"
-                        className="p-0"
-                        style={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                        }}
-                      >
-                        {allPost.length -
-                          currPage * postPerPage +
-                          (postPerPage - index)}
-                      </MDBCol>
-
-                      <MDBCol
-                        size="11"
-                        className="font-weight-bolder notice__title"
-                        style={{
-                          color: 'black',
-                          overflow: 'hidden',
-                          whiteSpace: 'nowrap',
-                          textOverflow: 'ellipsis',
-                        }}
-                      >
-                        <Link
-                          to={{
-                            pathname: `/notice/${post.id}`,
+                  <MDBRow
+                    className="border-bottom border-light py-2 mx-1"
+                    style={{
+                      color: 'gray',
+                      display: 'flex',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <MDBCol size="9">
+                      <MDBRow>
+                        <MDBCol
+                          size="1"
+                          className="p-0"
+                          style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
                           }}
-                          style={{ color: 'black' }}
+                        >
+                          {allPost.length -
+                            currPage * postPerPage +
+                            (postPerPage - index)}
+                        </MDBCol>
+
+                        <MDBCol
+                          size="11"
+                          className="font-weight-bolder notice__title"
+                          style={{
+                            color: 'black',
+                            overflow: 'hidden',
+                            whiteSpace: 'nowrap',
+                            textOverflow: 'ellipsis',
+                          }}
                         >
                           {post.isPrivate ? '🔒︎' : ''}&nbsp;{post.title}
-                        </Link>
-                      </MDBCol>
-                    </MDBRow>
-                  </MDBCol>
+                        </MDBCol>
+                      </MDBRow>
+                    </MDBCol>
 
-                  <MDBCol size="3">
-                    <MDBRow>
-                      <MDBCol
-                        size="12"
-                        lg="5"
-                        className="px-0 notice-lg-right"
-                        style={{ textAlign: 'right' }}
-                      >
-                        {post.author}
-                      </MDBCol>
-                      <MDBCol
-                        size="12"
-                        lg="7"
-                        className="px-0 pl-lg-2 pl-xl-4 notice-lg-right"
-                        style={{ textAlign: 'right' }}
-                      >
-                        {`${year}-${month}-${dateToday}`}
-                      </MDBCol>
-                    </MDBRow>
-                  </MDBCol>
-                </MDBRow>
+                    <MDBCol size="3">
+                      <MDBRow>
+                        <MDBCol
+                          size="12"
+                          lg="5"
+                          className="px-0 notice-lg-right"
+                          style={{ textAlign: 'right' }}
+                        >
+                          {post.author}
+                        </MDBCol>
+                        <MDBCol
+                          size="12"
+                          lg="7"
+                          className="px-0 pl-lg-2 pl-xl-4 notice-lg-right"
+                          style={{ textAlign: 'right' }}
+                        >
+                          {`${year}-${month}-${dateToday}`}
+                        </MDBCol>
+                      </MDBRow>
+                    </MDBCol>
+                  </MDBRow>
+                </Link>
               </div>
             );
           })}
