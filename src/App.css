@@ -338,3 +338,17 @@
 .page-item.active > .page-link {
   background-color: #7f304e !important;
 }
+
+@media (max-width: 992px) {
+  .company__motto {
+    opacity: 0;
+  }
+
+  .company__motto_image {
+    opacity: 0.5;
+  }
+
+  .company__motto_text {
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 1);
+  }
+}
