@@ -115,6 +115,7 @@
     user-select: none;
     -webkit-tap-highlight-color: transparent;
     transition: background-color 0.5s;
+    border-radius: 10px;
   }
 
   .nav__link:hover {
@@ -133,6 +134,7 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
+    border-radius: 10px;
   }
 
   .nav__link:hover .nav__link-group {
