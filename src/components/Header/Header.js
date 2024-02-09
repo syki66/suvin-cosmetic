@@ -48,6 +48,10 @@ export default function Header() {
     setIsOpen(!isOpen);
   };
 
+  const runCollapse = () => {
+    setIsOpen(false);
+  };
+
   const handleSendEmail = () => {
     sendEmailVerification(auth.currentUser).then(() => {
       alert(
@@ -107,6 +111,7 @@ export default function Header() {
                       to="/Company"
                       className="py-md-3 headerMenu_css"
                       style={{ textAlign: 'center' }}
+                      onClick={runCollapse}
                     >
                       Information
                     </MDBNavLink>
@@ -129,6 +134,7 @@ export default function Header() {
                       to="/Competence"
                       className="py-md-3 headerMenu_css"
                       style={{ textAlign: 'center' }}
+                      onClick={runCollapse}
                     >
                       Business
                     </MDBNavLink>
@@ -154,6 +160,7 @@ export default function Header() {
                       to="/Premium"
                       className="py-md-3 headerMenu_css"
                       style={{ textAlign: 'center' }}
+                      onClick={runCollapse}
                     >
                       Product
                     </MDBNavLink>
@@ -179,6 +186,7 @@ export default function Header() {
                       to="/Global Network"
                       className="py-md-3 headerMenu_css"
                       style={{ textAlign: 'center' }}
+                      onClick={runCollapse}
                     >
                       Global Network
                     </MDBNavLink>
@@ -198,6 +206,7 @@ export default function Header() {
                       to="/Inquiry"
                       className="py-md-3 headerMenu_css"
                       style={{ textAlign: 'center' }}
+                      onClick={runCollapse}
                     >
                       Inquiry
                     </MDBNavLink>
@@ -217,6 +226,7 @@ export default function Header() {
                       to="/notice/page/1"
                       className="py-md-3 headerMenu_css"
                       style={{ textAlign: 'center' }}
+                      onClick={runCollapse}
                     >
                       Customer
                     </MDBNavLink>
