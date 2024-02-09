@@ -5,7 +5,14 @@ import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
 import { Link } from 'react-router-dom';
 
 import { db } from '../../firebase-config';
-import { collection, getDocs, limit, orderBy, query } from 'firebase/firestore';
+import {
+  collection,
+  getDocs,
+  limit,
+  orderBy,
+  query,
+  where,
+} from 'firebase/firestore';
 
 export default function NoticeContact() {
   const [posts, setPosts] = useState([]);
@@ -14,6 +21,7 @@ export default function NoticeContact() {
     const getNoticeList = async () => {
       const q = query(
         collection(db, 'notice'),
+        where('isPrivate', '==', false),
         orderBy('timestamp', 'desc'),
         limit(3)
       );
