@@ -72,13 +72,13 @@ export default function Register() {
       <div
         style={{
           margin: '70px auto',
-          padding: '40px 50px',
           display: 'flex',
           flexDirection: 'column',
           maxWidth: '500px',
           border: 'solid 1px #eaeced',
           borderRadius: '15px',
         }}
+        className="px-2 py-5 p-sm-5"
       >
         <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>Sign Up</h2>
         <input
