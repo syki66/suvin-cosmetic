@@ -68,6 +68,14 @@ npm start
 
 ## Build
 
+_`package.json`의 `build`에 `CI=false` 추가해야됨 (CI 서버에서 warning을 error로 간주해서 빌드 실패가 발생함)_
+
+> 수동 배포
+
 ```bash
 npm run deploy
 ```
+
+> 자동 배포
+
+master 브랜치에 merge 또는 push가 발생하면, Github Action을 통해서 자동 배포됨
