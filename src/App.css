@@ -262,9 +262,17 @@
     background-position-x: center;
   }
 
+  .first_carousel {
+    background-image: url('./components/Home/carousel_1.png');
+  }
+
+  .second_carousel {
+    background-image: url('./components/Home/carousel_2.png');
+  }
+
   .headerBG__css {
     object-fit: contain !important;
-    background-image: url('https://user-images.githubusercontent.com/59393359/77156720-49699c80-6ae3-11ea-9a98-e308294ecedf.png');
+    background-image: url('./components/Header/header_sub_bg.png');
     background-repeat: repeat-x;
     background-position-x: center;
   }

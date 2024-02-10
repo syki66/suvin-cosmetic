@@ -78,7 +78,7 @@ export default function MainCarousel() {
               <FittedImage
                 fit="cover"
                 src={carousel_1}
-                className="carousel__css"
+                className="carousel__css first_carousel"
               />
             </MDBView>
           </MDBCarouselItem>
@@ -88,7 +88,7 @@ export default function MainCarousel() {
               <FittedImage
                 fit="cover"
                 src={carousel_2}
-                className="carousel__css"
+                className="carousel__css second_carousel"
               />
             </MDBView>
           </MDBCarouselItem>
