@@ -206,9 +206,10 @@
     display: none !important;
   }
 
-  /* .headerMenu_css {
-    width: 120px;
-  } */
+  .headerMenu_css {
+    /* width: 120px; */
+    border-radius: 10px;
+  }
 
   .notice-lg-right {
     text-align: left !important;

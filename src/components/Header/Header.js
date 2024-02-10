@@ -95,7 +95,7 @@ export default function Header() {
           style={{ maxWidth: 1100 }}
         >
           <MDBNavbarBrand>
-            <MDBNavLink to="/">
+            <MDBNavLink to="/" style={{ borderRadius: '10px' }}>
               <img src={slicedLogoImg} className="pr-1" />
               <strong className="white-text">Suvin Cosmetic</strong>
             </MDBNavLink>
