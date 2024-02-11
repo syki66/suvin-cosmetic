@@ -225,16 +225,14 @@ export default function BoardEdit({
           <MDBCol size="4">
             <div className="py-2 mt-2" style={{ textAlign: 'right' }}>
               <Link
-                to={`/${collectionName}/page/${localStorage.getItem(
-                  `${collectionName}LastPage`
-                )}`}
+                onClick={history.goBack}
                 className="border border-light p-1 p-lg-2 btn-click"
                 style={{
                   backgroundColor: '#e5ecef',
                   color: 'black',
                 }}
               >
-                List
+                Back
               </Link>
               <Link
                 className="border border-light p-1 p-lg-2 ml-3 btn-click"
