@@ -14,6 +14,7 @@ export default function BoardList({
   menuTitle,
   menuTitleList,
   mainTitle,
+  description,
 }) {
   const params = useParams();
 
@@ -130,6 +131,7 @@ export default function BoardList({
           </MDBCol>
         </MDBRow>
         <div className="border-top border-light pt-5">
+          {description && <div className="mb-3">{description}</div>}
           <MDBRow
             className="border-bottom border-top border-light py-2 mx-1 font-weight-bold"
             style={{

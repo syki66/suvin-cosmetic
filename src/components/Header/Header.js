@@ -206,7 +206,7 @@ export default function Header() {
                 <nav className="nav">
                   <div className="nav__link p-0" style={{ width: '100%' }}>
                     <MDBNavLink
-                      to="/Inquiry"
+                      to="/inquiry/page/1"
                       className="p-lg-3 headerMenu_css"
                       style={{ textAlign: 'center' }}
                       onClick={runCollapse}
@@ -214,7 +214,10 @@ export default function Header() {
                       Inquiry
                     </MDBNavLink>
                     <div className="nav__link-group" style={{ zIndex: '2' }}>
-                      <MDBNavLink to="/Inquiry" className="nav__link p-3">
+                      <MDBNavLink
+                        to="/inquiry/page/1"
+                        className="nav__link p-3"
+                      >
                         Inquiry
                       </MDBNavLink>
                     </div>

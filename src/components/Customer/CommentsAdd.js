@@ -1,9 +1,9 @@
 import React from 'react';
-import BoardList from '../common/board/BoardList';
+import BoardAdd from '../common/board/BoardAdd';
 
-export default function Comments() {
+export default function CommentsAdd() {
   return (
-    <BoardList
+    <BoardAdd
       collectionName="comments"
       menuTitle="Customer"
       menuTitleList={['Notice', 'Comments']}
