@@ -75,7 +75,6 @@ export default function App() {
 
         <Route path="/Global Network" component={Global_Network} />
 
-        <Route path="/inquiry" component={Inquiry} />
         <Route path="/inquiry/page/:id" component={Inquiry} />
         <Route path="/inquiry/new" component={InquiryAdd} />
         <Route path="/inquiry/edit/:id" component={InquiryEdit} />
