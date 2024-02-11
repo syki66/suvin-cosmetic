@@ -60,9 +60,11 @@ export default function BoardAdd({
       [{ color: [] }, { background: [] }], // dropdown with defaults from theme
       [{ font: [] }],
       [{ align: [] }],
-      ['link', 'image'],
+      ['link'],
 
       ['clean'], // remove formatting button
+
+      ['image'],
     ],
   };
 
@@ -266,14 +268,20 @@ export default function BoardAdd({
                 style={{ width: '100%' }}
                 className="mb-4"
               />
-              <ReactQuill
-                theme="snow"
-                value={content}
-                onChange={setContent}
-                placeholder="Write content"
-                modules={modules}
-                style={{ width: '100%', height: '650px' }}
-              />
+              {currUserUID && (
+                <ReactQuill
+                  theme="snow"
+                  value={content}
+                  onChange={setContent}
+                  placeholder="Write content"
+                  modules={
+                    adminUID === currUserUID
+                      ? modules
+                      : { toolbar: modules.toolbar.slice(0, -1) }
+                  }
+                  style={{ width: '100%', height: '650px' }}
+                />
+              )}
             </div>
           </div>
         </div>

@@ -249,7 +249,8 @@ export default function BoardList({
                             textOverflow: 'ellipsis',
                           }}
                         >
-                          {post.isPrivate ? '🔒︎' : ''}&nbsp;{post.title}
+                          {post.isPrivate ? '🔒︎ ' : ''}
+                          {post.title}
                         </MDBCol>
                       </MDBRow>
                     </MDBCol>
