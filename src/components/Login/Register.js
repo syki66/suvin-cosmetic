@@ -25,7 +25,7 @@ export default function Register() {
           // Email verification sent!
           // ...
           alert(
-            'Verify Your Email.\nCheck your email & click the link to activate your account.'
+            'Verify Your Email.\nCheck your email & click the link to activate your account.\n\nPage Refresh is required after Verification.'
           );
         });
       })

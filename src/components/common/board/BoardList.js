@@ -28,6 +28,7 @@ export default function BoardList({
   const [pagenationLength] = useState(10);
   const [pagenationArray, setPagenationArray] = useState([]);
   const [lastPaginationNumber, setLastPaginationNumber] = useState();
+  const [emailVerified, setEmailVerified] = useState(false);
 
   const auth = getAuth();
   const history = useHistory();
@@ -92,7 +93,9 @@ export default function BoardList({
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
+        user.getIdToken(true);
         setAuthorID(user.uid);
+        setEmailVerified(user.emailVerified);
       } else {
         console.log('로그아웃 상태');
       }
@@ -112,12 +115,21 @@ export default function BoardList({
                 !isAdminPage) && (
                 <Link
                   onClick={() => {
-                    if (authorID) {
-                      history.push(`/${collectionName}/new`);
-                    } else {
+                    if (!authorID) {
                       alert('Login is required');
                       history.push('/login');
                       return false;
+                    }
+
+                    if (!emailVerified) {
+                      alert(
+                        'Email verification is required.\nYou can resend the email from the menu at the top right.\n\nPage Refresh is required after Verification'
+                      );
+                      return false;
+                    }
+
+                    if (authorID) {
+                      history.push(`/${collectionName}/new`);
                     }
                   }}
                   className="border border-light p-1 p-lg-2 btn-click"
