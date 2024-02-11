@@ -15,6 +15,7 @@ export default function BoardList({
   menuTitleList,
   mainTitle,
   description,
+  isAdminPage = true,
 }) {
   const params = useParams();
 
@@ -107,7 +108,8 @@ export default function BoardList({
           </MDBCol>
           <MDBCol size="3">
             <div className="py-2 mt-2" style={{ textAlign: 'right' }}>
-              {authorID === process.env.REACT_APP_ADMIN_UID && (
+              {(authorID === process.env.REACT_APP_ADMIN_UID ||
+                !isAdminPage) && (
                 <Link
                   onClick={() => {
                     if (authorID) {

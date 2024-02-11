@@ -223,26 +223,27 @@ export default function BoardView({
               className="mt-3 mt-md-0"
               style={{ textAlign: 'right' }}
             >
-              {(data?.author === currAuthor || authorID === adminUID) && (
-                <>
-                  <Link
-                    className="border border-light p-1 p-lg-2 mr-2 btn-click"
-                    style={{ backgroundColor: '#e5ecef', color: 'black' }}
-                    onClick={() =>
-                      history.push(`/${collectionName}/edit/${id}`)
-                    }
-                  >
-                    Edit
-                  </Link>
-                  <Link
-                    className="border border-light p-1 p-lg-2 mr-2 btn-click"
-                    style={{ backgroundColor: '#e5ecef', color: 'black' }}
-                    onClick={() => handleBoardDelete()}
-                  >
-                    Delete
-                  </Link>
-                </>
-              )}
+              {data &&
+                (data.author === currAuthor || authorID === adminUID) && (
+                  <>
+                    <Link
+                      className="border border-light p-1 p-lg-2 mr-2 btn-click"
+                      style={{ backgroundColor: '#e5ecef', color: 'black' }}
+                      onClick={() =>
+                        history.push(`/${collectionName}/edit/${id}`)
+                      }
+                    >
+                      Edit
+                    </Link>
+                    <Link
+                      className="border border-light p-1 p-lg-2 mr-2 btn-click"
+                      style={{ backgroundColor: '#e5ecef', color: 'black' }}
+                      onClick={() => handleBoardDelete()}
+                    >
+                      Delete
+                    </Link>
+                  </>
+                )}
               <Link
                 to={`/${collectionName}/page/${localStorage.getItem(
                   `${collectionName}LastPage`

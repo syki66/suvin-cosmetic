@@ -8,6 +8,7 @@ export default function Comments() {
       menuTitle="Customer"
       menuTitleList={['Notice', 'Comments']}
       mainTitle="Comments"
+      isAdminPage={false}
     />
   );
 }

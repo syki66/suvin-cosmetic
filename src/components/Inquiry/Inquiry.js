@@ -9,6 +9,7 @@ export default function Inquiry() {
       menuTitleList={['Inquiry']}
       mainTitle="Inquiry"
       description="Please write freely about business matter here or use email directly (suvin@suvincos.com)"
+      isAdminPage={false}
     />
   );
 }
