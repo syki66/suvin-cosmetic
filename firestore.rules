@@ -3,18 +3,44 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     
+    // notice 페이지 권한
     // 인증 없이 누구나 읽을 수 있음
     match /notice/{document=**} {
       allow read;
     }
-    
-    // 인증된 사용자는 자신의 글만 수정 가능
+    // 관리자만 글 생성, 수정, 삭제 가능
     match /notice/{noticeId} {
-			allow create: if request.auth != null && request.auth.token.email_verified == true;
+			allow create, update, delete: if request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2";
+    }
+    // 이메일 인증이 완료된 사용자는 댓글 생성 및 자신의 댓글만 삭제 가능, 관리자는 모든 댓글 삭제 가능
+    match /notice/{noticeId}/comments/{commentId} {
+      allow create: if request.auth != null && request.auth.token.email_verified == true;
       allow update, delete: if request.auth != null && request.auth.token.email_verified == true && (request.auth.uid == resource.data.authorID || request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2");
     }
     
-    match /notice/{noticeId}/comments/{commentId} {
+    // comments 페이지 권한
+    match /comments/{document=**} {
+      allow read;
+    }
+    // 이메일 인증이 완료된 사용자는 글 생성 가능, 자신의 글만 수정, 삭제 가능
+    match /comments/{commentsId} {
+			allow create: if request.auth != null && request.auth.token.email_verified == true;
+      allow update, delete: if request.auth != null && request.auth.token.email_verified == true && (request.auth.uid == resource.data.authorID || request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2");
+    }
+    match /comments/{commentsId}/comments/{commentId} {
+      allow create: if request.auth != null && request.auth.token.email_verified == true;
+      allow update, delete: if request.auth != null && request.auth.token.email_verified == true && (request.auth.uid == resource.data.authorID || request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2");
+    }
+    
+    // inquiry 페이지 권한
+    match /inquiry/{document=**} {
+      allow read;
+    }
+    match /inquiry/{inquiryId} {
+			allow create: if request.auth != null && request.auth.token.email_verified == true;
+      allow update, delete: if request.auth != null && request.auth.token.email_verified == true && (request.auth.uid == resource.data.authorID || request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2");
+    }
+    match /inquiry/{inquiryId}/comments/{commentId} {
       allow create: if request.auth != null && request.auth.token.email_verified == true;
       allow update, delete: if request.auth != null && request.auth.token.email_verified == true && (request.auth.uid == resource.data.authorID || request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2");
     }
