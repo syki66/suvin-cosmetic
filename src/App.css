@@ -211,11 +211,11 @@
     border-radius: 10px;
   }
 
-  .notice-lg-right {
+  .board-lg-right {
     text-align: left !important;
   }
 
-  .notice-lg-center {
+  .board-lg-center {
     text-align: center !important;
   }
 
@@ -289,7 +289,7 @@
   text-decoration: underline;
 }
 
-.notice__title:hover {
+.board__title:hover {
   text-decoration: underline;
 }
 
