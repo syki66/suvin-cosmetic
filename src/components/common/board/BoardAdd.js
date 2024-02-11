@@ -6,9 +6,10 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { db, storage } from '../../../firebase-config';
 import InnerPageFrame from '../../common/InnerPageFrame';
 import { MDBCol, MDBRow } from 'mdbreact';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { v4 } from 'uuid';
+import imageCompression from 'browser-image-compression';
 
 const adminUID = process.env.REACT_APP_ADMIN_UID;
 
@@ -37,11 +38,16 @@ export default function BoardAdd({
   const [time, setTime] = useState(`${hours}:${minutes}:${seconds}`);
   const [author, setAuthor] = useState('');
   const [isPrivate, setIsPrivate] = useState(false);
+  const [thumbnail, setThumbnail] = useState(null);
+  const [price, setPrice] = useState(null);
 
   const [currUserUID, setCurrUserUID] = useState('');
 
   const auth = getAuth();
   const history = useHistory();
+  const location = useLocation();
+
+  const path = location.pathname.split('/')[1];
 
   const modules = {
     toolbar: [
@@ -84,8 +90,8 @@ export default function BoardAdd({
     return new Blob([ab], { type: 'image/jpeg' });
   };
 
-  const uploadImage = async (imageBlob, folderUUID) => {
-    const fileUUID = v4();
+  const uploadImage = async (imageBlob, folderUUID, isThumbnail) => {
+    const fileUUID = isThumbnail ? 'thumbnail' : v4();
     const imagePath = `${collectionName}/${folderUUID}/${fileUUID}`;
     const imageRef = ref(storage, imagePath);
     const response = await uploadBytes(imageRef, imageBlob);
@@ -95,6 +101,25 @@ export default function BoardAdd({
 
   const handlePrivateChange = (event) => {
     setIsPrivate(event.target.value === 'private');
+  };
+
+  const handleThumbnailChange = async (event) => {
+    const file = event.target.files[0];
+
+    if (file && file.type.includes('image')) {
+      try {
+        const options = {
+          maxSizeMB: 1,
+          maxWidthOrHeight: 300,
+          useWebWorker: true,
+        };
+
+        const compressedFile = await imageCompression(file, options);
+        setThumbnail(compressedFile);
+      } catch (error) {
+        console.error('Error compressing image:', error);
+      }
+    }
   };
 
   const handleSubmit = async () => {
@@ -124,6 +149,8 @@ export default function BoardAdd({
 
     await Promise.all(imageUploadsPromise);
 
+    const thumbnailURL = await uploadImage(thumbnail, docUUID, true);
+
     const timestamp =
       currUserUID === adminUID ? toTimestamp(`${date} ${time}`) : Date.now();
 
@@ -134,10 +161,12 @@ export default function BoardAdd({
       authorID: currUserUID,
       timestamp: timestamp,
       isPrivate: isPrivate,
+      thumbnail: thumbnailURL.imageURL,
+      price: price,
     })
       .then(() => {
         alert('Saved Successfully');
-        history.push(`/${collectionName}/page/1`);
+        history.push(`/${collectionName}/${docUUID}`);
       })
       .catch((error) => {
         alert(error);
@@ -258,6 +287,36 @@ export default function BoardAdd({
                     />
                   </div>
                 </div>
+              )}
+              {['premium', 'special', 'others'].includes(path) && (
+                <>
+                  <div className="mb-4">
+                    <input
+                      type="file"
+                      accept="image/jpeg, image/png"
+                      onChange={handleThumbnailChange}
+                    />
+                  </div>
+                  <div className="mb-4">
+                    {thumbnail && (
+                      <img
+                        src={URL.createObjectURL(thumbnail)}
+                        alt="thumbnail image"
+                        style={{ maxWidth: '300px', maxHeight: '300px' }}
+                      />
+                    )}
+                  </div>
+                  <div className="mb-4">
+                    <input
+                      value={price}
+                      onChange={(e) => {
+                        setPrice(e.target.value);
+                      }}
+                      placeholder="Price"
+                      style={{ width: '300px' }}
+                    />
+                  </div>
+                </>
               )}
               <input
                 value={title}

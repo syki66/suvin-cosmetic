@@ -6,7 +6,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { db, storage } from '../../../firebase-config';
 import InnerPageFrame from '../../common/InnerPageFrame';
 import { MDBCol, MDBRow } from 'mdbreact';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams, useLocation } from 'react-router-dom';
 import {
   deleteObject,
   getDownloadURL,
@@ -15,6 +15,7 @@ import {
   uploadBytes,
 } from 'firebase/storage';
 import { v4 } from 'uuid';
+import imageCompression from 'browser-image-compression';
 
 const adminUID = process.env.REACT_APP_ADMIN_UID;
 
@@ -30,6 +31,8 @@ export default function BoardEdit({
   const [time, setTime] = useState(``);
   const [author, setAuthor] = useState('');
   const [isPrivate, setIsPrivate] = useState(false);
+  const [thumbnail, setThumbnail] = useState(null);
+  const [price, setPrice] = useState(null);
 
   const [currUserUID, setCurrUserUID] = useState('');
 
@@ -37,6 +40,10 @@ export default function BoardEdit({
   const id = params.id;
   const auth = getAuth();
   const history = useHistory();
+
+  const location = useLocation();
+
+  const path = location.pathname.split('/')[1];
 
   const modules = {
     toolbar: [
@@ -95,8 +102,8 @@ export default function BoardEdit({
     return new Blob([ab], { type: 'image/jpeg' });
   };
 
-  const uploadImage = async (imageBlob, folderUUID) => {
-    const fileUUID = v4();
+  const uploadImage = async (imageBlob, folderUUID, isThumbnail) => {
+    const fileUUID = isThumbnail ? 'thumbnail' : v4();
     const imagePath = `${collectionName}/${folderUUID}/${fileUUID}`;
     const imageRef = ref(storage, imagePath);
     const response = await uploadBytes(imageRef, imageBlob);
@@ -106,6 +113,27 @@ export default function BoardEdit({
 
   const handlePrivateChange = (event) => {
     setIsPrivate(event.target.value === 'private');
+  };
+
+  const handleThumbnailChange = async (event) => {
+    const file = event.target.files[0];
+
+    if (file && file.type.includes('image')) {
+      try {
+        const options = {
+          maxSizeMB: 1,
+          maxWidthOrHeight: 300,
+          useWebWorker: true,
+        };
+
+        const compressedFile = await imageCompression(file, options);
+        const thumbnailURL = await uploadImage(compressedFile, id, true);
+        console.log(thumbnailURL);
+        setThumbnail(thumbnailURL.imageURL);
+      } catch (error) {
+        console.error('Error compressing image:', error);
+      }
+    }
   };
 
   const uploadedImagesInfo = async () => {
@@ -166,6 +194,8 @@ export default function BoardEdit({
       authorID: currUserUID,
       timestamp: toTimestamp(`${date} ${time}`),
       isPrivate: isPrivate,
+      thumbnail: thumbnail,
+      price: price,
     })
       .then(() => {
         alert('Saved Successfully');
@@ -180,7 +210,8 @@ export default function BoardEdit({
     const docRef = doc(db, collectionName, id);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
-      const { title, content, author, timestamp, isPrivate } = docSnap.data();
+      const { title, content, author, timestamp, isPrivate, thumbnail, price } =
+        docSnap.data();
       const { date, time } = timestampToDate(timestamp);
 
       setTitle(title);
@@ -189,6 +220,8 @@ export default function BoardEdit({
       setTime(time);
       setAuthor(author);
       setIsPrivate(isPrivate);
+      setPrice(price);
+      setThumbnail(thumbnail);
     } else {
       // docSnap.data() will be undefined in this case
       console.log('No such document!');
@@ -311,6 +344,36 @@ export default function BoardEdit({
                     />
                   </div>
                 </div>
+              )}
+              {['premium', 'special', 'others'].includes(path) && (
+                <>
+                  <div className="mb-4">
+                    <input
+                      type="file"
+                      accept="image/jpeg, image/png"
+                      onChange={handleThumbnailChange}
+                    />
+                  </div>
+                  <div className="mb-4">
+                    {thumbnail && (
+                      <img
+                        src={thumbnail}
+                        alt="thumbnail image"
+                        style={{ maxWidth: '300px', maxHeight: '300px' }}
+                      />
+                    )}
+                  </div>
+                  <div className="mb-4">
+                    <input
+                      value={price}
+                      onChange={(e) => {
+                        setPrice(e.target.value);
+                      }}
+                      placeholder="Price"
+                      style={{ width: '300px' }}
+                    />
+                  </div>
+                </>
               )}
               <input
                 value={title}
