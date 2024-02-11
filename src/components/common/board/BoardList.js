@@ -155,7 +155,7 @@ export default function BoardList({
               backgroundColor: '#e5ecef',
             }}
           >
-            <MDBCol size="8" lg="9">
+            <MDBCol size="8" lg="8" xl="9">
               <MDBRow>
                 <MDBCol
                   size="2"
@@ -179,7 +179,7 @@ export default function BoardList({
               </MDBRow>
             </MDBCol>
 
-            <MDBCol size="4" lg="3">
+            <MDBCol size="4" lg="4" xl="3">
               <MDBRow>
                 <MDBCol
                   size="8"
@@ -223,7 +223,7 @@ export default function BoardList({
                       alignItems: 'center',
                     }}
                   >
-                    <MDBCol size="9">
+                    <MDBCol size="8" xl="9">
                       <MDBRow>
                         <MDBCol
                           size="1"
@@ -254,7 +254,7 @@ export default function BoardList({
                       </MDBRow>
                     </MDBCol>
 
-                    <MDBCol size="3">
+                    <MDBCol size="4" xl="3">
                       <MDBRow>
                         <MDBCol
                           size="12"
@@ -267,7 +267,7 @@ export default function BoardList({
                         <MDBCol
                           size="12"
                           lg="7"
-                          className="px-0 pl-lg-2 pl-xl-4 board-lg-right"
+                          className="px-0 pl-lg-4 pl-xl-4 board-lg-right"
                           style={{ textAlign: 'right' }}
                         >
                           {`${year}-${month}-${dateToday}`}
