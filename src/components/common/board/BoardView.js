@@ -215,7 +215,15 @@ export default function BoardView({
         >
           <MDBRow>
             <MDBCol size="12" md="7">
-              작성자 : {data?.author} &nbsp;&nbsp;&nbsp;&nbsp; {data?.date}
+              {['premium', 'special', 'others'].includes(collectionName) ? (
+                <>
+                  {data?.subTitle} &nbsp;&nbsp;&nbsp;&nbsp; {data?.price}
+                </>
+              ) : (
+                <>
+                  Author : {data?.author} &nbsp;&nbsp;&nbsp;&nbsp; {data?.date}
+                </>
+              )}
             </MDBCol>
             <MDBCol
               size="12"
