@@ -26,7 +26,7 @@ service cloud.firestore {
 			allow create, update, delete: if request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2";
     }
     match /premium/{premiumId}/comments/{commentId} {
-      allow create: if request.auth != null && request.auth.token.email_verified == true;
+      allow create: if exists(/databases/$(database)/documents/premium/$(premiumId)) && request.auth != null && request.auth.token.email_verified == true;
       allow update, delete: if request.auth != null && request.auth.token.email_verified == true && (request.auth.uid == resource.data.authorID || request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2");
     }
     
@@ -38,7 +38,7 @@ service cloud.firestore {
 			allow create, update, delete: if request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2";
     }
     match /special/{specialId}/comments/{commentId} {
-      allow create: if request.auth != null && request.auth.token.email_verified == true;
+      allow create: if exists(/databases/$(database)/documents/special/$(specialId)) && request.auth != null && request.auth.token.email_verified == true;
       allow update, delete: if request.auth != null && request.auth.token.email_verified == true && (request.auth.uid == resource.data.authorID || request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2");
     }
     
@@ -50,7 +50,7 @@ service cloud.firestore {
 			allow create, update, delete: if request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2";
     }
     match /others/{othersId}/comments/{commentId} {
-      allow create: if request.auth != null && request.auth.token.email_verified == true;
+      allow create: if exists(/databases/$(database)/documents/others/$(othersId)) && request.auth != null && request.auth.token.email_verified == true;
       allow update, delete: if request.auth != null && request.auth.token.email_verified == true && (request.auth.uid == resource.data.authorID || request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2");
     }
     
@@ -65,7 +65,7 @@ service cloud.firestore {
       allow write: if request.time > resource.data.lastUpdateTime + duration.value(5, 'm');
     }
     match /comments/{commentsId}/comments/{commentId} {
-      allow create: if request.auth != null && request.auth.token.email_verified == true;
+      allow create: if exists(/databases/$(database)/documents/comments/$(commentsId)) && request.auth != null && request.auth.token.email_verified == true;
       allow update, delete: if request.auth != null && request.auth.token.email_verified == true && (request.auth.uid == resource.data.authorID || request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2");
     }
     
@@ -78,7 +78,7 @@ service cloud.firestore {
       allow update, delete: if request.auth != null && request.auth.token.email_verified == true && (request.auth.uid == resource.data.authorID || request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2");
     }
     match /inquiry/{inquiryId}/comments/{commentId} {
-      allow create: if request.auth != null && request.auth.token.email_verified == true;
+      allow create: if exists(/databases/$(database)/documents/inquiry/$(inquiryId)) && request.auth != null && request.auth.token.email_verified == true;
       allow update, delete: if request.auth != null && request.auth.token.email_verified == true && (request.auth.uid == resource.data.authorID || request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2");
     }
     

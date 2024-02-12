@@ -185,7 +185,7 @@ export default function BoardEdit({
     await deleteUnusedImages(oldImagesInfo);
 
     let thumbnailURL = thumbnail;
-    if (thumbnail.type === 'image/jpeg' || thumbnail.type === 'image/png') {
+    if (thumbnail?.type === 'image/jpeg' || thumbnail?.type === 'image/png') {
       thumbnailURL = await uploadImage(thumbnail, id, true);
       thumbnailURL = thumbnailURL.imageURL;
     }

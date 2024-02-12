@@ -147,6 +147,7 @@ export default function ProductList({
                             color: 'rgb(100,100,100)',
                           }}
                         >
+                          {post.isPrivate ? '🔒︎ ' : ''}
                           {post.title}
                         </div>
                         <div style={{ fontWeight: '600', fontSize: '16px' }}>

@@ -60,7 +60,7 @@ export default function Register() {
       if (user) {
         const uid = user.uid;
         console.log('로그인 상태', uid);
-        history.push('/home');
+        history.push('/');
       } else {
         console.log('로그아웃 상태');
       }

@@ -147,7 +147,11 @@ export default function BoardAdd({
 
     await Promise.all(imageUploadsPromise);
 
-    const thumbnailURL = await uploadImage(thumbnail, docUUID, true);
+    let thumbnailURL = null;
+    if (currUserUID === adminUID) {
+      thumbnailURL = await uploadImage(thumbnail, docUUID, true);
+      thumbnailURL = thumbnailURL.imageURL;
+    }
 
     const timestamp =
       currUserUID === adminUID ? toTimestamp(`${date} ${time}`) : Date.now();
@@ -160,7 +164,7 @@ export default function BoardAdd({
       authorID: currUserUID,
       timestamp: timestamp,
       isPrivate: isPrivate,
-      thumbnail: thumbnailURL.imageURL,
+      thumbnail: thumbnailURL,
       price: price,
     })
       .then(() => {
