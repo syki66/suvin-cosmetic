@@ -1,7 +1,77 @@
 {
   "indexes": [
     {
+      "collectionGroup": "comments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "isPrivate",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "timestamp",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "inquiry",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "isPrivate",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "timestamp",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
       "collectionGroup": "notice",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "isPrivate",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "timestamp",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "others",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "isPrivate",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "timestamp",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "premium",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "isPrivate",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "timestamp",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "special",
       "queryScope": "COLLECTION",
       "fields": [
         {
