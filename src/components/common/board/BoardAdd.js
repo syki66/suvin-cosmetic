@@ -6,7 +6,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { db, storage } from '../../../firebase-config';
 import InnerPageFrame from '../../common/InnerPageFrame';
 import { MDBCol, MDBRow } from 'mdbreact';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { v4 } from 'uuid';
 import imageCompression from 'browser-image-compression';
@@ -45,9 +45,6 @@ export default function BoardAdd({
 
   const auth = getAuth();
   const history = useHistory();
-  const location = useLocation();
-
-  const path = location.pathname.split('/')[1];
 
   const modules = {
     toolbar: [
@@ -288,7 +285,7 @@ export default function BoardAdd({
                   </div>
                 </div>
               )}
-              {['premium', 'special', 'others'].includes(path) && (
+              {['premium', 'special', 'others'].includes(collectionName) && (
                 <>
                   <div className="mb-4">
                     <input

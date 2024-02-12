@@ -6,7 +6,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { db, storage } from '../../../firebase-config';
 import InnerPageFrame from '../../common/InnerPageFrame';
 import { MDBCol, MDBRow } from 'mdbreact';
-import { Link, useHistory, useParams, useLocation } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import {
   deleteObject,
   getDownloadURL,
@@ -40,10 +40,6 @@ export default function BoardEdit({
   const id = params.id;
   const auth = getAuth();
   const history = useHistory();
-
-  const location = useLocation();
-
-  const path = location.pathname.split('/')[1];
 
   const modules = {
     toolbar: [
@@ -125,11 +121,8 @@ export default function BoardEdit({
           maxWidthOrHeight: 300,
           useWebWorker: true,
         };
-
         const compressedFile = await imageCompression(file, options);
-        const thumbnailURL = await uploadImage(compressedFile, id, true);
-        console.log(thumbnailURL);
-        setThumbnail(thumbnailURL.imageURL);
+        setThumbnail(compressedFile);
       } catch (error) {
         console.error('Error compressing image:', error);
       }
@@ -169,6 +162,7 @@ export default function BoardEdit({
     htmlObject.innerHTML = newContent;
 
     let oldImagesInfo = await uploadedImagesInfo();
+    oldImagesInfo = oldImagesInfo.filter((x) => x.name !== 'thumbnail');
 
     const imgs = [...htmlObject.querySelectorAll('img')];
     const imageUploadsPromise = imgs.map(async (img) => {
@@ -187,6 +181,12 @@ export default function BoardEdit({
     await Promise.all(imageUploadsPromise);
     await deleteUnusedImages(oldImagesInfo);
 
+    let thumbnailURL = thumbnail;
+    if (thumbnail.type === 'image/jpeg' || thumbnail.type === 'image/png') {
+      thumbnailURL = await uploadImage(thumbnail, id, true);
+      thumbnailURL = thumbnailURL.imageURL;
+    }
+
     updateDoc(doc(db, collectionName, id), {
       title: title,
       content: htmlObject.outerHTML,
@@ -194,7 +194,7 @@ export default function BoardEdit({
       authorID: currUserUID,
       timestamp: toTimestamp(`${date} ${time}`),
       isPrivate: isPrivate,
-      thumbnail: thumbnail,
+      thumbnail: thumbnailURL,
       price: price,
     })
       .then(() => {
@@ -345,7 +345,7 @@ export default function BoardEdit({
                   </div>
                 </div>
               )}
-              {['premium', 'special', 'others'].includes(path) && (
+              {['premium', 'special', 'others'].includes(collectionName) && (
                 <>
                   <div className="mb-4">
                     <input
@@ -357,7 +357,12 @@ export default function BoardEdit({
                   <div className="mb-4">
                     {thumbnail && (
                       <img
-                        src={thumbnail}
+                        src={
+                          thumbnail.type === 'image/jpeg' ||
+                          thumbnail.type === 'image/png'
+                            ? URL.createObjectURL(thumbnail)
+                            : thumbnail
+                        }
                         alt="thumbnail image"
                         style={{ maxWidth: '300px', maxHeight: '300px' }}
                       />
