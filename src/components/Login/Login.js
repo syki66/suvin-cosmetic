@@ -166,13 +166,22 @@ export default function Login() {
           </span>
         </div>
         <GoogleLoginButton onClick={handleGoogleLogin} />
-        <div style={{ textAlign: 'center', margin: '10px' }}>
+        <div style={{ textAlign: 'center', marginTop: '10px' }}>
           Need an account?&nbsp;
           <Link
             to="/Register"
             style={{ textDecoration: 'underline', color: 'gray' }}
           >
             SIGN UP
+          </Link>
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '5px' }}>
+          Forgot your Password?&nbsp;
+          <Link
+            to="/ResetPassword"
+            style={{ textDecoration: 'underline', color: 'gray' }}
+          >
+            Reset Password
           </Link>
         </div>
       </div>
