@@ -18,6 +18,42 @@ service cloud.firestore {
       allow update, delete: if request.auth != null && request.auth.token.email_verified == true && (request.auth.uid == resource.data.authorID || request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2");
     }
     
+    // premium 페이지 권한
+    match /premium/{document=**} {
+      allow read;
+    }
+    match /premium/{premiumId} {
+			allow create, update, delete: if request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2";
+    }
+    match /premium/{premiumId}/comments/{commentId} {
+      allow create: if request.auth != null && request.auth.token.email_verified == true;
+      allow update, delete: if request.auth != null && request.auth.token.email_verified == true && (request.auth.uid == resource.data.authorID || request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2");
+    }
+    
+    // special 페이지 권한
+    match /special/{document=**} {
+      allow read;
+    }
+    match /special/{specialId} {
+			allow create, update, delete: if request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2";
+    }
+    match /special/{specialId}/comments/{commentId} {
+      allow create: if request.auth != null && request.auth.token.email_verified == true;
+      allow update, delete: if request.auth != null && request.auth.token.email_verified == true && (request.auth.uid == resource.data.authorID || request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2");
+    }
+    
+    // others 페이지 권한
+    match /others/{document=**} {
+      allow read;
+    }
+    match /others/{othersId} {
+			allow create, update, delete: if request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2";
+    }
+    match /others/{othersId}/comments/{commentId} {
+      allow create: if request.auth != null && request.auth.token.email_verified == true;
+      allow update, delete: if request.auth != null && request.auth.token.email_verified == true && (request.auth.uid == resource.data.authorID || request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2");
+    }
+    
     // comments 페이지 권한
     match /comments/{document=**} {
       allow read;
@@ -26,6 +62,7 @@ service cloud.firestore {
     match /comments/{commentsId} {
 			allow create: if request.auth != null && request.auth.token.email_verified == true;
       allow update, delete: if request.auth != null && request.auth.token.email_verified == true && (request.auth.uid == resource.data.authorID || request.auth.uid == "twz9x2SgElgzdPQhBH1VDujDIqw2");
+      allow write: if request.time > resource.data.lastUpdateTime + duration.value(5, 'm');
     }
     match /comments/{commentsId}/comments/{commentId} {
       allow create: if request.auth != null && request.auth.token.email_verified == true;
