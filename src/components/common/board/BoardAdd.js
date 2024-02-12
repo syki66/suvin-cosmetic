@@ -222,13 +222,8 @@ export default function BoardAdd({
         </MDBRow>
 
         <div className="border-top border-light pt-5">
-          <div
-            className="border-bottom border-light pb-3 mb-2"
-            style={{ color: 'gray' }}
-          >
-            <div
-              style={{ width: '100%', height: '800px', textAlign: 'center' }}
-            >
+          <div className="pb-3 mb-2" style={{ color: 'gray' }}>
+            <div style={{ width: '100%', textAlign: 'center' }}>
               {currUserUID === adminUID && (
                 <div>
                   <div style={{ textAlign: 'right' }}>
@@ -325,18 +320,26 @@ export default function BoardAdd({
                 className="mb-4"
               />
               {currUserUID && (
-                <ReactQuill
-                  theme="snow"
-                  value={content}
-                  onChange={setContent}
-                  placeholder="Write content"
-                  modules={
-                    adminUID === currUserUID
-                      ? modules
-                      : { toolbar: modules.toolbar.slice(0, -1) }
-                  }
-                  style={{ width: '100%', height: '650px' }}
-                />
+                <div
+                  style={{
+                    minHeight: '500px',
+                    display: 'flex',
+                  }}
+                  className="pb-5 mb-5"
+                >
+                  <ReactQuill
+                    theme="snow"
+                    value={content}
+                    onChange={setContent}
+                    placeholder="Write content"
+                    modules={
+                      adminUID === currUserUID
+                        ? modules
+                        : { toolbar: modules.toolbar.slice(0, -1) }
+                    }
+                    style={{ width: '100%' }}
+                  />
+                </div>
               )}
             </div>
           </div>

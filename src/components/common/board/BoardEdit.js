@@ -58,9 +58,11 @@ export default function BoardEdit({
       [{ color: [] }, { background: [] }], // dropdown with defaults from theme
       [{ font: [] }],
       [{ align: [] }],
-      ['link', 'image'],
+      ['link'],
 
       ['clean'], // remove formatting button
+
+      ['image'],
     ],
   };
 
@@ -282,13 +284,8 @@ export default function BoardEdit({
         </MDBRow>
 
         <div className="border-top border-light pt-5">
-          <div
-            className="border-bottom border-light pb-3 mb-2"
-            style={{ color: 'gray' }}
-          >
-            <div
-              style={{ width: '100%', height: '800px', textAlign: 'center' }}
-            >
+          <div className=" pb-3 mb-2" style={{ color: 'gray' }}>
+            <div style={{ width: '100%', textAlign: 'center' }}>
               {currUserUID === adminUID && (
                 <div>
                   <div style={{ textAlign: 'right' }}>
@@ -389,14 +386,28 @@ export default function BoardEdit({
                 style={{ width: '100%' }}
                 className="mb-4"
               />
-              <ReactQuill
-                theme="snow"
-                value={content}
-                onChange={setContent}
-                placeholder="Write content"
-                modules={modules}
-                style={{ width: '100%', height: '650px' }}
-              />
+              {currUserUID && (
+                <div
+                  style={{
+                    minHeight: '500px',
+                    display: 'flex',
+                  }}
+                  className="pb-5 mb-5"
+                >
+                  <ReactQuill
+                    theme="snow"
+                    value={content}
+                    onChange={setContent}
+                    placeholder="Write content"
+                    modules={
+                      adminUID === currUserUID
+                        ? modules
+                        : { toolbar: modules.toolbar.slice(0, -1) }
+                    }
+                    style={{ width: '100%' }}
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
