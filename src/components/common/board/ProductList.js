@@ -124,8 +124,9 @@ export default function ProductList({
                             top: '0',
                             width: '100%',
                             height: '100%',
-                            objectFit: 'cover',
+                            objectFit: 'contain',
                             borderRadius: '8px',
+                            backgroundColor: 'rgb(250,250,250)',
                           }}
                           alt={post.title}
                         />
