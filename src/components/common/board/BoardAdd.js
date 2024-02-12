@@ -339,6 +339,7 @@ export default function BoardAdd({
                 <div
                   style={{
                     minHeight: '500px',
+                    maxHeight: '800px',
                     display: 'flex',
                   }}
                   className="pb-5 mb-5"

@@ -210,7 +210,7 @@ export default function BoardView({
           {data?.title}
         </div>
         <div
-          className="border-bottom border-light pb-3 mb-2"
+          className="border-bottom border-light pb-3 mb-5"
           style={{ color: 'gray' }}
         >
           <MDBRow>
