@@ -1,14 +1,13 @@
 import React from 'react';
-import ProductList from '../common/board/ProductList';
+import BoardView from '../common/board/BoardView';
 
-export default function Others() {
+export default function OthersView() {
   return (
-    <ProductList
+    <BoardView
       collectionName="others"
       menuTitle="Product"
       menuTitleList={['Premium', 'Special', 'Others']}
       mainTitle="Others"
-      isAdminPage={true}
     />
   );
 }

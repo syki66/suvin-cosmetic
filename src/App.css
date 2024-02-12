@@ -74,16 +74,6 @@
   width: 28vw;
 }
 
-@media (min-width: 576px) {
-  .product__img_resize {
-    height: 200px !important;
-  }
-
-  .product-sm-border-none {
-    border: none !important;
-  }
-}
-
 @media (min-width: 768px) {
   .disappear {
     display: flex !important;
@@ -362,4 +352,14 @@
   .company__motto_text {
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 1);
   }
+}
+
+.product__box {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.product__box:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

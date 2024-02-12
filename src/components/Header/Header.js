@@ -157,7 +157,7 @@ export default function Header() {
                 <nav className="nav">
                   <div className="nav__link p-0" style={{ width: '100%' }}>
                     <MDBNavLink
-                      to="/Premium"
+                      to="/premium/page/1"
                       className="p-lg-3 headerMenu_css"
                       style={{ textAlign: 'center' }}
                       onClick={runCollapse}
@@ -165,13 +165,19 @@ export default function Header() {
                       Product
                     </MDBNavLink>
                     <div className="nav__link-group" style={{ zIndex: '2' }}>
-                      <MDBNavLink to="/Premium" className="nav__link p-3">
+                      <MDBNavLink
+                        to="/premium/page/1"
+                        className="nav__link p-3"
+                      >
                         Premium
                       </MDBNavLink>
-                      <MDBNavLink to="/Special" className="nav__link p-3">
+                      <MDBNavLink
+                        to="/special/page/1"
+                        className="nav__link p-3"
+                      >
                         Special
                       </MDBNavLink>
-                      <MDBNavLink to="/Others" className="nav__link p-3">
+                      <MDBNavLink to="/others/page/1" className="nav__link p-3">
                         Others
                       </MDBNavLink>
                     </div>

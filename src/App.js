@@ -29,8 +29,19 @@ import RnD from './components/Business/RnD';
 import OEMnODM from './components/Business/OEMnODM';
 
 import Premium from './components/Product/Premium';
+import PremiumAdd from './components/Product/PremiumAdd.js';
+import PremiumEdit from './components/Product/PremiumEdit.js';
+import PremiumView from './components/Product/PremiumView.js';
+
 import Special from './components/Product/Special';
+import SpecialAdd from './components/Product/SpecialAdd.js';
+import SpecialEdit from './components/Product/SpecialEdit.js';
+import SpecialView from './components/Product/SpecialView.js';
+
 import Others from './components/Product/Others';
+import OthersAdd from './components/Product/OthersAdd.js';
+import OthersEdit from './components/Product/OthersEdit.js';
+import OthersView from './components/Product/OthersView.js';
 
 import Global_Network from './components/Global_Network/Global_Network.js';
 
@@ -69,9 +80,29 @@ export default function App() {
         <Route path="/R & D" component={RnD} />
         <Route path="/OEM & ODM" component={OEMnODM} />
 
-        <Route path="/Premium" component={Premium} />
-        <Route path="/Special" component={Special} />
-        <Route path="/Others" component={Others} />
+        <Route path="/premium/page/:id" component={Premium} />
+        <Route path="/premium/new" component={PremiumAdd} />
+        <Route path="/premium/edit/:id" component={PremiumEdit} />
+        <Route path="/premium/:id" component={PremiumView} />
+        <Route path="/premium">
+          <Redirect to="/premium/page/1" />
+        </Route>
+
+        <Route path="/special/page/:id" component={Special} />
+        <Route path="/special/new" component={SpecialAdd} />
+        <Route path="/special/edit/:id" component={SpecialEdit} />
+        <Route path="/special/:id" component={SpecialView} />
+        <Route path="/special">
+          <Redirect to="/special/page/1" />
+        </Route>
+
+        <Route path="/others/page/:id" component={Others} />
+        <Route path="/others/new" component={OthersAdd} />
+        <Route path="/others/edit/:id" component={OthersEdit} />
+        <Route path="/others/:id" component={OthersView} />
+        <Route path="/others">
+          <Redirect to="/others/page/1" />
+        </Route>
 
         <Route path="/Global Network" component={Global_Network} />
 

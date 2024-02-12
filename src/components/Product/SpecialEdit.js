@@ -1,14 +1,13 @@
 import React from 'react';
-import ProductList from '../common/board/ProductList';
+import BoardEdit from '../common/board/BoardEdit';
 
-export default function Special() {
+export default function SpecialEdit() {
   return (
-    <ProductList
+    <BoardEdit
       collectionName="special"
       menuTitle="Product"
       menuTitleList={['Premium', 'Special', 'Others']}
       mainTitle="Special"
-      isAdminPage={true}
     />
   );
 }
