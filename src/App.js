@@ -59,9 +59,6 @@ import CommentsAdd from './components/Customer/CommentsAdd.js';
 import CommentsView from './components/Customer/CommentsView.js';
 import CommentsEdit from './components/Customer/CommentsEdit.js';
 
-//common components
-import MarkdownMainTextFrame from './components/common/board/MarkdownMainTextFrame';
-
 export default function App() {
   return (
     <BrowserRouter>
@@ -129,8 +126,6 @@ export default function App() {
         <Route path="/comments">
           <Redirect to="/comments/page/1" />
         </Route>
-
-        <Route path="/:id" component={MarkdownMainTextFrame} />
 
         <Route path="*" component={NoMatch} />
       </Switch>
