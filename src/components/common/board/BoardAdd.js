@@ -33,6 +33,7 @@ export default function BoardAdd({
   dateToday = dateToday < 10 ? '0' + dateToday : dateToday;
 
   const [title, setTitle] = useState('');
+  const [subTitle, setSubTitle] = useState('');
   const [content, setContent] = useState('');
   const [date, setDate] = useState(`${year}-${month}-${dateToday}`);
   const [time, setTime] = useState(`${hours}:${minutes}:${seconds}`);
@@ -153,6 +154,7 @@ export default function BoardAdd({
 
     setDoc(doc(db, collectionName, docUUID), {
       title: title,
+      subTitle: subTitle,
       content: htmlObject.outerHTML,
       author: author,
       authorID: currUserUID,
@@ -297,6 +299,16 @@ export default function BoardAdd({
                         style={{ maxWidth: '300px', maxHeight: '300px' }}
                       />
                     )}
+                  </div>
+                  <div className="mb-4">
+                    <input
+                      value={subTitle}
+                      onChange={(e) => {
+                        setSubTitle(e.target.value);
+                      }}
+                      placeholder="SubTitle"
+                      style={{ width: '300px' }}
+                    />
                   </div>
                   <div className="mb-4">
                     <input

@@ -26,6 +26,7 @@ export default function BoardEdit({
   mainTitle,
 }) {
   const [title, setTitle] = useState('');
+  const [subTitle, setSubTitle] = useState('');
   const [content, setContent] = useState('');
   const [date, setDate] = useState(``);
   const [time, setTime] = useState(``);
@@ -191,6 +192,7 @@ export default function BoardEdit({
 
     updateDoc(doc(db, collectionName, id), {
       title: title,
+      subTitle: subTitle,
       content: htmlObject.outerHTML,
       author: author,
       authorID: currUserUID,
@@ -212,8 +214,16 @@ export default function BoardEdit({
     const docRef = doc(db, collectionName, id);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
-      const { title, content, author, timestamp, isPrivate, thumbnail, price } =
-        docSnap.data();
+      const {
+        title,
+        subTitle,
+        content,
+        author,
+        timestamp,
+        isPrivate,
+        thumbnail,
+        price,
+      } = docSnap.data();
       const { date, time } = timestampToDate(timestamp);
 
       setTitle(title);
@@ -224,6 +234,7 @@ export default function BoardEdit({
       setIsPrivate(isPrivate);
       setPrice(price);
       setThumbnail(thumbnail);
+      setSubTitle(subTitle);
     } else {
       // docSnap.data() will be undefined in this case
       console.log('No such document!');
@@ -260,7 +271,7 @@ export default function BoardEdit({
           <MDBCol size="4">
             <div className="py-2 mt-2" style={{ textAlign: 'right' }}>
               <Link
-                onClick={history.goBack}
+                to={`/${collectionName}/${id}`}
                 className="border border-light p-1 p-lg-2 btn-click"
                 style={{
                   backgroundColor: '#e5ecef',
@@ -364,6 +375,16 @@ export default function BoardEdit({
                         style={{ maxWidth: '300px', maxHeight: '300px' }}
                       />
                     )}
+                  </div>
+                  <div className="mb-4">
+                    <input
+                      value={subTitle}
+                      onChange={(e) => {
+                        setSubTitle(e.target.value);
+                      }}
+                      placeholder="SubTitle"
+                      style={{ width: '300px' }}
+                    />
                   </div>
                   <div className="mb-4">
                     <input
