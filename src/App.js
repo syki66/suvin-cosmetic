@@ -1,5 +1,11 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import {
+  BrowserRouter,
+  Route,
+  Switch,
+  Redirect,
+  useLocation,
+} from 'react-router-dom';
 
 //css
 import 'bootstrap/dist/css/bootstrap.min.css'; // react bootstrap css
@@ -61,8 +67,20 @@ import CommentsView from './components/Customer/CommentsView.js';
 import CommentsEdit from './components/Customer/CommentsEdit.js';
 
 export default function App() {
+  const ScrollToTop = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+  };
+
   return (
     <BrowserRouter>
+      <ScrollToTop />
+
       <Header />
 
       <Switch>
