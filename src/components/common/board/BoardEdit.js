@@ -164,25 +164,29 @@ export default function BoardEdit({
     const htmlObject = document.createElement('div');
     htmlObject.innerHTML = newContent;
 
-    let oldImagesInfo = await uploadedImagesInfo();
-    oldImagesInfo = oldImagesInfo.filter((x) => x.name !== 'thumbnail');
+    if (currUserUID === adminUID) {
+      let oldImagesInfo = await uploadedImagesInfo();
+      oldImagesInfo = oldImagesInfo.filter((x) => x.name !== 'thumbnail');
 
-    const imgs = [...htmlObject.querySelectorAll('img')];
-    const imageUploadsPromise = imgs.map(async (img) => {
-      if (img.src.startsWith('data')) {
-        const imageBlob = b64toBlob(img.src);
-        const { imageURL } = await uploadImage(imageBlob, id);
-        img.src = imageURL;
-      } else if (img.src.startsWith('http')) {
-        oldImagesInfo = oldImagesInfo.filter((x) => x.downloadURL !== img.src);
-      } else {
-        // pass
-      }
-      img.style.width = '100%';
-    });
+      const imgs = [...htmlObject.querySelectorAll('img')];
+      const imageUploadsPromise = imgs.map(async (img) => {
+        if (img.src.startsWith('data')) {
+          const imageBlob = b64toBlob(img.src);
+          const { imageURL } = await uploadImage(imageBlob, id);
+          img.src = imageURL;
+        } else if (img.src.startsWith('http')) {
+          oldImagesInfo = oldImagesInfo.filter(
+            (x) => x.downloadURL !== img.src
+          );
+        } else {
+          // pass
+        }
+        img.style.width = '100%';
+      });
 
-    await Promise.all(imageUploadsPromise);
-    await deleteUnusedImages(oldImagesInfo);
+      await Promise.all(imageUploadsPromise);
+      await deleteUnusedImages(oldImagesInfo);
+    }
 
     let thumbnailURL = thumbnail;
     if (thumbnail?.type === 'image/jpeg' || thumbnail?.type === 'image/png') {

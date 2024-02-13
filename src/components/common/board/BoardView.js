@@ -38,6 +38,8 @@ export default function BoardView({
   const [commentList, setCommentList] = useState();
   const [emailVerified, setEmailVerified] = useState(false);
 
+  const [currUserUID, setCurrUserUID] = useState('');
+
   const timestampToDate = (timestamp) => {
     let newDate = new Date(timestamp);
     let dateToday = newDate.getDate();
@@ -114,8 +116,10 @@ export default function BoardView({
     }
 
     try {
-      const imagesInfo = await uploadedImagesInfo();
-      await handleImagesDelete(imagesInfo);
+      if (currUserUID === adminUID) {
+        const imagesInfo = await uploadedImagesInfo();
+        await handleImagesDelete(imagesInfo);
+      }
       const comments = await getDocs(
         collection(db, collectionName, id, 'comments')
       );
@@ -193,6 +197,7 @@ export default function BoardView({
         user.getIdToken(true);
         setCurrAuthor(user.email.split('@')[0]);
         setAuthorID(user.uid);
+        setCurrUserUID(user.uid);
         setEmailVerified(user.emailVerified);
       } else {
         console.log('로그아웃 상태');
