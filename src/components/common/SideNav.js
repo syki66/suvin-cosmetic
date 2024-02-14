@@ -24,8 +24,12 @@ export default function SideNav({ title, subtitle, pickedIndex }) {
       </div>
 
       <MDBNav
-        className="nav-pills nav-justified flex-md-column border border-light"
-        style={{ backgroundColor: 'white' }}
+        className="nav-pills nav-justified flex-md-column border"
+        style={{
+          backgroundColor: 'white',
+          boxShadow: '0 0 5px rgba(0, 0, 0, 0.1)',
+          borderRadius: '8px',
+        }}
       >
         {subtitle.map((eachSubtitle, eachIndex) => {
           let active = null;
@@ -33,14 +37,22 @@ export default function SideNav({ title, subtitle, pickedIndex }) {
             active = 'active';
           }
           return (
-            <MDBNavItem className="border-bottom border-light">
-              <MDBNavLink
-                to={'/' + eachSubtitle}
-                className={`black-text px-3 py-2 ${active} sideNavComponent`}
-              >
-                {eachSubtitle}
-              </MDBNavLink>
-            </MDBNavItem>
+            <React.Fragment key={eachIndex}>
+              <MDBNavItem>
+                <MDBNavLink
+                  to={'/' + eachSubtitle}
+                  className={`black-text px-2 py-3 ${active} sideNavComponent`}
+                  style={{
+                    borderRadius: '8px',
+                  }}
+                >
+                  {eachSubtitle}
+                </MDBNavLink>
+              </MDBNavItem>
+              {eachIndex !== subtitle.length - 1 && ( // 마지막 메뉴 아이템이 아니라면 구분선 추가
+                <hr className="sidemenu__hr" />
+              )}
+            </React.Fragment>
           );
         })}
       </MDBNav>

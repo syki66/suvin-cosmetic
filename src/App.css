@@ -370,3 +370,16 @@ body {
 .product__box:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+.sidemenu__hr {
+  display: none;
+  width: calc(100% - 20px);
+  margin: 0 auto;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: 768px) {
+  .sidemenu__hr {
+    display: block;
+  }
+}
