@@ -80,109 +80,111 @@ export default function Login() {
 
   return (
     <>
-      <div
-        style={{
-          margin: '70px auto',
-          display: 'flex',
-          flexDirection: 'column',
-          maxWidth: '500px',
-          border: 'solid 1px #eaeced',
-          borderRadius: '15px',
-        }}
-        className="px-2 py-5 p-sm-5"
-      >
-        <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>Sign In</h2>
-        <input
-          style={{
-            fontSize: '19px',
-            margin: '5px',
-            marginBottom: '10px',
-            width: 'calc(100% - 10px)',
-            padding: '0px 10px',
-            height: '50px',
-          }}
-          placeholder="Email"
-          maxLength={30}
-          onChange={(e) => {
-            setUser({ ...user, email: e.target.value });
-          }}
-          onKeyPress={handleEnterPress}
-        />
-        <input
-          style={{
-            fontSize: '19px',
-            margin: '5px',
-            marginBottom: '10px',
-            width: 'calc(100% - 10px)',
-            padding: '0px 10px',
-            height: '50px',
-          }}
-          placeholder="Password"
-          maxLength={30}
-          type="password"
-          onChange={(e) => {
-            setUser({ ...user, password: e.target.value });
-          }}
-          onKeyPress={handleEnterPress}
-        />
-        <button
-          style={{
-            borderRadius: '3px',
-            fontSize: '19px',
-            margin: '5px',
-            width: 'calc(100% - 10px)',
-            padding: '0px 10px',
-            height: '50px',
-            background: '#7F304E',
-            color: 'white',
-            border: 'none',
-          }}
-          onClick={() => handleLogin(user.email, user.password)}
-        >
-          Login
-        </button>
+      <div className="m-3">
         <div
           style={{
-            borderTop: '1px solid #cbd2d6',
-            position: 'relative',
-            margin: '5px',
-            marginTop: '8.72%',
-            marginBottom: '4.895%',
-
-            height: '15px',
-            textAlign: 'center',
+            margin: '70px auto',
+            display: 'flex',
+            flexDirection: 'column',
+            maxWidth: '500px',
+            border: 'solid 1px #eaeced',
+            borderRadius: '15px',
           }}
+          className="px-2 py-5 p-sm-5"
         >
-          <span
+          <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>Sign In</h2>
+          <input
             style={{
-              backgroundColor: '#fff',
-              padding: '0 0.5em',
+              fontSize: '19px',
+              margin: '5px',
+              marginBottom: '10px',
+              width: 'calc(100% - 10px)',
+              padding: '0px 10px',
+              height: '50px',
+            }}
+            placeholder="Email"
+            maxLength={30}
+            onChange={(e) => {
+              setUser({ ...user, email: e.target.value });
+            }}
+            onKeyPress={handleEnterPress}
+          />
+          <input
+            style={{
+              fontSize: '19px',
+              margin: '5px',
+              marginBottom: '10px',
+              width: 'calc(100% - 10px)',
+              padding: '0px 10px',
+              height: '50px',
+            }}
+            placeholder="Password"
+            maxLength={30}
+            type="password"
+            onChange={(e) => {
+              setUser({ ...user, password: e.target.value });
+            }}
+            onKeyPress={handleEnterPress}
+          />
+          <button
+            style={{
+              borderRadius: '3px',
+              fontSize: '19px',
+              margin: '5px',
+              width: 'calc(100% - 10px)',
+              padding: '0px 10px',
+              height: '50px',
+              background: '#7F304E',
+              color: 'white',
+              border: 'none',
+            }}
+            onClick={() => handleLogin(user.email, user.password)}
+          >
+            Login
+          </button>
+          <div
+            style={{
+              borderTop: '1px solid #cbd2d6',
               position: 'relative',
-              color: '#6c7378',
-              top: '-0.7em',
+              margin: '5px',
+              marginTop: '8.72%',
+              marginBottom: '4.895%',
+
+              height: '15px',
+              textAlign: 'center',
             }}
           >
-            OR
-          </span>
-        </div>
-        <GoogleLoginButton onClick={handleGoogleLogin} />
-        <div style={{ textAlign: 'center', marginTop: '10px' }}>
-          Need an account?&nbsp;
-          <Link
-            to="/Register"
-            style={{ textDecoration: 'underline', color: 'gray' }}
-          >
-            SIGN UP
-          </Link>
-        </div>
-        <div style={{ textAlign: 'center', marginTop: '5px' }}>
-          Forgot your Password?&nbsp;
-          <Link
-            to="/ResetPassword"
-            style={{ textDecoration: 'underline', color: 'gray' }}
-          >
-            Reset Password
-          </Link>
+            <span
+              style={{
+                backgroundColor: '#fff',
+                padding: '0 0.5em',
+                position: 'relative',
+                color: '#6c7378',
+                top: '-0.7em',
+              }}
+            >
+              OR
+            </span>
+          </div>
+          <GoogleLoginButton onClick={handleGoogleLogin} />
+          <div style={{ textAlign: 'center', marginTop: '10px' }}>
+            Need an account?&nbsp;
+            <Link
+              to="/Register"
+              style={{ textDecoration: 'underline', color: 'gray' }}
+            >
+              SIGN UP
+            </Link>
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '5px' }}>
+            Forgot your Password?&nbsp;
+            <Link
+              to="/ResetPassword"
+              style={{ textDecoration: 'underline', color: 'gray' }}
+            >
+              Reset Password
+            </Link>
+          </div>
         </div>
       </div>
     </>
