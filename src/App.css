@@ -297,6 +297,13 @@ body {
   border-radius: 0px;
 }
 
+@media (max-width: 768px) {
+  .sideNavComponent {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+}
+
 /* spinner css */
 .loaders-container {
   padding: 20px;

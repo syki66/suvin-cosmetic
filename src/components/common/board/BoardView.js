@@ -313,17 +313,7 @@ export default function BoardView({
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <div>{comment.content}</div>
             {(comment.author === currAuthor || authorID === adminUID) && (
-              <Link
-                onClick={() => handleCommentDelete(comment.id)}
-                className="border border-light p-1 btn-click"
-                style={{
-                  backgroundColor: '#e5ecef',
-                  color: 'black',
-                  fontSize: 12,
-                }}
-              >
-                Delete
-              </Link>
+              <Link onClick={() => handleCommentDelete(comment.id)}>❌</Link>
             )}
           </div>
         </div>
