@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { MDBNav, MDBNavItem, MDBNavLink } from 'mdbreact';
 
 /*
@@ -17,6 +17,22 @@ import { MDBNav, MDBNavItem, MDBNavLink } from 'mdbreact';
 */
 
 export default function SideNav({ title, subtitle, pickedIndex }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  const handleResize = () => {
+    if (window.innerWidth <= 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div>
       <div className="h1" style={{ color: '#7f304e' }}>
@@ -24,7 +40,7 @@ export default function SideNav({ title, subtitle, pickedIndex }) {
       </div>
 
       <MDBNav
-        className="nav-pills nav-justified flex-md-column border"
+        className="nav-pills nav-justified flex-md-column border mb-4"
         style={{
           backgroundColor: 'white',
           boxShadow: '0 0 5px rgba(0, 0, 0, 0.1)',
@@ -41,7 +57,9 @@ export default function SideNav({ title, subtitle, pickedIndex }) {
               <MDBNavItem>
                 <MDBNavLink
                   to={'/' + eachSubtitle}
-                  className={`black-text px-2 py-3 ${active} sideNavComponent`}
+                  className={`black-text px-2 ${
+                    isMobile ? 'py-2' : 'py-3'
+                  } ${active} sideNavComponent`}
                   style={{
                     borderRadius: '8px',
                   }}
