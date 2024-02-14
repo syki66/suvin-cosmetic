@@ -43,6 +43,15 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [userEmail, setUserEmail] = useState('');
   const [emailVerified, setEmailVerified] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const handleResize = () => {
+    if (window.innerWidth <= 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
 
   const toggleCollapse = () => {
     setIsOpen(!isOpen);
@@ -63,12 +72,18 @@ export default function Header() {
   const handleLogout = () => {
     signOut(auth)
       .then(() => {
-        console.log('로그아웃 성공');
+        alert('You have successfully logged out.');
       })
       .catch((error) => {
         console.log('로그아웃 실패', error);
       });
   };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -258,13 +273,28 @@ export default function Header() {
                 <MDBNavItem>
                   <nav className="nav">
                     <div className="nav__link p-0" style={{ width: '100%' }}>
-                      <MDBNavLink
-                        to=""
-                        className="p-lg-3 headerMenu_css"
-                        style={{ textAlign: 'center' }}
-                      >
-                        {userEmail}
-                      </MDBNavLink>
+                      {isMobile ? (
+                        <MDBNavLink
+                          to=""
+                          className="p-lg-3 headerMenu_css"
+                          style={{ textAlign: 'center' }}
+                          onClick={() => {
+                            handleLogout();
+                            runCollapse();
+                          }}
+                        >
+                          Sign-out
+                        </MDBNavLink>
+                      ) : (
+                        <MDBNavLink
+                          to=""
+                          className="p-lg-3 headerMenu_css"
+                          style={{ textAlign: 'center' }}
+                          onClick={runCollapse}
+                        >
+                          {userEmail}
+                        </MDBNavLink>
+                      )}
                       <div className="nav__link-group" style={{ zIndex: '2' }}>
                         {emailVerified ? (
                           <></>
@@ -291,6 +321,7 @@ export default function Header() {
                         to="/Login"
                         className="p-lg-3 headerMenu_css"
                         style={{ textAlign: 'center' }}
+                        onClick={runCollapse}
                       >
                         Login
                       </MDBNavLink>
