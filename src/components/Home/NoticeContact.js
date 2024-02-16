@@ -73,8 +73,8 @@ export default function NoticeContact() {
                     </MDBCol>
                     <MDBCol
                       size="2"
-                      className="px-0 home__notice"
-                      style={{ textAlign: 'right' }}
+                      className="px-0"
+                      style={{ textAlign: 'right', whiteSpace: 'nowrap' }}
                     >
                       {`${year}-${month}-${dateToday}`}
                     </MDBCol>
