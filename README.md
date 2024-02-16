@@ -9,19 +9,18 @@
 ## Built With
 
 - React
-- MDB (Material Design for Bootstrap 4)
+- MDB React UI Kit
 - Firebase
 - react-quill
 
 ## Feature
 
 - 4단계 반응형 디자인 적용 (576, 768, 992, 1200px)
-- 회사 소개 페이지 및 헤더, 푸터, 캐러셀, 지도 api, 도형, 애니메이션, 다양한 레이아웃 적용
-- 인증 페이지 (회원가입, 로그인, 로그아웃, 암호 초기화 페이지, Firebase Auth 및 소셜 로그인)
-- 게시판, 상품 조회 페이지, 페이지네이션 구현 (Firestore를 이용한 CRUD)
-- [react-quill](https://github.com/zenoamaro/react-quill) 위지윅 에디터 적용 (이미지는 Cloud Storage에 연동)
-- 각 게시글에 실시간 댓글 기능 (Firestore onSnapshot 적용)
-- 관리자용 기능 (상품 및 공지 작성 권한 부여, 글 비공개 여부, 날짜, 작성자 수정, 모든 게시글의 수정 삭제, 모든 댓글의 삭제)
+- 메인 화면, 회사 소개, 헤더 및 푸터, 지도, 상품, 공지, 게시판, 인증 페이지 구현
+- 썸네일 그리드 뷰, 게시판, 페이지네이션, 실시간 댓글, carousel, 네이버 지도 API, quill 에디터, 이미지 업로드 적용 및 구현
+- Firebase Auth 기능 적용 (회원가입, 로그인, 로그아웃, 소셜 로그인, 암호 초기화, 인증 메일, 인증 상태 핸들링)
+- Firestore(NoSQL DB)를 통한 게시판 CRUD 구현
+- 관리자 및 사용자 권한 분리 (상품 및 공지 작성 권한, 비공개 게시글 열람, 날짜 및 작성자 수정, 모든 게시글 및 댓글의 수정과 삭제)
 
 ## Caution
 
