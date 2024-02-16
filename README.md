@@ -1,10 +1,28 @@
 # suvin-cosmetic
 
-수빈 코스메틱의 소개 및 홍보용 웹사이트 **[(링크)](https://suvincos.com/)**
+수빈 코스메틱의 소개 및 홍보 목적의 웹사이트 **[(링크)](https://suvincos.com/)**
 
-|                                                      PC                                                      |                                                      모바일                                                      |
+<br />
+
+## Screenshots
+
+| 메인화면(PC) | 메인화면(mobile) |
 | :----------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: |
 | ![pc](https://user-images.githubusercontent.com/59393359/148419257-fa796517-301a-43f0-9f35-073a6a6c8091.png) | ![mobile](https://user-images.githubusercontent.com/59393359/148786314-98bc0511-e416-4a84-aa5e-76519fccaeaa.png) |
+
+### 데스크톱 레이아웃
+
+| 상품페이지(PC) | 게시판 리스트(PC) |
+|:---:|:---:|
+| ![image](https://github.com/syki66/suvin-cosmetic/assets/59393359/e02a51f3-fb81-424d-9006-eed7f6af2ffe) | ![image](https://github.com/syki66/suvin-cosmetic/assets/59393359/4c8c8946-b3e1-4ef9-bbaf-753a738549c2) |
+|소개페이지1|소개페이지2|
+|![image](https://github.com/syki66/suvin-cosmetic/assets/59393359/bd8da648-51f1-441f-979a-ab61c7c51cc8)|![image](https://github.com/syki66/suvin-cosmetic/assets/59393359/4cfb8c5c-ba4f-4d19-bf06-1835b23f4d6b)|
+
+### 모바일 레아이웃
+
+| 상품페이지(Mobile) | 게시판 리스트(Mobile) |
+|:---:|:---:|
+| ![image](https://github.com/syki66/suvin-cosmetic/assets/59393359/254a2534-d560-4c7d-b880-7d5dc98b7be1) | ![image](https://github.com/syki66/suvin-cosmetic/assets/59393359/113b8f48-e897-4636-a88e-403ab49a3b00) |
 
 ## Built With
 
