@@ -35,7 +35,7 @@
 
 ## Requirements
 
-> node v16
+- node v16
 
 최신 노드버전에서 실행하려면 `--openssl-legacy-provider` 옵션 넣기 _(현재는 스크립트에 넣어놓음)_
 
@@ -49,7 +49,7 @@ npm install
 npm start
 ```
 
-> 다른 기기에서 테스트 하려면 아래 명령어 실행 후, `http://아이피주소:포트번호`로 접속하기
+#### 다른 기기에서 테스트 하려면 아래 명령어 실행 후, `http://아이피주소:포트번호`로 접속하기
 
 ```bash
 HOST=0.0.0.0 npm start
@@ -61,13 +61,13 @@ HOST=0.0.0.0 npm start
 
 _`package.json`의 `build`에 `CI=false` 추가해야됨 (CI 서버에서 warning을 error로 간주해서 빌드 실패가 발생함)_
 
-> 수동 배포
+#### 수동 배포
 
 ```bash
 npm run deploy
 ```
 
-> 자동 배포
+#### 자동 배포
 
 master 브랜치에 merge 또는 push가 발생하면, Github Action을 통해서 자동 배포됨
 
