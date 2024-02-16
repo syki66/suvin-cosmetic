@@ -6,49 +6,39 @@
 | :----------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: |
 | ![pc](https://user-images.githubusercontent.com/59393359/148419257-fa796517-301a-43f0-9f35-073a6a6c8091.png) | ![mobile](https://user-images.githubusercontent.com/59393359/148786314-98bc0511-e416-4a84-aa5e-76519fccaeaa.png) |
 
----
-
 ## Feature
 
 - 회사 정보 제공
 - 가로 사이즈에 따라 레이아웃 변경 (576px, 768px, 992px, 1200px)
 
----
-
 ## Caution
 
-로컬서버에서 작업해도 마크다운 파일들은 깃허브 레포를 참조함.
-
----
+- firebase에 특정 페이지의 데이터만 가져오는 페이지네이션이 불가능해서 현재는 컬렉션의 모든 문서를 get해서 사용
+- document의 최대 용량은 최대 1MB라서 게시글의 양은 제한 걸지 않음
+- 비공개 게시물은 프론트에서만 막아놓음
+- 관리자만이 storage의 read, write 권한을 가짐
+- firebase sdk v10 버전을 사용 중 타임아웃 오류가 있어서 v9으로 다운그레이드 진행함
+- fcm 설정 initialize하면 오류 발생함
+- 로컬 개발환경에서 proccess 관련 오류 발생함
 
 ## Todo List
 
-- company의 Management Motto 에 그립삽입하고 모바일버전에서는 리스트의 좌측패딩값 없애고 사진 배경으로 해놓고 흰색 마스크 씌우기
-- 홈화면에 제품 사진 courasel 시키기
-- global network 이미지를 한국에서 해외로 연결되는 사진으로 바꾸기
-- Product 페이지도 Notice 페이지와 동일하되 front matter 에 가격만 넣어야지
-- notice페이지에서 공지는 yml 옵션으로 따로 빼기
-- 위챗 정보 추가 소셜버튼이나 아이디
+- carousel을 이용해서 홈화면에 product 리스트 나열 및 순환
 - 각 컴포넌트에 key 할당
-- product 페이지에 구매링크 올리기
-- product 페이지 xl에서 사진 비율 안맞는거 고치기
-- 모바일 페이지에서 product에 이미지를 너비 기준으로 높이 정하기
-- iframe 모바일 자동재생 설정하기
-- iframe 임시로 두개 사용한거 하나로 줄이기
-- 깃허브 자체 페이지 커스텀 404 로 바꾸기
+- 메인 화면 iframe 하나로 줄이기
 - 일반 사용자도 사진 업로드 가능하도록 변경
-
----
+  - 유저에게 사진 업로드 권한을 주기 위해서는 storage 구조를 변경해야됨 (`/username/file/path`)
 
 ## Change Log
 
 - [change log](https://github.com/syki66/suvin-cosmetic/blob/master/CHANGELOG.MD)
-
----
+- commit description에 표기
 
 ## Requirements
 
 > node v16
+
+최신 노드버전에서 실행하려면 `--openssl-legacy-provider` 옵션 넣기 _(현재는 스크립트에 넣어놓음)_
 
 ## Run
 
@@ -58,6 +48,12 @@ npm install
 
 ```bash
 npm start
+```
+
+> 다른 기기에서 테스트 하려면 아래 명령어 실행 후, `http://아이피주소:포트번호`로 접속하기
+
+```bash
+HOST=0.0.0.0 npm start
 ```
 
 ---

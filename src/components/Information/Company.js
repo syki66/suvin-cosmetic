@@ -450,7 +450,7 @@ export default function Company() {
 
       <div className="border-top border-light">
         <MDBRow>
-          <MDBCol size="12" md="8">
+          <MDBCol size="12">
             <div className="h4 pt-5 pb-1">CEO 인사말</div>
             <p className="pt-3">
               화장품 연구개발 경력 30년의 연구전문가가 고객이 만족하고 신뢰할 수
@@ -466,18 +466,6 @@ export default function Company() {
             >
               대표 김 덕훈
             </div>
-          </MDBCol>
-
-          <MDBCol
-            size="12"
-            md="4"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <img src={CEO_IMG} className="img-fluid z-depth-1" alt="" />
           </MDBCol>
         </MDBRow>
       </div>
