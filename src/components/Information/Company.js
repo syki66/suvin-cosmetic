@@ -6,7 +6,6 @@ import InnerPageFrame from '../common/InnerPageFrame';
 import FittedImage from 'react-fitted-image';
 
 import Motto from './company_1.png';
-import CEO_IMG from './company_2.jpg';
 
 /*
     business 에서 양식 따오고, 평행사변형 배경 만드는데 하나의 div로는 불가여서 
