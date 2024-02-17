@@ -1,6 +1,6 @@
 # suvin-cosmetic
 
-수빈 코스메틱의 소개 및 홍보 목적의 웹사이트 **[(링크)](https://suvincos.com/)**
+수빈 코스메틱의 소개 및 홍보 목적의 웹사이트 **[(Live Demo)](https://suvincos.com/)**
 
 <br />
 
