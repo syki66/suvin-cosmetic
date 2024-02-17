@@ -14,8 +14,12 @@
 | 게시판 리스트 (PC) | 게시판 리스트 (mobile) |
 | ![image](https://github.com/syki66/suvin-cosmetic/assets/59393359/4c8c8946-b3e1-4ef9-bbaf-753a738549c2) | ![image](https://github.com/syki66/suvin-cosmetic/assets/59393359/113b8f48-e897-4636-a88e-403ab49a3b00) |
 
-|소개페이지1|소개페이지2|
+| 게시판 에디터 (PC) | 게시판 조회 (PC) |
 | :---: | :---: |
+|![image](https://github.com/syki66/suvin-cosmetic/assets/59393359/6c75d20c-84a6-4303-b171-f0856b58c4ed)|![image](https://github.com/syki66/suvin-cosmetic/assets/59393359/9b250ae3-1eac-4433-9fa4-53b476837a84)|
+| 댓글 (PC) | 인증 (PC) |
+|![image](https://github.com/syki66/suvin-cosmetic/assets/59393359/0ff82e0e-be39-4d97-aea5-a5d2cfa5ce78)|![image](https://github.com/syki66/suvin-cosmetic/assets/59393359/2ce50b80-2d36-4698-bb46-6350d761f4bb)|
+| 소개페이지1 (PC) | 소개페이지2 (PC) |
 |![image](https://github.com/syki66/suvin-cosmetic/assets/59393359/4cfb8c5c-ba4f-4d19-bf06-1835b23f4d6b)|![image](https://github.com/syki66/suvin-cosmetic/assets/59393359/bd8da648-51f1-441f-979a-ab61c7c51cc8)|
 
 ## Built With
