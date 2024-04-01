@@ -8,7 +8,7 @@ export default function Inquiry() {
       menuTitle="Inquiry"
       menuTitleList={['Inquiry']}
       mainTitle="Inquiry"
-      description="Please write freely about business matter here or use email directly (suvin@suvincos.com)"
+      description="Please write freely about business matter here or use email directly (dhkkis@daum.net)"
       isAdminPage={false}
     />
   );

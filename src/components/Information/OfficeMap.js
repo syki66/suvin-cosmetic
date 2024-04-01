@@ -26,7 +26,7 @@ export default function OfficeMap() {
         <span style={{ color: '#6e391a' }}>Tel :</span> 1688-9028
       </div>
       <div style={{ color: 'gray' }} className="font-weight-bold">
-        <span style={{ color: '#6e391a' }}>Mobile :</span> +82-10-6644-3665
+        <span style={{ color: '#6e391a' }}>E-mail :</span> dhkkis@daum.net
       </div>
       <div style={{ color: 'gray' }} className="font-weight-bold pb-5">
         <span style={{ color: '#6e391a' }}>WeChat ID :</span> dhkkis59

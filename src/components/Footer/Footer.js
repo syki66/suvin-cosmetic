@@ -34,10 +34,8 @@ export default function Footer() {
               <div className="footer_display">
                 Tel : 1688-9028&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </div>
-              <div className="footer_display">
-                Mobile : 010-6644-3665&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </div>
-              <div className="footer_display">E-mail : suvin@suvincos.com</div>
+
+              <div className="footer_display">E-mail : dhkkis@daum.net</div>
             </div>
           </MDBCol>
           <MDBCol
@@ -59,7 +57,7 @@ export default function Footer() {
             </a>
             <a
               className="px-5 px-lg-1"
-              href="mailto:suvin@suvincos.com"
+              href="mailto:dhkkis@daum.net"
               title="click to E-mail"
             >
               <img src={emailIcon_32} />
